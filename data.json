@@ -226,13 +226,19 @@
   ],
   "hs_deals": [
     {
-      "id": "62572164531",
-      "name": "Teste",
-      "amount": 60000,
+      "id": "62616673874",
+      "name": "Renner | Guilherme | NF",
+      "amount": 0,
+      "stageId": "1397554091"
+    },
+    {
+      "id": "62616675984",
+      "name": "Pernambucanas | Cristiane | LF",
+      "amount": 0,
       "stageId": "1397554091"
     }
   ],
-  "hs_last_updated": "13/07/2026, 13:30:28",
+  "hs_last_updated": "13/07/2026, 13:31:56",
   "mrr_overrides": {
     "total": {
       "value": 0,
@@ -255,5 +261,5 @@
   "hs_overrides": {},
   "hs_deleted": [],
   "active_tab": "kanban",
-  "snapshot_at": "2026-07-13T16:30:35.114Z"
+  "snapshot_at": "2026-07-13T16:32:02.724Z"
 }
