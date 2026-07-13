@@ -70,6 +70,19 @@
 </head>
 <body class="min-h-screen">
 
+<!-- ══════════════════ VIEWER LOGIN GATE (só na nuvem) ══════════════════ -->
+<div id="viewer-gate" style="display:none;position:fixed;inset:0;z-index:9999;background:var(--black);align-items:center;justify-content:center;">
+  <div class="card p-8" style="max-width:340px;width:90%;">
+    <div style="width:44px;height:44px;background:var(--mustard);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:Montserrat,sans-serif;font-weight:800;color:#000;font-size:18px;margin:0 auto 16px;">IN</div>
+    <p class="text-center font-bold text-lg mb-1" style="color:var(--black);">RPO Virtual</p>
+    <p class="text-center text-xs mb-5" style="color:var(--text2);">Digite a senha para acessar o dashboard.</p>
+    <input id="viewer-gate-input" type="password" placeholder="Senha" class="w-full mb-3" style="text-align:center;"
+      onkeydown="if(event.key==='Enter') checkViewerPassword();" />
+    <button class="btn-mustard w-full" onclick="checkViewerPassword()">Entrar</button>
+    <p id="viewer-gate-error" class="text-center text-xs mt-3" style="color:var(--danger);display:none;">Senha incorreta.</p>
+  </div>
+</div>
+
 <!-- ══════════════════ HEADER ══════════════════ -->
 <header class="sticky top-0 z-50" style="background:var(--black);">
   <div class="max-w-screen-2xl mx-auto px-4 py-3 flex flex-wrap items-center gap-3">
@@ -295,10 +308,38 @@
 <script>
 // ═══════════════════════════ MODE ═══════════════════════════
 const IS_VIEWER = !['localhost','127.0.0.1'].includes(location.hostname);
+// SHA-256 da senha de acesso ao link publicado — local (admin) nunca pede senha.
+const VIEWER_PASSWORD_HASH = 'daf9f273cf47149e742c318b711db6e5959d7beb29644d4387a35763281e24f6';
+
+async function sha256Hex(text) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function checkViewerPassword() {
+  const input = document.getElementById('viewer-gate-input');
+  const err = document.getElementById('viewer-gate-error');
+  const hash = await sha256Hex(input.value);
+  if (hash === VIEWER_PASSWORD_HASH) {
+    sessionStorage.setItem('rpov_viewer_unlocked', '1');
+    document.getElementById('viewer-gate').style.display = 'none';
+    document.body.style.overflow = '';
+  } else {
+    err.style.display = 'block';
+    input.value = '';
+    input.focus();
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   if (IS_VIEWER) {
     document.body.classList.add('viewer-mode');
     document.getElementById('viewer-banner').style.display = 'flex';
+    if (sessionStorage.getItem('rpov_viewer_unlocked') !== '1') {
+      document.getElementById('viewer-gate').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      document.getElementById('viewer-gate-input').focus();
+    }
   }
 });
 
