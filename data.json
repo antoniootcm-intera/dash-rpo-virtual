@@ -172,9 +172,67 @@
       "conv": 0
     }
   },
-  "hs_stages": [],
-  "hs_deals": [],
-  "hs_last_updated": "",
+  "hs_stages": [
+    {
+      "id": "1397554091",
+      "label": "HR | SQL (Lead qualificado",
+      "displayOrder": 0
+    },
+    {
+      "id": "1397554092",
+      "label": "OPP's (reunião de vendas agendada)",
+      "displayOrder": 1
+    },
+    {
+      "id": "1397554093",
+      "label": "REUNIÃO REALIZADA",
+      "displayOrder": 2
+    },
+    {
+      "id": "1397554094",
+      "label": "PROPOSTA ENVIADA (OPP)",
+      "displayOrder": 3
+    },
+    {
+      "id": "1397554095",
+      "label": "FOLLOW UP",
+      "displayOrder": 4
+    },
+    {
+      "id": "1397554096",
+      "label": "NEGOCIAÇÃO",
+      "displayOrder": 5
+    },
+    {
+      "id": "1397554097",
+      "label": "HOMOLOGAÇÃO | CONTRATO",
+      "displayOrder": 6
+    },
+    {
+      "id": "1397554098",
+      "label": "NEGÓCIO FECHADO",
+      "displayOrder": 7
+    },
+    {
+      "id": "1397554099",
+      "label": "DESQUALIFICADA",
+      "displayOrder": 8
+    },
+    {
+      "id": "1397554100",
+      "label": "NEGÓCIO PERDIDO",
+      "displayOrder": 9
+    }
+  ],
+  "hs_deals": [
+    {
+      "id": "62572164531",
+      "name": "Teste",
+      "amount": 60000,
+      "stageId": "1397554091"
+    }
+  ],
+  "hs_last_updated": "13/07/2026, 13:30:28",
   "mrr_overrides": {
     "total": {
       "value": 0,
@@ -196,6 +254,6 @@
   },
   "hs_overrides": {},
   "hs_deleted": [],
-  "active_tab": "metas",
-  "snapshot_at": "2026-07-13T16:20:49.817Z"
+  "active_tab": "kanban",
+  "snapshot_at": "2026-07-13T16:30:35.114Z"
 }
