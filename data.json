@@ -229,16 +229,16 @@
       "id": "62616673874",
       "name": "Renner | Guilherme | NF",
       "amount": 0,
-      "stageId": "1397554091"
+      "stageId": "1397554092"
     },
     {
       "id": "62616675984",
       "name": "Pernambucanas | Cristiane | LF",
       "amount": 0,
-      "stageId": "1397554091"
+      "stageId": "1397554092"
     }
   ],
-  "hs_last_updated": "13/07/2026, 13:31:56",
+  "hs_last_updated": "13/07/2026, 13:39:31",
   "mrr_overrides": {
     "total": {
       "value": 0,
@@ -261,5 +261,5 @@
   "hs_overrides": {},
   "hs_deleted": [],
   "active_tab": "kanban",
-  "snapshot_at": "2026-07-13T16:34:23.230Z"
+  "snapshot_at": "2026-07-13T16:39:33.113Z"
 }
