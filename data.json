@@ -167,16 +167,16 @@
   ],
   "canal_metas": {
     "NF": {
-      "sal": 0,
-      "conv": 0
+      "sal": 53,
+      "conv": 34
     },
     "RE": {
-      "sal": 0,
-      "conv": 0
+      "sal": 24,
+      "conv": 25
     },
     "LF": {
-      "sal": 0,
-      "conv": 0
+      "sal": 43,
+      "conv": 14
     }
   },
   "hs_stages": [
@@ -273,6 +273,6 @@
   },
   "hs_overrides": {},
   "hs_deleted": [],
-  "active_tab": "reunioes",
-  "snapshot_at": "2026-07-13T17:07:15.544Z"
+  "active_tab": "conversao",
+  "snapshot_at": "2026-07-13T17:31:48.117Z"
 }
