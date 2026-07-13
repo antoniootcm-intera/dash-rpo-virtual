@@ -1117,7 +1117,7 @@ window.addEventListener('DOMContentLoaded', () => {
   body.viewer-mode .viewer-only { display: inline; }
   body:not(.viewer-mode) .viewer-only { display: none; }
   body.viewer-mode .viewer-only-inline { display: inline !important; }
-  body.viewer-mode input, body.viewer-mode select { display: none !important; }
+  body.viewer-mode input:not(#viewer-gate-input), body.viewer-mode select { display: none !important; }
 </style>
 
 </body>
