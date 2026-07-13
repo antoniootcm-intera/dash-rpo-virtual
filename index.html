@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RPO Virtual — INTERA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:        #000000;
+    --mustard:       #D4A017;
+    --mustard-light: #FAEDC8;
+    --accent:        #9900FF;
+    --accent2:       #7A00CC;
+    --accent-light:  #F3E5FF;
+    --teal:          #00B8A9;
+    --teal-light:    #DFF7F4;
+    --bg:            #EEEEEE;
+    --white:         #FFFFFF;
+    --text:          #111111;
+    --text2:         #555555;
+    --muted:         #888888;
+    --danger:        #D64545;
+    --border:        #DDDDDD;
+  }
+  * { font-family: 'Inter', sans-serif; }
+  h1,h2,h3,.font-brand { font-family: 'Montserrat', sans-serif; }
+  body { background: var(--bg); color: var(--text); }
+  body.viewer-mode .admin-only { display: none !important; }
+  .card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; }
+  .tab-btn { padding: 10px 16px; font-weight: 600; font-size: 14px; color: var(--text2); border-bottom: 3px solid transparent; cursor: pointer; transition: all .15s; white-space: nowrap; }
+  .tab-btn:hover:not(.active) { color: var(--black); background: #F5F5F5; }
+  .tab-btn.active { color: var(--black); border-bottom-color: var(--mustard); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  .btn-primary { background: var(--black); color: #fff; font-weight: 600; border-radius: 10px; padding: 8px 16px; transition: background .15s; }
+  .btn-primary:hover { background: #222; }
+  .btn-mustard { background: var(--mustard); color: #000; font-weight: 700; border-radius: 10px; padding: 8px 16px; transition: filter .15s; }
+  .btn-mustard:hover { filter: brightness(1.08); }
+  .btn-ghost { background: #fff; color: var(--text); border: 1px solid var(--border); font-weight: 600; border-radius: 10px; padding: 8px 14px; transition: all .15s; }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+  input[type=number], input[type=text], input[type=date], select, input[type=password] {
+    border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font-size: 13px; background: #fff;
+  }
+  input:focus, select:focus { outline: 2px solid var(--accent-light); border-color: var(--accent); }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { padding: 8px 10px; font-size: 13px; border-bottom: 1px solid var(--border); text-align: center; }
+  thead th { background: #FAFAFA; color: var(--text2); font-weight: 700; text-transform: uppercase; font-size: 10.5px; letter-spacing: .04em; position: sticky; top: 0; }
+  tbody tr:hover { background: #FBFAFF; }
+  .q-divider td { border-bottom: 3px solid var(--mustard) !important; }
+  .progress-track { background: #E7E7E7; border-radius: 999px; height: 10px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 999px; transition: width .4s ease; }
+  .chip { border: 1px solid var(--border); border-radius: 10px; padding: 8px; background: #fff; text-align: center; }
+  .chip input { width: 100%; text-align: center; }
+  .kanban-col { background: #F7F7F7; border-radius: 12px; min-width: 240px; max-width: 260px; flex-shrink: 0; }
+  .kanban-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; margin-bottom: 8px; font-size: 12.5px; }
+  .kanban-card .amt { color: var(--accent2); font-weight: 700; }
+  .badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+  .badge-nf { background: var(--accent-light); color: var(--accent2); }
+  .badge-re { background: var(--teal-light); color: var(--teal); }
+  .badge-lf { background: var(--mustard-light); color: #8a6d00; }
+  .badge-nd { background: #eee; color: #888; }
+  ::-webkit-scrollbar { height: 8px; width: 8px; }
+  ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 8px; }
+  .no-print { }
+</style>
+</head>
+<body class="min-h-screen">
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header class="sticky top-0 z-50" style="background:var(--black);">
+  <div class="max-w-screen-2xl mx-auto px-4 py-3 flex flex-wrap items-center gap-3">
+    <div class="flex items-center gap-3 flex-1 min-w-0">
+      <div style="width:42px;height:42px;background:var(--mustard);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:Montserrat,sans-serif;font-weight:800;color:#000;font-size:17px;">IN</div>
+      <div class="min-w-0">
+        <div class="font-brand font-bold text-lg leading-none" style="color:#fff;">RPO Virtual</div>
+        <div class="text-xs" style="color:#bbb;">INTERA · 2º semestre 2026</div>
+      </div>
+    </div>
+
+    <div class="admin-only flex items-center gap-2 flex-wrap">
+      <input id="hs-token" type="password" placeholder="HubSpot Access Token…"
+        class="w-56" oninput="localStorage.setItem('rpov_hs_token', this.value)" />
+      <input id="hs-pipeline" type="text" placeholder="Pipeline ID" value="916013856"
+        class="w-32" oninput="localStorage.setItem('rpov_hs_pipeline', this.value)" />
+      <button onclick="testarToken()" class="btn-ghost text-sm">Testar Token</button>
+      <input id="gh-token" type="password" placeholder="GitHub Token (publicar)"
+        class="w-52" oninput="localStorage.setItem('rpov_gh_token', this.value)" />
+      <button id="btn-publicar" onclick="publicarSnapshot()" class="btn-mustard text-sm">🚀 Publicar</button>
+    </div>
+    <div id="viewer-banner" class="items-center gap-2 text-xs" style="display:none;">
+      <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full font-semibold" style="background:#333;color:var(--mustard);">👁 Modo visualização</span>
+    </div>
+    <div id="sync-status" class="text-xs" style="color:#aaa;"></div>
+  </div>
+
+  <nav class="max-w-screen-2xl mx-auto px-4 flex gap-1 overflow-x-auto" style="border-top:1px solid #222;">
+    <div class="tab-btn active" data-tab="metas" onclick="switchTab('metas')" style="color:#eee;">Metas Gerais</div>
+    <div class="tab-btn" data-tab="cascata" onclick="switchTab('cascata')" style="color:#eee;">Cascata Semanal</div>
+    <div class="tab-btn" data-tab="planejamento" onclick="switchTab('planejamento')" style="color:#eee;">Planejamento Cascata</div>
+    <div class="tab-btn" data-tab="reunioes" onclick="switchTab('reunioes')" style="color:#eee;">Reuniões Agendadas</div>
+    <div class="tab-btn" data-tab="conversao" onclick="switchTab('conversao')" style="color:#eee;">Conversão por Canal</div>
+    <div class="tab-btn" data-tab="kanban" onclick="switchTab('kanban')" style="color:#eee;">Pipeline</div>
+  </nav>
+</header>
+
+<main class="max-w-screen-2xl mx-auto px-4 py-6">
+
+<!-- ══════════════════ TAB 1: METAS GERAIS ══════════════════ -->
+<section id="tab-metas" class="tab-panel active space-y-6">
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="card p-5">
+      <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color:var(--accent);">Meta em Contratos · até dez/2026</p>
+      <p class="text-2xl font-bold" style="color:var(--black);">R$ 3.000.000,00</p>
+      <div class="flex items-center gap-3 mt-3">
+        <label class="text-xs font-semibold" style="color:var(--text2);">Realizado (R$)</label>
+        <input id="input-contratos-realizado" type="number" step="0.01" class="admin-only w-40" oninput="onContratosRealizadoInput()" />
+        <span id="contratos-realizado-view" class="font-semibold hidden viewer-only-inline"></span>
+      </div>
+      <div class="progress-track mt-3">
+        <div id="bar-contratos" class="progress-fill" style="width:0%;background:var(--mustard);"></div>
+      </div>
+      <p id="pct-contratos" class="text-xs mt-1 font-semibold" style="color:var(--text2);">0% da meta</p>
+    </div>
+
+    <div class="card p-5">
+      <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color:var(--accent);">MRR Total — Meta · Q3 + Q4</p>
+      <p class="text-2xl font-bold" style="color:var(--black);">R$ 300.000,00</p>
+      <div class="flex items-center gap-2 mt-3 flex-wrap">
+        <label class="text-xs font-semibold" style="color:var(--text2);">Realizado (R$)</label>
+        <input id="input-mrr-total-realizado" type="number" step="0.01" class="admin-only w-32" oninput="onMrrRealizadoInput('total', this.value)" />
+        <span id="mrr-total-realizado" class="font-semibold" style="color:var(--accent2);">R$ 0,00</span>
+        <span id="mrr-total-badge" class="text-[10px] font-bold px-2 py-0.5 rounded-full"></span>
+        <button id="mrr-total-reset" class="admin-only text-[10px] underline" style="color:var(--text2);display:none;" onclick="resetMrrAuto('total')">↺ voltar ao auto</button>
+      </div>
+      <div class="progress-track mt-3">
+        <div id="bar-mrr-total" class="progress-fill" style="width:0%;background:var(--accent);"></div>
+      </div>
+      <p id="pct-mrr-total" class="text-xs mt-1 font-semibold" style="color:var(--text2);">0% da meta</p>
+    </div>
+  </div>
+
+  <div class="card p-5">
+    <h3 class="text-sm font-bold mb-3" style="color:var(--black);">MRR — Meta Linear x Realizado (semestre completo)</h3>
+    <canvas id="chart-mrr-total" height="90"></canvas>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <div class="card p-5">
+      <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color:var(--teal);">MRR Q3 — Meta</p>
+      <p class="text-xl font-bold mb-2" style="color:var(--black);">R$ 100.000,00</p>
+      <div class="flex items-center gap-2 flex-wrap">
+        <label class="text-xs font-semibold" style="color:var(--text2);">Realizado (R$)</label>
+        <input id="input-mrr-q3-realizado" type="number" step="0.01" class="admin-only w-32" oninput="onMrrRealizadoInput('q3', this.value)" />
+        <span id="mrr-q3-realizado" class="font-semibold" style="color:var(--accent2);">R$ 0,00</span>
+        <span id="mrr-q3-badge" class="text-[10px] font-bold px-2 py-0.5 rounded-full"></span>
+        <button id="mrr-q3-reset" class="admin-only text-[10px] underline" style="color:var(--text2);display:none;" onclick="resetMrrAuto('q3')">↺ voltar ao auto</button>
+      </div>
+      <div class="progress-track mt-3"><div id="bar-mrr-q3" class="progress-fill" style="width:0%;background:var(--teal);"></div></div>
+      <p id="pct-mrr-q3" class="text-xs mt-1 font-semibold" style="color:var(--text2);">0% da meta</p>
+      <canvas id="chart-mrr-q3" height="130" class="mt-4"></canvas>
+    </div>
+    <div class="card p-5">
+      <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color:var(--mustard);">MRR Q4 — Meta</p>
+      <p class="text-xl font-bold mb-2" style="color:var(--black);">R$ 200.000,00</p>
+      <div class="flex items-center gap-2 flex-wrap">
+        <label class="text-xs font-semibold" style="color:var(--text2);">Realizado (R$)</label>
+        <input id="input-mrr-q4-realizado" type="number" step="0.01" class="admin-only w-32" oninput="onMrrRealizadoInput('q4', this.value)" />
+        <span id="mrr-q4-realizado" class="font-semibold" style="color:var(--accent2);">R$ 0,00</span>
+        <span id="mrr-q4-badge" class="text-[10px] font-bold px-2 py-0.5 rounded-full"></span>
+        <button id="mrr-q4-reset" class="admin-only text-[10px] underline" style="color:var(--text2);display:none;" onclick="resetMrrAuto('q4')">↺ voltar ao auto</button>
+      </div>
+      <div class="progress-track mt-3"><div id="bar-mrr-q4" class="progress-fill" style="width:0%;background:#B8860B;"></div></div>
+      <p id="pct-mrr-q4" class="text-xs mt-1 font-semibold" style="color:var(--text2);">0% da meta</p>
+      <canvas id="chart-mrr-q4" height="130" class="mt-4"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ TAB 2: CASCATA SEMANAL ══════════════════ -->
+<section id="tab-cascata" class="tab-panel space-y-6">
+
+  <div class="card p-5 flex flex-wrap items-center gap-6">
+    <div>
+      <p class="text-xs font-bold uppercase tracking-widest" style="color:var(--accent);">Total Realizado</p>
+      <p id="cascata-total-realizado" class="text-xl font-bold" style="color:var(--black);">R$ 0,00</p>
+    </div>
+    <div>
+      <p class="text-xs font-bold uppercase tracking-widest" style="color:var(--text2);">Meta (semestre)</p>
+      <p class="text-xl font-bold" style="color:var(--black);">R$ 300.000,00</p>
+    </div>
+    <div>
+      <p class="text-xs font-bold uppercase tracking-widest" style="color:var(--text2);">Aderência</p>
+      <p id="cascata-aderencia" class="text-xl font-bold" style="color:var(--accent2);">0%</p>
+    </div>
+  </div>
+
+  <div class="card p-5 overflow-x-auto">
+    <h3 class="text-sm font-bold mb-3" style="color:var(--black);">Registro de Execução Semanal</h3>
+    <table>
+      <thead><tr><th>Semana</th><th>Período</th><th>Incremento planejado (R$)</th><th>MRR fechado (R$)</th></tr></thead>
+      <tbody id="cascata-tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="card p-5">
+    <h3 class="text-sm font-bold mb-3" style="color:var(--black);">Meta Cascateada de Reuniões x Realizado</h3>
+    <canvas id="chart-reunioes-cascata" height="80"></canvas>
+  </div>
+
+  <div class="card p-5">
+    <h3 class="text-sm font-bold mb-3" style="color:var(--black);">Reuniões Realizadas por Semana</h3>
+    <div id="chips-grid" class="grid gap-2" style="grid-template-columns:repeat(auto-fill,minmax(96px,1fr));"></div>
+  </div>
+</section>
+
+<!-- ══════════════════ TAB 3: PLANEJAMENTO CASCATA ══════════════════ -->
+<section id="tab-planejamento" class="tab-panel space-y-4">
+  <div class="card p-5 overflow-x-auto">
+    <h3 class="text-sm font-bold mb-1" style="color:var(--black);">Plano Original — Referência (não editável)</h3>
+    <p class="text-xs mb-3" style="color:var(--text2);">13/07/2026 a 18/12/2026</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Semana</th><th>Período</th>
+          <th># Reuniões<br>Clientes Atuais</th><th># Reuniões<br>Recuperação</th><th># Reuniões<br>Marketing</th>
+          <th>Reuniões<br>Realizadas</th><th>Acumulado<br>Reuniões</th>
+          <th>Vendas</th><th>Acumulado<br>Vendas</th><th>MRR</th>
+        </tr>
+      </thead>
+      <tbody id="planejamento-tbody"></tbody>
+      <tfoot id="planejamento-tfoot"></tfoot>
+    </table>
+    <p class="text-xs mt-4 italic" style="color:var(--muted);">Ajuste para começar o mkt na 2ª quinzena de agosto · Mais reuniões dos outros 2 clusters no Q3.</p>
+  </div>
+</section>
+
+<!-- ══════════════════ TAB 4: REUNIÕES AGENDADAS ══════════════════ -->
+<section id="tab-reunioes" class="tab-panel space-y-4">
+  <div class="card p-5">
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="text-sm font-bold" style="color:var(--black);">Log de Reuniões</h3>
+      <button class="admin-only btn-primary text-sm" onclick="addReuniaoRow()">+ Adicionar reunião</button>
+    </div>
+    <div class="overflow-x-auto">
+      <table>
+        <thead><tr><th>Data</th><th>Cliente / Lead</th><th>Canal</th><th>Status</th><th>Observações</th><th class="admin-only">Ações</th></tr></thead>
+        <tbody id="reunioes-tbody"></tbody>
+      </table>
+    </div>
+    <div class="flex gap-4 mt-4 text-xs" style="color:var(--text2);">
+      <span>Realizadas → NF: <b id="sal-log-nf">0</b></span>
+      <span>Realizadas → RE: <b id="sal-log-re">0</b></span>
+      <span>Realizadas → LF: <b id="sal-log-lf">0</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ TAB 5: CONVERSÃO POR CANAL ══════════════════ -->
+<section id="tab-conversao" class="tab-panel space-y-6">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="canal-cards"></div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <div class="card p-5">
+      <h3 class="text-sm font-bold mb-3" style="color:var(--black);">SAL Gerado — Meta x Realizado</h3>
+      <canvas id="chart-sal" height="110"></canvas>
+    </div>
+    <div class="card p-5">
+      <h3 class="text-sm font-bold mb-3" style="color:var(--black);">Taxa de Conversão — Meta x Realizado</h3>
+      <canvas id="chart-conv" height="110"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ TAB 6: PIPELINE (KANBAN) ══════════════════ -->
+<section id="tab-kanban" class="tab-panel space-y-4">
+  <div class="card p-5">
+    <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
+      <h3 class="text-sm font-bold" style="color:var(--black);">Pipeline HubSpot — RPO Virtual (somente leitura)</h3>
+      <div class="flex items-center gap-3">
+        <span id="kanban-updated" class="text-xs" style="color:var(--muted);">Nunca carregado</span>
+        <button class="admin-only btn-mustard text-sm" onclick="carregarPipeline()">🔄 Carregar Pipeline</button>
+      </div>
+    </div>
+    <div id="kanban-board" class="flex gap-3 overflow-x-auto pb-2"></div>
+  </div>
+</section>
+
+</main>
+
+<script>
+// ═══════════════════════════ MODE ═══════════════════════════
+const IS_VIEWER = !['localhost','127.0.0.1'].includes(location.hostname);
+document.addEventListener('DOMContentLoaded', () => {
+  if (IS_VIEWER) {
+    document.body.classList.add('viewer-mode');
+    document.getElementById('viewer-banner').style.display = 'flex';
+  }
+});
+
+// ═══════════════════════════ WEEKS (plano original) ═══════════════════════════
+const WEEKS = [
+  {n:1,  period:'13/07–17/07', atuais:2, recup:1, mkt:null, reunMeta:3,  reunAcum:3,   vendasMeta:null, vendasAcum:null, mrrMeta:0},
+  {n:2,  period:'20/07–24/07', atuais:2, recup:1, mkt:null, reunMeta:3,  reunAcum:6,   vendasMeta:null, vendasAcum:null, mrrMeta:0},
+  {n:3,  period:'27/07–31/07', atuais:2, recup:1, mkt:null, reunMeta:3,  reunAcum:9,   vendasMeta:null, vendasAcum:null, mrrMeta:0},
+  {n:4,  period:'03/08–07/08', atuais:2, recup:2, mkt:1,    reunMeta:5,  reunAcum:14,  vendasMeta:1, vendasAcum:1,  mrrMeta:10000},
+  {n:5,  period:'10/08–14/08', atuais:3, recup:2, mkt:1,    reunMeta:6,  reunAcum:20,  vendasMeta:1, vendasAcum:2,  mrrMeta:20000},
+  {n:6,  period:'17/08–21/08', atuais:3, recup:2, mkt:2,    reunMeta:7,  reunAcum:27,  vendasMeta:1, vendasAcum:2,  mrrMeta:20000},
+  {n:7,  period:'24/08–28/08', atuais:3, recup:2, mkt:1,    reunMeta:6,  reunAcum:33,  vendasMeta:1, vendasAcum:4,  mrrMeta:40000},
+  {n:8,  period:'31/08–04/09', atuais:3, recup:2, mkt:2,    reunMeta:7,  reunAcum:40,  vendasMeta:2, vendasAcum:5,  mrrMeta:50000},
+  {n:9,  period:'07/09–11/09', atuais:3, recup:2, mkt:3,    reunMeta:8,  reunAcum:48,  vendasMeta:2, vendasAcum:7,  mrrMeta:70000},
+  {n:10, period:'14/09–18/09', atuais:3, recup:1, mkt:3,    reunMeta:7,  reunAcum:55,  vendasMeta:2, vendasAcum:8,  mrrMeta:80000},
+  {n:11, period:'21/09–25/09', atuais:3, recup:1, mkt:3,    reunMeta:7,  reunAcum:62,  vendasMeta:2, vendasAcum:10, mrrMeta:100000, qEnd:true},
+  {n:12, period:'28/09–02/10', atuais:3, recup:1, mkt:3,    reunMeta:7,  reunAcum:69,  vendasMeta:2, vendasAcum:12, mrrMeta:120000},
+  {n:13, period:'05/10–09/10', atuais:3, recup:1, mkt:4,    reunMeta:8,  reunAcum:77,  vendasMeta:2, vendasAcum:14, mrrMeta:140000},
+  {n:14, period:'12/10–16/10', atuais:3, recup:1, mkt:4,    reunMeta:8,  reunAcum:85,  vendasMeta:2, vendasAcum:16, mrrMeta:160000},
+  {n:15, period:'19/10–23/10', atuais:3, recup:1, mkt:4,    reunMeta:8,  reunAcum:93,  vendasMeta:2, vendasAcum:17, mrrMeta:170000},
+  {n:16, period:'26/10–30/10', atuais:4, recup:1, mkt:4,    reunMeta:9,  reunAcum:102, vendasMeta:2, vendasAcum:19, mrrMeta:190000},
+  {n:17, period:'02/11–06/11', atuais:4, recup:1, mkt:4,    reunMeta:9,  reunAcum:111, vendasMeta:2, vendasAcum:21, mrrMeta:210000},
+  {n:18, period:'09/11–13/11', atuais:4, recup:1, mkt:4,    reunMeta:9,  reunAcum:120, vendasMeta:2, vendasAcum:23, mrrMeta:230000},
+  {n:19, period:'16/11–20/11', atuais:null, recup:null, mkt:null, reunMeta:0, reunAcum:120, vendasMeta:2, vendasAcum:26, mrrMeta:260000},
+  {n:20, period:'23/11–27/11', atuais:null, recup:null, mkt:null, reunMeta:0, reunAcum:120, vendasMeta:2, vendasAcum:28, mrrMeta:280000},
+  {n:21, period:'30/11–04/12', atuais:null, recup:null, mkt:null, reunMeta:0, reunAcum:120, vendasMeta:2, vendasAcum:30, mrrMeta:300000},
+  {n:22, period:'07/12–11/12', atuais:null, recup:null, mkt:null, reunMeta:0, reunAcum:120, vendasMeta:null, vendasAcum:30, mrrMeta:300000},
+  {n:23, period:'14/12–18/12', atuais:null, recup:null, mkt:null, reunMeta:0, reunAcum:120, vendasMeta:null, vendasAcum:30, mrrMeta:300000},
+];
+const Q3_WEEKS = WEEKS.filter(w => w.n <= 11);
+const Q4_WEEKS = WEEKS.filter(w => w.n >= 12);
+WEEKS.forEach((w,i) => { w.mrrIncrement = w.mrrMeta - (i>0?WEEKS[i-1].mrrMeta:0); });
+WEEKS[5].mrrIncrement = 10000; // ajuste manual do incremento planejado da S6 (não deriva do mrrMeta acumulado)
+
+// ═══════════════════════════ STATE (localStorage) ═══════════════════════════
+function loadJSON(key, fallback) { try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; } catch(e) { return fallback; } }
+function saveJSON(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
+
+let contratosRealizado = parseFloat(localStorage.getItem('rpov_contratos_realizado')) || 0;
+let cascataRows   = loadJSON('rpov_cascata_rows', WEEKS.map(() => ({ mrrFechado: 0 })));
+let reunioesChips = loadJSON('rpov_reunioes_chips', WEEKS.map(() => ({ realizadas: 0 })));
+let reunioesLog   = loadJSON('rpov_reunioes_log', []);
+let canalMetas    = loadJSON('rpov_canal_metas', { NF:{sal:0,conv:0}, RE:{sal:0,conv:0}, LF:{sal:0,conv:0} });
+let hsStages      = loadJSON('rpov_hs_stages', []);
+let hsDeals       = loadJSON('rpov_hs_deals', []);
+let hsLastUpdated = localStorage.getItem('rpov_hs_last_updated') || '';
+let mrrOverrides  = loadJSON('rpov_mrr_overrides', { total:{value:0,locked:false}, q3:{value:0,locked:false}, q4:{value:0,locked:false} });
+let canalOverrides = loadJSON('rpov_canal_overrides', { NF:{}, RE:{}, LF:{} });
+let hsOverrides   = loadJSON('rpov_hs_overrides', {});
+let hsDeleted     = new Set(loadJSON('rpov_hs_deleted', []));
+
+// ═══════════════════════════ HELPERS ═══════════════════════════
+function fmtBRL(n) { return (Number(n)||0).toLocaleString('pt-BR', { style:'currency', currency:'BRL' }); }
+function fmtNum(n) { return (Number(n)||0).toLocaleString('pt-BR'); }
+function pct(a,b) { return b > 0 ? Math.round((a/b)*1000)/10 : 0; }
+function escapeHtml(s) { return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function detectCanal(name) {
+  const s = String(name || '').toUpperCase();
+  if (/\bNF\b/.test(s)) return 'NF';
+  if (/\bRE\b/.test(s)) return 'RE';
+  if (/\bLF\b/.test(s)) return 'LF';
+  return null;
+}
+function setStatus(msg, color) {
+  const el = document.getElementById('sync-status');
+  const colors = { green:'#7CFFB2', red:'#FF8A8A', blue:'#9ecbff', orange:'#ffd08a' };
+  el.style.color = colors[color] || '#aaa';
+  el.textContent = msg;
+}
+
+// ═══════════════════════════ TABS ═══════════════════════════
+function switchTab(id) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === id));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === 'tab-' + id));
+  localStorage.setItem('rpov_active_tab', id);
+}
+
+// ═══════════════════════════ TAB 1: METAS GERAIS ═══════════════════════════
+const CHARTS = {};
+function destroyChart(key) { if (CHARTS[key]) { CHARTS[key].destroy(); delete CHARTS[key]; } }
+
+function cascataAcumuladoAte(weeks) {
+  // retorna array cumulativo de MRR fechado (realizado) alinhado ao array `weeks`
+  let acc = 0;
+  return weeks.map(w => { acc += (cascataRows[w.n-1]?.mrrFechado || 0); return acc; });
+}
+
+function mrrAuto(key) {
+  if (key === 'total') return cascataRows.reduce((s,r) => s + (r.mrrFechado||0), 0);
+  const weeks = key === 'q3' ? Q3_WEEKS : Q4_WEEKS;
+  return weeks.reduce((s,w) => s + (cascataRows[w.n-1]?.mrrFechado||0), 0);
+}
+function mrrRealizado(key) {
+  const ov = mrrOverrides[key];
+  return ov?.locked ? (ov.value||0) : mrrAuto(key);
+}
+
+function renderMetasGerais() {
+  document.getElementById('input-contratos-realizado').value = contratosRealizado || '';
+  ['total','q3','q4'].forEach(key => {
+    const ov = mrrOverrides[key];
+    document.getElementById('input-mrr-' + key + '-realizado').value = ov?.locked ? ov.value : '';
+    document.getElementById('input-mrr-' + key + '-realizado').placeholder = mrrAuto(key);
+  });
+  updateMetasSummary();
+}
+
+function updateMetasSummary() {
+  // Contratos
+  const contratosMeta = 3000000;
+  document.getElementById('bar-contratos').style.width = Math.min(100, pct(contratosRealizado, contratosMeta)) + '%';
+  document.getElementById('pct-contratos').textContent = pct(contratosRealizado, contratosMeta) + '% da meta — ' + fmtBRL(contratosRealizado) + ' de ' + fmtBRL(contratosMeta);
+
+  // MRR (auto via cascata, ou manual se travado)
+  const totalRealizado = mrrRealizado('total');
+  const q3Realizado = mrrRealizado('q3');
+  const q4Realizado = mrrRealizado('q4');
+
+  document.getElementById('mrr-total-realizado').textContent = fmtBRL(totalRealizado);
+  document.getElementById('bar-mrr-total').style.width = Math.min(100, pct(totalRealizado, 300000)) + '%';
+  document.getElementById('pct-mrr-total').textContent = pct(totalRealizado, 300000) + '% da meta';
+
+  document.getElementById('mrr-q3-realizado').textContent = fmtBRL(q3Realizado);
+  document.getElementById('bar-mrr-q3').style.width = Math.min(100, pct(q3Realizado, 100000)) + '%';
+  document.getElementById('pct-mrr-q3').textContent = pct(q3Realizado, 100000) + '% da meta';
+
+  document.getElementById('mrr-q4-realizado').textContent = fmtBRL(q4Realizado);
+  document.getElementById('bar-mrr-q4').style.width = Math.min(100, pct(q4Realizado, 200000)) + '%';
+  document.getElementById('pct-mrr-q4').textContent = pct(q4Realizado, 200000) + '% da meta';
+
+  ['total','q3','q4'].forEach(key => {
+    const ov = mrrOverrides[key];
+    const badge = document.getElementById('mrr-' + key + '-badge');
+    const reset = document.getElementById('mrr-' + key + '-reset');
+    if (badge) { badge.textContent = ov?.locked ? '🔒 manual' : 'auto'; badge.style.background = ov?.locked ? 'var(--accent-light)' : '#eee'; badge.style.color = ov?.locked ? 'var(--accent2)' : 'var(--text2)'; }
+    if (reset) reset.style.display = ov?.locked ? '' : 'none';
+  });
+
+  renderChartMrrTotal();
+  renderChartMrrQ(Q3_WEEKS, 100000, 'chart-mrr-q3', 'mrrQ3');
+  renderChartMrrQ(Q4_WEEKS, 200000, 'chart-mrr-q4', 'mrrQ4');
+}
+
+function onContratosRealizadoInput() {
+  contratosRealizado = parseFloat(document.getElementById('input-contratos-realizado').value) || 0;
+  localStorage.setItem('rpov_contratos_realizado', contratosRealizado);
+  updateMetasSummary();
+}
+
+function onMrrRealizadoInput(key, val) {
+  mrrOverrides[key] = { value: parseFloat(val) || 0, locked: true };
+  saveJSON('rpov_mrr_overrides', mrrOverrides);
+  updateMetasSummary();
+}
+
+function resetMrrAuto(key) {
+  mrrOverrides[key] = { value: 0, locked: false };
+  saveJSON('rpov_mrr_overrides', mrrOverrides);
+  document.getElementById('input-mrr-' + key + '-realizado').value = '';
+  updateMetasSummary();
+}
+
+function renderChartMrrTotal() {
+  const labels = WEEKS.map(w => 'S' + w.n);
+  const totalMeta = 300000;
+  const linear = WEEKS.map(w => Math.round(totalMeta * (w.n / WEEKS.length)));
+  const realizadoAcum = cascataAcumuladoAte(WEEKS);
+  destroyChart('mrrTotal');
+  CHARTS.mrrTotal = new Chart(document.getElementById('chart-mrr-total'), {
+    type: 'line',
+    data: { labels, datasets: [
+      { label: 'Meta Linear', data: linear, borderColor: '#999', borderDash:[5,4], pointRadius:0, tension:0 },
+      { label: 'Realizado', data: realizadoAcum, borderColor: '#9900FF', backgroundColor:'#9900FF22', fill:true, tension:.25, pointRadius:2 },
+    ]},
+    options: { responsive:true, plugins:{ legend:{ position:'bottom' } },
+      scales: { y: { ticks: { callback: v => fmtBRL(v) } } } }
+  });
+}
+
+function renderChartMrrQ(weeks, meta, canvasId, key) {
+  const labels = weeks.map(w => 'S' + w.n);
+  const linear = weeks.map((w,i) => Math.round(meta * ((i+1) / weeks.length)));
+  let acc = 0;
+  const realizado = weeks.map(w => { acc += (cascataRows[w.n-1]?.mrrFechado||0); return acc; });
+  destroyChart(key);
+  CHARTS[key] = new Chart(document.getElementById(canvasId), {
+    type: 'line',
+    data: { labels, datasets: [
+      { label: 'Meta Linear', data: linear, borderColor: '#999', borderDash:[5,4], pointRadius:0 },
+      { label: 'Realizado', data: realizado, borderColor: '#7A00CC', backgroundColor:'#7A00CC22', fill:true, tension:.25, pointRadius:2 },
+    ]},
+    options: { responsive:true, plugins:{ legend:{ position:'bottom' } },
+      scales: { y: { ticks: { callback: v => fmtBRL(v) } } } }
+  });
+}
+
+// ═══════════════════════════ TAB 2: CASCATA SEMANAL ═══════════════════════════
+function renderCascata() {
+  const tbody = document.getElementById('cascata-tbody');
+  tbody.innerHTML = WEEKS.map(w => {
+    const row = cascataRows[w.n-1] || { mrrFechado: 0 };
+    return `<tr class="${w.qEnd ? 'q-divider' : ''}">
+      <td class="font-semibold">S${w.n}</td>
+      <td>${w.period}</td>
+      <td style="color:var(--text2);">${fmtBRL(w.mrrIncrement)}</td>
+      <td><input type="number" step="0.01" class="admin-only w-32" value="${row.mrrFechado || ''}"
+            oninput="onCascataInput(${w.n-1}, this.value)" /><span class="viewer-only">${fmtBRL(row.mrrFechado)}</span></td>
+    </tr>`;
+  }).join('');
+
+  const totalRealizado = cascataRows.reduce((s,r) => s + (r.mrrFechado||0), 0);
+  document.getElementById('cascata-total-realizado').textContent = fmtBRL(totalRealizado);
+  document.getElementById('cascata-aderencia').textContent = pct(totalRealizado, 300000) + '%';
+
+  renderChipsGrid();
+  renderChartReunioesCascata();
+}
+
+function onCascataInput(idx, val) {
+  cascataRows[idx] = { mrrFechado: parseFloat(val) || 0 };
+  saveJSON('rpov_cascata_rows', cascataRows);
+  updateCascataSummary();
+  renderMetasGerais();
+}
+
+function updateCascataSummary() {
+  const totalRealizado = cascataRows.reduce((s,r) => s + (r.mrrFechado||0), 0);
+  document.getElementById('cascata-total-realizado').textContent = fmtBRL(totalRealizado);
+  document.getElementById('cascata-aderencia').textContent = pct(totalRealizado, 300000) + '%';
+}
+
+function renderChipsGrid() {
+  const grid = document.getElementById('chips-grid');
+  grid.innerHTML = WEEKS.map(w => {
+    const chip = reunioesChips[w.n-1] || { realizadas: 0 };
+    return `<div class="chip">
+      <div class="text-xs font-bold" style="color:var(--text2);">S${w.n}</div>
+      <input type="number" min="0" class="admin-only mt-1" value="${chip.realizadas || ''}"
+        oninput="onChipInput(${w.n-1}, this.value)" placeholder="0" />
+      <div class="viewer-only text-lg font-bold mt-1">${chip.realizadas || 0}</div>
+      <div class="text-[10px] mt-1" style="color:var(--text2);">meta ${w.reunMeta}</div>
+      <div id="chip-pct-${w.n-1}" class="text-[10px] font-bold"></div>
+    </div>`;
+  }).join('');
+  WEEKS.forEach(w => updateChipAdherence(w.n-1));
+}
+
+function updateChipAdherence(idx) {
+  const w = WEEKS[idx];
+  const chip = reunioesChips[idx] || { realizadas: 0 };
+  const adher = pct(chip.realizadas, w.reunMeta);
+  const color = adher >= 100 ? 'var(--teal)' : (adher >= 60 ? 'var(--mustard)' : 'var(--danger)');
+  const el = document.getElementById('chip-pct-' + idx);
+  if (el) { el.textContent = adher + '%'; el.style.color = color; }
+}
+
+function onChipInput(idx, val) {
+  reunioesChips[idx] = { realizadas: parseInt(val) || 0 };
+  saveJSON('rpov_reunioes_chips', reunioesChips);
+  updateChipAdherence(idx);
+  renderChartReunioesCascata();
+}
+
+function renderChartReunioesCascata() {
+  const labels = WEEKS.map(w => 'S' + w.n);
+  const meta = WEEKS.map(w => w.reunMeta);
+  const realizado = WEEKS.map(w => reunioesChips[w.n-1]?.realizadas || 0);
+  destroyChart('reunioesCascata');
+  CHARTS.reunioesCascata = new Chart(document.getElementById('chart-reunioes-cascata'), {
+    type: 'bar',
+    data: { labels, datasets: [
+      { label: 'Meta cascateada', data: meta, backgroundColor: '#D4A01766', borderColor:'#D4A017', borderWidth:1 },
+      { label: 'Realizado', data: realizado, backgroundColor: '#00B8A9AA', borderColor:'#00B8A9', borderWidth:1 },
+    ]},
+    options: { responsive:true, plugins:{ legend:{ position:'bottom' } } }
+  });
+}
+
+// ═══════════════════════════ TAB 3: PLANEJAMENTO CASCATA ═══════════════════════════
+function renderPlanejamento() {
+  const tbody = document.getElementById('planejamento-tbody');
+  const dash = v => (v === null || v === undefined) ? '—' : fmtNum(v);
+  tbody.innerHTML = WEEKS.map(w => `<tr class="${w.qEnd ? 'q-divider' : ''}">
+    <td class="font-semibold">S${w.n}</td>
+    <td>${w.period}</td>
+    <td>${dash(w.atuais)}</td>
+    <td>${dash(w.recup)}</td>
+    <td>${dash(w.mkt)}</td>
+    <td class="font-semibold">${w.reunMeta || '—'}</td>
+    <td>${w.reunAcum}</td>
+    <td>${dash(w.vendasMeta)}</td>
+    <td>${dash(w.vendasAcum)}</td>
+    <td style="color:var(--accent2);font-weight:600;">${w.mrrMeta ? fmtBRL(w.mrrMeta) : '—'}</td>
+  </tr>`).join('');
+
+  const sum = (f) => WEEKS.reduce((s,w) => s + (w[f]||0), 0);
+  // Totais conforme fornecidos no plano original (a soma literal da coluna Vendas dá 32, mas o
+  // total de referência informado é 30 — mantido como está por fidelidade à fonte).
+  document.getElementById('planejamento-tfoot').innerHTML = `<tr class="font-bold" style="background:#FAFAFA;">
+    <td colspan="2">TOTAL</td>
+    <td>${sum('atuais')}</td><td>${sum('recup')}</td><td>${sum('mkt')}</td>
+    <td>${sum('reunMeta')}</td><td>—</td>
+    <td>30</td><td>—</td><td>—</td>
+  </tr>`;
+}
+
+// ═══════════════════════════ TAB 4: REUNIÕES AGENDADAS ═══════════════════════════
+const CANAL_COLORS = {
+  '':   { bg:'#EEEEEE', color:'#888888' },
+  NF:   { bg:'var(--accent-light)', color:'var(--accent2)' },
+  RE:   { bg:'var(--teal-light)',   color:'var(--teal)' },
+  LF:   { bg:'var(--mustard-light)', color:'#8A6D00' },
+};
+const STATUS_COLORS = {
+  'Agendada':  { bg:'#E8ECFB', color:'#3B4A9C' },
+  'Realizada': { bg:'var(--teal-light)', color:'var(--teal)' },
+  'Remarcada': { bg:'var(--mustard-light)', color:'#8A6D00' },
+  'Cancelada': { bg:'#FBE3E3', color:'var(--danger)' },
+  'No-show':   { bg:'#E7E7E7', color:'#555555' },
+};
+function pillStyle(map, key) {
+  const c = map[key] || map[''] || { bg:'#eee', color:'#555' };
+  return `background:${c.bg};color:${c.color};border-color:${c.bg};font-weight:700;`;
+}
+
+function renderReunioesLog() {
+  const tbody = document.getElementById('reunioes-tbody');
+  const statusOpts = ['Agendada','Realizada','Remarcada','Cancelada','No-show'];
+  tbody.innerHTML = reunioesLog.map((r, i) => `<tr>
+    <td><input type="date" class="admin-only" value="${r.data||''}" oninput="onReuniaoField(${i},'data',this.value)" /><span class="viewer-only">${r.data||''}</span></td>
+    <td><input type="text" class="admin-only w-40" value="${escapeHtml(r.cliente||'')}" oninput="onReuniaoField(${i},'cliente',this.value)" /><span class="viewer-only">${escapeHtml(r.cliente||'')}</span></td>
+    <td>
+      <select class="admin-only" style="${pillStyle(CANAL_COLORS, r.canal||'')}" onchange="onReuniaoField(${i},'canal',this.value)">
+        ${['','NF','RE','LF'].map(c => `<option value="${c}" ${r.canal===c?'selected':''}>${c||'—'}</option>`).join('')}
+      </select>
+      <span class="viewer-only badge" style="${pillStyle(CANAL_COLORS, r.canal||'')}">${r.canal||'—'}</span>
+    </td>
+    <td>
+      <select class="admin-only" style="${pillStyle(STATUS_COLORS, r.status)}" onchange="onReuniaoField(${i},'status',this.value)">
+        ${statusOpts.map(s => `<option value="${s}" ${r.status===s?'selected':''}>${s}</option>`).join('')}
+      </select>
+      <span class="viewer-only badge" style="${pillStyle(STATUS_COLORS, r.status)}">${r.status||''}</span>
+      ${r.status === 'Realizada' && r.canal ? `<span class="badge badge-${r.canal.toLowerCase()}">✓ 1 SAL ${r.canal}</span>` : ''}
+    </td>
+    <td><input type="text" class="admin-only w-48" value="${escapeHtml(r.obs||'')}" oninput="onReuniaoField(${i},'obs',this.value)" /><span class="viewer-only">${escapeHtml(r.obs||'')}</span></td>
+    <td class="admin-only"><button class="text-red-600 text-xs font-semibold" onclick="removeReuniaoRow(${i})">Remover</button></td>
+  </tr>`).join('') || `<tr><td colspan="6" style="color:var(--muted);">Nenhuma reunião cadastrada.</td></tr>`;
+
+  const counts = { NF:0, RE:0, LF:0 };
+  reunioesLog.forEach(r => { if (r.status === 'Realizada' && counts[r.canal] !== undefined) counts[r.canal]++; });
+  document.getElementById('sal-log-nf').textContent = counts.NF;
+  document.getElementById('sal-log-re').textContent = counts.RE;
+  document.getElementById('sal-log-lf').textContent = counts.LF;
+}
+
+function addReuniaoRow() {
+  reunioesLog.push({ data:'', cliente:'', canal:'', status:'Agendada', obs:'' });
+  saveJSON('rpov_reunioes_log', reunioesLog);
+  renderReunioesLog();
+}
+function removeReuniaoRow(i) {
+  reunioesLog.splice(i,1);
+  saveJSON('rpov_reunioes_log', reunioesLog);
+  renderReunioesLog();
+}
+function onReuniaoField(i, field, val) {
+  reunioesLog[i][field] = val;
+  saveJSON('rpov_reunioes_log', reunioesLog);
+  if (field === 'status' || field === 'canal') renderReunioesLog();
+}
+
+// ═══════════════════════════ TAB 5: CONVERSÃO POR CANAL ═══════════════════════════
+function canalStatsAuto(canal) {
+  const deals = mergedDeals().filter(d => detectCanal(d.name) === canal);
+  const sal = deals.length;
+  const vendas = deals.filter(d => d.stageId && d.stageId === fechadoStageId()).length;
+  return { sal, vendas, conv: sal > 0 ? Math.round((vendas/sal)*1000)/10 : 0 };
+}
+function canalStats(canal) {
+  const auto = canalStatsAuto(canal);
+  const ov = canalOverrides[canal] || {};
+  const sal = ov.sal?.locked ? ov.sal.value : auto.sal;
+  const vendas = ov.vendas?.locked ? ov.vendas.value : auto.vendas;
+  const convAuto = sal > 0 ? Math.round((vendas/sal)*1000)/10 : 0;
+  const conv = ov.conv?.locked ? ov.conv.value : convAuto;
+  return { sal, vendas, conv };
+}
+function fechadoStageId() {
+  const st = hsStages.find(s => (s.label||'').trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'') === 'negocio fechado');
+  return st ? st.id : null;
+}
+
+function canalOverrideRow(canal, field, label, value, autoValue) {
+  const ov = (canalOverrides[canal] && canalOverrides[canal][field]) || { locked:false };
+  const inputId = `canal-${canal}-${field}`;
+  return `<div class="flex items-center gap-2 text-xs">
+    <label class="flex-1" style="color:var(--text2);">${label}</label>
+    <input id="${inputId}" type="number" step="0.01" class="admin-only w-20" value="${ov.locked ? value : ''}" placeholder="${autoValue}"
+      oninput="onCanalStatInput('${canal}','${field}',this.value)" />
+    <span id="${inputId}-badge" class="text-[9px] font-bold px-1.5 py-0.5 rounded-full">${ov.locked ? '🔒' : 'auto'}</span>
+    <button class="admin-only text-[10px] underline" style="color:var(--text2);${ov.locked?'':'display:none;'}" id="${inputId}-reset" onclick="resetCanalAuto('${canal}','${field}')">↺</button>
+  </div>`;
+}
+
+function renderConversao() {
+  const canais = ['NF','RE','LF'];
+  const colorMap = { NF:'var(--accent)', RE:'var(--teal)', LF:'var(--mustard)' };
+  const cardsEl = document.getElementById('canal-cards');
+  cardsEl.innerHTML = canais.map(c => {
+    const st = canalStats(c);
+    const auto = canalStatsAuto(c);
+    const meta = canalMetas[c] || { sal:0, conv:0 };
+    return `<div class="card p-5">
+      <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color:${colorMap[c]};">Cluster ${c}</p>
+      <div class="grid grid-cols-2 gap-3 text-center mb-3">
+        <div><div id="canal-${c}-sal-big" class="text-2xl font-bold">${st.sal}</div><div class="text-[11px]" style="color:var(--text2);">SAL gerado</div></div>
+        <div><div id="canal-${c}-vendas-big" class="text-2xl font-bold">${st.vendas}</div><div class="text-[11px]" style="color:var(--text2);">Vendas</div></div>
+      </div>
+      <div class="text-center mb-3"><span id="canal-${c}-conv-big" class="text-lg font-bold" style="color:${colorMap[c]};">${st.conv}%</span> <span class="text-[11px]" style="color:var(--text2);">conversão</span></div>
+      <div class="admin-only border-t pt-3 mt-2 space-y-2">
+        <p class="text-[10px] font-bold uppercase" style="color:var(--text2);">Realizado (editável — sobrepõe HubSpot)</p>
+        ${canalOverrideRow(c, 'sal', 'SAL gerado', st.sal, auto.sal)}
+        ${canalOverrideRow(c, 'vendas', 'Vendas', st.vendas, auto.vendas)}
+        ${canalOverrideRow(c, 'conv', 'Conversão (%)', st.conv, auto.conv)}
+      </div>
+      <div class="admin-only border-t pt-3 mt-2 space-y-2">
+        <p class="text-[10px] font-bold uppercase" style="color:var(--text2);">Meta</p>
+        <div class="flex items-center justify-between text-xs">
+          <label style="color:var(--text2);">Meta SAL</label>
+          <input type="number" class="w-20" value="${meta.sal||''}" oninput="onCanalMeta('${c}','sal',this.value)" />
+        </div>
+        <div class="flex items-center justify-between text-xs">
+          <label style="color:var(--text2);">Meta Conversão (%)</label>
+          <input type="number" class="w-20" value="${meta.conv||''}" oninput="onCanalMeta('${c}','conv',this.value)" />
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  renderConversaoCharts();
+}
+
+function onCanalStatInput(canal, field, val) {
+  canalOverrides[canal] = canalOverrides[canal] || {};
+  canalOverrides[canal][field] = { value: parseFloat(val) || 0, locked: true };
+  saveJSON('rpov_canal_overrides', canalOverrides);
+  const inputId = `canal-${canal}-${field}`;
+  const badge = document.getElementById(inputId + '-badge');
+  const reset = document.getElementById(inputId + '-reset');
+  if (badge) badge.textContent = '🔒';
+  if (reset) reset.style.display = '';
+  const st = canalStats(canal);
+  const big = { sal: 'canal-'+canal+'-sal-big', vendas: 'canal-'+canal+'-vendas-big', conv: 'canal-'+canal+'-conv-big' };
+  const salBig = document.getElementById(big.sal); if (salBig) salBig.textContent = st.sal;
+  const vendasBig = document.getElementById(big.vendas); if (vendasBig) vendasBig.textContent = st.vendas;
+  const convBig = document.getElementById(big.conv); if (convBig) convBig.textContent = st.conv + '%';
+  // Conversão depende de SAL/Vendas — se não estiver travada, reflete o novo cálculo no próprio input.
+  if (field !== 'conv' && !canalOverrides[canal].conv?.locked) {
+    const convInput = document.getElementById(`canal-${canal}-conv`);
+    if (convInput) convInput.placeholder = st.conv;
+  }
+  renderConversaoCharts();
+}
+
+function resetCanalAuto(canal, field) {
+  canalOverrides[canal] = canalOverrides[canal] || {};
+  canalOverrides[canal][field] = { value: 0, locked: false };
+  saveJSON('rpov_canal_overrides', canalOverrides);
+  renderConversao();
+}
+
+function renderConversaoCharts() {
+  const canais = ['NF','RE','LF'];
+  destroyChart('sal');
+  CHARTS.sal = new Chart(document.getElementById('chart-sal'), {
+    type: 'bar',
+    data: { labels: canais, datasets: [
+      { label: 'Meta', data: canais.map(c => canalMetas[c]?.sal || 0), backgroundColor: '#D4A01766', borderColor:'#D4A017', borderWidth:1 },
+      { label: 'Realizado', data: canais.map(c => canalStats(c).sal), backgroundColor: '#9900FFAA', borderColor:'#9900FF', borderWidth:1 },
+    ]},
+    options: { responsive:true, plugins:{ legend:{ position:'bottom' } } }
+  });
+
+  destroyChart('conv');
+  CHARTS.conv = new Chart(document.getElementById('chart-conv'), {
+    type: 'bar',
+    data: { labels: canais, datasets: [
+      { label: 'Meta (%)', data: canais.map(c => canalMetas[c]?.conv || 0), backgroundColor: '#D4A01766', borderColor:'#D4A017', borderWidth:1 },
+      { label: 'Realizado (%)', data: canais.map(c => canalStats(c).conv), backgroundColor: '#00B8A9AA', borderColor:'#00B8A9', borderWidth:1 },
+    ]},
+    options: { responsive:true, plugins:{ legend:{ position:'bottom' } } }
+  });
+}
+
+function onCanalMeta(canal, field, val) {
+  canalMetas[canal] = canalMetas[canal] || { sal:0, conv:0 };
+  canalMetas[canal][field] = parseFloat(val) || 0;
+  saveJSON('rpov_canal_metas', canalMetas);
+  renderConversaoCharts();
+}
+
+// ═══════════════════════════ TAB 6: PIPELINE (KANBAN) ═══════════════════════════
+function mergedDeals() {
+  return hsDeals
+    .filter(d => !hsDeleted.has(String(d.id)))
+    .map(d => hsOverrides[d.id] ? { ...d, ...hsOverrides[d.id] } : d);
+}
+
+function renderKanban() {
+  const board = document.getElementById('kanban-board');
+  document.getElementById('kanban-updated').textContent = hsLastUpdated ? ('Atualizado em ' + hsLastUpdated) : 'Nunca carregado';
+
+  if (!hsStages.length) {
+    board.innerHTML = `<p style="color:var(--muted);" class="text-sm p-4">Nenhum dado carregado ainda. ${IS_VIEWER ? '' : 'Clique em "🔄 Carregar Pipeline".'}</p>`;
+    return;
+  }
+  const deals = mergedDeals();
+  const stagesSorted = [...hsStages].sort((a,b) => (a.displayOrder||0) - (b.displayOrder||0));
+  board.innerHTML = stagesSorted.map(st => {
+    const stDeals = deals.filter(d => d.stageId === st.id);
+    const total = stDeals.reduce((s,d) => s + (d.amount||0), 0);
+    return `<div class="kanban-col p-3">
+      <div class="flex items-center justify-between mb-2">
+        <span class="font-bold text-xs uppercase" style="color:var(--black);">${escapeHtml(st.label)}</span>
+        <span class="badge badge-nd">${stDeals.length}</span>
+      </div>
+      <div id="kanban-total-${st.id}" class="text-[11px] mb-2" style="color:var(--text2);">${fmtBRL(total)}</div>
+      ${stDeals.map(d => {
+        const canal = detectCanal(d.name);
+        const badgeClass = canal ? 'badge-' + canal.toLowerCase() : 'badge-nd';
+        const overridden = !!hsOverrides[d.id];
+        return `<div class="kanban-card" id="kanban-card-${d.id}">
+          <div class="admin-only space-y-1 mb-1">
+            <input type="text" class="w-full text-xs" value="${escapeHtml(d.name)}" oninput="onKanbanDealField('${d.id}','name',this.value,'${st.id}')" />
+            <div class="flex items-center gap-1">
+              <input type="number" step="0.01" class="w-24 text-xs" value="${d.amount||''}" oninput="onKanbanDealField('${d.id}','amount',this.value,'${st.id}')" />
+              <span id="kanban-badge-${d.id}" class="badge ${badgeClass}">${canal || '—'}</span>
+              ${overridden ? `<button class="text-[10px] underline" style="color:var(--text2);" onclick="undoKanbanOverride('${d.id}')" title="Desfazer edição manual">↺</button>` : ''}
+              <button class="text-[11px]" style="color:var(--danger);" onclick="removeKanbanDeal('${d.id}')" title="Remover (não afeta o HubSpot)">🗑</button>
+            </div>
+          </div>
+          <div class="viewer-only">
+            <div class="font-semibold mb-1">${escapeHtml(d.name)}</div>
+            <div class="flex items-center justify-between">
+              <span class="amt">${fmtBRL(d.amount)}</span>
+              ${canal ? `<span class="badge ${badgeClass}">${canal}</span>` : ''}
+            </div>
+          </div>
+        </div>`;
+      }).join('') || `<p class="text-[11px]" style="color:var(--muted);">Sem negócios</p>`}
+    </div>`;
+  }).join('');
+}
+
+function onKanbanDealField(dealId, field, val, stageId) {
+  hsOverrides[dealId] = hsOverrides[dealId] || {};
+  hsOverrides[dealId][field] = field === 'amount' ? (parseFloat(val) || 0) : val;
+  saveJSON('rpov_hs_overrides', hsOverrides);
+
+  if (field === 'name') {
+    const d = mergedDeals().find(x => String(x.id) === String(dealId));
+    const canal = d ? detectCanal(d.name) : null;
+    const badge = document.getElementById('kanban-badge-' + dealId);
+    if (badge) { badge.textContent = canal || '—'; badge.className = 'badge ' + (canal ? 'badge-' + canal.toLowerCase() : 'badge-nd'); }
+  }
+  if (field === 'amount') {
+    const total = mergedDeals().filter(d => d.stageId === stageId).reduce((s,d) => s + (d.amount||0), 0);
+    const totalEl = document.getElementById('kanban-total-' + stageId);
+    if (totalEl) totalEl.textContent = fmtBRL(total);
+  }
+  renderConversao();
+}
+
+function removeKanbanDeal(dealId) {
+  hsDeleted.add(String(dealId));
+  saveJSON('rpov_hs_deleted', [...hsDeleted]);
+  renderKanban();
+  renderConversao();
+}
+
+function undoKanbanOverride(dealId) {
+  delete hsOverrides[dealId];
+  saveJSON('rpov_hs_overrides', hsOverrides);
+  renderKanban();
+  renderConversao();
+}
+
+async function testarToken() {
+  const token = document.getElementById('hs-token').value.trim();
+  if (!token) { setStatus('Cole o token primeiro.', 'red'); return; }
+  setStatus('Testando token…', 'blue');
+  try {
+    const res = await fetch(hsProxy(token, 'crm/v3/objects/deals?limit=1'));
+    const json = await res.json();
+    if (!res.ok) setStatus('Token inválido: ' + (json.message || res.status), 'red');
+    else setStatus('✓ Token válido!', 'green');
+  } catch(e) { setStatus('Erro: ' + e.message, 'red'); }
+}
+
+function hsProxy(token, path) {
+  return '/hubspot-proxy/' + encodeURIComponent(token) + '/' + path;
+}
+
+async function carregarPipeline() {
+  const token = document.getElementById('hs-token').value.trim() || localStorage.getItem('rpov_hs_token');
+  const pipelineId = document.getElementById('hs-pipeline').value.trim() || '916013856';
+  if (!token) { alert('Cole o HubSpot Access Token antes de carregar.'); return; }
+  setStatus('Carregando pipeline…', 'blue');
+  try {
+    const stRes = await fetch(hsProxy(token, 'crm/v3/pipelines/deals/' + pipelineId));
+    const stJson = await stRes.json();
+    if (!stRes.ok) throw new Error(stJson.message || stRes.status);
+    hsStages = (stJson.stages || []).map(s => ({ id: s.id, label: s.label, displayOrder: s.displayOrder }));
+
+    let all = [], after;
+    do {
+      const body = {
+        filterGroups: [{ filters: [{ propertyName:'pipeline', operator:'EQ', value: pipelineId }] }],
+        properties: ['dealname','amount','dealstage'],
+        limit: 100,
+        ...(after ? { after } : {})
+      };
+      const res = await fetch(hsProxy(token, 'crm/v3/objects/deals/search'), {
+        method: 'POST', headers: { 'Content-Type':'application/json' }, body: JSON.stringify(body)
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.message || res.status);
+      all = all.concat(json.results || []);
+      after = json.paging?.next?.after;
+    } while (after);
+
+    hsDeals = all.map(d => ({
+      id: d.id,
+      name: d.properties?.dealname || '',
+      amount: parseFloat(d.properties?.amount) || 0,
+      stageId: d.properties?.dealstage || null,
+    }));
+    hsLastUpdated = new Date().toLocaleString('pt-BR');
+
+    saveJSON('rpov_hs_stages', hsStages);
+    saveJSON('rpov_hs_deals', hsDeals);
+    localStorage.setItem('rpov_hs_last_updated', hsLastUpdated);
+
+    renderKanban();
+    renderConversao();
+    setStatus('✓ ' + hsDeals.length + ' deals carregados', 'green');
+  } catch(e) {
+    setStatus('Erro: ' + e.message, 'red');
+    console.error(e);
+  }
+}
+
+// ═══════════════════════════ PUBLICAR (GitHub Pages) ═══════════════════════════
+async function publicarSnapshot() {
+  const ghToken = localStorage.getItem('rpov_gh_token') || document.getElementById('gh-token')?.value;
+  if (!ghToken) {
+    alert('Cole seu GitHub Token no campo ao lado do botão 🚀 Publicar.\n\nCrie um em: github.com → Settings → Developer settings → Personal access tokens → Tokens (classic) → marcar "repo"');
+    return;
+  }
+
+  const btn = document.getElementById('btn-publicar');
+  const orig = btn.innerHTML;
+  btn.innerHTML = '⏳ Publicando…';
+  btn.disabled = true;
+
+  const REPO = 'antoniootcm-intera/dash-rpo-virtual';
+  const API  = (file) => `https://api.github.com/repos/${REPO}/contents/${file}`;
+  const AUTH = { 'Authorization': 'token ' + ghToken, 'Content-Type': 'application/json' };
+  const tsLabel = new Date().toLocaleString('pt-BR');
+
+  async function pushFile(filename, contentBase64, message) {
+    const getRes = await fetch(API(filename), { headers: AUTH });
+    const sha = getRes.ok ? (await getRes.json()).sha : undefined;
+    const body = { message, content: contentBase64 };
+    if (sha) body.sha = sha;
+    const putRes = await fetch(API(filename), { method:'PUT', headers: AUTH, body: JSON.stringify(body) });
+    if (!putRes.ok) {
+      const err = await putRes.json().catch(() => ({}));
+      throw new Error(`${filename}: ${err.message || putRes.status}`);
+    }
+  }
+  const toB64 = (str) => btoa(unescape(encodeURIComponent(str)));
+
+  try {
+    const snapshot = {
+      contratos_realizado: contratosRealizado,
+      cascata_rows: cascataRows,
+      reunioes_chips: reunioesChips,
+      reunioes_log: reunioesLog,
+      canal_metas: canalMetas,
+      hs_stages: hsStages,
+      hs_deals: hsDeals,
+      hs_last_updated: hsLastUpdated,
+      mrr_overrides: mrrOverrides,
+      canal_overrides: canalOverrides,
+      hs_overrides: hsOverrides,
+      hs_deleted: [...hsDeleted],
+      active_tab: localStorage.getItem('rpov_active_tab') || 'metas',
+      snapshot_at: new Date().toISOString(),
+    };
+
+    btn.innerHTML = '⏳ data.json…';
+    await pushFile('data.json', toB64(JSON.stringify(snapshot, null, 2)), `snapshot ${tsLabel}`);
+
+    btn.innerHTML = '⏳ index.html…';
+    let htmlSource = null;
+    try {
+      const htmlRes = await fetch('./index.html', { cache:'no-store' });
+      if (htmlRes.ok) htmlSource = await htmlRes.text();
+    } catch(_) {}
+
+    if (htmlSource) {
+      htmlSource = htmlSource.replace(/(localStorage\.setItem\(['"](?:rpov_hs_token|rpov_gh_token)['"],\s*['"])[^'"]*(['"])/g, '$1$2');
+      await pushFile('index.html', toB64(htmlSource), `dash update ${tsLabel}`);
+      setStatus('✓ Publicado! Link atualiza em ~30s → antoniootcm-intera.github.io/dash-rpo-virtual/', 'green');
+    } else {
+      setStatus('⚠ data.json publicado. index.html não atualizado (fetch local falhou).', 'orange');
+    }
+  } catch(e) {
+    setStatus('✗ Falha: ' + e.message, 'red');
+  } finally {
+    btn.innerHTML = orig;
+    btn.disabled = false;
+  }
+}
+
+// ═══════════════════════════ INIT ═══════════════════════════
+function renderAll() {
+  renderMetasGerais();
+  renderCascata();
+  renderPlanejamento();
+  renderReunioesLog();
+  renderConversao();
+  renderKanban();
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  if (IS_VIEWER) {
+    document.body.classList.add('viewer-mode');
+    fetch('./data.json')
+      .then(r => { if (!r.ok) throw new Error('no data'); return r.json(); })
+      .then(d => {
+        if (typeof d.contratos_realizado === 'number') contratosRealizado = d.contratos_realizado;
+        if (Array.isArray(d.cascata_rows)) cascataRows = d.cascata_rows;
+        if (Array.isArray(d.reunioes_chips)) reunioesChips = d.reunioes_chips;
+        if (Array.isArray(d.reunioes_log)) reunioesLog = d.reunioes_log;
+        if (d.canal_metas) canalMetas = d.canal_metas;
+        if (Array.isArray(d.hs_stages)) hsStages = d.hs_stages;
+        if (Array.isArray(d.hs_deals)) hsDeals = d.hs_deals;
+        if (d.hs_last_updated) hsLastUpdated = d.hs_last_updated;
+        if (d.mrr_overrides) mrrOverrides = d.mrr_overrides;
+        if (d.canal_overrides) canalOverrides = d.canal_overrides;
+        if (d.hs_overrides) hsOverrides = d.hs_overrides;
+        if (Array.isArray(d.hs_deleted)) hsDeleted = new Set(d.hs_deleted);
+        renderAll();
+        switchTab(d.active_tab || 'metas');
+      })
+      .catch(() => { renderAll(); switchTab('metas'); });
+    return;
+  }
+
+  const savedHs = localStorage.getItem('rpov_hs_token');
+  if (savedHs) document.getElementById('hs-token').value = savedHs;
+  const savedPipeline = localStorage.getItem('rpov_hs_pipeline');
+  if (savedPipeline) document.getElementById('hs-pipeline').value = savedPipeline;
+  const savedGh = localStorage.getItem('rpov_gh_token');
+  if (savedGh) document.getElementById('gh-token').value = savedGh;
+
+  renderAll();
+  switchTab(localStorage.getItem('rpov_active_tab') || 'metas');
+});
+</script>
+
+<style>
+  body.viewer-mode .viewer-only { display: inline; }
+  body:not(.viewer-mode) .viewer-only { display: none; }
+  body.viewer-mode .viewer-only-inline { display: inline !important; }
+  body.viewer-mode input, body.viewer-mode select { display: none !important; }
+</style>
+
+</body>
+</html>
