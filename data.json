@@ -156,6 +156,13 @@
       "canal": "LF",
       "status": "Agendada",
       "obs": "Outbound"
+    },
+    {
+      "data": "2026-07-22",
+      "cliente": "Riachuelo",
+      "canal": "NF",
+      "status": "Agendada",
+      "obs": "Johnny"
     }
   ],
   "canal_metas": {
@@ -236,9 +243,15 @@
       "name": "Pernambucanas | Cristiane | LF",
       "amount": 0,
       "stageId": "1397554092"
+    },
+    {
+      "id": "62619521145",
+      "name": "Riachuelo | Johnny | NF",
+      "amount": 0,
+      "stageId": "1397554092"
     }
   ],
-  "hs_last_updated": "13/07/2026, 13:39:31",
+  "hs_last_updated": "13/07/2026, 14:06:51",
   "mrr_overrides": {
     "total": {
       "value": 0,
@@ -260,6 +273,6 @@
   },
   "hs_overrides": {},
   "hs_deleted": [],
-  "active_tab": "kanban",
-  "snapshot_at": "2026-07-13T16:39:33.113Z"
+  "active_tab": "reunioes",
+  "snapshot_at": "2026-07-13T17:07:15.544Z"
 }
