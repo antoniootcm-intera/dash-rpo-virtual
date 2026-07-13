@@ -1,0 +1,201 @@
+{
+  "contratos_realizado": 0,
+  "cascata_rows": [
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    },
+    {
+      "mrrFechado": 0
+    }
+  ],
+  "reunioes_chips": [
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    },
+    {
+      "realizadas": 0
+    }
+  ],
+  "reunioes_log": [
+    {
+      "data": "2026-07-15",
+      "cliente": "Renner ",
+      "canal": "NF",
+      "status": "Agendada",
+      "obs": "Time Guilherme"
+    },
+    {
+      "data": "2026-07-17",
+      "cliente": "Pernambucanas",
+      "canal": "LF",
+      "status": "Agendada",
+      "obs": "Outbound"
+    }
+  ],
+  "canal_metas": {
+    "NF": {
+      "sal": 0,
+      "conv": 0
+    },
+    "RE": {
+      "sal": 0,
+      "conv": 0
+    },
+    "LF": {
+      "sal": 0,
+      "conv": 0
+    }
+  },
+  "hs_stages": [],
+  "hs_deals": [],
+  "hs_last_updated": "",
+  "mrr_overrides": {
+    "total": {
+      "value": 0,
+      "locked": false
+    },
+    "q3": {
+      "value": 0,
+      "locked": false
+    },
+    "q4": {
+      "value": 0,
+      "locked": false
+    }
+  },
+  "canal_overrides": {
+    "NF": {},
+    "RE": {},
+    "LF": {}
+  },
+  "hs_overrides": {},
+  "hs_deleted": [],
+  "active_tab": "metas",
+  "snapshot_at": "2026-07-13T16:20:49.817Z"
+}
