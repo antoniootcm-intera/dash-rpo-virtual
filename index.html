@@ -301,6 +301,25 @@
     </div>
     <div id="kanban-board" class="flex gap-3 overflow-x-auto pb-2"></div>
   </div>
+
+  <div class="card p-5">
+    <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
+      <h3 class="text-sm font-bold" style="color:var(--black);">Pipeline HubSpot — Pré-vendas RPO Virtual (somente leitura)</h3>
+      <div class="admin-only flex items-center gap-2">
+        <select id="hs-pipeline2-picker" class="w-56" style="display:none;" onchange="onPipelinePickerChange(this.value)">
+          <option value="">Selecione um pipeline…</option>
+        </select>
+        <input id="hs-pipeline2" type="text" placeholder="Pipeline ID (pré-vendas)" value="917641483" class="w-40"
+          oninput="localStorage.setItem('rpov_hs_pipeline2', this.value)" />
+        <button class="btn-ghost text-xs" onclick="buscarPipelines()">🔍 Buscar</button>
+      </div>
+      <div class="flex items-center gap-3">
+        <span id="kanban2-updated" class="text-xs" style="color:var(--muted);">Nunca carregado</span>
+        <button class="admin-only btn-mustard text-sm" onclick="carregarPipeline2()">🔄 Carregar Pipeline</button>
+      </div>
+    </div>
+    <div id="kanban2-board" class="flex gap-3 overflow-x-auto pb-2"></div>
+  </div>
 </section>
 
 </main>
@@ -390,6 +409,11 @@ let mrrOverrides  = loadJSON('rpov_mrr_overrides', { total:{value:0,locked:false
 let canalOverrides = loadJSON('rpov_canal_overrides', { NF:{}, RE:{}, LF:{} });
 let hsOverrides   = loadJSON('rpov_hs_overrides', {});
 let hsDeleted     = new Set(loadJSON('rpov_hs_deleted', []));
+let hsStages2      = loadJSON('rpov_hs_stages2', []);
+let hsDeals2       = loadJSON('rpov_hs_deals2', []);
+let hsLastUpdated2 = localStorage.getItem('rpov_hs_last_updated2') || '';
+let hsOverrides2   = loadJSON('rpov_hs_overrides2', {});
+let hsDeleted2     = new Set(loadJSON('rpov_hs_deleted2', []));
 
 // ═══════════════════════════ HELPERS ═══════════════════════════
 function fmtBRL(n) { return (Number(n)||0).toLocaleString('pt-BR', { style:'currency', currency:'BRL' }); }
@@ -713,7 +737,7 @@ function onReuniaoField(i, field, val) {
 
 // ═══════════════════════════ TAB 5: CONVERSÃO POR CANAL ═══════════════════════════
 function canalStatsAuto(canal) {
-  const deals = mergedDeals().filter(d => detectCanal(d.name) === canal);
+  const deals = mergedDeals().filter(d => (d.canal || detectCanal(d.name)) === canal);
   const sal = deals.length;
   const vendas = deals.filter(d => d.stageId && d.stageId === fechadoStageId()).length;
   return { sal, vendas, conv: sal > 0 ? Math.round((vendas/sal)*1000)/10 : 0 };
@@ -868,15 +892,17 @@ function renderKanban() {
       </div>
       <div id="kanban-total-${st.id}" class="text-[11px] mb-2" style="color:var(--text2);">${fmtBRL(total)}</div>
       ${stDeals.map(d => {
-        const canal = detectCanal(d.name);
+        const canal = d.canal || detectCanal(d.name);
         const badgeClass = canal ? 'badge-' + canal.toLowerCase() : 'badge-nd';
         const overridden = !!hsOverrides[d.id];
         return `<div class="kanban-card" id="kanban-card-${d.id}">
           <div class="admin-only space-y-1 mb-1">
             <input type="text" class="w-full text-xs" value="${escapeHtml(d.name)}" oninput="onKanbanDealField('${d.id}','name',this.value,'${st.id}')" />
             <div class="flex items-center gap-1">
-              <input type="number" step="0.01" class="w-24 text-xs" value="${d.amount||''}" oninput="onKanbanDealField('${d.id}','amount',this.value,'${st.id}')" />
-              <span id="kanban-badge-${d.id}" class="badge ${badgeClass}">${canal || '—'}</span>
+              <input type="number" step="0.01" class="w-20 text-xs" value="${d.amount||''}" oninput="onKanbanDealField('${d.id}','amount',this.value,'${st.id}')" />
+              <select id="kanban-canal-${d.id}" class="text-xs" style="${pillStyle(CANAL_COLORS, canal||'')}" onchange="onKanbanDealField('${d.id}','canal',this.value,'${st.id}')">
+                ${['','NF','RE','LF'].map(c => `<option value="${c}" ${(d.canal||'')===c?'selected':''}>${c || 'auto'}</option>`).join('')}
+              </select>
               ${overridden ? `<button class="text-[10px] underline" style="color:var(--text2);" onclick="undoKanbanOverride('${d.id}')" title="Desfazer edição manual">↺</button>` : ''}
               <button class="text-[11px]" style="color:var(--danger);" onclick="removeKanbanDeal('${d.id}')" title="Remover (não afeta o HubSpot)">🗑</button>
             </div>
@@ -899,11 +925,12 @@ function onKanbanDealField(dealId, field, val, stageId) {
   hsOverrides[dealId][field] = field === 'amount' ? (parseFloat(val) || 0) : val;
   saveJSON('rpov_hs_overrides', hsOverrides);
 
-  if (field === 'name') {
+  if (field === 'name' || field === 'canal') {
     const d = mergedDeals().find(x => String(x.id) === String(dealId));
-    const canal = d ? detectCanal(d.name) : null;
-    const badge = document.getElementById('kanban-badge-' + dealId);
-    if (badge) { badge.textContent = canal || '—'; badge.className = 'badge ' + (canal ? 'badge-' + canal.toLowerCase() : 'badge-nd'); }
+    const canal = d ? (d.canal || detectCanal(d.name)) : null;
+    const badgeClass = canal ? 'badge-' + canal.toLowerCase() : 'badge-nd';
+    const select = document.getElementById('kanban-canal-' + dealId);
+    if (select) select.style.cssText = pillStyle(CANAL_COLORS, canal || '');
   }
   if (field === 'amount') {
     const total = mergedDeals().filter(d => d.stageId === stageId).reduce((s,d) => s + (d.amount||0), 0);
@@ -992,6 +1019,165 @@ async function carregarPipeline() {
   }
 }
 
+// ═══════════════════════════ TAB 6b: PIPELINE 2 — PRÉ-VENDAS RPO VIRTUAL ═══════════════════════════
+function mergedDeals2() {
+  return hsDeals2
+    .filter(d => !hsDeleted2.has(String(d.id)))
+    .map(d => hsOverrides2[d.id] ? { ...d, ...hsOverrides2[d.id] } : d);
+}
+
+function renderKanban2() {
+  const board = document.getElementById('kanban2-board');
+  document.getElementById('kanban2-updated').textContent = hsLastUpdated2 ? ('Atualizado em ' + hsLastUpdated2) : 'Nunca carregado';
+
+  if (!hsStages2.length) {
+    board.innerHTML = `<p style="color:var(--muted);" class="text-sm p-4">Nenhum dado carregado ainda. ${IS_VIEWER ? '' : 'Cole o Pipeline ID e clique em "🔄 Carregar Pipeline".'}</p>`;
+    return;
+  }
+  const deals = mergedDeals2();
+  const stagesSorted = [...hsStages2].sort((a,b) => (a.displayOrder||0) - (b.displayOrder||0));
+  board.innerHTML = stagesSorted.map(st => {
+    const stDeals = deals.filter(d => d.stageId === st.id);
+    const total = stDeals.reduce((s,d) => s + (d.amount||0), 0);
+    return `<div class="kanban-col p-3">
+      <div class="flex items-center justify-between mb-2">
+        <span class="font-bold text-xs uppercase" style="color:var(--black);">${escapeHtml(st.label)}</span>
+        <span class="badge badge-nd">${stDeals.length}</span>
+      </div>
+      <div id="kanban2-total-${st.id}" class="text-[11px] mb-2" style="color:var(--text2);">${fmtBRL(total)}</div>
+      ${stDeals.map(d => {
+        const canal = d.canal || detectCanal(d.name);
+        const badgeClass = canal ? 'badge-' + canal.toLowerCase() : 'badge-nd';
+        const overridden = !!hsOverrides2[d.id];
+        return `<div class="kanban-card" id="kanban2-card-${d.id}">
+          <div class="admin-only space-y-1 mb-1">
+            <input type="text" class="w-full text-xs" value="${escapeHtml(d.name)}" oninput="onKanbanDealField2('${d.id}','name',this.value,'${st.id}')" />
+            <div class="flex items-center gap-1">
+              <input type="number" step="0.01" class="w-20 text-xs" value="${d.amount||''}" oninput="onKanbanDealField2('${d.id}','amount',this.value,'${st.id}')" />
+              <select id="kanban2-canal-${d.id}" class="text-xs" style="${pillStyle(CANAL_COLORS, canal||'')}" onchange="onKanbanDealField2('${d.id}','canal',this.value,'${st.id}')">
+                ${['','NF','RE','LF'].map(c => `<option value="${c}" ${(d.canal||'')===c?'selected':''}>${c || 'auto'}</option>`).join('')}
+              </select>
+              ${overridden ? `<button class="text-[10px] underline" style="color:var(--text2);" onclick="undoKanbanOverride2('${d.id}')" title="Desfazer edição manual">↺</button>` : ''}
+              <button class="text-[11px]" style="color:var(--danger);" onclick="removeKanbanDeal2('${d.id}')" title="Remover (não afeta o HubSpot)">🗑</button>
+            </div>
+          </div>
+          <div class="viewer-only">
+            <div class="font-semibold mb-1">${escapeHtml(d.name)}</div>
+            <div class="flex items-center justify-between">
+              <span class="amt">${fmtBRL(d.amount)}</span>
+              ${canal ? `<span class="badge ${badgeClass}">${canal}</span>` : ''}
+            </div>
+          </div>
+        </div>`;
+      }).join('') || `<p class="text-[11px]" style="color:var(--muted);">Sem negócios</p>`}
+    </div>`;
+  }).join('');
+}
+
+function onKanbanDealField2(dealId, field, val, stageId) {
+  hsOverrides2[dealId] = hsOverrides2[dealId] || {};
+  hsOverrides2[dealId][field] = field === 'amount' ? (parseFloat(val) || 0) : val;
+  saveJSON('rpov_hs_overrides2', hsOverrides2);
+
+  if (field === 'name' || field === 'canal') {
+    const d = mergedDeals2().find(x => String(x.id) === String(dealId));
+    const canal = d ? (d.canal || detectCanal(d.name)) : null;
+    const select = document.getElementById('kanban2-canal-' + dealId);
+    if (select) select.style.cssText = pillStyle(CANAL_COLORS, canal || '');
+  }
+  if (field === 'amount') {
+    const total = mergedDeals2().filter(d => d.stageId === stageId).reduce((s,d) => s + (d.amount||0), 0);
+    const totalEl = document.getElementById('kanban2-total-' + stageId);
+    if (totalEl) totalEl.textContent = fmtBRL(total);
+  }
+}
+
+function removeKanbanDeal2(dealId) {
+  hsDeleted2.add(String(dealId));
+  saveJSON('rpov_hs_deleted2', [...hsDeleted2]);
+  renderKanban2();
+}
+
+function undoKanbanOverride2(dealId) {
+  delete hsOverrides2[dealId];
+  saveJSON('rpov_hs_overrides2', hsOverrides2);
+  renderKanban2();
+}
+
+async function buscarPipelines() {
+  const token = document.getElementById('hs-token').value.trim() || localStorage.getItem('rpov_hs_token');
+  if (!token) { alert('Cole o HubSpot Access Token antes de buscar os pipelines.'); return; }
+  setStatus('Buscando pipelines…', 'blue');
+  try {
+    const res = await fetch(hsProxy(token, 'crm/v3/pipelines/deals'));
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.message || res.status);
+    const picker = document.getElementById('hs-pipeline2-picker');
+    const options = (json.results || []).map(p => `<option value="${p.id}">${escapeHtml(p.label)} (${p.id})</option>`).join('');
+    picker.innerHTML = `<option value="">Selecione um pipeline…</option>` + options;
+    picker.style.display = '';
+    setStatus('✓ ' + (json.results||[]).length + ' pipelines encontrados — escolha na lista', 'green');
+  } catch(e) {
+    setStatus('Erro: ' + e.message, 'red');
+  }
+}
+
+function onPipelinePickerChange(id) {
+  if (!id) return;
+  const input = document.getElementById('hs-pipeline2');
+  input.value = id;
+  localStorage.setItem('rpov_hs_pipeline2', id);
+}
+
+async function carregarPipeline2() {
+  const token = document.getElementById('hs-token').value.trim() || localStorage.getItem('rpov_hs_token');
+  const pipelineId = document.getElementById('hs-pipeline2').value.trim();
+  if (!token) { alert('Cole o HubSpot Access Token antes de carregar.'); return; }
+  if (!pipelineId) { alert('Cole o Pipeline ID de Pré-vendas RPO Virtual antes de carregar.'); return; }
+  setStatus('Carregando pipeline de pré-vendas…', 'blue');
+  try {
+    const stRes = await fetch(hsProxy(token, 'crm/v3/pipelines/deals/' + pipelineId));
+    const stJson = await stRes.json();
+    if (!stRes.ok) throw new Error(stJson.message || stRes.status);
+    hsStages2 = (stJson.stages || []).map(s => ({ id: s.id, label: s.label, displayOrder: s.displayOrder }));
+
+    let all = [], after;
+    do {
+      const body = {
+        filterGroups: [{ filters: [{ propertyName:'pipeline', operator:'EQ', value: pipelineId }] }],
+        properties: ['dealname','amount','dealstage'],
+        limit: 100,
+        ...(after ? { after } : {})
+      };
+      const res = await fetch(hsProxy(token, 'crm/v3/objects/deals/search'), {
+        method: 'POST', headers: { 'Content-Type':'application/json' }, body: JSON.stringify(body)
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.message || res.status);
+      all = all.concat(json.results || []);
+      after = json.paging?.next?.after;
+    } while (after);
+
+    hsDeals2 = all.map(d => ({
+      id: d.id,
+      name: d.properties?.dealname || '',
+      amount: parseFloat(d.properties?.amount) || 0,
+      stageId: d.properties?.dealstage || null,
+    }));
+    hsLastUpdated2 = new Date().toLocaleString('pt-BR');
+
+    saveJSON('rpov_hs_stages2', hsStages2);
+    saveJSON('rpov_hs_deals2', hsDeals2);
+    localStorage.setItem('rpov_hs_last_updated2', hsLastUpdated2);
+
+    renderKanban2();
+    setStatus('✓ ' + hsDeals2.length + ' deals de pré-vendas carregados', 'green');
+  } catch(e) {
+    setStatus('Erro: ' + e.message, 'red');
+    console.error(e);
+  }
+}
+
 // ═══════════════════════════ PUBLICAR (GitHub Pages) ═══════════════════════════
 async function publicarSnapshot() {
   const ghToken = localStorage.getItem('rpov_gh_token') || document.getElementById('gh-token')?.value;
@@ -1037,6 +1223,11 @@ async function publicarSnapshot() {
       canal_overrides: canalOverrides,
       hs_overrides: hsOverrides,
       hs_deleted: [...hsDeleted],
+      hs_stages2: hsStages2,
+      hs_deals2: hsDeals2,
+      hs_last_updated2: hsLastUpdated2,
+      hs_overrides2: hsOverrides2,
+      hs_deleted2: [...hsDeleted2],
       active_tab: localStorage.getItem('rpov_active_tab') || 'metas',
       snapshot_at: new Date().toISOString(),
     };
@@ -1074,6 +1265,7 @@ function renderAll() {
   renderReunioesLog();
   renderConversao();
   renderKanban();
+  renderKanban2();
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -1094,6 +1286,11 @@ window.addEventListener('DOMContentLoaded', () => {
         if (d.canal_overrides) canalOverrides = d.canal_overrides;
         if (d.hs_overrides) hsOverrides = d.hs_overrides;
         if (Array.isArray(d.hs_deleted)) hsDeleted = new Set(d.hs_deleted);
+        if (Array.isArray(d.hs_stages2)) hsStages2 = d.hs_stages2;
+        if (Array.isArray(d.hs_deals2)) hsDeals2 = d.hs_deals2;
+        if (d.hs_last_updated2) hsLastUpdated2 = d.hs_last_updated2;
+        if (d.hs_overrides2) hsOverrides2 = d.hs_overrides2;
+        if (Array.isArray(d.hs_deleted2)) hsDeleted2 = new Set(d.hs_deleted2);
         renderAll();
         switchTab(d.active_tab || 'metas');
       })
@@ -1105,6 +1302,8 @@ window.addEventListener('DOMContentLoaded', () => {
   if (savedHs) document.getElementById('hs-token').value = savedHs;
   const savedPipeline = localStorage.getItem('rpov_hs_pipeline');
   if (savedPipeline) document.getElementById('hs-pipeline').value = savedPipeline;
+  const savedPipeline2 = localStorage.getItem('rpov_hs_pipeline2');
+  if (savedPipeline2) document.getElementById('hs-pipeline2').value = savedPipeline2;
   const savedGh = localStorage.getItem('rpov_gh_token');
   if (savedGh) document.getElementById('gh-token').value = savedGh;
 
