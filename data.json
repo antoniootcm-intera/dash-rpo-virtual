@@ -144,39 +144,60 @@
   ],
   "reunioes_log": [
     {
-      "data": "2026-07-15",
-      "cliente": "Renner ",
+      "data": "2026-07-22",
+      "cliente": "Riachuelo",
       "canal": "NF",
       "status": "Agendada",
-      "obs": "Time Guilherme"
+      "obs": ""
     },
     {
       "data": "2026-07-17",
       "cliente": "Pernambucanas",
       "canal": "LF",
       "status": "Agendada",
-      "obs": "Outbound"
+      "obs": ""
     },
     {
-      "data": "2026-07-22",
-      "cliente": "Riachuelo",
+      "data": "2026-07-15",
+      "cliente": "Harsco",
+      "canal": "LF",
+      "status": "Agendada",
+      "obs": ""
+    },
+    {
+      "data": "2026-07-21",
+      "cliente": "DM",
       "canal": "NF",
       "status": "Agendada",
-      "obs": "Johnny"
+      "obs": ""
+    },
+    {
+      "data": "",
+      "cliente": "Renner",
+      "canal": "NF",
+      "status": "Agendada",
+      "obs": "Pediu para remarcar"
+    },
+    {
+      "data": "2026-07-30",
+      "cliente": "Osklen",
+      "canal": "RE",
+      "status": "Agendada",
+      "obs": ""
     }
   ],
   "canal_metas": {
     "NF": {
-      "sal": 53,
-      "conv": 34
+      "sal": 0,
+      "conv": 0
     },
     "RE": {
-      "sal": 24,
-      "conv": 25
+      "sal": 0,
+      "conv": 0
     },
     "LF": {
-      "sal": 43,
-      "conv": 14
+      "sal": 0,
+      "conv": 0
     }
   },
   "hs_stages": [
@@ -249,9 +270,21 @@
       "name": "Riachuelo | Johnny | NF",
       "amount": 0,
       "stageId": "1397554092"
+    },
+    {
+      "id": "62628787280",
+      "name": "Osklen | Bianca | RE",
+      "amount": 0,
+      "stageId": "1397554092"
+    },
+    {
+      "id": "62661040054",
+      "name": "Harsco Environmental | Gabi | LF",
+      "amount": 0,
+      "stageId": "1397554094"
     }
   ],
-  "hs_last_updated": "13/07/2026, 14:06:51",
+  "hs_last_updated": "16/07/2026, 11:51:12",
   "mrr_overrides": {
     "total": {
       "value": 0,
@@ -271,8 +304,468 @@
     "RE": {},
     "LF": {}
   },
-  "hs_overrides": {},
+  "hs_overrides": {
+    "62661040054": {
+      "canal": "LF"
+    }
+  },
   "hs_deleted": [],
-  "active_tab": "conversao",
-  "snapshot_at": "2026-07-13T17:31:48.117Z"
+  "hs_stages2": [
+    {
+      "id": "1398904714",
+      "label": "Prospects",
+      "displayOrder": 0
+    },
+    {
+      "id": "1398904715",
+      "label": "[D1]  Primeiro contato",
+      "displayOrder": 1
+    },
+    {
+      "id": "1398904716",
+      "label": "[D2] FUP - Segundo canal",
+      "displayOrder": 2
+    },
+    {
+      "id": "1399081987",
+      "label": "[D3] FUP 2 - Terceiro canal",
+      "displayOrder": 3
+    },
+    {
+      "id": "1399081988",
+      "label": "[D4] FUP 3 - Canal original",
+      "displayOrder": 4
+    },
+    {
+      "id": "1399081989",
+      "label": "[D5] FUP - Segundo canal",
+      "displayOrder": 5
+    },
+    {
+      "id": "1399081990",
+      "label": "RESPONDENTES",
+      "displayOrder": 6
+    },
+    {
+      "id": "1399091979",
+      "label": "[R1] FUP 1",
+      "displayOrder": 7
+    },
+    {
+      "id": "1399091980",
+      "label": "[R2] FUP 2",
+      "displayOrder": 8
+    },
+    {
+      "id": "1399081991",
+      "label": "Lost",
+      "displayOrder": 9
+    },
+    {
+      "id": "1398903677",
+      "label": "Agendado",
+      "displayOrder": 10
+    }
+  ],
+  "hs_deals2": [
+    {
+      "id": "59184917932",
+      "name": "Sicredi  |  Raquel  |  RE",
+      "amount": 0,
+      "stageId": "1398904716"
+    },
+    {
+      "id": "62639556404",
+      "name": "Grupo Boticário | Sheila | NF",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62638131486",
+      "name": "Itau BBA ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62639555855",
+      "name": "Icatu Seguros ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62638126767",
+      "name": "Unimed Nacional ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62638131586",
+      "name": "Grupo QuintoAndar ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62638131606",
+      "name": "Supermercado Nordestão ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62638140822",
+      "name": "Drogal ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62638126918",
+      "name": "OXXO Brasil ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62639556893",
+      "name": "CVC ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62638131765",
+      "name": "Farmácias Pague Menos ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62638140960",
+      "name": "Grupo CAOA ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62639556018",
+      "name": "Drogaria Araujo S/A ",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62638141993",
+      "name": "Unidas ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62638143243",
+      "name": "Home Center Ferreira Costa ",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62639557892",
+      "name": "Farmácia Indiana ",
+      "amount": 0,
+      "stageId": "1398904716"
+    },
+    {
+      "id": "62639557304",
+      "name": "Chilli Beans ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62639560548",
+      "name": "Natura ",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62639557403",
+      "name": "Supermercados Guanabara ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62638143575",
+      "name": "Marisa S.A. ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62639560757",
+      "name": "CENTAURO ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62639558152",
+      "name": "Grupo Carrefour Brasil ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62638143756",
+      "name": "Cobasi ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62639558179",
+      "name": "Brisanet Telecomunicações ",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62639560804",
+      "name": "Assaí Atacadista ",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62639560819",
+      "name": "Grupo Ri Happy ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62639560839",
+      "name": "Cencosud S.A. ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62639559692",
+      "name": "BYD Brasil ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62639563187",
+      "name": "Iguatemi S.A. ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62639560975",
+      "name": "Petlove ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62639562000",
+      "name": "americanas s.a. ",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62638142645",
+      "name": "C&A Brasil ",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62638142735",
+      "name": "Fast Shop S/A ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62638144378",
+      "name": "Monte Carlo ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62639563607",
+      "name": "Facta promotora",
+      "amount": 0,
+      "stageId": "1398904716"
+    },
+    {
+      "id": "62639558756",
+      "name": "Localiza",
+      "amount": 0,
+      "stageId": "1398904716"
+    },
+    {
+      "id": "62639569484",
+      "name": "Reagendamento Renner",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62639593280",
+      "name": "DM",
+      "amount": 0,
+      "stageId": "1398903677"
+    },
+    {
+      "id": "62639591290",
+      "name": "Ambev",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62657638961",
+      "name": "Lello Condomínios",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62660909592",
+      "name": "Alelo Brasil ",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62660909629",
+      "name": "Alice ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62661095294",
+      "name": "Avenue Code ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62661095321",
+      "name": "Bionexo ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62661095336",
+      "name": "CashMe ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62660971675",
+      "name": "Contabilizei ",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62660909740",
+      "name": "EXA ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62660972595",
+      "name": "IPNET ",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62660972630",
+      "name": "Pravaler ",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62657817377",
+      "name": "Sallve ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62660972669",
+      "name": "Ultragaz ",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62661034511",
+      "name": "Winnin ",
+      "amount": 0,
+      "stageId": "1398904714"
+    },
+    {
+      "id": "62660910750",
+      "name": "Zig. The Global Funtech ",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62657817962",
+      "name": "Arezzo&Co ",
+      "amount": 0,
+      "stageId": "1398904715"
+    },
+    {
+      "id": "62657783213",
+      "name": "Grupo Comolatti",
+      "amount": 0,
+      "stageId": "1398904715"
+    }
+  ],
+  "hs_last_updated2": "16/07/2026, 11:51:15",
+  "hs_overrides2": {
+    "62639556404": {
+      "canal": "NF"
+    },
+    "59184917932": {
+      "canal": "RE"
+    },
+    "62639556018": {
+      "canal": "LF"
+    },
+    "62638143243": {
+      "canal": "LF"
+    },
+    "62639557892": {
+      "canal": "RE"
+    },
+    "62639560548": {
+      "canal": "RE"
+    },
+    "62639558179": {
+      "canal": "RE"
+    },
+    "62639560804": {
+      "canal": "LF"
+    },
+    "62639562000": {
+      "canal": "RE"
+    },
+    "62638142645": {
+      "canal": "LF"
+    },
+    "62639563607": {
+      "canal": "NF"
+    },
+    "62639558756": {
+      "canal": "NF"
+    },
+    "62639569484": {
+      "canal": "NF"
+    },
+    "62639591290": {
+      "canal": "NF"
+    },
+    "62657638961": {
+      "canal": "RE"
+    },
+    "62660972669": {
+      "canal": "RE"
+    },
+    "62657817962": {
+      "canal": "LF"
+    },
+    "62660909592": {
+      "canal": "NF"
+    },
+    "62657783213": {
+      "canal": "NF"
+    },
+    "62660910750": {
+      "canal": "NF"
+    },
+    "62660971675": {
+      "canal": "NF"
+    }
+  },
+  "hs_deleted2": [],
+  "active_tab": "kanban",
+  "snapshot_at": "2026-07-17T13:10:14.105Z"
 }
