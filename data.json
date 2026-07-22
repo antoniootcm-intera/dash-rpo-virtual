@@ -298,9 +298,15 @@
       "name": "Facta | Priscila | CG",
       "amount": 0,
       "stageId": "1397554093"
+    },
+    {
+      "id": "62950271745",
+      "name": "DM | Letícia | CG",
+      "amount": 0,
+      "stageId": "1397554093"
     }
   ],
-  "hs_last_updated": "20/07/2026, 19:41:50",
+  "hs_last_updated": "22/07/2026, 10:19:23",
   "mrr_overrides": {
     "total": {
       "value": 0,
@@ -799,5 +805,5 @@
   },
   "hs_deleted2": [],
   "active_tab": "kanban",
-  "snapshot_at": "2026-07-22T13:19:14.701Z"
+  "snapshot_at": "2026-07-22T13:19:26.649Z"
 }
