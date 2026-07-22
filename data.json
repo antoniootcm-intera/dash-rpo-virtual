@@ -187,7 +187,7 @@
     }
   ],
   "canal_metas": {
-    "NF": {
+    "CG": {
       "sal": 0,
       "conv": 0
     },
@@ -195,7 +195,11 @@
       "sal": 0,
       "conv": 0
     },
-    "LF": {
+    "MKT": {
+      "sal": 0,
+      "conv": 0
+    },
+    "OUT": {
       "sal": 0,
       "conv": 0
     }
@@ -255,7 +259,7 @@
   "hs_deals": [
     {
       "id": "62616673874",
-      "name": "Renner | Guilherme | NF",
+      "name": "Renner | Guilherme | CG",
       "amount": 0,
       "stageId": "1397554092"
     },
@@ -263,11 +267,11 @@
       "id": "62616675984",
       "name": "Pernambucanas | Cristiane | LF",
       "amount": 0,
-      "stageId": "1397554092"
+      "stageId": "1397554095"
     },
     {
       "id": "62619521145",
-      "name": "Riachuelo | Johnny | NF",
+      "name": "Riachuelo | Johnny | CG",
       "amount": 0,
       "stageId": "1397554092"
     },
@@ -282,9 +286,21 @@
       "name": "Harsco Environmental | Gabi | LF",
       "amount": 0,
       "stageId": "1397554094"
+    },
+    {
+      "id": "62706348314",
+      "name": "Cielo ",
+      "amount": 120000,
+      "stageId": "1397554097"
+    },
+    {
+      "id": "62852981907",
+      "name": "Facta | Priscila | CG",
+      "amount": 0,
+      "stageId": "1397554093"
     }
   ],
-  "hs_last_updated": "16/07/2026, 11:51:12",
+  "hs_last_updated": "20/07/2026, 19:41:50",
   "mrr_overrides": {
     "total": {
       "value": 0,
@@ -300,13 +316,29 @@
     }
   },
   "canal_overrides": {
-    "NF": {},
+    "CG": {},
     "RE": {},
-    "LF": {}
+    "MKT": {},
+    "OUT": {}
   },
   "hs_overrides": {
     "62661040054": {
       "canal": "LF"
+    },
+    "62616675984": {
+      "canal": "LF"
+    },
+    "62616673874": {
+      "canal": "NF"
+    },
+    "62619521145": {
+      "canal": "NF"
+    },
+    "62628787280": {
+      "canal": "RE"
+    },
+    "62706348314": {
+      "canal": "NF"
     }
   },
   "hs_deleted": [],
@@ -384,7 +416,7 @@
       "id": "62638131486",
       "name": "Itau BBA ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715"
     },
     {
       "id": "62639555855",
@@ -414,19 +446,19 @@
       "id": "62638140822",
       "name": "Drogal ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715"
     },
     {
       "id": "62638126918",
       "name": "OXXO Brasil ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715"
     },
     {
       "id": "62639556893",
       "name": "CVC ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715"
     },
     {
       "id": "62638131765",
@@ -438,25 +470,25 @@
       "id": "62638140960",
       "name": "Grupo CAOA ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715"
     },
     {
       "id": "62639556018",
       "name": "Drogaria Araujo S/A ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904716"
     },
     {
       "id": "62638141993",
       "name": "Unidas ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715"
     },
     {
       "id": "62638143243",
       "name": "Home Center Ferreira Costa ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904716"
     },
     {
       "id": "62639557892",
@@ -474,7 +506,7 @@
       "id": "62639560548",
       "name": "Natura ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904716"
     },
     {
       "id": "62639557403",
@@ -486,7 +518,7 @@
       "id": "62638143575",
       "name": "Marisa S.A. ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715"
     },
     {
       "id": "62639560757",
@@ -498,13 +530,13 @@
       "id": "62639558152",
       "name": "Grupo Carrefour Brasil ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715"
     },
     {
       "id": "62638143756",
       "name": "Cobasi ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715"
     },
     {
       "id": "62639558179",
@@ -516,7 +548,7 @@
       "id": "62639560804",
       "name": "Assaí Atacadista ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904716"
     },
     {
       "id": "62639560819",
@@ -546,7 +578,7 @@
       "id": "62639560975",
       "name": "Petlove ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715"
     },
     {
       "id": "62639562000",
@@ -564,7 +596,7 @@
       "id": "62638142735",
       "name": "Fast Shop S/A ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904716"
     },
     {
       "id": "62638144378",
@@ -672,7 +704,7 @@
       "id": "62660972669",
       "name": "Ultragaz ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904716"
     },
     {
       "id": "62661034511",
@@ -699,7 +731,7 @@
       "stageId": "1398904715"
     }
   ],
-  "hs_last_updated2": "16/07/2026, 11:51:15",
+  "hs_last_updated2": "20/07/2026, 19:41:55",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -767,5 +799,5 @@
   },
   "hs_deleted2": [],
   "active_tab": "kanban",
-  "snapshot_at": "2026-07-17T13:10:14.105Z"
+  "snapshot_at": "2026-07-22T13:19:14.701Z"
 }
