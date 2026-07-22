@@ -59,9 +59,10 @@
   .kanban-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; margin-bottom: 8px; font-size: 12.5px; }
   .kanban-card .amt { color: var(--accent2); font-weight: 700; }
   .badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 700; }
-  .badge-nf { background: var(--accent-light); color: var(--accent2); }
+  .badge-cg { background: var(--accent-light); color: var(--accent2); }
   .badge-re { background: var(--teal-light); color: var(--teal); }
-  .badge-lf { background: var(--mustard-light); color: #8a6d00; }
+  .badge-mkt { background: #E8ECFB; color: #3B4A9C; }
+  .badge-out { background: var(--mustard-light); color: #8a6d00; }
   .badge-nd { background: #eee; color: #888; }
   ::-webkit-scrollbar { height: 8px; width: 8px; }
   ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 8px; }
@@ -266,16 +267,17 @@
       </table>
     </div>
     <div class="flex gap-4 mt-4 text-xs" style="color:var(--text2);">
-      <span>Realizadas → NF: <b id="sal-log-nf">0</b></span>
+      <span>Realizadas → CG: <b id="sal-log-cg">0</b></span>
       <span>Realizadas → RE: <b id="sal-log-re">0</b></span>
-      <span>Realizadas → LF: <b id="sal-log-lf">0</b></span>
+      <span>Realizadas → MKT: <b id="sal-log-mkt">0</b></span>
+      <span>Realizadas → OUT: <b id="sal-log-out">0</b></span>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════ TAB 5: CONVERSÃO POR CANAL ══════════════════ -->
 <section id="tab-conversao" class="tab-panel space-y-6">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="canal-cards"></div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="canal-cards"></div>
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
     <div class="card p-5">
@@ -401,12 +403,24 @@ let contratosRealizado = parseFloat(localStorage.getItem('rpov_contratos_realiza
 let cascataRows   = loadJSON('rpov_cascata_rows', WEEKS.map(() => ({ mrrFechado: 0 })));
 let reunioesChips = loadJSON('rpov_reunioes_chips', WEEKS.map(() => ({ realizadas: 0 })));
 let reunioesLog   = loadJSON('rpov_reunioes_log', []);
-let canalMetas    = loadJSON('rpov_canal_metas', { NF:{sal:0,conv:0}, RE:{sal:0,conv:0}, LF:{sal:0,conv:0} });
+let canalMetas    = loadJSON('rpov_canal_metas', { CG:{sal:0,conv:0}, RE:{sal:0,conv:0}, MKT:{sal:0,conv:0}, OUT:{sal:0,conv:0} });
 let hsStages      = loadJSON('rpov_hs_stages', []);
 let hsDeals       = loadJSON('rpov_hs_deals', []);
 let hsLastUpdated = localStorage.getItem('rpov_hs_last_updated') || '';
 let mrrOverrides  = loadJSON('rpov_mrr_overrides', { total:{value:0,locked:false}, q3:{value:0,locked:false}, q4:{value:0,locked:false} });
-let canalOverrides = loadJSON('rpov_canal_overrides', { NF:{}, RE:{}, LF:{} });
+let canalOverrides = loadJSON('rpov_canal_overrides', { CG:{}, RE:{}, MKT:{}, OUT:{} });
+
+// Migração: cluster "NF" (networking forte) virou "CG" (Clientes do Grupo); garante MKT presente.
+function migrateCanalNFtoCG(obj, mktDefault) {
+  if (obj && obj.NF && !obj.CG) { obj.CG = obj.NF; delete obj.NF; }
+  if (obj && obj.LF && !obj.OUT) { obj.OUT = obj.LF; delete obj.LF; }
+  if (obj && !obj.MKT) obj.MKT = mktDefault;
+  return obj;
+}
+canalMetas = migrateCanalNFtoCG(canalMetas, { sal:0, conv:0 });
+canalOverrides = migrateCanalNFtoCG(canalOverrides, {});
+saveJSON('rpov_canal_metas', canalMetas);
+saveJSON('rpov_canal_overrides', canalOverrides);
 let hsOverrides   = loadJSON('rpov_hs_overrides', {});
 let hsDeleted     = new Set(loadJSON('rpov_hs_deleted', []));
 let hsStages2      = loadJSON('rpov_hs_stages2', []);
@@ -422,9 +436,10 @@ function pct(a,b) { return b > 0 ? Math.round((a/b)*1000)/10 : 0; }
 function escapeHtml(s) { return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function detectCanal(name) {
   const s = String(name || '').toUpperCase();
-  if (/\bNF\b/.test(s)) return 'NF';
+  if (/\bCG\b/.test(s)) return 'CG';
   if (/\bRE\b/.test(s)) return 'RE';
-  if (/\bLF\b/.test(s)) return 'LF';
+  if (/\bMKT\b/.test(s)) return 'MKT';
+  if (/\bOUT\b/.test(s)) return 'OUT';
   return null;
 }
 function setStatus(msg, color) {
@@ -673,9 +688,10 @@ function renderPlanejamento() {
 // ═══════════════════════════ TAB 4: REUNIÕES AGENDADAS ═══════════════════════════
 const CANAL_COLORS = {
   '':   { bg:'#EEEEEE', color:'#888888' },
-  NF:   { bg:'var(--accent-light)', color:'var(--accent2)' },
+  CG:   { bg:'var(--accent-light)', color:'var(--accent2)' },
   RE:   { bg:'var(--teal-light)',   color:'var(--teal)' },
-  LF:   { bg:'var(--mustard-light)', color:'#8A6D00' },
+  MKT:  { bg:'#E8ECFB', color:'#3B4A9C' },
+  OUT:  { bg:'var(--mustard-light)', color:'#8A6D00' },
 };
 const STATUS_COLORS = {
   'Agendada':  { bg:'#E8ECFB', color:'#3B4A9C' },
@@ -697,7 +713,7 @@ function renderReunioesLog() {
     <td><input type="text" class="admin-only w-40" value="${escapeHtml(r.cliente||'')}" oninput="onReuniaoField(${i},'cliente',this.value)" /><span class="viewer-only">${escapeHtml(r.cliente||'')}</span></td>
     <td>
       <select class="admin-only" style="${pillStyle(CANAL_COLORS, r.canal||'')}" onchange="onReuniaoField(${i},'canal',this.value)">
-        ${['','NF','RE','LF'].map(c => `<option value="${c}" ${r.canal===c?'selected':''}>${c||'—'}</option>`).join('')}
+        ${['','CG','RE','MKT','OUT'].map(c => `<option value="${c}" ${r.canal===c?'selected':''}>${c||'—'}</option>`).join('')}
       </select>
       <span class="viewer-only badge" style="${pillStyle(CANAL_COLORS, r.canal||'')}">${r.canal||'—'}</span>
     </td>
@@ -712,11 +728,12 @@ function renderReunioesLog() {
     <td class="admin-only"><button class="text-red-600 text-xs font-semibold" onclick="removeReuniaoRow(${i})">Remover</button></td>
   </tr>`).join('') || `<tr><td colspan="6" style="color:var(--muted);">Nenhuma reunião cadastrada.</td></tr>`;
 
-  const counts = { NF:0, RE:0, LF:0 };
+  const counts = { CG:0, RE:0, MKT:0, OUT:0 };
   reunioesLog.forEach(r => { if (r.status === 'Realizada' && counts[r.canal] !== undefined) counts[r.canal]++; });
-  document.getElementById('sal-log-nf').textContent = counts.NF;
+  document.getElementById('sal-log-cg').textContent = counts.CG;
   document.getElementById('sal-log-re').textContent = counts.RE;
-  document.getElementById('sal-log-lf').textContent = counts.LF;
+  document.getElementById('sal-log-mkt').textContent = counts.MKT;
+  document.getElementById('sal-log-out').textContent = counts.OUT;
 }
 
 function addReuniaoRow() {
@@ -769,8 +786,8 @@ function canalOverrideRow(canal, field, label, value, autoValue) {
 }
 
 function renderConversao() {
-  const canais = ['NF','RE','LF'];
-  const colorMap = { NF:'var(--accent)', RE:'var(--teal)', LF:'var(--mustard)' };
+  const canais = ['CG','RE','MKT','OUT'];
+  const colorMap = { CG:'var(--accent)', RE:'var(--teal)', MKT:'#3B4A9C', OUT:'var(--mustard)' };
   const cardsEl = document.getElementById('canal-cards');
   cardsEl.innerHTML = canais.map(c => {
     const st = canalStats(c);
@@ -836,7 +853,7 @@ function resetCanalAuto(canal, field) {
 }
 
 function renderConversaoCharts() {
-  const canais = ['NF','RE','LF'];
+  const canais = ['CG','RE','MKT','OUT'];
   destroyChart('sal');
   CHARTS.sal = new Chart(document.getElementById('chart-sal'), {
     type: 'bar',
@@ -901,7 +918,7 @@ function renderKanban() {
             <div class="flex items-center gap-1">
               <input type="number" step="0.01" class="w-20 text-xs" value="${d.amount||''}" oninput="onKanbanDealField('${d.id}','amount',this.value,'${st.id}')" />
               <select id="kanban-canal-${d.id}" class="text-xs" style="${pillStyle(CANAL_COLORS, canal||'')}" onchange="onKanbanDealField('${d.id}','canal',this.value,'${st.id}')">
-                ${['','NF','RE','LF'].map(c => `<option value="${c}" ${(d.canal||'')===c?'selected':''}>${c || 'auto'}</option>`).join('')}
+                ${['','CG','RE','MKT','OUT'].map(c => `<option value="${c}" ${(d.canal||'')===c?'selected':''}>${c || 'auto'}</option>`).join('')}
               </select>
               ${overridden ? `<button class="text-[10px] underline" style="color:var(--text2);" onclick="undoKanbanOverride('${d.id}')" title="Desfazer edição manual">↺</button>` : ''}
               <button class="text-[11px]" style="color:var(--danger);" onclick="removeKanbanDeal('${d.id}')" title="Remover (não afeta o HubSpot)">🗑</button>
@@ -1055,7 +1072,7 @@ function renderKanban2() {
             <div class="flex items-center gap-1">
               <input type="number" step="0.01" class="w-20 text-xs" value="${d.amount||''}" oninput="onKanbanDealField2('${d.id}','amount',this.value,'${st.id}')" />
               <select id="kanban2-canal-${d.id}" class="text-xs" style="${pillStyle(CANAL_COLORS, canal||'')}" onchange="onKanbanDealField2('${d.id}','canal',this.value,'${st.id}')">
-                ${['','NF','RE','LF'].map(c => `<option value="${c}" ${(d.canal||'')===c?'selected':''}>${c || 'auto'}</option>`).join('')}
+                ${['','CG','RE','MKT','OUT'].map(c => `<option value="${c}" ${(d.canal||'')===c?'selected':''}>${c || 'auto'}</option>`).join('')}
               </select>
               ${overridden ? `<button class="text-[10px] underline" style="color:var(--text2);" onclick="undoKanbanOverride2('${d.id}')" title="Desfazer edição manual">↺</button>` : ''}
               <button class="text-[11px]" style="color:var(--danger);" onclick="removeKanbanDeal2('${d.id}')" title="Remover (não afeta o HubSpot)">🗑</button>
