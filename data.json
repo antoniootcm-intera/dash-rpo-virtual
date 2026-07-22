@@ -191,6 +191,13 @@
       "canal": "CG",
       "status": "Agendada",
       "obs": ""
+    },
+    {
+      "data": "",
+      "cliente": "Cielo",
+      "canal": "CG",
+      "status": "Agendada",
+      "obs": ""
     }
   ],
   "canal_metas": {
@@ -336,22 +343,28 @@
   },
   "hs_overrides": {
     "62661040054": {
-      "canal": "LF"
+      "canal": "MKT"
     },
     "62616675984": {
-      "canal": "LF"
+      "canal": "OUT"
     },
     "62616673874": {
-      "canal": "NF"
+      "canal": "CG"
     },
     "62619521145": {
-      "canal": "NF"
+      "canal": "CG"
     },
     "62628787280": {
       "canal": "RE"
     },
     "62706348314": {
-      "canal": "NF"
+      "canal": "CG"
+    },
+    "62852981907": {
+      "canal": "CG"
+    },
+    "62950271745": {
+      "canal": "CG"
     }
   },
   "hs_deleted": [],
@@ -811,6 +824,6 @@
     }
   },
   "hs_deleted2": [],
-  "active_tab": "reunioes",
-  "snapshot_at": "2026-07-22T13:20:44.900Z"
+  "active_tab": "kanban",
+  "snapshot_at": "2026-07-22T13:45:44.347Z"
 }
