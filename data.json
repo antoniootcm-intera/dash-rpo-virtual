@@ -146,35 +146,35 @@
     {
       "data": "2026-07-22",
       "cliente": "Riachuelo",
-      "canal": "NF",
+      "canal": "CG",
       "status": "Agendada",
       "obs": ""
     },
     {
       "data": "2026-07-17",
       "cliente": "Pernambucanas",
-      "canal": "LF",
+      "canal": "OUT",
       "status": "Agendada",
       "obs": ""
     },
     {
       "data": "2026-07-15",
       "cliente": "Harsco",
-      "canal": "LF",
+      "canal": "MKT",
       "status": "Agendada",
       "obs": ""
     },
     {
       "data": "2026-07-21",
       "cliente": "DM",
-      "canal": "NF",
+      "canal": "CG",
       "status": "Agendada",
       "obs": ""
     },
     {
       "data": "",
       "cliente": "Renner",
-      "canal": "NF",
+      "canal": "CG",
       "status": "Agendada",
       "obs": "Pediu para remarcar"
     },
@@ -182,6 +182,13 @@
       "data": "2026-07-30",
       "cliente": "Osklen",
       "canal": "RE",
+      "status": "Agendada",
+      "obs": ""
+    },
+    {
+      "data": "2026-07-17",
+      "cliente": "Facta",
+      "canal": "CG",
       "status": "Agendada",
       "obs": ""
     }
@@ -804,6 +811,6 @@
     }
   },
   "hs_deleted2": [],
-  "active_tab": "kanban",
-  "snapshot_at": "2026-07-22T13:19:26.649Z"
+  "active_tab": "reunioes",
+  "snapshot_at": "2026-07-22T13:20:44.900Z"
 }
