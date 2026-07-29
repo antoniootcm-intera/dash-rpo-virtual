@@ -456,7 +456,12 @@
     }
   },
   "canal_overrides": {
-    "CG": {},
+    "CG": {
+      "vendas": {
+        "value": 2,
+        "locked": true
+      }
+    },
     "RE": {},
     "MKT": {},
     "OUT": {}
@@ -2034,6 +2039,6 @@
     }
   ],
   "clientes_fechados": [],
-  "active_tab": "metasemanal",
-  "snapshot_at": "2026-07-29T19:45:18.081Z"
+  "active_tab": "reunioes",
+  "snapshot_at": "2026-07-29T19:48:39.077Z"
 }
