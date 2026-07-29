@@ -73,10 +73,10 @@
   ],
   "reunioes_chips": [
     {
-      "realizadas": 0
+      "realizadas": 3
     },
     {
-      "realizadas": 0
+      "realizadas": 2
     },
     {
       "realizadas": 0
@@ -154,28 +154,28 @@
       "data": "2026-07-17",
       "cliente": "Pernambucanas",
       "canal": "OUT",
-      "status": "Agendada",
+      "status": "Realizada",
       "obs": ""
     },
     {
       "data": "2026-07-15",
       "cliente": "Harsco",
       "canal": "MKT",
-      "status": "Agendada",
+      "status": "Realizada",
       "obs": ""
     },
     {
       "data": "2026-07-21",
       "cliente": "DM",
       "canal": "CG",
-      "status": "Agendada",
+      "status": "Realizada",
       "obs": ""
     },
     {
       "data": "",
       "cliente": "Renner",
       "canal": "CG",
-      "status": "Agendada",
+      "status": "Realizada",
       "obs": "Pediu para remarcar"
     },
     {
@@ -189,13 +189,27 @@
       "data": "2026-07-17",
       "cliente": "Facta",
       "canal": "CG",
-      "status": "Agendada",
+      "status": "Realizada",
       "obs": ""
     },
     {
       "data": "",
       "cliente": "Cielo",
       "canal": "CG",
+      "status": "Realizada",
+      "obs": ""
+    },
+    {
+      "data": "2026-07-30",
+      "cliente": "Centauro",
+      "canal": "OUT",
+      "status": "Agendada",
+      "obs": ""
+    },
+    {
+      "data": "2026-07-30",
+      "cliente": "Stone",
+      "canal": "OUT",
       "status": "Agendada",
       "obs": ""
     }
@@ -275,52 +289,158 @@
       "id": "62616673874",
       "name": "Renner | Guilherme | CG",
       "amount": 0,
-      "stageId": "1397554092"
+      "stageId": "1397554093",
+      "notes": []
     },
     {
       "id": "62616675984",
-      "name": "Pernambucanas | Cristiane | LF",
+      "name": "Pernambucanas | Cristiane | OUT",
       "amount": 0,
-      "stageId": "1397554095"
+      "stageId": "1397554095",
+      "notes": [
+        {
+          "body": "FUP feito buscando agendar a demo prática.",
+          "timestamp": "2026-07-23T13:02:34.921Z",
+          "author": ""
+        },
+        {
+          "body": "Cliente está mostrando resistência quanto a agendar uma demo prática, ela quer testar logo de cara 3 vagas em 3 lojas diferentes.",
+          "timestamp": "2026-07-21T19:17:18.480Z",
+          "author": ""
+        },
+        {
+          "body": "PERNAMBUCANAS <> INTERAhttps://tldv.io/app/meetings/6a5a355c1469ff001366f4e41. Itens de AçãoAntônio formalizar proposta de preço para RPO virtual com 10 mil reais mensais por 15 vagas 33:47Antônio parametrizar entrevistadora de IA com critérios da Pernambucanas para teste 34:58Cristiane agendar segundo momento com Antônio para apresentação aos stakeholders internos 34:58Cristiane envolver head de operações para explicação do funcionamento do modelo 35:18Cristiane defender POC internamente para teste em lojas difíceis como Indaiatuba 35:152. Sobre a Intera e Modelo de RPO VirtualIntera é empresa sem sede fixa com sócios fundadores em Salvador e braço de tecnologia próprio 00:00Intera oferece consultoria, ATS Harley e novo modelo de RPO virtual com agentes de IA 14:18RPO virtual foi desenvolvido especificamente para vagas de vendas e operacionais de varejo 10:14Modelo permite aumentar capacidade sem aumentar custos fixos e libera time para questões estratégicas 11:06RPO virtual opera 24/7 sem limitações de horário comercial, multiplicando capacidade de entrevistas 31:52Intera possui base proprietária de mais de 15 mil vendedores potenciais em diversas localidades 12:513. Sobre a Pernambucanas e DesafiosPernambucanas tem 11 anos de operação com Cristiane gerenciando recrutamento, transformação e operações 00:58Vagas de loja representam próximo de 80% do volume total de contratações da empresa 04:30Pernambucanas desenvolveu plataforma própria para gestão de vagas em fase de homologação 10:16Cada gestor de loja realiza sua própria contratação com orçamento de divulgação centralizado 03:55Indaiatuba é localidade extremamente difícil para contratação com escala 6x1 e trabalho de sábado 30:56Pernambucanas realiza validações internas incluindo regras sobre recontratação de ex-colaboradores 31:184. Processo de Entrevista com IAEntrevista por IA é conversa natural por vídeo no WhatsApp com duração de 20 a 30 minutos 21:41IA interage dinamicamente com candidato, fazendo perguntas de acompanhamento e pedindo esclarecimentos 17:35Entrevista é avaliada automaticamente segundo critérios parametrizados com notas de 0 a 10 16:34Alternativa de entrevista por áudio WhatsApp disponível para vagas mais operacionais 25:52Candidatos avaliam entrevista com IA em 4.7 de 5 para WhatsApp e 4.2 de 5 para voz 27:115. Fluxo de RecrutamentoCandidatos recebem anúncios direcionados por geolocalização em Meta, Facebook e Instagram 22:47VV (Vem de Vaga) coleta currículo, CEP e valida fit do candidato via WhatsApp 23:30Inscrição é automática sem exigir clique em formulário para reduzir desistências 24:45Recrutador humano da Intera orquestra agendamento com gestor de loja e comunicação diária 29:08Dashboard de resultados atualizado semanalmente de forma automatizada para acompanhamento 29:396. Case de Sucesso MagaluVaga de vendedor no Shopping Tietê Plaza em São Paulo preenchida em 12 dias totais 15:03Processo de aprovação dos candidatos levou 8 dias, background e admissão 4 dias restantes 15:3625 candidatos aprovados pela IA, 20 agendados com gestor, 7 entrevistados, 5 aprovados 14:37Taxa de conversão de 71% com 3 contratações e backlog de candidatos para próximas vagas 14:587. Modelo de Contratação e PreçosRPO virtual trabalha até 15 vagas simultâneas por mês com custo de 10 mil reais mensais 30:33Contrato de 12 meses com rescisão a qualquer momento e 30 dias de aviso prévio 34:08Múltiplos RPOs virtuais podem ser contratados para aumentar capacidade conforme necessidade 30:50Modelo de serviço é mais simples que contratar ferramenta, permitindo teste e desligamento 30:108. Integrações e Próximos PassosRecrutador humano da Intera pode inserir candidatos diretamente na plataforma Pernambucanas 32:36Integração via API é possível para validações automáticas de CPF e regras de negócio 32:19Teste inicial pode focar em 15 localidades mais difíceis para validar modelo em cenário desafiador 33:22Notas manuaisNenhuma nota manual",
+          "timestamp": "2026-07-21T19:16:54.402Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62619521145",
       "name": "Riachuelo | Johnny | CG",
       "amount": 0,
-      "stageId": "1397554092"
+      "stageId": "1397554091",
+      "notes": [
+        {
+          "body": "FUP para reagendar a call que foi no show.",
+          "timestamp": "2026-07-23T13:04:27.075Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62628787280",
       "name": "Osklen | Bianca | RE",
       "amount": 0,
-      "stageId": "1397554092"
+      "stageId": "1397554092",
+      "notes": []
     },
     {
       "id": "62661040054",
-      "name": "Harsco Environmental | Gabi | LF",
+      "name": "Harsco Environmental | Gabi | OUT",
       "amount": 0,
-      "stageId": "1397554094"
+      "stageId": "1397554094",
+      "notes": [
+        {
+          "body": "https://tldv.io/app/meetings/6a57d518332a4d0013eecc85/Reuniao realizada hoje 15/07Lead tem muitas vagas operacionais, mas nao comerciais. Vagas de operador de carregamento e motorista de caminhao. Vou tentar agendar uma demo com a Iris.",
+          "timestamp": "2026-07-15T19:52:33.657Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62706348314",
       "name": "Cielo ",
       "amount": 120000,
-      "stageId": "1397554097"
+      "stageId": "1397554097",
+      "notes": []
     },
     {
       "id": "62852981907",
       "name": "Facta | Priscila | CG",
       "amount": 0,
-      "stageId": "1397554093"
+      "stageId": "1397554096",
+      "notes": [
+        {
+          "body": "FUP feito para entender se discutiram internamente.",
+          "timestamp": "2026-07-24T17:07:29.436Z",
+          "author": ""
+        },
+        {
+          "body": "Proposta enviada.",
+          "timestamp": "2026-07-22T15:27:32.403Z",
+          "author": ""
+        },
+        {
+          "body": "Facta <> INTERA (RPO Virtual)https://tldv.io/app/meetings/6a60ccd8580e6000130198011. Itens de AçãoPaula enviar contrato para assinatura pela Facta 45:21Facta retornar resposta sobre contrato até sexta-feira 47:12Paula agendar coffee com Facta para organizar implementação 45:21Paula definir posições e localização do recrutador alocado 45:30Paula iniciar implementação em dois dias após assinatura 45:32Intera enviar links das vagas para Facta compartilhar em canais 42:072. Demonstração do ProdutoSimulação de entrevista com IA para vaga de consultor de vendas realizada com sucesso 24:14Sistema avalia duas competências: apresentação do candidato e foco no cliente 32:13Candidata Priscila obteve nota 6.5 em apresentação e 5 em foco no cliente 33:36Entrevista durou sete minutos e 32 segundos com gravação completa disponível 34:08IA fornece análise detalhada de competências com exemplos das respostas 34:38Sistema detecta quando candidato sai da tela durante entrevista 37:073. Fluxo do Processo de RecrutamentoCandidatos recebem convocação para entrevista presencial via WhatsApp 38:47Sistema envia lembretes automáticos de entrevista presencial via WhatsApp 39:16Recrutador intermedia agendamento entre candidato e gerente de loja 39:30Recrutador acompanha aprovação e condução da entrevista presencial 40:02Um recrutador gerencia simultaneamente 15 posições em aberto 43:53Relatório semanal acompanha SLA, agendamentos e pipeline das vagas 44:134. Modelo de Preços e ImplementaçãoOferta exclusiva de lançamento com assinatura mensal sem fidelidade 45:09Facta pode cancelar assinatura a qualquer momento sem penalidades 45:09Implementação começa em dois dias após assinatura do contrato 45:32Recrutador será alocado em time específico para ambientação em ferramentas 45:325. Canais de Divulgação e CaptaçãoVagas podem ser divulgadas no Instagram com link direto para WhatsApp 41:22Facta pode compartilhar links das vagas em seus canais de comunicação 42:25Intera fornece peças de marketing para divulgação das vagas 42:13Candidatos caem direto no WhatsApp ao clicar no link da vaga 42:076. Vantagens do Sistema de IAAvaliação automática reduz tempo entre impacto e convocação para presencial 40:12Assertividade da IA é muito alta, especialmente em vagas de vendas 36:33Recrutador calibra notas e ajusta perguntas conforme necessário 36:01Transcrição completa e gravação de vídeo disponíveis para análise 33:57Processo é muito mais rápido que abordagem humana tradicional 31:497. Desafios Técnicos IdentificadosBloqueios de VPN ou segurança corporativa podem impedir acesso ao sistema 14:19Câmera não estava disponível no computador durante simulação 15:55Microfone teve problemas de reconhecimento durante entrevista 23:13Atualizações do sistema podem alterar configurações de áudio automaticamente 29:228. Próximos Passos da FactaFacta deseja testar o sistema em uma região piloto 44:39Recrutador adicional será diferente do que já trabalha com Facta 46:22Novo recrutador trabalhará em paralelo com recrutador atual 46:42Notas manuaisNenhuma nota manual",
+          "timestamp": "2026-07-22T15:27:20.938Z",
+          "author": ""
+        },
+        {
+          "body": "Facta <> Interahttps://tldv.io/app/meetings/6a59382af47fc70013883ebd1. Itens de AçãoAntônio agendar demonstração prática com Priscila na quarta-feira às 11 horas da manhã 47:18Antônio enviar convite para Tamara Gonçalves participar da demonstração na quarta-feira 49:45Intera e Facta calibrar processo de entrevista conforme perfil e valores específicos da Facta 33:30Intera e Facta construir case de uso de IA na cadeia de recrutamento para vagas de loja 43:492. Proposta de ServiçoIntera oferece recrutador virtual por R$ 10 mil mensais versus R$ 15 mil de RPO tradicional 44:33Contrato de 12 meses com rescisão possível com 30 dias de aviso prévio 44:38Recrutador virtual consegue tocar 15 vagas ativas por mês de vendas concentradas 44:10Serviço inclui mídia paga, WhatsApp e múltiplos agentes de IA para condução de entrevistas 47:553. Funcionalidades da PlataformaEntrevistadora virtual Íris conduz entrevistas via WhatsApp com linguagem natural e interativa 19:57IA questiona candidatos sobre competências específicas e gera parecer com notas de adequação 33:56Campanhas automatizadas geolocalizadas alcançam candidatos dentro de raio específico da loja 26:58Plataforma encurta fases do processo para manter engajamento e reduzir desistência de candidatos 34:12Recrutador humano recebe finalistas com briefing completo e acesso a gravações e transcrições 40:364. Experiência do CandidatoSatisfação média de candidatos em entrevistas por WhatsApp atingiu 4.7 em escala de cinco 37:23Público de vendedores de loja recebeu bem o modelo de entrevista com IA 42:00Candidatos podem fazer entrevista em qualquer contexto, inclusive deitados ou em horários flexíveis 43:305. Modelo de OperaçãoRecrutador humano agenda entrevista presencial com gestor da loja via WhatsApp 41:52Sistema envia notificações de lembrete para reduzir ausência de candidatos em entrevistas presenciais 41:56Gestor da loja devolve feedback ao recrutador humano que calibra agentes de IA 42:38Humano orquestra estratégia enquanto IA automatiza operacionalização pesada do processo 42:486. Contexto da ReuniãoFacta ainda não utiliza inteligência artificial em recrutamento e seleção 06:10Paula participava de evento sobre tecnologia em RH na manhã da reunião 06:30Magalu é cliente Intera com case bem-sucedido de entrevistas por IA 19:14Notas manuaisNenhuma nota manual",
+          "timestamp": "2026-07-21T19:16:18.626Z",
+          "author": ""
+        },
+        {
+          "body": "Primeira reunião realizada. Ela já viu sobre os valores. Iremos realizar uma segunda reunião no dia 22/07 para testar a agente de IA parametrizada.",
+          "timestamp": "2026-07-20T22:34:04.463Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62950271745",
       "name": "DM | Letícia | CG",
       "amount": 0,
-      "stageId": "1397554093"
+      "stageId": "1397554096",
+      "notes": [
+        {
+          "body": "Demo realizada! Proposta feita com o cliente50% de desconto nos 3 primeiros mesesfidelidade mínimaproposta válida 31/07",
+          "timestamp": "2026-07-24T17:06:30.251Z",
+          "author": ""
+        },
+        {
+          "body": "Reunião de DEMO PRÁTICA no dia 23/07 às 14h.",
+          "timestamp": "2026-07-21T19:15:32.943Z",
+          "author": ""
+        },
+        {
+          "body": "Reunião realizada hoje. Link da gravação: DM + INTERAhttps://tldv.io/app/meetings/6a5f5f466a784400139eea4e1. Itens de AçãoAntônio agendar simulação com Letícia e coordenadora para quinta-feira 23 de julho às 14h15 49:35Antônio enviar convite de reunião para Letícia e coordenadora 50:25Letícia compartilhar apresentação do arpeão virtual com coordenadora e área cliente 48:10Letícia apresentar solução para stakeholders envolvidos em reunião posterior 45:002. Contexto Operacional da DMDM é empresa de produtos financeiros que fornece promotores para cartões de loja em varejo 03:47Letícia supervisiona time com quatro recrutadores: duas plenas e duas juniores 03:00Atualmente 43 vagas comerciais ativas de 59 vagas totais no time 11:46Vagas distribuídas pelo Brasil com maior densidade em São Paulo e interior de Minas 07:05SLA médio para fechar vaga comercial ultrapassa 100 dias em regiões difíceis 07:28Três consultorias externas apoiam recrutamento com foco em regionalização 08:033. Desafios de RecrutamentoPromotores enfrentam desgaste por dependência de cartão ativado para comissão 04:27Menos de 5% das 70 vagas comerciais representam crescimento de quadro 17:54Taxa de conversão de cliques em inscrição muito baixa sem otimização 35:51Consultorias multinacionais não conseguem atingir regiões como Minas Gerais 08:054. Solução Arpeão Virtual ApresentadaArpeão Virtual automatiza entrevistas especificamente para vendas via WhatsApp 25:17Base proprietária com mais de 15 mil vendedores, concentrada em São Paulo 19:4143% dos candidatos enviados foram contratados com conversão bem-sucedida 21:38Campanhas automáticas no Meta com geolocalização por raio de quilômetros 31:15Fluxo automatizado com métricas em tempo real de cada etapa do processo 36:235. Aprendizados sobre Atração de CandidatosInscrição feita pela plataforma aumentou conversão de 6% para 46% 38:44Fazer inscrição pelo usuário aumenta todas as taxas de conversão 39:09Candidato preenchendo apenas informações faltantes melhora taxa de inscrição 39:30Teste A/B mostrou diferença entre usar e não usar em Raia: 6% versus 2% 37:466. Modelo de Operação e PricingRecrutador humano da Intera parametriza agente e mantém relacionamento com cliente 39:41Recrutador virtual pode atender múltiplos clientes simultaneamente 42:08Capacidade de rodar até 15 vagas simultâneas por mês 42:26Contrato de 12 meses com rescisão antecipada sem multa com 30 dias aviso 42:36Mensalidade de 10 mil reais fixa para 15 vagas, sem custos adicionais por contratação 42:53Implantação sem custos adicionais, tudo incluído na mensalidade 44:437. Próximas EtapasSimulação de entrevista com demonstração do fluxo completo agendada 49:57Apresentação para coordenadora e área cliente para validar investimento 44:29Parametrização do agente para entrevista de promotor como segunda etapa 45:00Notas manuaisNenhuma nota manual",
+          "timestamp": "2026-07-21T19:14:50.268Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63083878957",
+      "name": "Centauro | Jaqueline | OUT",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "63083883404",
+      "name": "Bradesco | Thais |  MKT",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "63083888724",
+      "name": "Magalu | Jaqueline | CG",
+      "amount": 0,
+      "stageId": "1397554091",
+      "notes": []
+    },
+    {
+      "id": "63189313125",
+      "name": "Stone | Bruna",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
     }
   ],
-  "hs_last_updated": "22/07/2026, 10:19:23",
+  "hs_last_updated": "28/07/2026, 11:57:56",
   "mrr_overrides": {
     "total": {
       "value": 0,
@@ -364,6 +484,13 @@
       "canal": "CG"
     },
     "62950271745": {
+      "canal": "CG",
+      "amount": 0
+    },
+    "63083883404": {
+      "canal": "CG"
+    },
+    "63189313125": {
       "canal": "CG"
     }
   },
@@ -430,334 +557,1294 @@
       "id": "59184917932",
       "name": "Sicredi  |  Raquel  |  RE",
       "amount": 0,
-      "stageId": "1398904716"
+      "stageId": "1399081991",
+      "dEntries": {
+        "1": "2026-07-14T21:51:34.598Z",
+        "2": "2026-07-16T13:09:59.249Z",
+        "3": "2026-07-22T17:46:40.459Z"
+      },
+      "notes": [
+        {
+          "body": "FUP com a outra pessoa",
+          "timestamp": "2026-07-22T17:46:49.127Z",
+          "author": ""
+        },
+        {
+          "body": "FUP enviado",
+          "timestamp": "2026-07-16T13:11:51.368Z",
+          "author": ""
+        },
+        {
+          "body": "Fiz um contato novo citando a tese de IA",
+          "timestamp": "2026-07-14T21:52:12.711Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639556404",
       "name": "Grupo Boticário | Sheila | NF",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-14T18:50:53.687Z"
+      },
+      "notes": [
+        {
+          "body": "FUP realizado com a miria, nao Sheila, que está de licença.",
+          "timestamp": "2026-07-22T18:04:19.502Z",
+          "author": ""
+        },
+        {
+          "body": "wpp enviado para sheila + pedido para o TL comunicar na call com ela.",
+          "timestamp": "2026-07-14T18:49:16.597Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62638131486",
       "name": "Itau BBA ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1399081987",
+      "dEntries": {
+        "1": "2026-07-20T13:09:38.903Z",
+        "2": "2026-07-29T14:40:12.112Z",
+        "3": "2026-07-29T14:41:22.381Z"
+      },
+      "notes": [
+        {
+          "body": "Fup 3",
+          "timestamp": "2026-07-29T14:41:30.345Z",
+          "author": ""
+        },
+        {
+          "body": "FUP2 feito",
+          "timestamp": "2026-07-29T14:40:21.006Z",
+          "author": ""
+        },
+        {
+          "body": "Contato feito pelo email com patricia, a qual eu ja tive contato no passado.",
+          "timestamp": "2026-07-20T13:09:34.496Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639555855",
       "name": "Icatu Seguros ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904716",
+      "dEntries": {
+        "1": "2026-07-23T14:14:04.857Z",
+        "2": "2026-07-23T14:14:34.144Z"
+      },
+      "notes": [
+        {
+          "body": "Fup feito batendo na tecla de 24/7",
+          "timestamp": "2026-07-23T14:15:11.730Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62638126767",
       "name": "Unimed Nacional ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
     },
     {
       "id": "62638131586",
       "name": "Grupo QuintoAndar ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-27T14:16:21.031Z"
+      },
+      "notes": [
+        {
+          "body": "Email enviado para a Julia prado. Ela segue a pagina da INTERA no linkedin e sao ex clientes.",
+          "timestamp": "2026-07-27T14:16:18.085Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62638131606",
       "name": "Supermercado Nordestão ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-23T14:20:07.064Z"
+      },
+      "notes": [
+        {
+          "body": "Batendo na tecla de abertura de loja.",
+          "timestamp": "2026-07-23T14:20:03.134Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62638140822",
       "name": "Drogal ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-20T13:15:19.142Z"
+      },
+      "notes": []
     },
     {
       "id": "62638126918",
       "name": "OXXO Brasil ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904716",
+      "dEntries": {
+        "1": "2026-07-20T13:15:34.468Z",
+        "2": "2026-07-22T17:48:42.859Z"
+      },
+      "notes": [
+        {
+          "body": "Prospectei a Ana agora, já que jeremias saiu da empresa, imagino.",
+          "timestamp": "2026-07-22T17:48:55.875Z",
+          "author": ""
+        },
+        {
+          "body": "Prospectei o jeremias. Ja tínhamos contato no passado. Tentei puxar para call mesmo!",
+          "timestamp": "2026-07-17T20:23:41.600Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639556893",
       "name": "CVC ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904716",
+      "dEntries": {
+        "1": "2026-07-20T13:20:14.589Z",
+        "2": "2026-07-29T14:10:13.309Z"
+      },
+      "notes": [
+        {
+          "body": "FUP2 feito",
+          "timestamp": "2026-07-29T14:10:20.952Z",
+          "author": ""
+        },
+        {
+          "body": "Primeiro contato feito. Tese de IA forte.",
+          "timestamp": "2026-07-20T13:20:31.750Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62638131765",
       "name": "Farmácias Pague Menos ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-23T14:28:55.487Z"
+      },
+      "notes": [
+        {
+          "body": "Ela já usa IA no recrutamento. Mensagem sobre se é copiloto ou agente.",
+          "timestamp": "2026-07-23T14:31:33.532Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62638140960",
       "name": "Grupo CAOA ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904716",
+      "dEntries": {
+        "1": "2026-07-20T13:25:50.584Z",
+        "2": "2026-07-29T14:13:41.766Z"
+      },
+      "notes": [
+        {
+          "body": "FUP2 feito",
+          "timestamp": "2026-07-29T14:13:49.732Z",
+          "author": ""
+        },
+        {
+          "body": "Contato feito focando nas vagas de vendedor de veículos no Brasil todo",
+          "timestamp": "2026-07-20T13:25:36.715Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639556018",
       "name": "Drogaria Araujo S/A ",
       "amount": 0,
-      "stageId": "1398904716"
+      "stageId": "1399081987",
+      "dEntries": {
+        "1": "2026-07-15T15:18:45.669Z",
+        "2": "2026-07-17T19:52:32.194Z",
+        "3": "2026-07-29T14:04:29.390Z"
+      },
+      "notes": [
+        {
+          "body": "Contato feito pelo wpp.",
+          "timestamp": "2026-07-29T14:04:26.250Z",
+          "author": ""
+        },
+        {
+          "body": "Diogo toca a frente de lojas. prospeccao feita nesse sentido.",
+          "timestamp": "2026-07-15T15:19:05.340Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62638141993",
       "name": "Unidas ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-20T13:35:26.893Z"
+      },
+      "notes": [
+        {
+          "body": "FUP2 FEITO",
+          "timestamp": "2026-07-29T14:14:44.182Z",
+          "author": ""
+        },
+        {
+          "body": "Contato feito focando nas vagas comerciais pulverizadas ao longo do país.",
+          "timestamp": "2026-07-20T13:35:45.645Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62638143243",
       "name": "Home Center Ferreira Costa ",
       "amount": 0,
-      "stageId": "1398904716"
+      "stageId": "1399081987",
+      "dEntries": {
+        "1": "2026-07-15T14:56:28.343Z",
+        "2": "2026-07-17T19:52:29.357Z",
+        "3": "2026-07-29T14:05:34.661Z"
+      },
+      "notes": [
+        {
+          "body": "Terceiro FUP.",
+          "timestamp": "2026-07-29T14:05:44.094Z",
+          "author": ""
+        },
+        {
+          "body": "Email para Ieda e Sumaya ao mesmo tempo. Teste.",
+          "timestamp": "2026-07-15T14:56:45.272Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639557892",
       "name": "Farmácia Indiana ",
       "amount": 0,
-      "stageId": "1398904716"
+      "stageId": "1398904716",
+      "dEntries": {
+        "1": "2026-07-14T19:11:49.474Z",
+        "2": "2026-07-16T13:11:12.533Z"
+      },
+      "notes": [
+        {
+          "body": "FUP enviado",
+          "timestamp": "2026-07-16T13:11:32.496Z",
+          "author": ""
+        },
+        {
+          "body": "Mensagem enviada por email para bater no que conversamos na época para o RPO tradicional e não era resolvido.",
+          "timestamp": "2026-07-14T19:10:07.067Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639557304",
       "name": "Chilli Beans ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-23T14:13:20.893Z"
+      },
+      "notes": [
+        {
+          "body": "FUP2 feito",
+          "timestamp": "2026-07-29T14:44:49.876Z",
+          "author": ""
+        },
+        {
+          "body": "Email feito para o head de expansao. Sem contato de talent.",
+          "timestamp": "2026-07-23T14:13:37.180Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639560548",
       "name": "Natura ",
       "amount": 0,
-      "stageId": "1398904716"
+      "stageId": "1399081987",
+      "dEntries": {
+        "1": "2026-07-15T14:49:47.503Z",
+        "2": "2026-07-17T19:52:26.843Z",
+        "3": "2026-07-29T13:55:16.167Z"
+      },
+      "notes": [
+        {
+          "body": "Prospectei a Larissa Vieira, nova lider de talent/",
+          "timestamp": "2026-07-15T14:50:22.887Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639557403",
       "name": "Supermercados Guanabara ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-27T14:06:35.439Z"
+      },
+      "notes": []
     },
     {
       "id": "62638143575",
       "name": "Marisa S.A. ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904716",
+      "dEntries": {
+        "1": "2026-07-20T13:43:34.792Z",
+        "2": "2026-07-29T14:09:21.601Z"
+      },
+      "notes": [
+        {
+          "body": "FUP2 feito",
+          "timestamp": "2026-07-29T14:09:29.870Z",
+          "author": ""
+        },
+        {
+          "body": "Contato feito na tese de encurtar sla. muitas vagas de assessor de clientes abertas no brasil.",
+          "timestamp": "2026-07-20T13:43:20.664Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639560757",
       "name": "CENTAURO ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-23T14:36:56.152Z",
+        "2": "2026-07-23T14:36:53.804Z"
+      },
+      "notes": [
+        {
+          "body": "Contato sobre as mais de 320 vagas. Usam gupy. Ex cliente.",
+          "timestamp": "2026-07-23T14:36:49.739Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639558152",
       "name": "Grupo Carrefour Brasil ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-20T13:48:39.615Z"
+      },
+      "notes": [
+        {
+          "body": "FUp2 feito",
+          "timestamp": "2026-07-29T14:16:35.365Z",
+          "author": ""
+        },
+        {
+          "body": "Foco nas vagas de loja, quase 2500.",
+          "timestamp": "2026-07-20T13:48:50.900Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62638143756",
       "name": "Cobasi ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904716",
+      "dEntries": {
+        "1": "2026-07-20T13:52:50.241Z",
+        "2": "2026-07-29T14:11:30.017Z"
+      },
+      "notes": [
+        {
+          "body": "fup2 feito",
+          "timestamp": "2026-07-29T14:11:43.580Z",
+          "author": ""
+        },
+        {
+          "body": "Acompanhar",
+          "timestamp": "2026-07-20T13:53:24.054Z",
+          "author": ""
+        },
+        {
+          "body": "Contato feito para vagas de operador de loja e vendedor especializado",
+          "timestamp": "2026-07-20T13:53:05.157Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639558179",
       "name": "Brisanet Telecomunicações ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-14T19:33:53.466Z"
+      },
+      "notes": []
     },
     {
       "id": "62639560804",
       "name": "Assaí Atacadista ",
       "amount": 0,
-      "stageId": "1398904716"
+      "stageId": "1399081987",
+      "dEntries": {
+        "1": "2026-07-15T15:04:43.631Z",
+        "2": "2026-07-17T19:52:24.494Z",
+        "3": "2026-07-29T13:59:21.539Z"
+      },
+      "notes": [
+        {
+          "body": "Contato feito para a Flávia e Tamaly de uma vez. Teste",
+          "timestamp": "2026-07-15T15:05:02.469Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639560819",
       "name": "Grupo Ri Happy ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-23T13:49:07.806Z"
+      },
+      "notes": [
+        {
+          "body": "Primeiro contato feito. 350 vagas comericias. Muito fit.",
+          "timestamp": "2026-07-23T13:49:03.768Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639560839",
       "name": "Cencosud S.A. ",
       "amount": 0,
-      "stageId": "1398904714"
-    },
-    {
-      "id": "62639559692",
-      "name": "BYD Brasil ",
-      "amount": 0,
-      "stageId": "1398904714"
-    },
-    {
-      "id": "62639563187",
-      "name": "Iguatemi S.A. ",
-      "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904716",
+      "dEntries": {
+        "1": "2026-07-23T14:03:36.434Z",
+        "2": "2026-07-29T14:49:58.584Z"
+      },
+      "notes": [
+        {
+          "body": "FUP novo feito.",
+          "timestamp": "2026-07-29T14:50:06.707Z",
+          "author": ""
+        },
+        {
+          "body": "Primeiro email enviado. Sao vagas operacionais, mas nao vagas comerciais necessariamente.",
+          "timestamp": "2026-07-23T14:03:32.222Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639560975",
       "name": "Petlove ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904716",
+      "dEntries": {
+        "1": "2026-07-17T20:14:33.190Z",
+        "2": "2026-07-29T14:07:00.233Z"
+      },
+      "notes": [
+        {
+          "body": "FUP2 feito",
+          "timestamp": "2026-07-29T14:07:09.446Z",
+          "author": ""
+        },
+        {
+          "body": "Tem solucao propria de IA. Contato feito numa espécie de bench para somar.",
+          "timestamp": "2026-07-17T20:14:27.574Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639562000",
       "name": "americanas s.a. ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-15T12:43:01.870Z"
+      },
+      "notes": []
     },
     {
       "id": "62638142645",
       "name": "C&A Brasil ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1399081987",
+      "dEntries": {
+        "1": "2026-07-15T12:34:52.586Z",
+        "2": "2026-07-29T14:01:26.282Z",
+        "3": "2026-07-29T14:01:49.593Z"
+      },
+      "notes": [
+        {
+          "body": "Contato feito com a Clarissa JaquesTese IA, case magalu e sla diminuídoteste em bullet points",
+          "timestamp": "2026-07-15T12:35:21.895Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62638142735",
       "name": "Fast Shop S/A ",
       "amount": 0,
-      "stageId": "1398904716"
+      "stageId": "1398904716",
+      "dEntries": {
+        "1": "2026-07-17T18:53:01.986Z",
+        "2": "2026-07-17T19:52:21.390Z"
+      },
+      "notes": [
+        {
+          "body": "FUP enviado por email",
+          "timestamp": "2026-07-29T13:52:35.086Z",
+          "author": ""
+        },
+        {
+          "body": "Mensagem enviada para Renan. Ele fala de números. Gosta de métricas, ja implementou IA em recrutamento e vem de modelo de RPO (trabalhava na page).",
+          "timestamp": "2026-07-17T18:52:52.850Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62638144378",
       "name": "Monte Carlo ",
       "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904716",
+      "dEntries": {
+        "1": "2026-07-23T13:57:32.475Z",
+        "2": "2026-07-29T14:43:33.571Z"
+      },
+      "notes": [
+        {
+          "body": "Contato novo feito",
+          "timestamp": "2026-07-29T14:43:41.512Z",
+          "author": ""
+        },
+        {
+          "body": "Contato feito com a coord de R&S. Usam gupy e tem muitas vagas de assessor de vendas.",
+          "timestamp": "2026-07-23T13:57:28.109Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639563607",
       "name": "Facta promotora",
       "amount": 0,
-      "stageId": "1398904716"
+      "stageId": "1398903677",
+      "dEntries": {
+        "1": "2026-07-14T19:28:39.795Z",
+        "2": "2026-07-16T14:07:59.725Z"
+      },
+      "notes": [
+        {
+          "body": "mensagem + FUP enviado para a Tamara",
+          "timestamp": "2026-07-14T19:28:32.322Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639558756",
       "name": "Localiza",
       "amount": 0,
-      "stageId": "1398904716"
+      "stageId": "1398904716",
+      "dEntries": {
+        "1": "2026-07-14T19:30:31.971Z",
+        "2": "2026-07-16T12:51:57.391Z"
+      },
+      "notes": [
+        {
+          "body": "Mensagem enviada para Aline pedindo o contato da par dela responsável por seminovos.",
+          "timestamp": "2026-07-14T19:30:24.616Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639569484",
       "name": "Reagendamento Renner",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-14T19:50:28.624Z"
+      },
+      "notes": []
     },
     {
       "id": "62639593280",
       "name": "DM",
       "amount": 0,
-      "stageId": "1398903677"
+      "stageId": "1398903677",
+      "dEntries": {
+        "1": "2026-07-14T22:16:56.475Z"
+      },
+      "notes": [
+        {
+          "body": "Retomei de onde paramos, pois tentamos vender RPO tradicional para eles.",
+          "timestamp": "2026-07-14T22:17:20.658Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62639591290",
       "name": "Ambev",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-14T22:28:49.249Z"
+      },
+      "notes": []
     },
     {
       "id": "62657638961",
       "name": "Lello Condomínios",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-15T14:49:25.085Z"
+      },
+      "notes": []
     },
     {
       "id": "62660909592",
       "name": "Alelo Brasil ",
       "amount": 0,
-      "stageId": "1398904715"
-    },
-    {
-      "id": "62660909629",
-      "name": "Alice ",
-      "amount": 0,
-      "stageId": "1398904714"
-    },
-    {
-      "id": "62661095294",
-      "name": "Avenue Code ",
-      "amount": 0,
-      "stageId": "1398904714"
-    },
-    {
-      "id": "62661095321",
-      "name": "Bionexo ",
-      "amount": 0,
-      "stageId": "1398904714"
-    },
-    {
-      "id": "62661095336",
-      "name": "CashMe ",
-      "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-16T13:51:33.519Z"
+      },
+      "notes": []
     },
     {
       "id": "62660971675",
       "name": "Contabilizei ",
       "amount": 0,
-      "stageId": "1398904715"
-    },
-    {
-      "id": "62660909740",
-      "name": "EXA ",
-      "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-16T13:46:40.738Z"
+      },
+      "notes": []
     },
     {
       "id": "62660972595",
       "name": "IPNET ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904716",
+      "dEntries": {
+        "1": "2026-07-16T13:38:54.538Z",
+        "2": "2026-07-27T19:41:28.110Z"
+      },
+      "notes": []
     },
     {
       "id": "62660972630",
       "name": "Pravaler ",
       "amount": 0,
-      "stageId": "1398904715"
-    },
-    {
-      "id": "62657817377",
-      "name": "Sallve ",
-      "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-16T13:31:45.809Z"
+      },
+      "notes": []
     },
     {
       "id": "62660972669",
       "name": "Ultragaz ",
       "amount": 0,
-      "stageId": "1398904716"
-    },
-    {
-      "id": "62661034511",
-      "name": "Winnin ",
-      "amount": 0,
-      "stageId": "1398904714"
+      "stageId": "1399081987",
+      "dEntries": {
+        "1": "2026-07-15T18:32:23.274Z",
+        "2": "2026-07-17T19:52:16.020Z",
+        "3": "2026-07-29T13:57:27.626Z"
+      },
+      "notes": [
+        {
+          "body": "FUP3 feito. Próximo mudar o canal.",
+          "timestamp": "2026-07-29T13:59:31.064Z",
+          "author": ""
+        },
+        {
+          "body": "3 FUP Feito",
+          "timestamp": "2026-07-29T13:57:36.956Z",
+          "author": ""
+        },
+        {
+          "body": "Contato feito falando de volume",
+          "timestamp": "2026-07-15T18:32:37.517Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62660910750",
       "name": "Zig. The Global Funtech ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1399081987",
+      "dEntries": {
+        "1": "2026-07-16T13:17:34.106Z",
+        "2": "2026-07-22T17:42:32.416Z",
+        "3": "2026-07-29T14:41:51.433Z"
+      },
+      "notes": [
+        {
+          "body": "FUP 3 feito",
+          "timestamp": "2026-07-29T14:41:59.273Z",
+          "author": ""
+        },
+        {
+          "body": "FUP Realizado ainda por email",
+          "timestamp": "2026-07-22T17:42:46.384Z",
+          "author": ""
+        },
+        {
+          "body": "Contato realizado. Clientes inhire e ex cliente intera.",
+          "timestamp": "2026-07-16T13:17:54.389Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62657817962",
       "name": "Arezzo&Co ",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-15T17:54:12.196Z"
+      },
+      "notes": [
+        {
+          "body": "Resposta automática de férias e retorna em 27/07",
+          "timestamp": "2026-07-15T17:55:36.246Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62657783213",
       "name": "Grupo Comolatti",
       "amount": 0,
-      "stageId": "1398904715"
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-16T13:59:51.685Z"
+      },
+      "notes": []
+    },
+    {
+      "id": "63083879087",
+      "name": "Natura ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-24T17:16:31.924Z"
+      },
+      "notes": [
+        {
+          "body": "Está de férias pediu pra entrar em contato em Agosto",
+          "timestamp": "2026-07-24T17:17:36.392Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63083883359",
+      "name": "Stone ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-24T17:18:50.889Z"
+      },
+      "notes": []
+    },
+    {
+      "id": "63087218827",
+      "name": "Alpargatas S.A. ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63087218851",
+      "name": "Lojas Torra ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63125454122",
+      "name": "Lojas REDE ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63087278402",
+      "name": "Lojas Besni ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63125403397",
+      "name": "Telefonica ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63087278643",
+      "name": "PepsiCo ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63087219204",
+      "name": "Grupo Fleury ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63087278663",
+      "name": "Loovi ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63125454364",
+      "name": "Consórcio Embracon ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63087097272",
+      "name": "Cia. Hering ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63125454371",
+      "name": "Burger King ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63125454377",
+      "name": "Arco Educação ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63087097361",
+      "name": "Petz ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63087278690",
+      "name": "Decolar ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63125454393",
+      "name": "Kopenhagen e Chocolates Brasil Cacau (Grupo CRM) ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63125454401",
+      "name": "Ipiranga ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63125346095",
+      "name": "Rentcars ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63087278707",
+      "name": "Hortifruti ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63125346106",
+      "name": "Mottu ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63125403690",
+      "name": "KFC Brasil ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63125346122",
+      "name": "Casas Bahia ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-29T19:09:23.931Z"
+      },
+      "notes": [
+        {
+          "body": "Tem solucao propria de IA. FUP sobre as vagas operacionais.",
+          "timestamp": "2026-07-29T19:09:20.400Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63125403705",
+      "name": "Banco Mercantil ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63125454459",
+      "name": "XP Inc. ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63087219286",
+      "name": "V4 Company ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63087341234",
+      "name": "Bluefit Academia ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63125454473",
+      "name": "Grupo Souza Lima ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63087278969",
+      "name": "Volkswagen Caminhões e Ônibus ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63087097705",
+      "name": "ALE Combustíveis ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63125285178",
+      "name": "GO EYEWEAR ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63125403985",
+      "name": "Movida Aluguel de Carros ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-29T19:00:14.037Z"
+      },
+      "notes": [
+        {
+          "body": "muito fit. Vagas rac e seminovos.",
+          "timestamp": "2026-07-29T19:00:23.612Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63087278988",
+      "name": "SulAmérica ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "notes": []
+    },
+    {
+      "id": "63087219571",
+      "name": "Tenda Atacado ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-29T18:38:21.616Z"
+      },
+      "notes": [
+        {
+          "body": "Usam pandapé, muitas vagas abertar operacionais. Atacado.",
+          "timestamp": "2026-07-29T18:38:18.065Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63087097738",
+      "name": "Moura Dubeux ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-29T18:44:52.330Z"
+      },
+      "notes": [
+        {
+          "body": "Foco nas vagas de estágio e jovem aprendiz. Volume!",
+          "timestamp": "2026-07-29T18:44:49.703Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63087278998",
+      "name": "Avenida ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-29T18:16:01.401Z"
+      },
+      "notes": [
+        {
+          "body": "Primeiro contato feito. Lead tem um dizer muito forte de gente importa. Meio contra IA.",
+          "timestamp": "2026-07-29T18:16:19.178Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63125454710",
+      "name": "Grupo Equatorial ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-29T18:27:29.906Z"
+      },
+      "notes": [
+        {
+          "body": "Primeiro contato com a Kleyse Kelly",
+          "timestamp": "2026-07-29T18:27:41.155Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63087279007",
+      "name": "Raízen ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-27T19:54:20.565Z"
+      },
+      "notes": [
+        {
+          "body": "Contato feito com Maria Beatriz, coord de talent.",
+          "timestamp": "2026-07-27T19:54:11.156Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63125454718",
+      "name": "RedeFlex Comércio e Serviço de Telefonia Ltda ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-27T19:51:04.022Z"
+      },
+      "notes": [
+        {
+          "body": "33 vagas de vendas abertas no brasil todo. fit alto! contato feito com a coord de rh.",
+          "timestamp": "2026-07-27T19:50:58.126Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63087097759",
+      "name": "Bacio di Latte ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-27T19:16:47.758Z"
+      },
+      "notes": [
+        {
+          "body": "Contato feito com a Diretora de RH. 315 VAGAS SÓ DE ATENDENTE",
+          "timestamp": "2026-07-27T19:16:45.269Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63125346457",
+      "name": "Cacau Show ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-27T19:10:27.415Z"
+      },
+      "notes": [
+        {
+          "body": "Contato feito com o HRBP. Foquei no turnover que ele avaliar.",
+          "timestamp": "2026-07-27T19:10:24.906Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63087279031",
+      "name": "Hapvida NotreDame Intermédica ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-27T19:47:17.150Z"
+      },
+      "notes": [
+        {
+          "body": "Email tambem voltou. Tentar via linkedin",
+          "timestamp": "2026-07-27T19:58:16.938Z",
+          "author": ""
+        },
+        {
+          "body": "Email da josilane voltou. contatei a fernanda, gerente sr de HR",
+          "timestamp": "2026-07-27T19:57:12.799Z",
+          "author": ""
+        },
+        {
+          "body": "Josilane prospectada. Muitas vagas operacionais, mas nao necessariamente comerciais.",
+          "timestamp": "2026-07-27T19:47:14.623Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63087219609",
+      "name": "PagBank ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-27T19:36:03.504Z"
+      },
+      "notes": [
+        {
+          "body": "Contato feito com Reiñihel, tese de IA forte. 380 vagas abetas so de executivo de vendas.",
+          "timestamp": "2026-07-27T19:36:00.870Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63125454751",
+      "name": "Porto ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-27T19:01:30.833Z"
+      },
+      "notes": [
+        {
+          "body": "Contato com carolina.rosa@portoseguro.com.br RPO Virtual e tese de IA forte132 vagas com perfil comercial na gupy",
+          "timestamp": "2026-07-27T19:01:28.058Z",
+          "author": ""
+        }
+      ]
     }
   ],
-  "hs_last_updated2": "20/07/2026, 19:41:55",
+  "hs_last_updated2": "29/07/2026, 16:09:33",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -790,7 +1877,7 @@
       "canal": "LF"
     },
     "62639563607": {
-      "canal": "NF"
+      "canal": "CG"
     },
     "62639558756": {
       "canal": "NF"
@@ -821,9 +1908,132 @@
     },
     "62660971675": {
       "canal": "NF"
+    },
+    "62639593280": {
+      "canal": "CG"
     }
   },
   "hs_deleted2": [],
-  "active_tab": "kanban",
-  "snapshot_at": "2026-07-22T13:45:44.347Z"
+  "cascata_inc_overrides": {},
+  "meta_semanal": [
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 3,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 3,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 40,
+      "metaReunioes": 5,
+      "abordagensOverride": null,
+      "contatosOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 5,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 6,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 7,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 6,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 7,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 8,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 7,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 7,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 7,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 8,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 8,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 8,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 9,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 9,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 9,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 0,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 0,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 0,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 0,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 0,
+      "abordagensOverride": null
+    }
+  ],
+  "clientes_fechados": [],
+  "active_tab": "metasemanal",
+  "snapshot_at": "2026-07-29T19:45:18.081Z"
 }
