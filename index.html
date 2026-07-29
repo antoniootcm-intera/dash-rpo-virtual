@@ -56,8 +56,10 @@
   .chip { border: 1px solid var(--border); border-radius: 10px; padding: 8px; background: #fff; text-align: center; }
   .chip input { width: 100%; text-align: center; }
   .kanban-col { background: #F7F7F7; border-radius: 12px; min-width: 240px; max-width: 260px; flex-shrink: 0; }
-  .kanban-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; margin-bottom: 8px; font-size: 12.5px; }
+  .kanban-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; margin-bottom: 8px; font-size: 12.5px; overflow-wrap: break-word; word-break: break-word; overflow: hidden; }
   .kanban-card .amt { color: var(--accent2); font-weight: 700; }
+  .kanban-card input, .kanban-card select { min-width: 0; }
+  .kanban-card select { padding: 2px 4px; }
   .badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 700; }
   .badge-cg { background: var(--accent-light); color: var(--accent2); }
   .badge-re { background: var(--teal-light); color: var(--teal); }
@@ -81,6 +83,17 @@
       onkeydown="if(event.key==='Enter') checkViewerPassword();" />
     <button class="btn-mustard w-full" onclick="checkViewerPassword()">Entrar</button>
     <p id="viewer-gate-error" class="text-center text-xs mt-3" style="color:var(--danger);display:none;">Senha incorreta.</p>
+  </div>
+</div>
+
+<!-- ══════════════════ MODAL DE OBSERVAÇÕES ══════════════════ -->
+<div id="notes-modal" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,.6);align-items:center;justify-content:center;padding:16px;" onclick="if(event.target===this) closeNotesModal();">
+  <div class="card p-6" style="max-width:480px;width:100%;max-height:80vh;display:flex;flex-direction:column;">
+    <div class="flex items-center justify-between mb-3">
+      <p id="notes-modal-title" class="font-bold text-sm" style="color:var(--black);"></p>
+      <button onclick="closeNotesModal()" class="text-lg leading-none" style="color:var(--text2);">✕</button>
+    </div>
+    <div id="notes-modal-body" class="overflow-y-auto" style="flex:1;"></div>
   </div>
 </div>
 
@@ -114,6 +127,7 @@
   <nav class="max-w-screen-2xl mx-auto px-4 flex gap-1 overflow-x-auto" style="border-top:1px solid #222;">
     <div class="tab-btn active" data-tab="metas" onclick="switchTab('metas')" style="color:#eee;">Metas Gerais</div>
     <div class="tab-btn" data-tab="cascata" onclick="switchTab('cascata')" style="color:#eee;">Cascata Semanal</div>
+    <div class="tab-btn" data-tab="metasemanal" onclick="switchTab('metasemanal')" style="color:#eee;">Meta Semanal</div>
     <div class="tab-btn" data-tab="planejamento" onclick="switchTab('planejamento')" style="color:#eee;">Planejamento Cascata</div>
     <div class="tab-btn" data-tab="reunioes" onclick="switchTab('reunioes')" style="color:#eee;">Reuniões Agendadas</div>
     <div class="tab-btn" data-tab="conversao" onclick="switchTab('conversao')" style="color:#eee;">Conversão por Canal</div>
@@ -193,6 +207,23 @@
       <canvas id="chart-mrr-q4" height="130" class="mt-4"></canvas>
     </div>
   </div>
+
+  <div class="card p-5">
+    <div class="flex items-center justify-between flex-wrap gap-2 mb-1">
+      <h3 class="text-sm font-bold" style="color:var(--black);">Clientes Fechados</h3>
+      <div class="flex items-center gap-3">
+        <span class="text-xs" style="color:var(--text2);">Total mensal: <b id="clientes-total-mensal" style="color:var(--accent2);">R$ 0,00</b></span>
+        <button class="admin-only btn-primary text-sm" onclick="addClienteRow()">+ Adicionar cliente</button>
+      </div>
+    </div>
+    <p class="text-xs mb-3" style="color:var(--text2);">Nome do cliente, valor mensal (MRR) e link do contrato.</p>
+    <div class="overflow-x-auto">
+      <table>
+        <thead><tr><th style="text-align:left;">Cliente</th><th>Valor mensal (R$)</th><th>Contrato (link)</th><th class="admin-only">Ações</th></tr></thead>
+        <tbody id="clientes-tbody"></tbody>
+      </table>
+    </div>
+  </div>
 </section>
 
 <!-- ══════════════════ TAB 2: CASCATA SEMANAL ══════════════════ -->
@@ -216,7 +247,7 @@
   <div class="card p-5 overflow-x-auto">
     <h3 class="text-sm font-bold mb-3" style="color:var(--black);">Registro de Execução Semanal</h3>
     <table>
-      <thead><tr><th>Semana</th><th>Período</th><th>Incremento planejado (R$)</th><th>MRR fechado (R$)</th></tr></thead>
+      <thead><tr><th>Semana</th><th>Período</th><th>Incremento planejado (R$)</th><th>MRR gerado (R$)</th></tr></thead>
       <tbody id="cascata-tbody"></tbody>
     </table>
   </div>
@@ -229,6 +260,65 @@
   <div class="card p-5">
     <h3 class="text-sm font-bold mb-3" style="color:var(--black);">Reuniões Realizadas por Semana</h3>
     <div id="chips-grid" class="grid gap-2" style="grid-template-columns:repeat(auto-fill,minmax(96px,1fr));"></div>
+  </div>
+</section>
+
+<!-- ══════════════════ TAB: META SEMANAL ══════════════════ -->
+<section id="tab-metasemanal" class="tab-panel space-y-6">
+
+  <div class="card p-5">
+    <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+      <p class="text-xs font-bold uppercase tracking-widest" style="color:var(--text2);">📅 Semana atual · <span id="ms-semana-atual" style="color:var(--black);">—</span></p>
+      <div class="admin-only text-right">
+        <button class="btn-ghost text-xs" onclick="carregarPipeline2()" title="Recarrega o pipeline de pré-vendas e recalcula abordagens e contatos pelas datas reais">🔄 Atualizar do HubSpot</button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="rounded-xl p-4" style="background:var(--accent-light);">
+        <p class="text-[11px] font-bold uppercase tracking-widest" style="color:var(--accent2);">Abordagens novas (D1) · na semana</p>
+        <p id="ms-week-abordagens" class="text-3xl font-bold mt-1" style="color:var(--black);">0</p>
+        <p class="text-[11px] mt-0.5" style="color:var(--text2);">meta da semana: <b id="ms-week-meta-abord">0</b> · <span id="ms-week-abord-ader" class="font-bold">0%</span></p>
+      </div>
+      <div class="rounded-xl p-4" style="background:#E8ECFB;">
+        <p class="text-[11px] font-bold uppercase tracking-widest" style="color:#3B4A9C;">Contatos (avanços no funil) · na semana</p>
+        <p id="ms-week-contatos" class="text-3xl font-bold mt-1" style="color:var(--black);">0</p>
+        <p class="text-[11px] mt-0.5" style="color:var(--text2);">soma dos avanços D1→D2→D3… nesta semana</p>
+      </div>
+      <div class="rounded-xl p-4" style="background:var(--teal-light);">
+        <p class="text-[11px] font-bold uppercase tracking-widest" style="color:var(--teal);">Reuniões realizadas · na semana</p>
+        <p id="ms-week-reunioes" class="text-3xl font-bold mt-1" style="color:var(--black);">0</p>
+        <p class="text-[11px] mt-0.5" style="color:var(--text2);">meta da semana: <b id="ms-week-meta-reun">0</b> · <span id="ms-week-reun-ader" class="font-bold">0%</span></p>
+      </div>
+    </div>
+    <div id="ms-d1-status" class="admin-only text-xs mt-3" style="color:var(--text2);">Contagem automática pelo pipeline de pré-vendas.</div>
+  </div>
+
+  <div class="card p-5 overflow-x-auto">
+    <h3 class="text-sm font-bold mb-1" style="color:var(--black);">Detalhe por Semana</h3>
+    <p class="text-xs mb-3" style="color:var(--text2);"><b>Abordagens</b> = novos cards que entraram em D1 na semana (tem meta). <b>Contatos</b> = cada avanço no funil (D1→D2, D2→D3…), inclui a 1ª abordagem — só realizado, sem meta. <b>Reuniões</b> = realizadas na semana. Automático pelo pipeline de pré-vendas e editável à mão.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Semana</th><th>Período</th>
+          <th>Meta<br>Abordagens</th><th>Abordagens<br>Realizadas</th><th>Ader.</th>
+          <th>Contatos<br>Realizados</th>
+          <th>Meta<br>Reuniões</th><th>Reuniões<br>Realizadas</th><th>Ader.</th>
+        </tr>
+      </thead>
+      <tbody id="metasemanal-tbody"></tbody>
+      <tfoot id="metasemanal-tfoot"></tfoot>
+    </table>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <div class="card p-5">
+      <h3 class="text-sm font-bold mb-3" style="color:var(--black);">Abordagens por Semana — Meta x Realizado</h3>
+      <canvas id="chart-abordagens" height="120"></canvas>
+    </div>
+    <div class="card p-5">
+      <h3 class="text-sm font-bold mb-3" style="color:var(--black);">Contatos por Semana (evolução)</h3>
+      <canvas id="chart-contatos" height="120"></canvas>
+    </div>
   </div>
 </section>
 
@@ -428,6 +518,32 @@ let hsDeals2       = loadJSON('rpov_hs_deals2', []);
 let hsLastUpdated2 = localStorage.getItem('rpov_hs_last_updated2') || '';
 let hsOverrides2   = loadJSON('rpov_hs_overrides2', {});
 let hsDeleted2     = new Set(loadJSON('rpov_hs_deleted2', []));
+// Incremento planejado editável (índice da semana → valor); sobrepõe o valor derivado do plano.
+let cascataIncOverrides = loadJSON('rpov_cascata_inc_overrides', {});
+// Meta Semanal: metas de abordagens e reuniões por semana + realizado de abordagens (override manual opcional).
+let metaSemanal = loadJSON('rpov_meta_semanal', WEEKS.map(w => ({ metaAbordagens: 0, metaReunioes: w.reunMeta || 0, abordagensOverride: null })));
+// Abordagens e contatos são contados pelas DATAS REAIS de entrada em cada etapa D (hs_date_entered_*),
+// que vêm em cada card (d.dEntries), distribuídos por semana. Sem filtro de data — conta tudo do semestre.
+localStorage.removeItem('rpov_contagem_inicio'); // limpa filtro antigo que podia zerar a contagem
+// Clientes fechados (Metas Gerais): nome, valor mensal (MRR), link do contrato.
+let clientesFechados = loadJSON('rpov_clientes_fechados', []);
+
+// ─── Datas das semanas (S1 começa 13/07/2026, uma por semana) ───
+const WEEK1_START = new Date(2026, 6, 13); // mês 6 = julho
+function weekStartDate(idx) { const d = new Date(WEEK1_START); d.setDate(d.getDate() + idx*7); return d; }
+function weekIndexForDate(dateLike) {
+  const d = new Date(dateLike);
+  if (isNaN(d)) return -1;
+  const diffDays = Math.floor((d - WEEK1_START) / (1000*60*60*24));
+  const idx = Math.floor(diffDays / 7);
+  return (idx < 0 || idx >= WEEKS.length) ? -1 : idx;
+}
+// Semana de hoje, mas sempre dentro do intervalo (antes do início → S1; depois do fim → última).
+function currentWeekIdx() {
+  const raw = weekIndexForDate(new Date().toISOString());
+  if (raw >= 0) return raw;
+  return (new Date() < WEEK1_START) ? 0 : WEEKS.length - 1;
+}
 
 // ═══════════════════════════ HELPERS ═══════════════════════════
 function fmtBRL(n) { return (Number(n)||0).toLocaleString('pt-BR', { style:'currency', currency:'BRL' }); }
@@ -454,6 +570,8 @@ function switchTab(id) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === id));
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === 'tab-' + id));
   localStorage.setItem('rpov_active_tab', id);
+  // Reflete edições de reuniões (feitas na Cascata) ao abrir a Meta Semanal.
+  if (id === 'metasemanal' && typeof renderMetaSemanal === 'function') renderMetaSemanal();
 }
 
 // ═══════════════════════════ TAB 1: METAS GERAIS ═══════════════════════════
@@ -541,6 +659,47 @@ function resetMrrAuto(key) {
   updateMetasSummary();
 }
 
+// ─── Clientes Fechados ───
+function renderClientes() {
+  const tbody = document.getElementById('clientes-tbody');
+  if (!tbody) return;
+  tbody.innerHTML = clientesFechados.map((c, i) => {
+    const linkView = c.link
+      ? `<a href="${escapeHtml(c.link)}" target="_blank" rel="noopener noreferrer" style="color:var(--accent2);text-decoration:underline;">abrir contrato ↗</a>`
+      : `<span style="color:var(--muted);">—</span>`;
+    return `<tr>
+      <td style="text-align:left;"><input type="text" class="admin-only w-48" value="${escapeHtml(c.nome||'')}" oninput="onClienteField(${i},'nome',this.value)" placeholder="Nome do cliente" /><span class="viewer-only font-semibold">${escapeHtml(c.nome||'')}</span></td>
+      <td><input type="number" step="0.01" class="admin-only w-32" value="${c.valor||''}" oninput="onClienteField(${i},'valor',this.value)" placeholder="0,00" /><span class="viewer-only">${fmtBRL(c.valor)}</span></td>
+      <td><input type="text" class="admin-only w-64" value="${escapeHtml(c.link||'')}" oninput="onClienteField(${i},'link',this.value)" placeholder="https://…" /><span class="viewer-only">${linkView}</span></td>
+      <td class="admin-only"><button class="text-red-600 text-xs font-semibold" onclick="removeClienteRow(${i})">Remover</button></td>
+    </tr>`;
+  }).join('') || `<tr><td colspan="4" style="color:var(--muted);">Nenhum cliente fechado cadastrado.</td></tr>`;
+
+  const totalMensal = clientesFechados.reduce((s,c) => s + (parseFloat(c.valor)||0), 0);
+  const el = document.getElementById('clientes-total-mensal');
+  if (el) el.textContent = fmtBRL(totalMensal);
+}
+
+function addClienteRow() {
+  clientesFechados.push({ nome:'', valor:0, link:'' });
+  saveJSON('rpov_clientes_fechados', clientesFechados);
+  renderClientes();
+}
+function removeClienteRow(i) {
+  clientesFechados.splice(i,1);
+  saveJSON('rpov_clientes_fechados', clientesFechados);
+  renderClientes();
+}
+function onClienteField(i, field, val) {
+  clientesFechados[i][field] = field === 'valor' ? (parseFloat(val)||0) : val;
+  saveJSON('rpov_clientes_fechados', clientesFechados);
+  if (field === 'valor') {
+    const totalMensal = clientesFechados.reduce((s,c) => s + (parseFloat(c.valor)||0), 0);
+    const el = document.getElementById('clientes-total-mensal');
+    if (el) el.textContent = fmtBRL(totalMensal);
+  }
+}
+
 function renderChartMrrTotal() {
   const labels = WEEKS.map(w => 'S' + w.n);
   const totalMeta = 300000;
@@ -576,16 +735,29 @@ function renderChartMrrQ(weeks, meta, canvasId, key) {
 }
 
 // ═══════════════════════════ TAB 2: CASCATA SEMANAL ═══════════════════════════
+// Incremento planejado: usa o valor editado à mão se existir, senão o valor derivado do plano.
+function getIncremento(idx) {
+  const ov = cascataIncOverrides[idx];
+  return (ov === undefined || ov === null) ? WEEKS[idx].mrrIncrement : ov;
+}
+
 function renderCascata() {
   const tbody = document.getElementById('cascata-tbody');
   tbody.innerHTML = WEEKS.map(w => {
-    const row = cascataRows[w.n-1] || { mrrFechado: 0 };
+    const idx = w.n-1;
+    const row = cascataRows[idx] || { mrrFechado: 0 };
+    const editado = cascataIncOverrides[idx] !== undefined && cascataIncOverrides[idx] !== null;
     return `<tr class="${w.qEnd ? 'q-divider' : ''}">
       <td class="font-semibold">S${w.n}</td>
       <td>${w.period}</td>
-      <td style="color:var(--text2);">${fmtBRL(w.mrrIncrement)}</td>
+      <td>
+        <input type="number" step="0.01" class="admin-only w-28" value="${editado ? cascataIncOverrides[idx] : ''}" placeholder="${WEEKS[idx].mrrIncrement}"
+          oninput="onCascataIncInput(${idx}, this.value)" title="${editado ? 'Valor editado manualmente' : 'Valor do plano — edite para sobrepor'}" />
+        <span class="viewer-only">${fmtBRL(getIncremento(idx))}</span>
+        ${editado ? `<button class="admin-only text-[10px] underline" style="color:var(--text2);" onclick="resetIncremento(${idx})" title="Voltar ao valor do plano">↺</button>` : ''}
+      </td>
       <td><input type="number" step="0.01" class="admin-only w-32" value="${row.mrrFechado || ''}"
-            oninput="onCascataInput(${w.n-1}, this.value)" /><span class="viewer-only">${fmtBRL(row.mrrFechado)}</span></td>
+            oninput="onCascataInput(${idx}, this.value)" /><span class="viewer-only">${fmtBRL(row.mrrFechado)}</span></td>
     </tr>`;
   }).join('');
 
@@ -602,6 +774,18 @@ function onCascataInput(idx, val) {
   saveJSON('rpov_cascata_rows', cascataRows);
   updateCascataSummary();
   renderMetasGerais();
+}
+
+function onCascataIncInput(idx, val) {
+  cascataIncOverrides[idx] = val === '' ? null : (parseFloat(val) || 0);
+  if (cascataIncOverrides[idx] === null) delete cascataIncOverrides[idx];
+  saveJSON('rpov_cascata_inc_overrides', cascataIncOverrides);
+}
+
+function resetIncremento(idx) {
+  delete cascataIncOverrides[idx];
+  saveJSON('rpov_cascata_inc_overrides', cascataIncOverrides);
+  renderCascata();
 }
 
 function updateCascataSummary() {
@@ -652,6 +836,224 @@ function renderChartReunioesCascata() {
     data: { labels, datasets: [
       { label: 'Meta cascateada', data: meta, backgroundColor: '#D4A01766', borderColor:'#D4A017', borderWidth:1 },
       { label: 'Realizado', data: realizado, backgroundColor: '#00B8A9AA', borderColor:'#00B8A9', borderWidth:1 },
+    ]},
+    options: { responsive:true, plugins:{ legend:{ position:'bottom' } } }
+  });
+}
+
+// ═══════════════════════════ TAB: META SEMANAL ═══════════════════════════
+// ─── Extrai o nº D de um label de estágio ("[D2] FUP" → 2, "D3" → 3, "Prospects" → null). ───
+function dNumber(label) {
+  const m = String(label || '').match(/\bD(\d+)\b/i);
+  return m ? parseInt(m[1]) : null;
+}
+function stageDNumMap() {
+  const map = {};
+  hsStages2.forEach(s => { const n = dNumber(s.label); if (n !== null) map[s.id] = n; });
+  return map;
+}
+
+// ABORDAGENS por semana = data em que cada card ENTROU em D1 (nº D = 1), pela data real do HubSpot.
+function abordagensRealizadasPorSemana() {
+  const arr = WEEKS.map(() => 0);
+  hsDeals2.forEach(d => {
+    const iso = d.dEntries && d.dEntries[1];
+    if (iso) { const idx = weekIndexForDate(iso); if (idx >= 0) arr[idx]++; }
+  });
+  return arr;
+}
+
+// CONTATOS por semana = cada entrada em qualquer etapa D (D1, D2, D3…), pela data real de entrada.
+function contatosRealizadosPorSemana() {
+  const arr = WEEKS.map(() => 0);
+  hsDeals2.forEach(d => {
+    Object.values(d.dEntries || {}).forEach(iso => {
+      if (iso) { const idx = weekIndexForDate(iso); if (idx >= 0) arr[idx]++; }
+    });
+  });
+  return arr;
+}
+
+function getContatosRealizados(idx, autoArr) {
+  const ov = metaSemanal[idx]?.contatosOverride;
+  const auto = autoArr || contatosRealizadosPorSemana();
+  return (ov === undefined || ov === null) ? (auto[idx] || 0) : ov;
+}
+
+// Valor exibido de abordagens realizadas: override manual se houver, senão o automático de D1.
+function getAbordagensRealizadas(idx, autoArr) {
+  const ov = metaSemanal[idx]?.abordagensOverride;
+  return (ov === undefined || ov === null) ? (autoArr[idx] || 0) : ov;
+}
+
+function renderMetaSemanal() {
+  const tbody = document.getElementById('metasemanal-tbody');
+  const auto = abordagensRealizadasPorSemana();
+  const autoCont = contatosRealizadosPorSemana();
+  tbody.innerHTML = WEEKS.map(w => {
+    const idx = w.n-1;
+    const ms = metaSemanal[idx] || { metaAbordagens:0, metaReunioes:w.reunMeta||0, abordagensOverride:null };
+    const abordReal = getAbordagensRealizadas(idx, auto);
+    const editado = ms.abordagensOverride !== undefined && ms.abordagensOverride !== null;
+    const contReal = getContatosRealizados(idx, autoCont);
+    const contEditado = ms.contatosOverride !== undefined && ms.contatosOverride !== null;
+    const reunReal = reunioesChips[idx]?.realizadas || 0;
+    const adherA = pct(abordReal, ms.metaAbordagens);
+    const adherR = pct(reunReal, ms.metaReunioes);
+    const cor = a => a >= 100 ? 'var(--teal)' : (a >= 60 ? 'var(--mustard)' : 'var(--danger)');
+    return `<tr class="${w.qEnd ? 'q-divider' : ''}">
+      <td class="font-semibold">S${w.n}</td>
+      <td>${w.period}</td>
+      <td><input type="number" min="0" class="admin-only w-16" value="${ms.metaAbordagens||''}" oninput="onMetaSemanalInput(${idx},'metaAbordagens',this.value)" placeholder="0" /><span class="viewer-only">${ms.metaAbordagens||0}</span></td>
+      <td>
+        <input type="number" min="0" class="admin-only w-14" value="${editado ? ms.abordagensOverride : ''}" placeholder="${auto[idx]||0}" oninput="onMetaSemanalInput(${idx},'abordagensOverride',this.value)" title="${editado ? 'Editado à mão' : 'Automático (novos cards D1) — edite para sobrepor'}" />
+        <span class="viewer-only font-bold">${abordReal}</span>
+        ${editado ? `<button class="admin-only text-[10px] underline" style="color:var(--text2);" onclick="resetAbordagens(${idx})">↺</button>` : ''}
+      </td>
+      <td id="ms-adher-a-${idx}" class="text-[11px] font-bold" style="color:${cor(adherA)};">${adherA}%</td>
+      <td>
+        <input type="number" min="0" class="admin-only w-14" value="${contEditado ? ms.contatosOverride : ''}" placeholder="${autoCont[idx]||0}" oninput="onMetaSemanalInput(${idx},'contatosOverride',this.value)" title="${contEditado ? 'Editado à mão' : 'Automático (avanços no funil D) — edite para sobrepor'}" />
+        <span class="viewer-only font-bold">${contReal}</span>
+        ${contEditado ? `<button class="admin-only text-[10px] underline" style="color:var(--text2);" onclick="resetContatos(${idx})">↺</button>` : ''}
+      </td>
+      <td><input type="number" min="0" class="admin-only w-16" value="${ms.metaReunioes||''}" oninput="onMetaSemanalInput(${idx},'metaReunioes',this.value)" placeholder="0" /><span class="viewer-only">${ms.metaReunioes||0}</span></td>
+      <td><input type="number" min="0" class="admin-only w-14" value="${reunReal || ''}" oninput="onMetaSemanalReuniaoInput(${idx},this.value)" placeholder="0" title="Reuniões realizadas na semana (sincroniza com a Cascata Semanal)" /><span class="viewer-only font-bold">${reunReal}</span></td>
+      <td id="ms-adher-r-${idx}" class="text-[11px] font-bold" style="color:${cor(adherR)};">${adherR}%</td>
+    </tr>`;
+  }).join('');
+
+  updateMetaSemanalTotals();
+
+  const temD = Object.keys(stageDNumMap()).length > 0;
+  const statusEl = document.getElementById('ms-d1-status');
+  if (statusEl) {
+    if (!hsStages2.length) statusEl.innerHTML = 'Carregue o pipeline de pré-vendas (aba Pipeline) para contar abordagens e contatos automaticamente.';
+    else if (!temD) statusEl.innerHTML = '⚠ Não encontrei etapas <b>D1/D2/D3…</b> no pipeline de pré-vendas. Use os campos à mão ou nomeie os estágios com [D1], [D2]…';
+    else {
+      const totAbord = auto.reduce((a,b)=>a+b,0);
+      const totCont = autoCont.reduce((a,b)=>a+b,0);
+      const diag = window._rpovDiag;
+      let aviso = '';
+      if (diag && diag.comData === 0 && diag.total > 0) {
+        aviso = ` <span style="color:var(--danger);">⚠ Nenhum dos ${diag.total} negócios trouxe data de etapa do HubSpot — o token precisa de permissão de leitura de negócios com histórico, ou as etapas não são D1/D2/D3.</span>`;
+      } else if (diag) {
+        aviso = ` <span style="color:var(--muted);">(${diag.comData}/${diag.total} negócios com data de etapa)</span>`;
+      }
+      statusEl.innerHTML = `Contado pelas datas reais de entrada em cada etapa D · <b>${totAbord}</b> abordagens · <b>${totCont}</b> contatos.${aviso} Recarregue o pipeline (aba Pipeline) para atualizar.`;
+    }
+  }
+}
+
+function onMetaSemanalInput(idx, field, val) {
+  metaSemanal[idx] = metaSemanal[idx] || { metaAbordagens:0, metaReunioes:0, abordagensOverride:null };
+  if (field === 'abordagensOverride' || field === 'contatosOverride') {
+    metaSemanal[idx][field] = val === '' ? null : (parseInt(val) || 0);
+  } else {
+    metaSemanal[idx][field] = parseInt(val) || 0;
+  }
+  saveJSON('rpov_meta_semanal', metaSemanal);
+  // Atualiza só os totais/aderências sem reconstruir a tabela (mantém foco no input).
+  updateMetaSemanalTotals();
+}
+
+// Reuniões realizadas editadas na Meta Semanal — grava no mesmo lugar da Cascata (fica sincronizado).
+function onMetaSemanalReuniaoInput(idx, val) {
+  reunioesChips[idx] = { realizadas: parseInt(val) || 0 };
+  saveJSON('rpov_reunioes_chips', reunioesChips);
+  updateMetaSemanalTotals();
+  if (typeof renderChartReunioesCascata === 'function') renderChartReunioesCascata();
+}
+
+function updateMetaSemanalTotals() {
+  const auto = abordagensRealizadasPorSemana();
+  const autoCont = contatosRealizadosPorSemana();
+  const cor = a => a>=100?'var(--teal)':(a>=60?'var(--mustard)':'var(--danger)');
+  WEEKS.forEach(w => {
+    const idx = w.n-1;
+    const ms = metaSemanal[idx];
+    const adherA = pct(getAbordagensRealizadas(idx, auto), ms.metaAbordagens);
+    const adherR = pct(reunioesChips[idx]?.realizadas||0, ms.metaReunioes);
+    const ea = document.getElementById('ms-adher-a-'+idx);
+    const er = document.getElementById('ms-adher-r-'+idx);
+    if (ea) { ea.textContent = adherA+'%'; ea.style.color = cor(adherA); }
+    if (er) { er.textContent = adherR+'%'; er.style.color = cor(adherR); }
+  });
+  const totMetaA = metaSemanal.reduce((s,m) => s + (m.metaAbordagens||0), 0);
+  const totRealA = WEEKS.reduce((s,w) => s + getAbordagensRealizadas(w.n-1, auto), 0);
+  const totRealC = WEEKS.reduce((s,w) => s + getContatosRealizados(w.n-1, autoCont), 0);
+  const totMetaR = metaSemanal.reduce((s,m) => s + (m.metaReunioes||0), 0);
+  const totRealR = reunioesChips.reduce((s,c) => s + (c.realizadas||0), 0);
+  const tfoot = document.getElementById('metasemanal-tfoot');
+  if (tfoot) tfoot.innerHTML = `<tr class="font-bold" style="background:#FAFAFA;">
+    <td colspan="2">TOTAL</td>
+    <td>${totMetaA}</td><td>${totRealA}</td><td>${pct(totRealA,totMetaA)}%</td>
+    <td>${totRealC}</td>
+    <td>${totMetaR}</td><td>${totRealR}</td><td>${pct(totRealR,totMetaR)}%</td>
+  </tr>`;
+
+  // Tiles do topo = SEMANA ATUAL (não o total do semestre).
+  const wk = currentWeekIdx();
+  const w = WEEKS[wk];
+  const semanaEl = document.getElementById('ms-semana-atual');
+  if (semanaEl) semanaEl.textContent = `S${w.n} · ${w.period}`;
+  const wkAbord = getAbordagensRealizadas(wk, auto);
+  const wkMetaAbord = metaSemanal[wk]?.metaAbordagens || 0;
+  const wkCont = getContatosRealizados(wk, autoCont);
+  const wkReun = reunioesChips[wk]?.realizadas || 0;
+  const wkMetaReun = metaSemanal[wk]?.metaReunioes || 0;
+  const setTxt = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
+  const setAder = (id, a) => { const e = document.getElementById(id); if (e) { e.textContent = a+'%'; e.style.color = cor(a); } };
+  setTxt('ms-week-abordagens', wkAbord);
+  setTxt('ms-week-meta-abord', wkMetaAbord);
+  setAder('ms-week-abord-ader', pct(wkAbord, wkMetaAbord));
+  setTxt('ms-week-contatos', wkCont);
+  setTxt('ms-week-reunioes', wkReun);
+  setTxt('ms-week-meta-reun', wkMetaReun);
+  setAder('ms-week-reun-ader', pct(wkReun, wkMetaReun));
+
+  renderChartAbordagens(auto);
+  renderChartContatos();
+}
+
+function resetAbordagens(idx) {
+  if (metaSemanal[idx]) metaSemanal[idx].abordagensOverride = null;
+  saveJSON('rpov_meta_semanal', metaSemanal);
+  renderMetaSemanal();
+}
+function resetContatos(idx) {
+  if (metaSemanal[idx]) metaSemanal[idx].contatosOverride = null;
+  saveJSON('rpov_meta_semanal', metaSemanal);
+  renderMetaSemanal();
+}
+
+function renderChartAbordagens(autoArr) {
+  const auto = autoArr || abordagensRealizadasPorSemana();
+  const labels = WEEKS.map(w => 'S' + w.n);
+  const meta = WEEKS.map((w,i) => metaSemanal[i]?.metaAbordagens || 0);
+  const realizado = WEEKS.map((w,i) => getAbordagensRealizadas(i, auto));
+  destroyChart('abordagens');
+  const el = document.getElementById('chart-abordagens');
+  if (!el) return;
+  CHARTS.abordagens = new Chart(el, {
+    type: 'bar',
+    data: { labels, datasets: [
+      { label: 'Meta', data: meta, backgroundColor: '#D4A01766', borderColor:'#D4A017', borderWidth:1 },
+      { label: 'Realizado', data: realizado, backgroundColor: '#9900FFAA', borderColor:'#9900FF', borderWidth:1 },
+    ]},
+    options: { responsive:true, plugins:{ legend:{ position:'bottom' } } }
+  });
+}
+
+function renderChartContatos() {
+  const labels = WEEKS.map(w => 'S' + w.n);
+  const realizado = WEEKS.map((w,i) => getContatosRealizados(i));
+  destroyChart('contatos');
+  const el = document.getElementById('chart-contatos');
+  if (!el) return;
+  CHARTS.contatos = new Chart(el, {
+    type: 'bar',
+    data: { labels, datasets: [
+      { label: 'Contatos realizados', data: realizado, backgroundColor: '#3B4A9CAA', borderColor:'#3B4A9C', borderWidth:1 },
     ]},
     options: { responsive:true, plugins:{ legend:{ position:'bottom' } } }
   });
@@ -883,6 +1285,44 @@ function onCanalMeta(canal, field, val) {
 }
 
 // ═══════════════════════════ TAB 6: PIPELINE (KANBAN) ═══════════════════════════
+function fmtNoteDate(ts) {
+  if (!ts) return '';
+  const d = new Date(ts);
+  if (isNaN(d)) return '';
+  return d.toLocaleDateString('pt-BR', { day:'2-digit', month:'2-digit' }) + ' ' + d.toLocaleTimeString('pt-BR', { hour:'2-digit', minute:'2-digit' });
+}
+
+function renderNotesBlock(notes, source, dealId) {
+  if (!notes || !notes.length) {
+    return `<p class="text-[10px] mt-1 pt-1" style="color:var(--muted);border-top:1px dashed var(--border);">Sem observações</p>`;
+  }
+  const latest = notes[0];
+  const preview = latest.body.length > 70 ? latest.body.slice(0,70) + '…' : latest.body;
+  return `<div class="mt-1 pt-1" style="border-top:1px dashed var(--border);cursor:pointer;" onclick="openNotesModal('${source}','${dealId}')" title="Ver todas as observações">
+    <div class="text-[10px] font-semibold" style="color:var(--text2);">${escapeHtml(latest.author || 'Observação')}${latest.timestamp ? ` · ${fmtNoteDate(latest.timestamp)}` : ''}</div>
+    <div class="text-[11px]">${escapeHtml(preview)}</div>
+    <div class="text-[10px] font-semibold mt-0.5" style="color:var(--accent2);">👁 ${notes.length > 1 ? 'Ver todas (' + notes.length + ')' : 'Ver observação'}</div>
+  </div>`;
+}
+
+function openNotesModal(source, dealId) {
+  const deal = (source === '2' ? mergedDeals2() : mergedDeals()).find(d => String(d.id) === String(dealId));
+  if (!deal) return;
+  const notes = deal.notes || [];
+  document.getElementById('notes-modal-title').textContent = deal.name;
+  document.getElementById('notes-modal-body').innerHTML = notes.length
+    ? notes.map(n => `<div class="mb-3 pb-3" style="border-bottom:1px solid var(--border);">
+        <div class="text-xs font-semibold" style="color:var(--text2);">${escapeHtml(n.author || 'Observação')}${n.timestamp ? ` · ${fmtNoteDate(n.timestamp)}` : ''}</div>
+        <div class="text-sm mt-1" style="white-space:pre-wrap;">${escapeHtml(n.body)}</div>
+      </div>`).join('')
+    : `<p style="color:var(--muted);">Sem observações.</p>`;
+  document.getElementById('notes-modal').style.display = 'flex';
+}
+
+function closeNotesModal() {
+  document.getElementById('notes-modal').style.display = 'none';
+}
+
 function mergedDeals() {
   return hsDeals
     .filter(d => !hsDeleted.has(String(d.id)))
@@ -915,11 +1355,12 @@ function renderKanban() {
         return `<div class="kanban-card" id="kanban-card-${d.id}">
           <div class="admin-only space-y-1 mb-1">
             <input type="text" class="w-full text-xs" value="${escapeHtml(d.name)}" oninput="onKanbanDealField('${d.id}','name',this.value,'${st.id}')" />
-            <div class="flex items-center gap-1">
-              <input type="number" step="0.01" class="w-20 text-xs" value="${d.amount||''}" oninput="onKanbanDealField('${d.id}','amount',this.value,'${st.id}')" />
+            <div class="flex items-center gap-1 flex-wrap">
+              <input type="number" step="0.01" class="w-16 text-xs" style="min-width:0;" value="${d.amount||''}" oninput="onKanbanDealField('${d.id}','amount',this.value,'${st.id}')" />
               <select id="kanban-canal-${d.id}" class="text-xs" style="${pillStyle(CANAL_COLORS, canal||'')}" onchange="onKanbanDealField('${d.id}','canal',this.value,'${st.id}')">
                 ${['','CG','RE','MKT','OUT'].map(c => `<option value="${c}" ${(d.canal||'')===c?'selected':''}>${c || 'auto'}</option>`).join('')}
               </select>
+              <span class="flex-1"></span>
               ${overridden ? `<button class="text-[10px] underline" style="color:var(--text2);" onclick="undoKanbanOverride('${d.id}')" title="Desfazer edição manual">↺</button>` : ''}
               <button class="text-[11px]" style="color:var(--danger);" onclick="removeKanbanDeal('${d.id}')" title="Remover (não afeta o HubSpot)">🗑</button>
             </div>
@@ -931,6 +1372,7 @@ function renderKanban() {
               ${canal ? `<span class="badge ${badgeClass}">${canal}</span>` : ''}
             </div>
           </div>
+          ${renderNotesBlock(d.notes, '1', d.id)}
         </div>`;
       }).join('') || `<p class="text-[11px]" style="color:var(--muted);">Sem negócios</p>`}
     </div>`;
@@ -976,7 +1418,7 @@ async function testarToken() {
   if (!token) { setStatus('Cole o token primeiro.', 'red'); return; }
   setStatus('Testando token…', 'blue');
   try {
-    const res = await fetch(hsProxy(token, 'crm/v3/objects/deals?limit=1'));
+    const res = await fetchWithTimeout(hsProxy(token, 'crm/v3/objects/deals?limit=1'));
     const json = await res.json();
     if (!res.ok) setStatus('Token inválido: ' + (json.message || res.status), 'red');
     else setStatus('✓ Token válido!', 'green');
@@ -987,39 +1429,59 @@ function hsProxy(token, path) {
   return '/hubspot-proxy/' + encodeURIComponent(token) + '/' + path;
 }
 
+async function fetchWithTimeout(url, opts, ms = 60000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), ms);
+  try {
+    return await fetch(url, { ...(opts || {}), signal: controller.signal });
+  } catch(e) {
+    if (e.name === 'AbortError') throw new Error('Tempo esgotado esperando resposta (' + Math.round(ms/1000) + 's) — tente novamente.');
+    throw e;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 async function carregarPipeline() {
   const token = document.getElementById('hs-token').value.trim() || localStorage.getItem('rpov_hs_token');
   const pipelineId = document.getElementById('hs-pipeline').value.trim() || '916013856';
   if (!token) { alert('Cole o HubSpot Access Token antes de carregar.'); return; }
-  setStatus('Carregando pipeline…', 'blue');
+  setStatus('Buscando estágios do pipeline…', 'blue');
   try {
-    const stRes = await fetch(hsProxy(token, 'crm/v3/pipelines/deals/' + pipelineId));
+    const stRes = await fetchWithTimeout(hsProxy(token, 'crm/v3/pipelines/deals/' + pipelineId));
     const stJson = await stRes.json();
     if (!stRes.ok) throw new Error(stJson.message || stRes.status);
     hsStages = (stJson.stages || []).map(s => ({ id: s.id, label: s.label, displayOrder: s.displayOrder }));
 
-    let all = [], after;
+    let all = [], after, pagina = 1;
     do {
+      setStatus('Buscando negócios (página ' + pagina + ')…', 'blue');
       const body = {
         filterGroups: [{ filters: [{ propertyName:'pipeline', operator:'EQ', value: pipelineId }] }],
         properties: ['dealname','amount','dealstage'],
         limit: 100,
         ...(after ? { after } : {})
       };
-      const res = await fetch(hsProxy(token, 'crm/v3/objects/deals/search'), {
+      const res = await fetchWithTimeout(hsProxy(token, 'crm/v3/objects/deals/search'), {
         method: 'POST', headers: { 'Content-Type':'application/json' }, body: JSON.stringify(body)
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.message || res.status);
       all = all.concat(json.results || []);
       after = json.paging?.next?.after;
+      pagina++;
     } while (after);
+
+    // Mantém observações já carregadas antes (não some enquanto recarrega em segundo plano)
+    const notesAntigas = {};
+    hsDeals.forEach(d => { if (d.notes && d.notes.length) notesAntigas[d.id] = d.notes; });
 
     hsDeals = all.map(d => ({
       id: d.id,
       name: d.properties?.dealname || '',
       amount: parseFloat(d.properties?.amount) || 0,
       stageId: d.properties?.dealstage || null,
+      notes: notesAntigas[d.id] || [],
     }));
     hsLastUpdated = new Date().toLocaleString('pt-BR');
 
@@ -1027,12 +1489,29 @@ async function carregarPipeline() {
     saveJSON('rpov_hs_deals', hsDeals);
     localStorage.setItem('rpov_hs_last_updated', hsLastUpdated);
 
+    // Renderiza o pipeline IMEDIATAMENTE — observações vêm depois, em segundo plano
     renderKanban();
     renderConversao();
-    setStatus('✓ ' + hsDeals.length + ' deals carregados', 'green');
+    setStatus('✓ ' + hsDeals.length + ' deals carregados — buscando observações…', 'green');
+
+    carregarNotasEmBackground(token, hsDeals, () => { renderKanban(); saveJSON('rpov_hs_deals', hsDeals); }, '1');
   } catch(e) {
     setStatus('Erro: ' + e.message, 'red');
     console.error(e);
+  }
+}
+
+// Busca observações sem travar a interface; atualiza os cards quando termina.
+async function carregarNotasEmBackground(token, deals, onDone, tag) {
+  try {
+    const notesByDeal = await fetchDealNotes(token, deals.map(d => d.id));
+    deals.forEach(d => { d.notes = notesByDeal[d.id] || []; });
+    onDone();
+    const total = deals.reduce((s,d) => s + (d.notes?.length || 0), 0);
+    setStatus('✓ observações carregadas (' + total + ')', 'green');
+  } catch(e) {
+    console.error('Falha ao carregar observações:', e);
+    setStatus('⚠ negócios carregados, mas observações falharam: ' + e.message + ' (token pode não ter permissão de notas)', 'orange');
   }
 }
 
@@ -1069,11 +1548,12 @@ function renderKanban2() {
         return `<div class="kanban-card" id="kanban2-card-${d.id}">
           <div class="admin-only space-y-1 mb-1">
             <input type="text" class="w-full text-xs" value="${escapeHtml(d.name)}" oninput="onKanbanDealField2('${d.id}','name',this.value,'${st.id}')" />
-            <div class="flex items-center gap-1">
-              <input type="number" step="0.01" class="w-20 text-xs" value="${d.amount||''}" oninput="onKanbanDealField2('${d.id}','amount',this.value,'${st.id}')" />
+            <div class="flex items-center gap-1 flex-wrap">
+              <input type="number" step="0.01" class="w-16 text-xs" style="min-width:0;" value="${d.amount||''}" oninput="onKanbanDealField2('${d.id}','amount',this.value,'${st.id}')" />
               <select id="kanban2-canal-${d.id}" class="text-xs" style="${pillStyle(CANAL_COLORS, canal||'')}" onchange="onKanbanDealField2('${d.id}','canal',this.value,'${st.id}')">
                 ${['','CG','RE','MKT','OUT'].map(c => `<option value="${c}" ${(d.canal||'')===c?'selected':''}>${c || 'auto'}</option>`).join('')}
               </select>
+              <span class="flex-1"></span>
               ${overridden ? `<button class="text-[10px] underline" style="color:var(--text2);" onclick="undoKanbanOverride2('${d.id}')" title="Desfazer edição manual">↺</button>` : ''}
               <button class="text-[11px]" style="color:var(--danger);" onclick="removeKanbanDeal2('${d.id}')" title="Remover (não afeta o HubSpot)">🗑</button>
             </div>
@@ -1085,6 +1565,7 @@ function renderKanban2() {
               ${canal ? `<span class="badge ${badgeClass}">${canal}</span>` : ''}
             </div>
           </div>
+          ${renderNotesBlock(d.notes, '2', d.id)}
         </div>`;
       }).join('') || `<p class="text-[11px]" style="color:var(--muted);">Sem negócios</p>`}
     </div>`;
@@ -1126,7 +1607,7 @@ async function buscarPipelines() {
   if (!token) { alert('Cole o HubSpot Access Token antes de buscar os pipelines.'); return; }
   setStatus('Buscando pipelines…', 'blue');
   try {
-    const res = await fetch(hsProxy(token, 'crm/v3/pipelines/deals'));
+    const res = await fetchWithTimeout(hsProxy(token, 'crm/v3/pipelines/deals'));
     const json = await res.json();
     if (!res.ok) throw new Error(json.message || res.status);
     const picker = document.getElementById('hs-pipeline2-picker');
@@ -1146,41 +1627,154 @@ function onPipelinePickerChange(id) {
   localStorage.setItem('rpov_hs_pipeline2', id);
 }
 
+// ─── Notas (aba "Observações" de Atividades no HubSpot) ──────────────────
+function stripHtml(html) {
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html || '';
+  return (tmp.textContent || tmp.innerText || '').trim();
+}
+
+function chunkArray(arr, size) {
+  const out = [];
+  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
+  return out;
+}
+
+async function fetchOwnersMap(token) {
+  const map = {};
+  let after;
+  try {
+    do {
+      const path = 'crm/v3/owners' + (after ? ('?after=' + after) : '');
+      const res = await fetchWithTimeout(hsProxy(token, path));
+      const json = await res.json();
+      if (!res.ok) break; // sem permissão pra ler donos — segue sem nomes de autor
+      (json.results || []).forEach(o => {
+        map[o.id] = [o.firstName, o.lastName].filter(Boolean).join(' ') || o.email || ('Dono ' + o.id);
+      });
+      after = json.paging?.next?.after;
+    } while (after);
+  } catch(_) {}
+  return map;
+}
+
+async function fetchDealNotes(token, dealIds) {
+  const notesByDeal = {};
+  if (!dealIds.length) return notesByDeal;
+
+  const dealNoteIds = {};
+  const dealGroups = chunkArray(dealIds, 100);
+  for (let i = 0; i < dealGroups.length; i++) {
+    setStatus('Buscando associações de observações (lote ' + (i+1) + '/' + dealGroups.length + ')…', 'blue');
+    const res = await fetchWithTimeout(hsProxy(token, 'crm/v4/associations/deals/notes/batch/read'), {
+      method: 'POST', headers: { 'Content-Type':'application/json' },
+      body: JSON.stringify({ inputs: dealGroups[i].map(id => ({ id: String(id) })) })
+    });
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.message || res.status);
+    (json.results || []).forEach(r => { dealNoteIds[r.from.id] = (r.to || []).map(t => t.toObjectId); });
+  }
+
+  const allNoteIds = [...new Set(Object.values(dealNoteIds).flat())];
+  if (!allNoteIds.length) return notesByDeal;
+
+  const notesById = {};
+  const noteGroups = chunkArray(allNoteIds, 100);
+  for (let i = 0; i < noteGroups.length; i++) {
+    setStatus('Buscando texto das observações (lote ' + (i+1) + '/' + noteGroups.length + ')…', 'blue');
+    const res = await fetchWithTimeout(hsProxy(token, 'crm/v3/objects/notes/batch/read'), {
+      method: 'POST', headers: { 'Content-Type':'application/json' },
+      body: JSON.stringify({ properties: ['hs_note_body','hs_timestamp','hubspot_owner_id'], inputs: noteGroups[i].map(id => ({ id })) })
+    });
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.message || res.status);
+    (json.results || []).forEach(n => { notesById[n.id] = n; });
+  }
+
+  setStatus('Buscando nomes dos responsáveis…', 'blue');
+  const owners = await fetchOwnersMap(token);
+
+  Object.entries(dealNoteIds).forEach(([dealId, noteIds]) => {
+    notesByDeal[dealId] = noteIds
+      .map(id => notesById[id])
+      .filter(Boolean)
+      .map(n => ({
+        body: stripHtml(n.properties.hs_note_body),
+        timestamp: n.properties.hs_timestamp,
+        author: owners[n.properties.hubspot_owner_id] || '',
+      }))
+      .sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp));
+  });
+  return notesByDeal;
+}
+
 async function carregarPipeline2() {
   const token = document.getElementById('hs-token').value.trim() || localStorage.getItem('rpov_hs_token');
   const pipelineId = document.getElementById('hs-pipeline2').value.trim();
   if (!token) { alert('Cole o HubSpot Access Token antes de carregar.'); return; }
   if (!pipelineId) { alert('Cole o Pipeline ID de Pré-vendas RPO Virtual antes de carregar.'); return; }
-  setStatus('Carregando pipeline de pré-vendas…', 'blue');
+  setStatus('Buscando estágios do pipeline de pré-vendas…', 'blue');
   try {
-    const stRes = await fetch(hsProxy(token, 'crm/v3/pipelines/deals/' + pipelineId));
+    const stRes = await fetchWithTimeout(hsProxy(token, 'crm/v3/pipelines/deals/' + pipelineId));
     const stJson = await stRes.json();
     if (!stRes.ok) throw new Error(stJson.message || stRes.status);
     hsStages2 = (stJson.stages || []).map(s => ({ id: s.id, label: s.label, displayOrder: s.displayOrder }));
 
-    let all = [], after;
+    // Etapas D (D1, D2, D3…) → pedimos ao HubSpot a data em que cada card ENTROU em cada etapa.
+    // O HubSpot tem duas versões dessa propriedade: hs_date_entered_<id> (antiga) e hs_v2_date_entered_<id> (nova).
+    // Pedimos as duas + createdate como fallback, pra funcionar em qualquer conta.
+    const dStages = hsStages2.map(s => ({ id: s.id, num: dNumber(s.label) })).filter(s => s.num !== null);
+    const enteredProps = [];
+    dStages.forEach(s => { enteredProps.push('hs_date_entered_' + s.id); enteredProps.push('hs_v2_date_entered_' + s.id); });
+
+    let all = [], after, pagina = 1;
     do {
+      setStatus('Buscando negócios de pré-vendas (página ' + pagina + ')…', 'blue');
       const body = {
         filterGroups: [{ filters: [{ propertyName:'pipeline', operator:'EQ', value: pipelineId }] }],
-        properties: ['dealname','amount','dealstage'],
+        properties: ['dealname','amount','dealstage','createdate', ...enteredProps],
         limit: 100,
         ...(after ? { after } : {})
       };
-      const res = await fetch(hsProxy(token, 'crm/v3/objects/deals/search'), {
+      const res = await fetchWithTimeout(hsProxy(token, 'crm/v3/objects/deals/search'), {
         method: 'POST', headers: { 'Content-Type':'application/json' }, body: JSON.stringify(body)
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.message || res.status);
       all = all.concat(json.results || []);
       after = json.paging?.next?.after;
+      pagina++;
     } while (after);
 
-    hsDeals2 = all.map(d => ({
-      id: d.id,
-      name: d.properties?.dealname || '',
-      amount: parseFloat(d.properties?.amount) || 0,
-      stageId: d.properties?.dealstage || null,
-    }));
+    const notesAntigas2 = {};
+    hsDeals2.forEach(d => { if (d.notes && d.notes.length) notesAntigas2[d.id] = d.notes; });
+
+    let comData = 0;
+    hsDeals2 = all.map(d => {
+      const props = d.properties || {};
+      // dEntries = { nºD: dataISO } de quando o card entrou em cada etapa D (usa a versão que existir).
+      const dEntries = {};
+      dStages.forEach(s => {
+        const v = props['hs_date_entered_' + s.id] || props['hs_v2_date_entered_' + s.id];
+        if (v) dEntries[s.num] = v;
+      });
+      // Fallback: card que está numa etapa D mas sem data de entrada em D1 → usa a data de criação como D1
+      // (garante pelo menos a abordagem). Só quando o card já está no funil D.
+      const curNum = dStages.find(s => s.id === props.dealstage)?.num;
+      if (curNum !== undefined && dEntries[1] === undefined && props.createdate) {
+        dEntries[1] = props.createdate;
+      }
+      if (Object.keys(dEntries).length) comData++;
+      return {
+        id: d.id,
+        name: props.dealname || '',
+        amount: parseFloat(props.amount) || 0,
+        stageId: props.dealstage || null,
+        dEntries,
+        notes: notesAntigas2[d.id] || [],
+      };
+    });
+    window._rpovDiag = { total: hsDeals2.length, comData, dStages: dStages.map(s => s.num) };
     hsLastUpdated2 = new Date().toLocaleString('pt-BR');
 
     saveJSON('rpov_hs_stages2', hsStages2);
@@ -1188,7 +1782,10 @@ async function carregarPipeline2() {
     localStorage.setItem('rpov_hs_last_updated2', hsLastUpdated2);
 
     renderKanban2();
-    setStatus('✓ ' + hsDeals2.length + ' deals de pré-vendas carregados', 'green');
+    renderMetaSemanal();  // abordagens e contatos são recalculados das datas reais (d.dEntries)
+    setStatus('✓ ' + hsDeals2.length + ' deals de pré-vendas carregados — buscando observações…', 'green');
+
+    carregarNotasEmBackground(token, hsDeals2, () => { renderKanban2(); saveJSON('rpov_hs_deals2', hsDeals2); }, '2');
   } catch(e) {
     setStatus('Erro: ' + e.message, 'red');
     console.error(e);
@@ -1245,6 +1842,9 @@ async function publicarSnapshot() {
       hs_last_updated2: hsLastUpdated2,
       hs_overrides2: hsOverrides2,
       hs_deleted2: [...hsDeleted2],
+      cascata_inc_overrides: cascataIncOverrides,
+      meta_semanal: metaSemanal,
+      clientes_fechados: clientesFechados,
       active_tab: localStorage.getItem('rpov_active_tab') || 'metas',
       snapshot_at: new Date().toISOString(),
     };
@@ -1277,7 +1877,9 @@ async function publicarSnapshot() {
 // ═══════════════════════════ INIT ═══════════════════════════
 function renderAll() {
   renderMetasGerais();
+  renderClientes();
   renderCascata();
+  renderMetaSemanal();
   renderPlanejamento();
   renderReunioesLog();
   renderConversao();
@@ -1308,6 +1910,9 @@ window.addEventListener('DOMContentLoaded', () => {
         if (d.hs_last_updated2) hsLastUpdated2 = d.hs_last_updated2;
         if (d.hs_overrides2) hsOverrides2 = d.hs_overrides2;
         if (Array.isArray(d.hs_deleted2)) hsDeleted2 = new Set(d.hs_deleted2);
+        if (d.cascata_inc_overrides) cascataIncOverrides = d.cascata_inc_overrides;
+        if (Array.isArray(d.meta_semanal)) metaSemanal = d.meta_semanal;
+        if (Array.isArray(d.clientes_fechados)) clientesFechados = d.clientes_fechados;
         renderAll();
         switchTab(d.active_tab || 'metas');
       })
