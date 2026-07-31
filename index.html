@@ -320,6 +320,27 @@
       <canvas id="chart-contatos" height="120"></canvas>
     </div>
   </div>
+
+  <div class="card p-5 overflow-x-auto">
+    <div class="flex items-center justify-between flex-wrap gap-2 mb-1">
+      <h3 class="text-sm font-bold" style="color:var(--black);">Conversão: Abordados → Agendados</h3>
+      <span class="text-xs" style="color:var(--text2);">Total: <b id="conv-total" style="color:var(--accent2);">0 / 0 · 0%</b></span>
+    </div>
+    <p class="text-xs mb-3" style="color:var(--text2);">Dos cards <b>abordados</b> na semana (entraram em D1), quantos chegaram na fase <b>Agendado</b> do pipeline de pré-vendas. Automático pelas datas reais, editável à mão.</p>
+    <div id="conv-status" class="admin-only text-xs mb-3" style="color:var(--text2);"></div>
+    <table>
+      <thead>
+        <tr><th>Semana</th><th>Período</th><th>Abordados</th><th>Agendados</th><th>Conversão</th></tr>
+      </thead>
+      <tbody id="conversao-tbody"></tbody>
+      <tfoot id="conversao-tfoot"></tfoot>
+    </table>
+  </div>
+
+  <div class="card p-5">
+    <h3 class="text-sm font-bold mb-3" style="color:var(--black);">Conversão Abordados → Agendados por Semana</h3>
+    <canvas id="chart-conversao" height="110"></canvas>
+  </div>
 </section>
 
 <!-- ══════════════════ TAB 3: PLANEJAMENTO CASCATA ══════════════════ -->
@@ -886,6 +907,24 @@ function getAbordagensRealizadas(idx, autoArr) {
   return (ov === undefined || ov === null) ? (autoArr[idx] || 0) : ov;
 }
 
+// AGENDADOS por semana (coorte) = cards que foram ABORDADOS (entraram em D1) naquela semana E
+// que em algum momento chegaram na fase "Agendado". Ou seja: quantos dos abordados da semana agendaram.
+function agendadosDaCoortePorSemana() {
+  const arr = WEEKS.map(() => 0);
+  hsDeals2.forEach(d => {
+    const abordIso = d.dEntries && d.dEntries[1];
+    if (!abordIso || !d.agendadoDate) return;
+    const idx = weekIndexForDate(abordIso);
+    if (idx >= 0) arr[idx]++;
+  });
+  return arr;
+}
+function getAgendadosRealizados(idx, autoArr) {
+  const ov = metaSemanal[idx]?.agendadosOverride;
+  const auto = autoArr || agendadosDaCoortePorSemana();
+  return (ov === undefined || ov === null) ? (auto[idx] || 0) : ov;
+}
+
 function renderMetaSemanal() {
   const tbody = document.getElementById('metasemanal-tbody');
   const auto = abordagensRealizadasPorSemana();
@@ -942,11 +981,13 @@ function renderMetaSemanal() {
       statusEl.innerHTML = `Contado pelas datas reais de entrada em cada etapa D · <b>${totAbord}</b> abordagens · <b>${totCont}</b> contatos.${aviso} Recarregue o pipeline (aba Pipeline) para atualizar.`;
     }
   }
+
+  renderConversaoAgendados();
 }
 
 function onMetaSemanalInput(idx, field, val) {
   metaSemanal[idx] = metaSemanal[idx] || { metaAbordagens:0, metaReunioes:0, abordagensOverride:null };
-  if (field === 'abordagensOverride' || field === 'contatosOverride') {
+  if (field === 'abordagensOverride' || field === 'contatosOverride' || field === 'agendadosOverride') {
     metaSemanal[idx][field] = val === '' ? null : (parseInt(val) || 0);
   } else {
     metaSemanal[idx][field] = parseInt(val) || 0;
@@ -954,6 +995,7 @@ function onMetaSemanalInput(idx, field, val) {
   saveJSON('rpov_meta_semanal', metaSemanal);
   // Atualiza só os totais/aderências sem reconstruir a tabela (mantém foco no input).
   updateMetaSemanalTotals();
+  updateConversaoLive();
 }
 
 // Reuniões realizadas editadas na Meta Semanal — grava no mesmo lugar da Cascata (fica sincronizado).
@@ -1056,6 +1098,89 @@ function renderChartContatos() {
       { label: 'Contatos realizados', data: realizado, backgroundColor: '#3B4A9CAA', borderColor:'#3B4A9C', borderWidth:1 },
     ]},
     options: { responsive:true, plugins:{ legend:{ position:'bottom' } } }
+  });
+}
+
+// ─── Conversão Abordados → Agendados ───
+const _corConv = a => a >= 100 ? 'var(--teal)' : (a >= 50 ? 'var(--mustard)' : 'var(--danger)');
+
+function renderConversaoAgendados() {
+  const tbody = document.getElementById('conversao-tbody');
+  if (!tbody) return;
+  const autoAg = agendadosDaCoortePorSemana();
+  tbody.innerHTML = WEEKS.map(w => {
+    const idx = w.n-1;
+    const agEdit = metaSemanal[idx]?.agendadosOverride !== undefined && metaSemanal[idx]?.agendadosOverride !== null;
+    return `<tr class="${w.qEnd ? 'q-divider' : ''}">
+      <td class="font-semibold">S${w.n}</td>
+      <td>${w.period}</td>
+      <td id="conv-abord-${idx}"></td>
+      <td>
+        <input type="number" min="0" class="admin-only w-14" value="${agEdit ? metaSemanal[idx].agendadosOverride : ''}" placeholder="${autoAg[idx]||0}" oninput="onMetaSemanalInput(${idx},'agendadosOverride',this.value)" title="${agEdit ? 'Editado à mão' : 'Automático (chegaram na fase Agendado) — edite para sobrepor'}" />
+        <span class="viewer-only font-bold" id="conv-ag-view-${idx}"></span>
+        ${agEdit ? `<button class="admin-only text-[10px] underline" style="color:var(--text2);" onclick="resetAgendados(${idx})">↺</button>` : ''}
+      </td>
+      <td id="conv-pct-${idx}" class="text-[11px] font-bold"></td>
+    </tr>`;
+  }).join('');
+
+  const diag = window._rpovDiag;
+  const cs = document.getElementById('conv-status');
+  if (cs) {
+    if (!hsStages2.length) cs.innerHTML = 'Carregue o pipeline de pré-vendas para calcular a conversão.';
+    else if (diag && diag.temAgendado === false) cs.innerHTML = '⚠ Não encontrei uma fase com "Agendado" no pipeline de pré-vendas. Use a coluna Agendados à mão, ou renomeie o estágio para conter "Agendado".';
+    else cs.innerHTML = '';
+  }
+
+  updateConversaoLive();
+}
+
+// Atualiza só os números da conversão (sem reconstruir os inputs — mantém o foco).
+function updateConversaoLive() {
+  if (!document.getElementById('conversao-tbody')) return;
+  const autoAbord = abordagensRealizadasPorSemana();
+  const autoAg = agendadosDaCoortePorSemana();
+  WEEKS.forEach(w => {
+    const idx = w.n-1;
+    const abord = getAbordagensRealizadas(idx, autoAbord);
+    const ag = getAgendadosRealizados(idx, autoAg);
+    const conv = pct(ag, abord);
+    const ea = document.getElementById('conv-abord-'+idx);
+    const ep = document.getElementById('conv-pct-'+idx);
+    const ev = document.getElementById('conv-ag-view-'+idx);
+    if (ea) ea.textContent = abord;
+    if (ev) ev.textContent = ag;
+    if (ep) { ep.textContent = conv+'%'; ep.style.color = _corConv(conv); }
+  });
+  const totAbord = WEEKS.reduce((s,w) => s + getAbordagensRealizadas(w.n-1, autoAbord), 0);
+  const totAg = WEEKS.reduce((s,w) => s + getAgendadosRealizados(w.n-1, autoAg), 0);
+  const tfoot = document.getElementById('conversao-tfoot');
+  if (tfoot) tfoot.innerHTML = `<tr class="font-bold" style="background:#FAFAFA;">
+    <td colspan="2">TOTAL</td><td>${totAbord}</td><td>${totAg}</td><td>${pct(totAg,totAbord)}%</td>
+  </tr>`;
+  const ct = document.getElementById('conv-total');
+  if (ct) ct.textContent = `${totAg} / ${totAbord} · ${pct(totAg,totAbord)}%`;
+  renderChartConversao(autoAbord, autoAg);
+}
+
+function resetAgendados(idx) {
+  if (metaSemanal[idx]) metaSemanal[idx].agendadosOverride = null;
+  saveJSON('rpov_meta_semanal', metaSemanal);
+  renderMetaSemanal();
+}
+
+function renderChartConversao(autoAbord, autoAg) {
+  const labels = WEEKS.map(w => 'S' + w.n);
+  const conv = WEEKS.map((w,i) => pct(getAgendadosRealizados(i, autoAg), getAbordagensRealizadas(i, autoAbord)));
+  destroyChart('conversao');
+  const el = document.getElementById('chart-conversao');
+  if (!el) return;
+  CHARTS.conversao = new Chart(el, {
+    type: 'line',
+    data: { labels, datasets: [
+      { label: 'Conversão Abordados → Agendados (%)', data: conv, borderColor:'#00B8A9', backgroundColor:'#00B8A922', fill:true, tension:.25, pointRadius:2 },
+    ]},
+    options: { responsive:true, plugins:{ legend:{ position:'bottom' } }, scales:{ y:{ ticks:{ callback: v => v + '%' } } } }
   });
 }
 
@@ -1720,12 +1845,13 @@ async function carregarPipeline2() {
     if (!stRes.ok) throw new Error(stJson.message || stRes.status);
     hsStages2 = (stJson.stages || []).map(s => ({ id: s.id, label: s.label, displayOrder: s.displayOrder }));
 
-    // Etapas D (D1, D2, D3…) → pedimos ao HubSpot a data em que cada card ENTROU em cada etapa.
-    // O HubSpot tem duas versões dessa propriedade: hs_date_entered_<id> (antiga) e hs_v2_date_entered_<id> (nova).
-    // Pedimos as duas + createdate como fallback, pra funcionar em qualquer conta.
+    // Pedimos ao HubSpot a data em que cada card ENTROU em CADA etapa (todas), para contar
+    // abordagens/contatos (etapas D) e agendados (etapa "Agendado") pela data real.
+    // O HubSpot tem duas versões da propriedade: hs_date_entered_<id> (antiga) e hs_v2_date_entered_<id> (nova).
     const dStages = hsStages2.map(s => ({ id: s.id, num: dNumber(s.label) })).filter(s => s.num !== null);
+    const agStage = hsStages2.find(s => /agendad/i.test(s.label || ''));
     const enteredProps = [];
-    dStages.forEach(s => { enteredProps.push('hs_date_entered_' + s.id); enteredProps.push('hs_v2_date_entered_' + s.id); });
+    hsStages2.forEach(s => { enteredProps.push('hs_date_entered_' + s.id); enteredProps.push('hs_v2_date_entered_' + s.id); });
 
     let all = [], after, pagina = 1;
     do {
@@ -1765,16 +1891,19 @@ async function carregarPipeline2() {
         dEntries[1] = props.createdate;
       }
       if (Object.keys(dEntries).length) comData++;
+      // agendadoDate = data em que o card entrou na etapa "Agendado" (se existir).
+      const agendadoDate = agStage ? (props['hs_date_entered_' + agStage.id] || props['hs_v2_date_entered_' + agStage.id] || null) : null;
       return {
         id: d.id,
         name: props.dealname || '',
         amount: parseFloat(props.amount) || 0,
         stageId: props.dealstage || null,
         dEntries,
+        agendadoDate,
         notes: notesAntigas2[d.id] || [],
       };
     });
-    window._rpovDiag = { total: hsDeals2.length, comData, dStages: dStages.map(s => s.num) };
+    window._rpovDiag = { total: hsDeals2.length, comData, dStages: dStages.map(s => s.num), temAgendado: !!agStage };
     hsLastUpdated2 = new Date().toLocaleString('pt-BR');
 
     saveJSON('rpov_hs_stages2', hsStages2);
