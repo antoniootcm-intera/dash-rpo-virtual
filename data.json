@@ -1,14 +1,14 @@
 {
-  "contratos_realizado": 0,
+  "contratos_realizado": 41000,
   "cascata_rows": [
     {
       "mrrFechado": 0
     },
     {
-      "mrrFechado": 0
+      "mrrFechado": 10000
     },
     {
-      "mrrFechado": 0
+      "mrrFechado": 31000
     },
     {
       "mrrFechado": 0
@@ -73,7 +73,7 @@
   ],
   "reunioes_chips": [
     {
-      "realizadas": 3
+      "realizadas": 4
     },
     {
       "realizadas": 2
@@ -433,7 +433,7 @@
       "id": "63083883404",
       "name": "Bradesco | Thais |  MKT",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554093",
       "notes": []
     },
     {
@@ -458,15 +458,15 @@
       "notes": []
     }
   ],
-  "hs_last_updated": "31/07/2026, 13:49:09",
+  "hs_last_updated": "31/07/2026, 14:27:25",
   "mrr_overrides": {
     "total": {
-      "value": 0,
-      "locked": false
+      "value": 41000,
+      "locked": true
     },
     "q3": {
-      "value": 0,
-      "locked": false
+      "value": 41000,
+      "locked": true
     },
     "q4": {
       "value": 0,
@@ -515,6 +515,9 @@
     },
     "63189313125": {
       "canal": "CG"
+    },
+    "63083878957": {
+      "canal": "OUT"
     }
   },
   "hs_deleted": [],
@@ -2115,7 +2118,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "31/07/2026, 13:46:26",
+  "hs_last_updated2": "31/07/2026, 14:27:39",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -2204,7 +2207,7 @@
       "contatosOverride": null
     },
     {
-      "metaAbordagens": 0,
+      "metaAbordagens": 55,
       "metaReunioes": 5,
       "abordagensOverride": null
     },
@@ -2304,7 +2307,28 @@
       "abordagensOverride": null
     }
   ],
-  "clientes_fechados": [],
-  "active_tab": "metasemanal",
-  "snapshot_at": "2026-07-31T17:06:03.388Z"
+  "clientes_fechados": [
+    {
+      "nome": "Cielo",
+      "valor": 10000,
+      "link": ""
+    },
+    {
+      "nome": "Facta",
+      "valor": 10000,
+      "link": ""
+    },
+    {
+      "nome": "DM",
+      "valor": 5000,
+      "link": ""
+    },
+    {
+      "nome": "Renner",
+      "valor": 16000,
+      "link": ""
+    }
+  ],
+  "active_tab": "metas",
+  "snapshot_at": "2026-07-31T17:36:54.866Z"
 }
