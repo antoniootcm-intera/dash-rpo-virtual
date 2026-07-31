@@ -79,7 +79,7 @@
       "realizadas": 2
     },
     {
-      "realizadas": 0
+      "realizadas": 3
     },
     {
       "realizadas": 0
@@ -287,16 +287,16 @@
   "hs_deals": [
     {
       "id": "62616673874",
-      "name": "Renner | Guilherme | CG",
+      "name": "Renner | Fernanda Jacob | CG",
       "amount": 0,
-      "stageId": "1397554093",
+      "stageId": "1397554096",
       "notes": []
     },
     {
       "id": "62616675984",
       "name": "Pernambucanas | Cristiane | OUT",
       "amount": 0,
-      "stageId": "1397554095",
+      "stageId": "1397554096",
       "notes": [
         {
           "body": "FUP feito buscando agendar a demo prática.",
@@ -319,7 +319,7 @@
       "id": "62619521145",
       "name": "Riachuelo | Johnny | CG",
       "amount": 0,
-      "stageId": "1397554091",
+      "stageId": "1397554092",
       "notes": [
         {
           "body": "FUP para reagendar a call que foi no show.",
@@ -359,7 +359,7 @@
       "id": "62852981907",
       "name": "Facta | Priscila | CG",
       "amount": 0,
-      "stageId": "1397554096",
+      "stageId": "1397554097",
       "notes": [
         {
           "body": "FUP feito para entender se discutiram internamente.",
@@ -415,8 +415,19 @@
       "id": "63083878957",
       "name": "Centauro | Jaqueline | OUT",
       "amount": 0,
-      "stageId": "1397554092",
-      "notes": []
+      "stageId": "1397554093",
+      "notes": [
+        {
+          "body": "Tentar contato com a pessoa correta.",
+          "timestamp": "2026-07-31T16:49:02.860Z",
+          "author": ""
+        },
+        {
+          "body": "INTERA <> Centaurohttps://tldv.io/app/meetings/6a6b911a15dfaa0013dd9e981. Itens de AçãoJaqueline to identify and share contact information for group recruitment decision-maker via email 40:05Jaqueline to test Íris virtual interviewer by accessing shared link when available 38:232. Contexto da Centauro e Estrutura de RHCentauro fará 18 anos no grupo e opera com estrutura centralizada de recrutamento para Brasil 07:56Jaqueline atua como especialista em projetos envolvendo RH e operações, enquanto Júlia cuida de treinamento corporativo 08:31Time de operações possui entre 10 a 12 analistas distribuídos em polos de atendimento pelo Brasil 16:22Vagas focam em posições de base: vendedor, assistente de loja e algumas lideranças 17:003. Desafios e Objetivos de RecrutamentoCentauro enfrenta desafios de atratividade em interior de São Paulo e regiões litorâneas 22:33Objetivo principal é contratar com qualidade e reter talento, não apenas fechar vagas 18:21Busca reduzir demanda de analistas em triagem para que dediquem mais tempo a entrevistas 19:35Qualidade é prioridade maior que velocidade nas ações de recrutamento 20:194. Expansão e Planejamento para NatalCentauro planeja aumentar time de analistas de 10-12 para aproximadamente 20 pessoas para Natal 21:21Demanda projetada para Natal é superior a mil vagas 21:00Novos analistas serão terceirizados e distribuídos remotamente por regiões específicas 21:47Consultoria temporária já opera o ano inteiro com possibilidade de ajuste de perfil 22:125. Ferramentas e Tecnologias AtuaisCentauro utiliza Recruta como ATS pilotado em grupo específico de lojas 14:08Recruta oferece serviço completo: atração, entrevista e entrega de candidatos para avaliação final 15:21WhatsApp é canal principal de comunicação com candidatos em todas as etapas do processo 24:32Centauro possui número dedicado integrado com plataforma para envio de mensagens massivas 24:546. Proposta Intera e Modelo de ArpoamentoIntera oferece serviço de recrutador alocado (arpoamento) com suporte de inteligência artificial 37:08Modelo combina operador humano com agentes virtuais para condução de vagas de varejo 37:08Arpoamento virtual reduz custos comparado ao modelo tradicional e gerencia até 15 posições simultâneas 37:22Entrevista virtual Íris realiza avaliação interativa com scoring preciso de competências 36:197. Casos de Sucesso e ResultadosIntera reduziu SLA de 20-25 dias para 8-12 dias em casos como Magalu e Apple 33:47Plataforma opera 24/7 com capacidade de diminuir absolutamente SLA em operações 33:338. Próximos Passos e ConsideraçõesJaqueline considera proposta similar ao que já opera e levará para gerente como stand by 38:53Centauro tem desenho fechado para projeto atual e reluta em mudanças por questões orçamentárias 39:36Possibilidade de testar solução Intera em vagas do grupo com volume menor 39:57Notas manuaisNenhuma nota manual",
+          "timestamp": "2026-07-31T16:48:50.877Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63083883404",
@@ -436,11 +447,18 @@
       "id": "63189313125",
       "name": "Stone | Bruna",
       "amount": 0,
+      "stageId": "1397554094",
+      "notes": []
+    },
+    {
+      "id": "63327423351",
+      "name": "KFC Brasil | Elizabete | OUT",
+      "amount": 0,
       "stageId": "1397554092",
       "notes": []
     }
   ],
-  "hs_last_updated": "28/07/2026, 11:57:56",
+  "hs_last_updated": "31/07/2026, 13:49:09",
   "mrr_overrides": {
     "total": {
       "value": 0,
@@ -568,6 +586,7 @@
         "2": "2026-07-16T13:09:59.249Z",
         "3": "2026-07-22T17:46:40.459Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "FUP com a outra pessoa",
@@ -594,6 +613,7 @@
       "dEntries": {
         "1": "2026-07-14T18:50:53.687Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "FUP realizado com a miria, nao Sheila, que está de licença.",
@@ -617,6 +637,7 @@
         "2": "2026-07-29T14:40:12.112Z",
         "3": "2026-07-29T14:41:22.381Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Fup 3",
@@ -644,6 +665,7 @@
         "1": "2026-07-23T14:14:04.857Z",
         "2": "2026-07-23T14:14:34.144Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Fup feito batendo na tecla de 24/7",
@@ -658,6 +680,7 @@
       "amount": 0,
       "stageId": "1398904714",
       "dEntries": {},
+      "agendadoDate": null,
       "notes": []
     },
     {
@@ -668,6 +691,7 @@
       "dEntries": {
         "1": "2026-07-27T14:16:21.031Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Email enviado para a Julia prado. Ela segue a pagina da INTERA no linkedin e sao ex clientes.",
@@ -684,6 +708,7 @@
       "dEntries": {
         "1": "2026-07-23T14:20:07.064Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Batendo na tecla de abertura de loja.",
@@ -700,6 +725,7 @@
       "dEntries": {
         "1": "2026-07-20T13:15:19.142Z"
       },
+      "agendadoDate": null,
       "notes": []
     },
     {
@@ -711,6 +737,7 @@
         "1": "2026-07-20T13:15:34.468Z",
         "2": "2026-07-22T17:48:42.859Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Prospectei a Ana agora, já que jeremias saiu da empresa, imagino.",
@@ -733,6 +760,7 @@
         "1": "2026-07-20T13:20:14.589Z",
         "2": "2026-07-29T14:10:13.309Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "FUP2 feito",
@@ -754,6 +782,7 @@
       "dEntries": {
         "1": "2026-07-23T14:28:55.487Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Ela já usa IA no recrutamento. Mensagem sobre se é copiloto ou agente.",
@@ -771,6 +800,7 @@
         "1": "2026-07-20T13:25:50.584Z",
         "2": "2026-07-29T14:13:41.766Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "FUP2 feito",
@@ -794,6 +824,7 @@
         "2": "2026-07-17T19:52:32.194Z",
         "3": "2026-07-29T14:04:29.390Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Contato feito pelo wpp.",
@@ -815,6 +846,7 @@
       "dEntries": {
         "1": "2026-07-20T13:35:26.893Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "FUP2 FEITO",
@@ -838,6 +870,7 @@
         "2": "2026-07-17T19:52:29.357Z",
         "3": "2026-07-29T14:05:34.661Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Terceiro FUP.",
@@ -860,6 +893,7 @@
         "1": "2026-07-14T19:11:49.474Z",
         "2": "2026-07-16T13:11:12.533Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "FUP enviado",
@@ -881,6 +915,7 @@
       "dEntries": {
         "1": "2026-07-23T14:13:20.893Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "FUP2 feito",
@@ -904,6 +939,7 @@
         "2": "2026-07-17T19:52:26.843Z",
         "3": "2026-07-29T13:55:16.167Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Prospectei a Larissa Vieira, nova lider de talent/",
@@ -920,6 +956,7 @@
       "dEntries": {
         "1": "2026-07-27T14:06:35.439Z"
       },
+      "agendadoDate": null,
       "notes": []
     },
     {
@@ -931,6 +968,7 @@
         "1": "2026-07-20T13:43:34.792Z",
         "2": "2026-07-29T14:09:21.601Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "FUP2 feito",
@@ -948,11 +986,12 @@
       "id": "62639560757",
       "name": "CENTAURO ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398903677",
       "dEntries": {
         "1": "2026-07-23T14:36:56.152Z",
         "2": "2026-07-23T14:36:53.804Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Contato sobre as mais de 320 vagas. Usam gupy. Ex cliente.",
@@ -969,6 +1008,7 @@
       "dEntries": {
         "1": "2026-07-20T13:48:39.615Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "FUp2 feito",
@@ -991,6 +1031,7 @@
         "1": "2026-07-20T13:52:50.241Z",
         "2": "2026-07-29T14:11:30.017Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "fup2 feito",
@@ -1017,6 +1058,7 @@
       "dEntries": {
         "1": "2026-07-14T19:33:53.466Z"
       },
+      "agendadoDate": null,
       "notes": []
     },
     {
@@ -1029,6 +1071,7 @@
         "2": "2026-07-17T19:52:24.494Z",
         "3": "2026-07-29T13:59:21.539Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Contato feito para a Flávia e Tamaly de uma vez. Teste",
@@ -1045,6 +1088,7 @@
       "dEntries": {
         "1": "2026-07-23T13:49:07.806Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Primeiro contato feito. 350 vagas comericias. Muito fit.",
@@ -1062,6 +1106,7 @@
         "1": "2026-07-23T14:03:36.434Z",
         "2": "2026-07-29T14:49:58.584Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "FUP novo feito.",
@@ -1084,6 +1129,7 @@
         "1": "2026-07-17T20:14:33.190Z",
         "2": "2026-07-29T14:07:00.233Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "FUP2 feito",
@@ -1105,6 +1151,7 @@
       "dEntries": {
         "1": "2026-07-15T12:43:01.870Z"
       },
+      "agendadoDate": null,
       "notes": []
     },
     {
@@ -1117,6 +1164,7 @@
         "2": "2026-07-29T14:01:26.282Z",
         "3": "2026-07-29T14:01:49.593Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Contato feito com a Clarissa JaquesTese IA, case magalu e sla diminuídoteste em bullet points",
@@ -1134,6 +1182,7 @@
         "1": "2026-07-17T18:53:01.986Z",
         "2": "2026-07-17T19:52:21.390Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "FUP enviado por email",
@@ -1156,6 +1205,7 @@
         "1": "2026-07-23T13:57:32.475Z",
         "2": "2026-07-29T14:43:33.571Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Contato novo feito",
@@ -1178,6 +1228,7 @@
         "1": "2026-07-14T19:28:39.795Z",
         "2": "2026-07-16T14:07:59.725Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "mensagem + FUP enviado para a Tamara",
@@ -1195,6 +1246,7 @@
         "1": "2026-07-14T19:30:31.971Z",
         "2": "2026-07-16T12:51:57.391Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Mensagem enviada para Aline pedindo o contato da par dela responsável por seminovos.",
@@ -1211,6 +1263,7 @@
       "dEntries": {
         "1": "2026-07-14T19:50:28.624Z"
       },
+      "agendadoDate": null,
       "notes": []
     },
     {
@@ -1221,6 +1274,7 @@
       "dEntries": {
         "1": "2026-07-14T22:16:56.475Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Retomei de onde paramos, pois tentamos vender RPO tradicional para eles.",
@@ -1237,6 +1291,7 @@
       "dEntries": {
         "1": "2026-07-14T22:28:49.249Z"
       },
+      "agendadoDate": null,
       "notes": []
     },
     {
@@ -1247,6 +1302,7 @@
       "dEntries": {
         "1": "2026-07-15T14:49:25.085Z"
       },
+      "agendadoDate": null,
       "notes": []
     },
     {
@@ -1257,6 +1313,7 @@
       "dEntries": {
         "1": "2026-07-16T13:51:33.519Z"
       },
+      "agendadoDate": null,
       "notes": []
     },
     {
@@ -1267,6 +1324,7 @@
       "dEntries": {
         "1": "2026-07-16T13:46:40.738Z"
       },
+      "agendadoDate": null,
       "notes": []
     },
     {
@@ -1278,6 +1336,7 @@
         "1": "2026-07-16T13:38:54.538Z",
         "2": "2026-07-27T19:41:28.110Z"
       },
+      "agendadoDate": null,
       "notes": []
     },
     {
@@ -1288,6 +1347,7 @@
       "dEntries": {
         "1": "2026-07-16T13:31:45.809Z"
       },
+      "agendadoDate": null,
       "notes": []
     },
     {
@@ -1300,6 +1360,7 @@
         "2": "2026-07-17T19:52:16.020Z",
         "3": "2026-07-29T13:57:27.626Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "FUP3 feito. Próximo mudar o canal.",
@@ -1328,6 +1389,7 @@
         "2": "2026-07-22T17:42:32.416Z",
         "3": "2026-07-29T14:41:51.433Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "FUP 3 feito",
@@ -1354,6 +1416,7 @@
       "dEntries": {
         "1": "2026-07-15T17:54:12.196Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Resposta automática de férias e retorna em 27/07",
@@ -1370,6 +1433,7 @@
       "dEntries": {
         "1": "2026-07-16T13:59:51.685Z"
       },
+      "agendadoDate": null,
       "notes": []
     },
     {
@@ -1380,6 +1444,7 @@
       "dEntries": {
         "1": "2026-07-24T17:16:31.924Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Está de férias pediu pra entrar em contato em Agosto",
@@ -1396,6 +1461,7 @@
       "dEntries": {
         "1": "2026-07-24T17:18:50.889Z"
       },
+      "agendadoDate": null,
       "notes": []
     },
     {
@@ -1404,31 +1470,59 @@
       "amount": 0,
       "stageId": "1398904714",
       "dEntries": {},
+      "agendadoDate": null,
       "notes": []
     },
     {
       "id": "63087218851",
       "name": "Lojas Torra ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T16:40:49.484Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Varejo puro. FIT!",
+          "timestamp": "2026-07-31T16:40:47.109Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63125454122",
       "name": "Lojas REDE ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T16:38:28.088Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Varejo puro. FIT!",
+          "timestamp": "2026-07-31T16:38:25.045Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63087278402",
       "name": "Lojas Besni ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T16:36:07.020Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Muita vaga de loja. FIT!",
+          "timestamp": "2026-07-31T16:36:04.563Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63125403397",
@@ -1436,6 +1530,7 @@
       "amount": 0,
       "stageId": "1398904714",
       "dEntries": {},
+      "agendadoDate": null,
       "notes": []
     },
     {
@@ -1444,6 +1539,7 @@
       "amount": 0,
       "stageId": "1398904714",
       "dEntries": {},
+      "agendadoDate": null,
       "notes": []
     },
     {
@@ -1452,31 +1548,59 @@
       "amount": 0,
       "stageId": "1398904714",
       "dEntries": {},
+      "agendadoDate": null,
       "notes": []
     },
     {
       "id": "63087278663",
       "name": "Loovi ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T16:32:39.304Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "CEO abordado. Teste.",
+          "timestamp": "2026-07-31T16:32:36.794Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63125454364",
       "name": "Consórcio Embracon ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T16:29:16.279Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Só vagas comerciais. Muito fit.",
+          "timestamp": "2026-07-31T16:29:12.993Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63087097272",
       "name": "Cia. Hering ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T16:20:45.772Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Ideia de extra natal.",
+          "timestamp": "2026-07-31T16:20:42.324Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63125454371",
@@ -1484,79 +1608,144 @@
       "amount": 0,
       "stageId": "1398904714",
       "dEntries": {},
+      "agendadoDate": null,
       "notes": []
     },
     {
       "id": "63125454377",
       "name": "Arco Educação ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T16:27:20.073Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Coordenadora abordada.",
+          "timestamp": "2026-07-31T16:27:06.825Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63087097361",
       "name": "Petz ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T16:12:54.793Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Primeira mensagem enviada. 600 vagas mes. MUITO FIT.",
+          "timestamp": "2026-07-31T16:12:51.980Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63087278690",
       "name": "Decolar ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T16:09:36.152Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Pedido de indicacao",
+          "timestamp": "2026-07-31T16:09:33.948Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63125454393",
       "name": "Kopenhagen e Chocolates Brasil Cacau (Grupo CRM) ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T16:05:39.757Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "75 vagas so de vendedor de loja.",
+          "timestamp": "2026-07-31T16:05:36.319Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63125454401",
       "name": "Ipiranga ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
-    },
-    {
-      "id": "63125346095",
-      "name": "Rentcars ",
-      "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T14:11:03.086Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Primeiro email enviado.",
+          "timestamp": "2026-07-31T14:10:59.165Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63087278707",
       "name": "Hortifruti ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T16:02:42.672Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Contato com https://www.linkedin.com/in/isabelasgmoura/",
+          "timestamp": "2026-07-31T16:02:40.249Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63125346106",
       "name": "Mottu ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T14:30:57.161Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Usam InHire. Foco nisso.",
+          "timestamp": "2026-07-31T14:30:54.735Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63125403690",
       "name": "KFC Brasil ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T14:56:57.710Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Usam pandapé para vagas ops. Muita vaga com fit.",
+          "timestamp": "2026-07-31T14:56:54.847Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63125346122",
@@ -1566,6 +1755,7 @@
       "dEntries": {
         "1": "2026-07-29T19:09:23.931Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Tem solucao propria de IA. FUP sobre as vagas operacionais.",
@@ -1578,65 +1768,120 @@
       "id": "63125403705",
       "name": "Banco Mercantil ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T15:28:41.506Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Bianca está em domo inovacao, empresa tech do grupo. pedi indicacao.",
+          "timestamp": "2026-07-31T15:28:39.132Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63125454459",
       "name": "XP Inc. ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-30T14:56:49.884Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Contato feito com a Jéssica, que toca vagas de varejo.",
+          "timestamp": "2026-07-30T14:56:45.038Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63087219286",
       "name": "V4 Company ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T14:53:20.086Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "A diretora de RH tem muito viés de ia e vibecoding. prospeccao nesse sentido.",
+          "timestamp": "2026-07-31T14:53:17.476Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63087341234",
       "name": "Bluefit Academia ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T14:26:17.913Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Pedido de conexao enviado para a Laryssa e email enviado para Ana.",
+          "timestamp": "2026-07-31T14:26:14.818Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63125454473",
       "name": "Grupo Souza Lima ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T15:10:45.393Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Primeiro email enviado.",
+          "timestamp": "2026-07-31T15:10:43.327Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63087278969",
-      "name": "Volkswagen Caminhões e Ônibus ",
+      "name": "Volkswagen ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T15:20:44.117Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Férias e retoma 03/08",
+          "timestamp": "2026-07-31T15:20:56.651Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63087097705",
       "name": "ALE Combustíveis ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
-    },
-    {
-      "id": "63125285178",
-      "name": "GO EYEWEAR ",
-      "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T14:15:23.645Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "primeiro email enviado",
+          "timestamp": "2026-07-31T14:15:21.313Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63125403985",
@@ -1646,6 +1891,7 @@
       "dEntries": {
         "1": "2026-07-29T19:00:14.037Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "muito fit. Vagas rac e seminovos.",
@@ -1658,9 +1904,18 @@
       "id": "63087278988",
       "name": "SulAmérica ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "notes": []
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-07-31T15:02:02.980Z"
+      },
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Mensagem curta e direta para o CHRO.",
+          "timestamp": "2026-07-31T15:01:56.639Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63087219571",
@@ -1670,6 +1925,7 @@
       "dEntries": {
         "1": "2026-07-29T18:38:21.616Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Usam pandapé, muitas vagas abertar operacionais. Atacado.",
@@ -1686,6 +1942,7 @@
       "dEntries": {
         "1": "2026-07-29T18:44:52.330Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Foco nas vagas de estágio e jovem aprendiz. Volume!",
@@ -1702,6 +1959,7 @@
       "dEntries": {
         "1": "2026-07-29T18:16:01.401Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Primeiro contato feito. Lead tem um dizer muito forte de gente importa. Meio contra IA.",
@@ -1718,6 +1976,7 @@
       "dEntries": {
         "1": "2026-07-29T18:27:29.906Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Primeiro contato com a Kleyse Kelly",
@@ -1734,6 +1993,7 @@
       "dEntries": {
         "1": "2026-07-27T19:54:20.565Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Contato feito com Maria Beatriz, coord de talent.",
@@ -1750,6 +2010,7 @@
       "dEntries": {
         "1": "2026-07-27T19:51:04.022Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "33 vagas de vendas abertas no brasil todo. fit alto! contato feito com a coord de rh.",
@@ -1766,6 +2027,7 @@
       "dEntries": {
         "1": "2026-07-27T19:16:47.758Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Contato feito com a Diretora de RH. 315 VAGAS SÓ DE ATENDENTE",
@@ -1782,6 +2044,7 @@
       "dEntries": {
         "1": "2026-07-27T19:10:27.415Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Contato feito com o HRBP. Foquei no turnover que ele avaliar.",
@@ -1798,6 +2061,7 @@
       "dEntries": {
         "1": "2026-07-27T19:47:17.150Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Email tambem voltou. Tentar via linkedin",
@@ -1824,6 +2088,7 @@
       "dEntries": {
         "1": "2026-07-27T19:36:03.504Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Contato feito com Reiñihel, tese de IA forte. 380 vagas abetas so de executivo de vendas.",
@@ -1840,6 +2105,7 @@
       "dEntries": {
         "1": "2026-07-27T19:01:30.833Z"
       },
+      "agendadoDate": null,
       "notes": [
         {
           "body": "Contato com carolina.rosa@portoseguro.com.br RPO Virtual e tese de IA forte132 vagas com perfil comercial na gupy",
@@ -1849,7 +2115,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "29/07/2026, 16:09:33",
+  "hs_last_updated2": "31/07/2026, 13:46:26",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -2039,6 +2305,6 @@
     }
   ],
   "clientes_fechados": [],
-  "active_tab": "reunioes",
-  "snapshot_at": "2026-07-29T19:48:39.077Z"
+  "active_tab": "metasemanal",
+  "snapshot_at": "2026-07-31T17:06:03.388Z"
 }
