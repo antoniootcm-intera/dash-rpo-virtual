@@ -140,36 +140,20 @@
 <!-- ══════════════════ TAB 1: METAS GERAIS ══════════════════ -->
 <section id="tab-metas" class="tab-panel active space-y-6">
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div class="card p-5">
-      <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color:var(--accent);">Meta em Contratos · até dez/2026</p>
-      <p class="text-2xl font-bold" style="color:var(--black);">R$ 3.000.000,00</p>
-      <div class="flex items-center gap-3 mt-3">
-        <label class="text-xs font-semibold" style="color:var(--text2);">Realizado (R$)</label>
-        <input id="input-contratos-realizado" type="number" step="0.01" class="admin-only w-40" oninput="onContratosRealizadoInput()" />
-        <span id="contratos-realizado-view" class="font-semibold hidden viewer-only-inline"></span>
-      </div>
-      <div class="progress-track mt-3">
-        <div id="bar-contratos" class="progress-fill" style="width:0%;background:var(--mustard);"></div>
-      </div>
-      <p id="pct-contratos" class="text-xs mt-1 font-semibold" style="color:var(--text2);">0% da meta</p>
+  <div class="card p-5">
+    <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color:var(--accent);">MRR Total — Meta · Q3 + Q4 · até dez/2026</p>
+    <p class="text-2xl font-bold" style="color:var(--black);">R$ 300.000,00</p>
+    <div class="flex items-center gap-2 mt-3 flex-wrap">
+      <label class="text-xs font-semibold" style="color:var(--text2);">Realizado (R$)</label>
+      <input id="input-mrr-total-realizado" type="number" step="0.01" class="admin-only w-32" oninput="onMrrRealizadoInput('total', this.value)" />
+      <span id="mrr-total-realizado" class="font-semibold" style="color:var(--accent2);">R$ 0,00</span>
+      <span id="mrr-total-badge" class="text-[10px] font-bold px-2 py-0.5 rounded-full"></span>
+      <button id="mrr-total-reset" class="admin-only text-[10px] underline" style="color:var(--text2);display:none;" onclick="resetMrrAuto('total')">↺ voltar ao auto</button>
     </div>
-
-    <div class="card p-5">
-      <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color:var(--accent);">MRR Total — Meta · Q3 + Q4</p>
-      <p class="text-2xl font-bold" style="color:var(--black);">R$ 300.000,00</p>
-      <div class="flex items-center gap-2 mt-3 flex-wrap">
-        <label class="text-xs font-semibold" style="color:var(--text2);">Realizado (R$)</label>
-        <input id="input-mrr-total-realizado" type="number" step="0.01" class="admin-only w-32" oninput="onMrrRealizadoInput('total', this.value)" />
-        <span id="mrr-total-realizado" class="font-semibold" style="color:var(--accent2);">R$ 0,00</span>
-        <span id="mrr-total-badge" class="text-[10px] font-bold px-2 py-0.5 rounded-full"></span>
-        <button id="mrr-total-reset" class="admin-only text-[10px] underline" style="color:var(--text2);display:none;" onclick="resetMrrAuto('total')">↺ voltar ao auto</button>
-      </div>
-      <div class="progress-track mt-3">
-        <div id="bar-mrr-total" class="progress-fill" style="width:0%;background:var(--accent);"></div>
-      </div>
-      <p id="pct-mrr-total" class="text-xs mt-1 font-semibold" style="color:var(--text2);">0% da meta</p>
+    <div class="progress-track mt-3">
+      <div id="bar-mrr-total" class="progress-fill" style="width:0%;background:var(--accent);"></div>
     </div>
+    <p id="pct-mrr-total" class="text-xs mt-1 font-semibold" style="color:var(--text2);">0% da meta</p>
   </div>
 
   <div class="card p-5">
@@ -510,7 +494,6 @@ WEEKS[5].mrrIncrement = 10000; // ajuste manual do incremento planejado da S6 (n
 function loadJSON(key, fallback) { try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; } catch(e) { return fallback; } }
 function saveJSON(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
 
-let contratosRealizado = parseFloat(localStorage.getItem('rpov_contratos_realizado')) || 0;
 let cascataRows   = loadJSON('rpov_cascata_rows', WEEKS.map(() => ({ mrrFechado: 0 })));
 let reunioesChips = loadJSON('rpov_reunioes_chips', WEEKS.map(() => ({ realizadas: 0 })));
 let reunioesLog   = loadJSON('rpov_reunioes_log', []);
@@ -599,6 +582,63 @@ function switchTab(id) {
 const CHARTS = {};
 function destroyChart(key) { if (CHARTS[key]) { CHARTS[key].destroy(); delete CHARTS[key]; } }
 
+// Plugin "você está aqui": linha vertical mostarda na semana atual (índice em options.plugins.vline.index).
+const vLinePlugin = {
+  id: 'vline',
+  afterDatasetsDraw(chart, args, opts) {
+    const idx = opts && opts.index;
+    if (idx == null || idx < 0) return;
+    const meta = chart.getDatasetMeta(chart.data.datasets.length - 1); // linha "Realizado"
+    const pt = meta && meta.data[idx];
+    if (!pt) return;
+    const x = pt.x, py = pt.y;
+    const { top, bottom } = chart.chartArea;
+    const ctx = chart.ctx;
+    ctx.save();
+    // Linha vertical
+    ctx.beginPath();
+    ctx.moveTo(x, top);
+    ctx.lineTo(x, bottom);
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = '#D4A017';
+    ctx.setLineDash([4,3]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    // Destaca o ponto atual da linha Realizado
+    ctx.beginPath();
+    ctx.arc(x, py, 4, 0, Math.PI*2);
+    ctx.fillStyle = '#D4A017';
+    ctx.fill();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = '#fff';
+    ctx.stroke();
+    // Rótulo logo acima do ponto (perto de onde estamos), clampado dentro do gráfico
+    ctx.font = 'bold 9px Inter, sans-serif';
+    ctx.textAlign = 'center';
+    const label = '📍 você está aqui';
+    const tw = ctx.measureText(label).width;
+    const half = tw/2 + 6;
+    let bx = x;
+    if (bx - half < chart.chartArea.left) bx = chart.chartArea.left + half;
+    if (bx + half > chart.chartArea.right) bx = chart.chartArea.right - half;
+    let by = py - 22;                       // acima do ponto
+    if (by < top) by = Math.min(py + 8, bottom - 15); // se não couber acima, joga abaixo
+    ctx.fillStyle = '#D4A017';
+    ctx.beginPath();
+    ctx.roundRect ? ctx.roundRect(bx - half, by, tw + 12, 15, 4) : ctx.rect(bx - half, by, tw + 12, 15);
+    ctx.fill();
+    ctx.fillStyle = '#000';
+    ctx.fillText(label, bx, by + 11);
+    ctx.restore();
+  }
+};
+if (window.Chart) Chart.register(vLinePlugin);
+
+// Tooltip padrão dos gráficos de MRR: mostra valor em R$ e % da meta informada.
+function mrrTooltip(metaTotal) {
+  return { callbacks: { label: (c) => `${c.dataset.label}: ${fmtBRL(c.parsed.y)} · ${pct(c.parsed.y, metaTotal)}% da meta` } };
+}
+
 function cascataAcumuladoAte(weeks) {
   // retorna array cumulativo de MRR fechado (realizado) alinhado ao array `weeks`
   let acc = 0;
@@ -616,7 +656,6 @@ function mrrRealizado(key) {
 }
 
 function renderMetasGerais() {
-  document.getElementById('input-contratos-realizado').value = contratosRealizado || '';
   ['total','q3','q4'].forEach(key => {
     const ov = mrrOverrides[key];
     document.getElementById('input-mrr-' + key + '-realizado').value = ov?.locked ? ov.value : '';
@@ -626,11 +665,6 @@ function renderMetasGerais() {
 }
 
 function updateMetasSummary() {
-  // Contratos
-  const contratosMeta = 3000000;
-  document.getElementById('bar-contratos').style.width = Math.min(100, pct(contratosRealizado, contratosMeta)) + '%';
-  document.getElementById('pct-contratos').textContent = pct(contratosRealizado, contratosMeta) + '% da meta — ' + fmtBRL(contratosRealizado) + ' de ' + fmtBRL(contratosMeta);
-
   // MRR (auto via cascata, ou manual se travado)
   const totalRealizado = mrrRealizado('total');
   const q3Realizado = mrrRealizado('q3');
@@ -659,12 +693,6 @@ function updateMetasSummary() {
   renderChartMrrTotal();
   renderChartMrrQ(Q3_WEEKS, 100000, 'chart-mrr-q3', 'mrrQ3');
   renderChartMrrQ(Q4_WEEKS, 200000, 'chart-mrr-q4', 'mrrQ4');
-}
-
-function onContratosRealizadoInput() {
-  contratosRealizado = parseFloat(document.getElementById('input-contratos-realizado').value) || 0;
-  localStorage.setItem('rpov_contratos_realizado', contratosRealizado);
-  updateMetasSummary();
 }
 
 function onMrrRealizadoInput(key, val) {
@@ -733,7 +761,8 @@ function renderChartMrrTotal() {
       { label: 'Meta Linear', data: linear, borderColor: '#999', borderDash:[5,4], pointRadius:0, tension:0 },
       { label: 'Realizado', data: realizadoAcum, borderColor: '#9900FF', backgroundColor:'#9900FF22', fill:true, tension:.25, pointRadius:2 },
     ]},
-    options: { responsive:true, plugins:{ legend:{ position:'bottom' } },
+    options: { responsive:true, interaction:{ mode:'index', intersect:false },
+      plugins:{ legend:{ position:'bottom' }, tooltip: mrrTooltip(totalMeta), vline: { index: currentWeekIdx() } },
       scales: { y: { ticks: { callback: v => fmtBRL(v) } } } }
   });
 }
@@ -743,6 +772,9 @@ function renderChartMrrQ(weeks, meta, canvasId, key) {
   const linear = weeks.map((w,i) => Math.round(meta * ((i+1) / weeks.length)));
   let acc = 0;
   const realizado = weeks.map(w => { acc += (cascataRows[w.n-1]?.mrrFechado||0); return acc; });
+  // Índice da semana atual DENTRO deste trimestre (ou -1 se estamos fora dele).
+  const wkAbs = currentWeekIdx();
+  const localIdx = weeks.findIndex(w => (w.n-1) === wkAbs);
   destroyChart(key);
   CHARTS[key] = new Chart(document.getElementById(canvasId), {
     type: 'line',
@@ -750,7 +782,8 @@ function renderChartMrrQ(weeks, meta, canvasId, key) {
       { label: 'Meta Linear', data: linear, borderColor: '#999', borderDash:[5,4], pointRadius:0 },
       { label: 'Realizado', data: realizado, borderColor: '#7A00CC', backgroundColor:'#7A00CC22', fill:true, tension:.25, pointRadius:2 },
     ]},
-    options: { responsive:true, plugins:{ legend:{ position:'bottom' } },
+    options: { responsive:true, interaction:{ mode:'index', intersect:false },
+      plugins:{ legend:{ position:'bottom' }, tooltip: mrrTooltip(meta), vline: { index: localIdx } },
       scales: { y: { ticks: { callback: v => fmtBRL(v) } } } }
   });
 }
@@ -907,14 +940,29 @@ function getAbordagensRealizadas(idx, autoArr) {
   return (ov === undefined || ov === null) ? (autoArr[idx] || 0) : ov;
 }
 
-// AGENDADOS por semana (coorte) = cards que foram ABORDADOS (entraram em D1) naquela semana E
-// que em algum momento chegaram na fase "Agendado". Ou seja: quantos dos abordados da semana agendaram.
+// Um card "chegou em Agendado" se: o campo veio marcado no carregamento, OU (fallback robusto)
+// se o estágio atual dele está na fase Agendado ou além, calculado ao vivo pela config do pipeline.
+function _agendadoOrderLive() {
+  const s = hsStages2.find(x => /agendad/i.test(x.label || ''));
+  return s ? (s.displayOrder != null ? s.displayOrder : 0) : null;
+}
+function _reachedAgendado(d) {
+  if (d.reachedAgendado) return true;
+  const agO = _agendadoOrderLive();
+  if (agO == null) return false;
+  const s = hsStages2.find(x => x.id === d.stageId);
+  const curO = s ? (s.displayOrder != null ? s.displayOrder : 0) : null;
+  return curO != null && curO >= agO;
+}
+
+// AGENDADOS por semana (coorte) = cards que chegaram na fase "Agendado", contados na semana em que
+// foram ABORDADOS (entraram em D1). Robusto: detecta pela posição no funil, não só pela data.
 function agendadosDaCoortePorSemana() {
   const arr = WEEKS.map(() => 0);
   hsDeals2.forEach(d => {
-    const abordIso = d.dEntries && d.dEntries[1];
-    if (!abordIso || !d.agendadoDate) return;
-    const idx = weekIndexForDate(abordIso);
+    if (!_reachedAgendado(d)) return;
+    const abordIso = (d.dEntries && d.dEntries[1]) || d.agendadoDate;
+    const idx = abordIso ? weekIndexForDate(abordIso) : currentWeekIdx(); // sem data → semana atual (fallback)
     if (idx >= 0) arr[idx]++;
   });
   return arr;
@@ -1127,9 +1175,11 @@ function renderConversaoAgendados() {
   const diag = window._rpovDiag;
   const cs = document.getElementById('conv-status');
   if (cs) {
+    const naFase = hsDeals2.filter(d => _reachedAgendado(d)).length;
     if (!hsStages2.length) cs.innerHTML = 'Carregue o pipeline de pré-vendas para calcular a conversão.';
-    else if (diag && diag.temAgendado === false) cs.innerHTML = '⚠ Não encontrei uma fase com "Agendado" no pipeline de pré-vendas. Use a coluna Agendados à mão, ou renomeie o estágio para conter "Agendado".';
-    else cs.innerHTML = '';
+    else if (_agendadoOrderLive() == null) cs.innerHTML = '⚠ Não encontrei uma fase com "Agendado" no pipeline de pré-vendas. Use a coluna Agendados à mão, ou renomeie o estágio para conter "Agendado".';
+    else if (diag && diag.agReached === undefined) cs.innerHTML = `<span style="color:var(--mustard);">Recarregue o pipeline (botão 🔄 Atualizar do HubSpot) para pegar as datas da fase Agendado.</span>`;
+    else cs.innerHTML = `<b>${naFase}</b> cards na fase Agendado ou além.`;
   }
 
   updateConversaoLive();
@@ -1850,6 +1900,9 @@ async function carregarPipeline2() {
     // O HubSpot tem duas versões da propriedade: hs_date_entered_<id> (antiga) e hs_v2_date_entered_<id> (nova).
     const dStages = hsStages2.map(s => ({ id: s.id, num: dNumber(s.label) })).filter(s => s.num !== null);
     const agStage = hsStages2.find(s => /agendad/i.test(s.label || ''));
+    const orderOf = id => { const s = hsStages2.find(x => x.id === id); return s ? (s.displayOrder != null ? s.displayOrder : 0) : null; };
+    const d1Order = (() => { const s = hsStages2.find(x => dNumber(x.label) === 1); return s ? orderOf(s.id) : null; })();
+    const agOrder = agStage ? orderOf(agStage.id) : null;
     const enteredProps = [];
     hsStages2.forEach(s => { enteredProps.push('hs_date_entered_' + s.id); enteredProps.push('hs_v2_date_entered_' + s.id); });
 
@@ -1884,26 +1937,32 @@ async function carregarPipeline2() {
         const v = props['hs_date_entered_' + s.id] || props['hs_v2_date_entered_' + s.id];
         if (v) dEntries[s.num] = v;
       });
-      // Fallback: card que está numa etapa D mas sem data de entrada em D1 → usa a data de criação como D1
-      // (garante pelo menos a abordagem). Só quando o card já está no funil D.
-      const curNum = dStages.find(s => s.id === props.dealstage)?.num;
-      if (curNum !== undefined && dEntries[1] === undefined && props.createdate) {
+      // Fallback: card que já está em D1 OU ADIANTE no funil (inclui Agendado e além), mas sem data
+      // de entrada em D1 → usa a data de criação como D1 (garante que ele conte como abordagem/coorte).
+      const curOrder = orderOf(props.dealstage);
+      const noFunil = d1Order != null && curOrder != null && curOrder >= d1Order;
+      if (noFunil && dEntries[1] === undefined && props.createdate) {
         dEntries[1] = props.createdate;
       }
       if (Object.keys(dEntries).length) comData++;
-      // agendadoDate = data em que o card entrou na etapa "Agendado" (se existir).
-      const agendadoDate = agStage ? (props['hs_date_entered_' + agStage.id] || props['hs_v2_date_entered_' + agStage.id] || null) : null;
+      // Chegou em Agendado: pela POSIÇÃO no funil (estágio atual >= Agendado) — robusto, não depende de data.
+      const reachedAgendado = agOrder != null && curOrder != null && curOrder >= agOrder;
+      // agendadoDate = data em que o card entrou na etapa "Agendado"; se não veio, usa a data de D1/criação.
+      let agendadoDate = agStage ? (props['hs_date_entered_' + agStage.id] || props['hs_v2_date_entered_' + agStage.id] || null) : null;
+      if (reachedAgendado && !agendadoDate) agendadoDate = dEntries[1] || props.createdate || null;
       return {
         id: d.id,
         name: props.dealname || '',
         amount: parseFloat(props.amount) || 0,
         stageId: props.dealstage || null,
         dEntries,
+        reachedAgendado,
         agendadoDate,
         notes: notesAntigas2[d.id] || [],
       };
     });
-    window._rpovDiag = { total: hsDeals2.length, comData, dStages: dStages.map(s => s.num), temAgendado: !!agStage };
+    const agReached = hsDeals2.filter(d => d.reachedAgendado).length;
+    window._rpovDiag = { total: hsDeals2.length, comData, dStages: dStages.map(s => s.num), temAgendado: !!agStage, agReached };
     hsLastUpdated2 = new Date().toLocaleString('pt-BR');
 
     saveJSON('rpov_hs_stages2', hsStages2);
@@ -1954,7 +2013,6 @@ async function publicarSnapshot() {
 
   try {
     const snapshot = {
-      contratos_realizado: contratosRealizado,
       cascata_rows: cascataRows,
       reunioes_chips: reunioesChips,
       reunioes_log: reunioesLog,
@@ -2022,7 +2080,6 @@ window.addEventListener('DOMContentLoaded', () => {
     fetch('./data.json')
       .then(r => { if (!r.ok) throw new Error('no data'); return r.json(); })
       .then(d => {
-        if (typeof d.contratos_realizado === 'number') contratosRealizado = d.contratos_realizado;
         if (Array.isArray(d.cascata_rows)) cascataRows = d.cascata_rows;
         if (Array.isArray(d.reunioes_chips)) reunioesChips = d.reunioes_chips;
         if (Array.isArray(d.reunioes_log)) reunioesLog = d.reunioes_log;
