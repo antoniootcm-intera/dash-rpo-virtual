@@ -318,7 +318,7 @@
       "id": "62619521145",
       "name": "Riachuelo | Johnny | CG",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554091",
       "notes": [
         {
           "body": "FUP para reagendar a call que foi no show.",
@@ -331,7 +331,7 @@
       "id": "62628787280",
       "name": "Osklen | Bianca | RE",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554091",
       "notes": []
     },
     {
@@ -456,6 +456,11 @@
       "stageId": "1397554094",
       "notes": [
         {
+          "body": "RPOvirtual <> Demo prática KFChttps://tldv.io/app/meetings/6a74bd8f7fa21d0013b90f951. Itens de AçãoAntônio to formalize discussion and send scorecard print to Erika 01:11:40Antônio to export recording and send to Erika 01:11:48Erika to discuss RPO virtual with Beth and provide feedback by Friday 01:05:39Antônio to follow up with Erika by Tuesday if no response received 01:06:21Antônio to align with technology team on geolocation radius capabilities 47:30Antônio to design solution for multiple shopping centers per vacancy 39:102. Visão Geral da Solução RPO VirtualPlataforma automatiza campanhas em Instagram e Facebook com geolocalização para atrair candidatos 11:18Candidatos clicam em anúncio e caem no WhatsApp para qualificação automática 12:05IA coleta informações do candidato e realiza triagem automática de fit com vaga 14:46IA inscreve candidato automaticamente após confirmação, eliminando barreira de formulário 15:47Entrevista por IA pode ser realizada a qualquer hora, permitindo múltiplas entrevistas simultâneas 19:193. Jornada do CandidatoCandidato recebe anúncio geolocalizado no Instagram, Facebook ou Stories 12:17VV WhatsApp interage com candidato solicitando nome, idade, currículo e CEP 13:09CEP permite direcionar candidato para unidade mais próxima dentro da zona 13:43IA parametriza perguntas personalizadas conforme critérios do cliente 14:08Candidato sem currículo recebe perguntas sobre experiência profissional e escolaridade 17:25IA preenche formulário com informações do currículo ou conversa, sem candidato sair do WhatsApp 17:464. Benefícios da Entrevista por IAEntrevista individual com IA extrai mais informações que dinâmica em grupo 23:47Candidatos chegam ao gestor com melhor fit após triagem individualizada 23:55Solução permite falar com mais pessoas mantendo qualidade individualizada 24:07Candidatos podem fazer entrevista em qualquer horário, inclusive madrugada 19:56Fluxo adapta-se aos hábitos das pessoas via WhatsApp com áudio ou texto 21:025. Estrutura da Entrevista por IAIris faz perguntas sobre competências como atendimento ao cliente e proatividade 59:03IA faz perguntas de apoio dinamicamente conforme respostas do candidato 57:18Entrevista dura no máximo 20 minutos, variando conforme interação do candidato 58:16IA fornece nota e análise detalhada de cada competência avaliada 58:55Gravação e transcrição completa da entrevista fica disponível para consulta 59:10Perguntas são totalmente personalizáveis conforme necessidades do cliente 01:02:566. Modelo de Negócio e CapacidadeRPO virtual atende 15 perfis simultâneos por unidade ou região 36:47Sem limite de contratações por vaga aberta, variando conforme região 26:35Exemplo Magalu: 20 pessoas validadas, 7 presenciais, 5 contratadas 25:21Número de finalistas aumenta ao longo dos meses conforme IA aprende 26:24Serviço oferecido com condição de lançamento até final de agosto 01:06:57Assinatura mensal com possibilidade de cancelamento a qualquer momento 01:06:577. Desafio de Vagas Críticas da KFCKFC tem 146 posições abertas em lojas críticas com alta rotatividade 33:58Desvio de vagas muda diariamente conforme entradas e demissões 34:16Dashboard atualizado uma vez por dia, não refletindo realidade futura 34:44Turnover muito alto, com 270 demissões e 380 contratações em julho 42:24Vagas críticas mudam constantemente entre lojas, impossibilitando previsibilidade 35:198. Estratégia de Implementação PropostaComeçar com vagas que nunca fecham por natureza do negócio 46:05Testar com 15 vagas em regionais mais difíceis antes de expandir 31:17Uma vaga pode alimentar múltiplos shoppings próximos na mesma região 39:10Flexibilizar modelo por região em vez de por shopping individual 48:34Redirecionar candidatos entre lojas próximas quando uma vaga fecha 39:319. Integração com Base de Leads ExistenteKFC tem média de 10 mil candidaturas por mês de parceiros 01:08:06VV WhatsApp qualificará leads existentes, solicitando CEP para direcionamento 01:08:27Candidatos não aproveitados por geolocalização vão para banco para futuras vagas 01:10:51Integração de leads aumenta volume de candidatos entrevistados e aprovados 01:09:0010. Aplicabilidade para Vagas de LiderançaSolução também funciona para vagas de liderança de equipe e loja 01:02:40Perguntas por competência fazem sentido para seleção de liderança 01:02:23IA pode fazer perguntas mais detalhistas e exploratórias para liderança 01:03:08Candidatos empregados podem fazer entrevista fora do horário comercial 20:1311. Próximos Passos ComerciaisErika to discuss with Beth and director before providing definitive response 01:06:08Antônio to discuss regional versus unit-based pricing with team 27:52Ambas as partes alinhadas em testar solução antes de decisão final 01:07:41Notas manuaisNenhuma nota manual",
+          "timestamp": "2026-08-10T13:04:23.861Z",
+          "author": ""
+        },
+        {
           "body": "RPOvirtual INTERA <> KFC Brasilhttps://tldv.io/app/meetings/6a70c8f39de7d40013b8f0a41. Itens de AçãoAntônio enviar apresentação em PowerPoint para Elizabeth revisar antes de reunião com diretor 49:05Antônio parametrizar simulação de ponta a ponta para quinta-feira às 14h 59:15Antônio enviar proposta formal e apresentação por e-mail 59:49Antônio enviar número de contato via WhatsApp para Érica 01:00:43Antônio trazer dados de conversão média de vagas para próxima reunião 57:062. Sobre o Serviço RPOvirtualRPOvirtual é consultoria de recrutamento focada em vagas operacionais de volume 02:15Serviço utiliza entrevistas automatizadas por IA via WhatsApp com candidatos 28:17Candidatos realizam entrevistas em horários flexíveis, inclusive madrugada 52:33Sistema solicita CEP do candidato para indicar loja mais próxima 51:33Entrevista é transcrita e candidato recebe nota por parâmetros definidos 33:04Candidatos com nota acima do corte são encaminhados ao gestor da loja 40:32Serviço funciona através de assinatura mensal sem contrato de longo prazo 48:13Cancelamento requer 30 dias de aviso prévio 49:323. Estrutura e Desafios KFC BrasilKFC possui cinco recrutadores cobrindo todo Brasil para lojas 16:48Dois assistentes fornecem suporte aos cinco recrutadores 22:43KFC contrata aproximadamente 400 atendentes de loja por mês 14:20Processo de contratação leva aproximadamente 18 dias da abertura até admissão 15:02Divisão de vagas é aproximadamente 70% reposição e 30% inaugurações 15:37Taxa de turnover é aproximadamente 14% em média 16:04KFC recebe aproximadamente 10 mil inscrições por mês no Pandape 40:14Equipe não consegue processar toda triagem de inscrições mensais 42:37Conversão final é menor do que potencial devido a limitações de processamento 50:10Dificuldades de atração em cidades com menos habitantes e muita indústria 43:074. Modelo de Preço e OperaçãoServiço custa 10 mil reais por mês 49:48Recrutador não é exclusivo, atua com múltiplos clientes simultaneamente 46:25Cada vaga aberta representa um crédito no sistema 37:45Uma vaga pode gerar múltiplas contratações 39:55Serviço cobre vagas de atendente, vendas e esteira 44:125. Clientes Existentes e Casos de SucessoRPOvirtual já atendeu Magalu, Cielo, Leo Madeiras e outros clientes 55:33Serviço está em fase de lançamento para mercado geral 53:53Caso Magalu: sete finalistas, cinco aprovados, três contratados em 12 dias 56:35Alguns clientes contratam serviço principalmente por mudanças em políticas WhatsApp 49:426. Próximas EtapasSimulação de ponta a ponta agendada para quinta-feira às 14h 58:52Elizabeth apresentará proposta ao diretor na sexta-feira 01:00:19Grupo será criado para acompanhar resultados da simulação em tempo real 50:28Simulação incluirá criação de anúncio, interação WhatsApp e entrevista 49:51Notas manuaisNenhuma nota manual",
           "timestamp": "2026-08-03T19:37:45.048Z",
           "author": ""
@@ -471,18 +476,42 @@
       "id": "63436402725",
       "name": "Caffeine Army | Mac | CG",
       "amount": 0,
-      "stageId": "1397554092",
-      "notes": []
+      "stageId": "1397554099",
+      "notes": [
+        {
+          "body": "Caffeine Army + RPOvirtual INTERAhttps://tldv.io/app/meetings/6a74d9a628b02e00132409fb1. Itens de AçãoAntônio to connect Maria with responsible person for WinRAR interview module 27:18Maria to review contract for second Maurício chair position 28:53Taís to review and sign contract for second Maurício chair position 29:042. Visão Geral do Serviço RPO VirtualRPO Virtual combina expertise em consultoria de RH com tecnologia de IA para automação de recrutamento 02:08Serviço entrega finalistas para aprovação do gestor, não apenas uma ferramenta 02:36Processo automatizado inclui campanhas de anúncios, triagem, inscrição e entrevista com IA 02:54Especializado em vagas de vendas com alto volume e rotatividade elevada 05:07Reduz SLA eliminando barreiras de agendamento e disponibilidade do candidato 06:083. Funcionalidades TécnicasAnúncios automatizados veiculados via Meta, Facebook e Instagram para localidades específicas 02:54WhatsApp \"Vem de Vaga\" realiza triagem automatizada coletando informações e currículo 03:18IA inscreve candidatos automaticamente reduzindo desistências no processo 03:56Entrevistas conduzidas por agente IA com interação natural, não apenas checklist 04:04Agente IA opera 24/7 permitindo entrevistas em horários flexíveis 06:12Avaliação por competências com notas para cada critério estabelecido 17:24Gestor acessa gravação, transcrição e notas de todas as entrevistas via plataforma 18:074. Modelo OperacionalPessoa recrutadora da Intera parametriza e orquestra todo o processo 08:44Recrutadora participa de reuniões semanais e alinhamentos com time cliente 19:30Cada RPO Virtual toca até 15 vagas simultâneas por mês 20:42Recrutadora não é exclusiva, atende múltiplos clientes simultaneamente 21:10Todas informações de conversão por etapa ficam acessíveis ao cliente 09:175. Resultados e Casos de SucessoMagalu: 43 entrevistas em 12 dias, 25 aprovadas, 20 agendadas com gestor 10:18Magalu: 5 dias para aprovados, 7 dias adicionais para admissão 11:33Gerentes de loja Magalu aprovaram perfis e solicitaram uso em outras vagas 11:18NPS de satisfação dos candidatos é 4.2 de 5 28:10Base proprietária de mais de 15 mil pessoas já entrevistadas 12:136. Precificação e ComparaçãoRPO tradicional custa 15 mil reais por cadeira 20:58RPO Virtual toca 15 vagas por 10 mil reais mensais 21:07Não cobra por anúncio gerado, diferente de outras soluções 19:047. Análise de Fit para ClienteMaria identifica volume insuficiente de vagas comerciais para justificar investimento 22:08Cliente opera com apenas 3 vagas mensais atualmente 23:37Vagas de atendimento/CX e comercial são as principais demandas 23:12Antônio reconhece que solução não faz sentido para momento atual 26:548. Alternativas PropostasMódulo de entrevista por IA do WinRAR pode ajudar time cliente 27:09Entrevistas por WhatsApp disponíveis para posições operacionais 27:51Parametrização de entrevistas por IA é simples com campos básicos 27:25Notas manuaisNenhuma nota manual",
+          "timestamp": "2026-08-10T12:59:23.762Z",
+          "author": ""
+        },
+        {
+          "body": "https://tldv.io/app/meetings/6a74d9a628b02e00132409fb/",
+          "timestamp": "2026-08-10T12:59:17.102Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63436402738",
       "name": "Lojas Colombo | Taís | OUT",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554094",
+      "notes": [
+        {
+          "body": "Lojas Colombo <> RPOvirtual INTERAhttps://tldv.io/app/meetings/6a749367237bfc00138292541. Itens de AçãoAntônio agendar reunião de demonstração prática com Liane para dia 18 de agosto às 14 horas 39:20Antônio enviar e-mail formalizando a conversa e link da gravação para Liane 39:42Liane conversar com Taís sobre apresentação do serviço RPOvirtual 39:232. Sobre o Serviço RPOvirtualRPOvirtual oferece recrutamento de ponta a ponta usando agentes de IA para vagas operacionais 00:46Serviço especializado em vagas de vendedor e atendente, com mais de 15 mil entrevistas realizadas 13:33Agente de IA conduz entrevista conversacional natural via WhatsApp com candidatos 08:44Cada RPOvirtual toca 15 vagas simultâneas por mês, com custo de 10 mil reais mensais 32:44Serviço inclui atração, triagem, entrevistas e documentação sem custos variáveis por contratação 34:36Recrutador humano alocado faz alinhamento semanal e participa de reuniões internas do cliente 30:083. Estrutura de Recrutamento Lojas ColomboColombo trabalha com quatro recrutadoras e lojas têm autonomia na seleção de candidatos 01:21Gerentes regionais fazem primeira entrevista, depois candidatos passam por avaliações comportamentais 06:01Vagas operacionais têm SLA de 22 a 35 dias para contratação 04:06Liane é analista de recrutamento responsável pela área, Taís é gerente de recursos humanos 02:30Vendedores são recrutados em parceria com gerentes de loja que auxiliam na divulgação 03:074. Desafios de Recrutamento ColomboColombo tem dificuldade em atrair candidatos em cidades menores com menor proximidade ao portal 22:18Colombo está expandindo com abertura de lojas em Registro e outras praças no Rio Grande do Sul 00:37Colombo não trabalha com consultoria externa para recrutamento atualmente 03:305. Funcionalidades do ServiçoCandidatos interagem via WhatsApp após clicar em anúncio, sem necessidade de acessar portal 22:41Agente de IA qualifica candidato e sugere vagas dentro de raio de até 30 km de preferência 26:40Candidatos podem ficar em banco de talentos se não houver vaga próxima disponível 26:11Dashboard fornece acesso a entrevistas gravadas, transcrições e notas de avaliação parametrizadas 13:18Recrutador RPOvirtual envia links de vídeos e avaliações diretamente ao gerente de loja 31:31Dados de candidatos são documentados na ferramenta RPOvirtual e integrados ao sistema cliente 23:076. Casos de SucessoMagalu teve 37 entrevistas realizadas com agente de IA em shopping com dificuldade de atração 17:15Facta Promotora utiliza serviço como pioneira de IA em recrutamento no Rio Grande do Sul 08:58Gerentes de loja apreciaram ferramenta e alguns solicitaram uso em outros tipos de vagas 14:06Notas manuaisNenhuma nota manual",
+          "timestamp": "2026-08-10T13:00:00.916Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63666627638",
+      "name": "Lojas Rede | joanita | OUT",
+      "amount": 0,
+      "stageId": "1397554091",
       "notes": []
     }
   ],
-  "hs_last_updated": "05/08/2026, 17:10:25",
+  "hs_last_updated": "10/08/2026, 10:06:19",
   "mrr_overrides": {
     "total": {
       "value": 41000,
@@ -3768,6 +3797,6 @@
       "link": ""
     }
   ],
-  "active_tab": "metasemanal",
-  "snapshot_at": "2026-08-10T12:19:24.496Z"
+  "active_tab": "kanban",
+  "snapshot_at": "2026-08-10T13:06:24.939Z"
 }
