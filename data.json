@@ -81,7 +81,7 @@
       "realizadas": 3
     },
     {
-      "realizadas": 1
+      "realizadas": 3
     },
     {
       "realizadas": 0
@@ -482,7 +482,7 @@
       "notes": []
     }
   ],
-  "hs_last_updated": "03/08/2026, 17:05:36",
+  "hs_last_updated": "05/08/2026, 17:10:25",
   "mrr_overrides": {
     "total": {
       "value": 41000,
@@ -3021,7 +3021,7 @@
       "amount": 0,
       "stageId": "1398904715",
       "dEntries": {
-        "1": "2026-08-04T22:07:00.725Z"
+        "1": "2026-08-04T22:07:26.001Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -3032,9 +3032,523 @@
           "author": ""
         }
       ]
+    },
+    {
+      "id": "63513978762",
+      "name": "ABC da Construção S.A. ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T19:55:11.807Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/tvpenna/",
+          "timestamp": "2026-08-07T19:55:09.525Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63513997161",
+      "name": "AUTOMOB ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T20:32:43.206Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/robert-schues-6775b017a/",
+          "timestamp": "2026-08-07T20:32:40.808Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63436800632",
+      "name": "Agibank ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T20:25:40.452Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/ivanneves/",
+          "timestamp": "2026-08-07T20:25:38.340Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63436800637",
+      "name": "Agricopel ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T20:17:50.466Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/ma%C3%A9lle-souza-03492b163/",
+          "timestamp": "2026-08-07T20:17:48.653Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63436824647",
+      "name": "Alloha Fibra ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T20:14:50.179Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/karenmello/",
+          "timestamp": "2026-08-07T20:14:47.811Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63513998776",
+      "name": "Angeloni ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T20:11:25.886Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/anete-wainstein-paiva-bba02781/",
+          "timestamp": "2026-08-07T20:11:22.638Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63436824662",
+      "name": "CLAMED - Cia Latino Americana de Medicamentos ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T20:08:44.880Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/fernando-linharess/",
+          "timestamp": "2026-08-07T20:08:42.653Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63514001033",
+      "name": "Caedu ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T20:04:52.839Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/jaqueline-s-300b00220/",
+          "timestamp": "2026-08-07T20:04:50.849Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63436689161",
+      "name": "Claro Brasil ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T19:46:31.461Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/glaucio-marfir-783b1327/",
+          "timestamp": "2026-08-07T19:46:29.382Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63436824673",
+      "name": "Condor Brasil I Atacado da Construção ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T19:38:18.627Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/duarte-ju/",
+          "timestamp": "2026-08-07T19:38:16.374Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63514003054",
+      "name": "Crefaz ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T19:31:25.712Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/jakesormani/",
+          "timestamp": "2026-08-07T19:31:43.045Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63436800679",
+      "name": "Grupo Energisa ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T19:24:32.152Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/tha%C3%ADs-moura-984b5927/",
+          "timestamp": "2026-08-07T19:24:29.583Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63513978906",
+      "name": "Grupo Madero ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T19:20:39.189Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/santiago-esteves-neto-45466839/",
+          "timestamp": "2026-08-07T19:20:59.014Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63514024221",
+      "name": "Rodobens ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63578785376",
+      "name": "Shoulder ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63514024230",
+      "name": "Smart Fit ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63514023082",
+      "name": "VESTE S/A ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T21:42:38.150Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "linkedin.com/in/danielaciampiruiz",
+          "timestamp": "2026-08-07T21:42:31.663Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63513985645",
+      "name": "Tel Contact Center ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63436807551",
+      "name": "Grupo Oscar Calçados ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T21:40:42.325Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/vivian-martins-185abb197/?skipRedirect=true",
+          "timestamp": "2026-08-07T21:40:39.513Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63513985653",
+      "name": "Grupo Panvel ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T21:30:51.030Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/rochele-ramires/",
+          "timestamp": "2026-08-07T21:30:48.995Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63514024253",
+      "name": "Grupo Saga ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63514024256",
+      "name": "Organização Verdemar ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T21:36:15.651Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "linkedin.com/in/kênia-moreira-30248b10a/",
+          "timestamp": "2026-08-07T21:36:28.225Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63578786370",
+      "name": "Portobello Shop ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63436807559",
+      "name": "Savegnago Supermercados ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T21:33:41.994Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/danilocribeiro/",
+          "timestamp": "2026-08-07T21:33:40.230Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63578787423",
+      "name": "Flora ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63578784078",
+      "name": "Freitas ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T21:18:21.767Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/vyrlanelopes/",
+          "timestamp": "2026-08-07T21:18:38.157Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63578784080",
+      "name": "FISIA ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T21:15:28.759Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "fernanda.strutz@fisia.com.br",
+          "timestamp": "2026-08-07T21:15:26.712Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63514024268",
+      "name": "Paraná Banco S/A ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63436807563",
+      "name": "Grupo Skala ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63436807564",
+      "name": "Grupo Soma ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T21:12:48.348Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "amanda.lins@somagrupo.com.br",
+          "timestamp": "2026-08-07T21:12:46.427Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63578784097",
+      "name": "Inbrands ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T21:08:01.789Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "luisa.andrade@inbrands.com.br",
+          "timestamp": "2026-08-07T21:07:58.049Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63514024275",
+      "name": "Millicom (Tigo) ",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63578785433",
+      "name": "Promofarma ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-07T21:02:44.886Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/peresmarcia/",
+          "timestamp": "2026-08-07T21:02:42.402Z",
+          "author": ""
+        }
+      ]
     }
   ],
-  "hs_last_updated2": "04/08/2026, 19:07:31",
+  "hs_last_updated2": "10/08/2026, 09:19:21",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -3255,5 +3769,5 @@
     }
   ],
   "active_tab": "metasemanal",
-  "snapshot_at": "2026-08-04T22:13:43.219Z"
+  "snapshot_at": "2026-08-10T12:19:24.496Z"
 }
