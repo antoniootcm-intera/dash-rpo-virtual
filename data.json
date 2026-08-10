@@ -331,7 +331,7 @@
       "id": "62628787280",
       "name": "Osklen | Bianca | RE",
       "amount": 0,
-      "stageId": "1397554091",
+      "stageId": "1397554092",
       "notes": []
     },
     {
@@ -494,7 +494,7 @@
       "id": "63436402738",
       "name": "Lojas Colombo | Taís | OUT",
       "amount": 0,
-      "stageId": "1397554094",
+      "stageId": "1397554093",
       "notes": [
         {
           "body": "Lojas Colombo <> RPOvirtual INTERAhttps://tldv.io/app/meetings/6a749367237bfc00138292541. Itens de AçãoAntônio agendar reunião de demonstração prática com Liane para dia 18 de agosto às 14 horas 39:20Antônio enviar e-mail formalizando a conversa e link da gravação para Liane 39:42Liane conversar com Taís sobre apresentação do serviço RPOvirtual 39:232. Sobre o Serviço RPOvirtualRPOvirtual oferece recrutamento de ponta a ponta usando agentes de IA para vagas operacionais 00:46Serviço especializado em vagas de vendedor e atendente, com mais de 15 mil entrevistas realizadas 13:33Agente de IA conduz entrevista conversacional natural via WhatsApp com candidatos 08:44Cada RPOvirtual toca 15 vagas simultâneas por mês, com custo de 10 mil reais mensais 32:44Serviço inclui atração, triagem, entrevistas e documentação sem custos variáveis por contratação 34:36Recrutador humano alocado faz alinhamento semanal e participa de reuniões internas do cliente 30:083. Estrutura de Recrutamento Lojas ColomboColombo trabalha com quatro recrutadoras e lojas têm autonomia na seleção de candidatos 01:21Gerentes regionais fazem primeira entrevista, depois candidatos passam por avaliações comportamentais 06:01Vagas operacionais têm SLA de 22 a 35 dias para contratação 04:06Liane é analista de recrutamento responsável pela área, Taís é gerente de recursos humanos 02:30Vendedores são recrutados em parceria com gerentes de loja que auxiliam na divulgação 03:074. Desafios de Recrutamento ColomboColombo tem dificuldade em atrair candidatos em cidades menores com menor proximidade ao portal 22:18Colombo está expandindo com abertura de lojas em Registro e outras praças no Rio Grande do Sul 00:37Colombo não trabalha com consultoria externa para recrutamento atualmente 03:305. Funcionalidades do ServiçoCandidatos interagem via WhatsApp após clicar em anúncio, sem necessidade de acessar portal 22:41Agente de IA qualifica candidato e sugere vagas dentro de raio de até 30 km de preferência 26:40Candidatos podem ficar em banco de talentos se não houver vaga próxima disponível 26:11Dashboard fornece acesso a entrevistas gravadas, transcrições e notas de avaliação parametrizadas 13:18Recrutador RPOvirtual envia links de vídeos e avaliações diretamente ao gerente de loja 31:31Dados de candidatos são documentados na ferramenta RPOvirtual e integrados ao sistema cliente 23:076. Casos de SucessoMagalu teve 37 entrevistas realizadas com agente de IA em shopping com dificuldade de atração 17:15Facta Promotora utiliza serviço como pioneira de IA em recrutamento no Rio Grande do Sul 08:58Gerentes de loja apreciaram ferramenta e alguns solicitaram uso em outros tipos de vagas 14:06Notas manuaisNenhuma nota manual",
@@ -509,9 +509,16 @@
       "amount": 0,
       "stageId": "1397554091",
       "notes": []
+    },
+    {
+      "id": "63680205660",
+      "name": "OXXO | Jeremias | OUT",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
     }
   ],
-  "hs_last_updated": "10/08/2026, 10:22:37",
+  "hs_last_updated": "10/08/2026, 17:05:32",
   "mrr_overrides": {
     "total": {
       "value": 41000,
@@ -577,6 +584,9 @@
     },
     "63436402738": {
       "canal": "OUT"
+    },
+    "63436402725": {
+      "canal": "CG"
     }
   },
   "hs_deleted": [],
@@ -762,14 +772,20 @@
       "id": "62638131606",
       "name": "Supermercado Nordestão ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-07-23T14:20:07.064Z",
-        "2": "2026-08-04T21:00:50.006Z"
+        "2": "2026-08-04T21:00:50.006Z",
+        "3": "2026-08-10T19:40:31.904Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-08-10T19:40:39.205Z",
+          "author": ""
+        },
         {
           "body": "Batendo na tecla de abertura de loja.",
           "timestamp": "2026-07-23T14:20:03.134Z",
@@ -793,13 +809,13 @@
       "id": "62638126918",
       "name": "OXXO Brasil ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1398903677",
       "dEntries": {
         "1": "2026-07-20T13:15:34.468Z",
         "2": "2026-07-22T17:48:42.859Z"
       },
-      "reachedAgendado": false,
-      "agendadoDate": null,
+      "reachedAgendado": true,
+      "agendadoDate": "2026-07-20T13:15:34.468Z",
       "notes": [
         {
           "body": "Prospectei a Ana agora, já que jeremias saiu da empresa, imagino.",
@@ -841,13 +857,19 @@
       "id": "62638131765",
       "name": "Farmácias Pague Menos ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-07-23T14:28:55.487Z"
+        "1": "2026-07-23T14:28:55.487Z",
+        "2": "2026-08-10T19:39:17.505Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP feito",
+          "timestamp": "2026-08-10T19:39:24.388Z",
+          "author": ""
+        },
         {
           "body": "Ela já usa IA no recrutamento. Mensagem sobre se é copiloto ou agente.",
           "timestamp": "2026-07-23T14:31:33.532Z",
@@ -1290,14 +1312,20 @@
       "id": "62638144378",
       "name": "Monte Carlo ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-07-23T13:57:32.475Z",
-        "2": "2026-07-29T14:43:33.571Z"
+        "2": "2026-07-29T14:43:33.571Z",
+        "3": "2026-08-10T19:57:25.629Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP",
+          "timestamp": "2026-08-10T19:57:23.108Z",
+          "author": ""
+        },
         {
           "body": "Contato novo feito",
           "timestamp": "2026-07-29T14:43:41.512Z",
@@ -1515,14 +1543,20 @@
       "id": "62657817962",
       "name": "Arezzo&Co ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-07-15T17:54:12.196Z",
-        "2": "2026-08-04T21:00:04.718Z"
+        "2": "2026-08-04T21:00:04.718Z",
+        "4": "2026-08-10T19:42:56.615Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "vários fups.",
+          "timestamp": "2026-08-10T19:43:03.695Z",
+          "author": ""
+        },
         {
           "body": "Resposta automática de férias e retorna em 27/07",
           "timestamp": "2026-07-15T17:55:36.246Z",
@@ -2138,13 +2172,19 @@
       "id": "63087279007",
       "name": "Raízen ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-07-27T19:54:20.565Z"
+        "1": "2026-07-27T19:54:20.565Z",
+        "2": "2026-08-10T19:47:33.811Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-08-10T19:47:38.889Z",
+          "author": ""
+        },
         {
           "body": "Contato feito com Maria Beatriz, coord de talent.",
           "timestamp": "2026-07-27T19:54:11.156Z",
@@ -2156,13 +2196,19 @@
       "id": "63125454718",
       "name": "RedeFlex Comércio e Serviço de Telefonia Ltda ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-07-27T19:51:04.022Z"
+        "1": "2026-07-27T19:51:04.022Z",
+        "2": "2026-08-10T19:48:56.812Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-08-10T19:49:02.056Z",
+          "author": ""
+        },
         {
           "body": "33 vagas de vendas abertas no brasil todo. fit alto! contato feito com a coord de rh.",
           "timestamp": "2026-07-27T19:50:58.126Z",
@@ -2174,13 +2220,19 @@
       "id": "63087097759",
       "name": "Bacio di Latte ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-07-27T19:16:47.758Z"
+        "1": "2026-07-27T19:16:47.758Z",
+        "2": "2026-08-10T19:49:59.966Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-08-10T19:49:58.065Z",
+          "author": ""
+        },
         {
           "body": "Contato feito com a Diretora de RH. 315 VAGAS SÓ DE ATENDENTE",
           "timestamp": "2026-07-27T19:16:45.269Z",
@@ -2192,13 +2244,19 @@
       "id": "63125346457",
       "name": "Cacau Show ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-07-27T19:10:27.415Z"
+        "1": "2026-07-27T19:10:27.415Z",
+        "2": "2026-08-10T19:46:39.073Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-08-10T19:46:36.966Z",
+          "author": ""
+        },
         {
           "body": "Contato feito com o HRBP. Foquei no turnover que ele avaliar.",
           "timestamp": "2026-07-27T19:10:24.906Z",
@@ -2238,13 +2296,19 @@
       "id": "63087219609",
       "name": "PagBank ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-07-27T19:36:03.504Z"
+        "1": "2026-07-27T19:36:03.504Z",
+        "2": "2026-08-10T19:45:19.953Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-08-10T19:45:17.852Z",
+          "author": ""
+        },
         {
           "body": "Contato feito com Reiñihel, tese de IA forte. 380 vagas abetas so de executivo de vendas.",
           "timestamp": "2026-07-27T19:36:00.870Z",
@@ -2256,13 +2320,19 @@
       "id": "63125454751",
       "name": "Porto ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-07-27T19:01:30.833Z"
+        "1": "2026-07-27T19:01:30.833Z",
+        "2": "2026-08-10T19:44:26.358Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-08-10T19:44:23.436Z",
+          "author": ""
+        },
         {
           "body": "Contato com carolina.rosa@portoseguro.com.br RPO Virtual e tese de IA forte132 vagas com perfil comercial na gupy",
           "timestamp": "2026-07-27T19:01:28.058Z",
@@ -3192,13 +3262,19 @@
       "id": "63514001033",
       "name": "Caedu ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-07T20:04:52.839Z"
+        "1": "2026-08-07T20:04:52.839Z",
+        "2": "2026-08-10T19:36:35.604Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP feito no linkedin",
+          "timestamp": "2026-08-10T19:36:57.548Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/jaqueline-s-300b00220/",
           "timestamp": "2026-08-07T20:04:50.849Z",
@@ -3577,7 +3653,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "10/08/2026, 09:19:21",
+  "hs_last_updated2": "10/08/2026, 17:05:32",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -3670,12 +3746,22 @@
     },
     {
       "metaAbordagens": 40,
-      "metaReunioes": 5,
+      "metaReunioes": 3,
       "abordagensOverride": null,
       "contatosOverride": null
     },
     {
       "metaAbordagens": 55,
+      "metaReunioes": 4,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 40,
+      "metaReunioes": 5,
+      "abordagensOverride": 0
+    },
+    {
+      "metaAbordagens": 0,
       "metaReunioes": 5,
       "abordagensOverride": null
     },
@@ -3691,12 +3777,7 @@
     },
     {
       "metaAbordagens": 0,
-      "metaReunioes": 6,
-      "abordagensOverride": null
-    },
-    {
-      "metaAbordagens": 0,
-      "metaReunioes": 7,
+      "metaReunioes": 8,
       "abordagensOverride": null
     },
     {
@@ -3706,17 +3787,7 @@
     },
     {
       "metaAbordagens": 0,
-      "metaReunioes": 7,
-      "abordagensOverride": null
-    },
-    {
-      "metaAbordagens": 0,
-      "metaReunioes": 7,
-      "abordagensOverride": null
-    },
-    {
-      "metaAbordagens": 0,
-      "metaReunioes": 7,
+      "metaReunioes": 8,
       "abordagensOverride": null
     },
     {
@@ -3732,6 +3803,11 @@
     {
       "metaAbordagens": 0,
       "metaReunioes": 8,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 9,
       "abordagensOverride": null
     },
     {
@@ -3774,6 +3850,31 @@
       "metaReunioes": 0,
       "abordagensOverride": null
     }
+  ],
+  "vendas_semana": [
+    0,
+    1,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
   ],
   "clientes_fechados": [
     {
@@ -3797,6 +3898,6 @@
       "link": ""
     }
   ],
-  "active_tab": "kanban",
-  "snapshot_at": "2026-08-10T13:23:20.248Z"
+  "active_tab": "metasemanal",
+  "snapshot_at": "2026-08-10T20:06:41.624Z"
 }
