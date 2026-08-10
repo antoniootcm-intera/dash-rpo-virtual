@@ -51,6 +51,8 @@
   thead th { background: #FAFAFA; color: var(--text2); font-weight: 700; text-transform: uppercase; font-size: 10.5px; letter-spacing: .04em; position: sticky; top: 0; }
   tbody tr:hover { background: #FBFAFF; }
   .q-divider td { border-bottom: 3px solid var(--mustard) !important; }
+  tr.week-atual td { background: var(--mustard-light) !important; }
+  tr.week-atual td:first-child { box-shadow: inset 3px 0 0 var(--mustard); }
   .progress-track { background: #E7E7E7; border-radius: 999px; height: 10px; overflow: hidden; }
   .progress-fill { height: 100%; border-radius: 999px; transition: width .4s ease; }
   .chip { border: 1px solid var(--border); border-radius: 10px; padding: 8px; background: #fff; text-align: center; }
@@ -193,6 +195,11 @@
   </div>
 
   <div class="card p-5">
+    <h3 class="text-sm font-bold mb-3" style="color:var(--black);">Reuniões — Acumulado Planejado x Realizado (semestre)</h3>
+    <canvas id="chart-reunioes-acum" height="90"></canvas>
+  </div>
+
+  <div class="card p-5">
     <div class="flex items-center justify-between flex-wrap gap-2 mb-1">
       <h3 class="text-sm font-bold" style="color:var(--black);">Clientes Fechados</h3>
       <div class="flex items-center gap-3">
@@ -278,19 +285,37 @@
   </div>
 
   <div class="card p-5 overflow-x-auto">
-    <h3 class="text-sm font-bold mb-1" style="color:var(--black);">Detalhe por Semana</h3>
-    <p class="text-xs mb-3" style="color:var(--text2);"><b>Abordagens</b> = novos cards que entraram em D1 na semana (tem meta). <b>Contatos</b> = cada avanço no funil (D1→D2, D2→D3…), inclui a 1ª abordagem — só realizado, sem meta. <b>Reuniões</b> = realizadas na semana. Automático pelo pipeline de pré-vendas e editável à mão.</p>
+    <h3 class="text-sm font-bold mb-1" style="color:var(--black);">Prospecção por Semana — Abordagens & Contatos</h3>
+    <p class="text-xs mb-3" style="color:var(--text2);"><b>Abordagens</b> = novos cards que entraram em D1 na semana (tem meta). <b>Contatos</b> = cada avanço no funil (D1→D2, D2→D3…), inclui a 1ª abordagem — só realizado, sem meta. Automático pelo pipeline de pré-vendas e editável à mão.</p>
     <table>
       <thead>
         <tr>
           <th>Semana</th><th>Período</th>
           <th>Meta<br>Abordagens</th><th>Abordagens<br>Realizadas</th><th>Ader.</th>
           <th>Contatos<br>Realizados</th>
-          <th>Meta<br>Reuniões</th><th>Reuniões<br>Realizadas</th><th>Ader.</th>
         </tr>
       </thead>
       <tbody id="metasemanal-tbody"></tbody>
       <tfoot id="metasemanal-tfoot"></tfoot>
+    </table>
+  </div>
+
+  <div class="card p-5 overflow-x-auto">
+    <h3 class="text-sm font-bold mb-1" style="color:var(--black);">Reuniões, Vendas & MRR por Semana — Plano x Realizado</h3>
+    <p class="text-xs mb-3" style="color:var(--text2);">Meta e realizado por semana, com acumulado <b>planejado</b> (do plano) e <b>realizado</b> (soma corrente). Reuniões realizadas, vendas e MRR fechado são editáveis à mão.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Semana</th><th>Período</th>
+          <th>Meta<br>Reuniões</th><th>Reuniões<br>Realizadas</th><th>Ader.</th>
+          <th>Reun. Acum.<br>Planejado</th><th>Reun. Acum.<br>Realizado</th>
+          <th>Vendas<br>Planejado</th><th>Vendas<br>Realizadas</th>
+          <th>Vendas Acum.<br>Planejado</th><th>Vendas Acum.<br>Realizado</th>
+          <th>MRR fechado<br>(semana)</th><th>MRR Acum.<br>Planejado</th><th>MRR Acum.<br>Realizado</th>
+        </tr>
+      </thead>
+      <tbody id="rvm-tbody"></tbody>
+      <tfoot id="rvm-tfoot"></tfoot>
     </table>
   </div>
 
@@ -490,6 +515,17 @@ const Q4_WEEKS = WEEKS.filter(w => w.n >= 12);
 WEEKS.forEach((w,i) => { w.mrrIncrement = w.mrrMeta - (i>0?WEEKS[i-1].mrrMeta:0); });
 WEEKS[5].mrrIncrement = 10000; // ajuste manual do incremento planejado da S6 (não deriva do mrrMeta acumulado)
 
+// Meta de reuniões por semana (planilha oficial) e vendas planejadas por semana — recalcula acumulados.
+const _REUN_META = [3,3,3,4,5,5,6,7,8,8,8,8,8,8,9,9,9,9,0,0,0,0,0];
+const _VENDAS_PLAN = [0,0,0,1,1,0,2,1,2,1,2,2,2,2,1,2,2,2,3,2,2,0,0];
+let _accReun = 0, _accVenda = 0;
+WEEKS.forEach((w,i) => {
+  w.reunMeta = _REUN_META[i];
+  _accReun += w.reunMeta; w.reunAcum = _accReun;
+  w.vendasPlan = _VENDAS_PLAN[i];
+  _accVenda += w.vendasPlan; w.vendasAcumPlan = _accVenda;
+});
+
 // ═══════════════════════════ STATE (localStorage) ═══════════════════════════
 function loadJSON(key, fallback) { try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; } catch(e) { return fallback; } }
 function saveJSON(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
@@ -526,6 +562,15 @@ let hsDeleted2     = new Set(loadJSON('rpov_hs_deleted2', []));
 let cascataIncOverrides = loadJSON('rpov_cascata_inc_overrides', {});
 // Meta Semanal: metas de abordagens e reuniões por semana + realizado de abordagens (override manual opcional).
 let metaSemanal = loadJSON('rpov_meta_semanal', WEEKS.map(w => ({ metaAbordagens: 0, metaReunioes: w.reunMeta || 0, abordagensOverride: null })));
+// Aplica UMA VEZ a Meta de Reuniões oficial da planilha (só essa coluna). Depois disso, os ajustes
+// manuais do usuário persistem (não sobrescreve em todo carregamento).
+if (localStorage.getItem('rpov_metareun_v2') !== '1') {
+  WEEKS.forEach((w,i) => { metaSemanal[i] = metaSemanal[i] || {}; metaSemanal[i].metaReunioes = w.reunMeta; });
+  saveJSON('rpov_meta_semanal', metaSemanal);
+  localStorage.setItem('rpov_metareun_v2', '1');
+}
+// Vendas realizadas por semana (editável à mão).
+let vendasSemana = loadJSON('rpov_vendas_semana', WEEKS.map(() => 0));
 // Abordagens e contatos são contados pelas DATAS REAIS de entrada em cada etapa D (hs_date_entered_*),
 // que vêm em cada card (d.dEntries), distribuídos por semana. Sem filtro de data — conta tudo do semestre.
 localStorage.removeItem('rpov_contagem_inicio'); // limpa filtro antigo que podia zerar a contagem
@@ -634,9 +679,12 @@ const vLinePlugin = {
 };
 if (window.Chart) Chart.register(vLinePlugin);
 
-// Tooltip padrão dos gráficos de MRR: mostra valor em R$ e % da meta informada.
-function mrrTooltip(metaTotal) {
-  return { callbacks: { label: (c) => `${c.dataset.label}: ${fmtBRL(c.parsed.y)} · ${pct(c.parsed.y, metaTotal)}% da meta` } };
+// Tooltip padrão dos gráficos de MRR: título com semana + intervalo de datas; valor em R$ e % da meta.
+function mrrTooltip(metaTotal, weeksArr) {
+  return { callbacks: {
+    title: (items) => { const w = weeksArr && weeksArr[items[0].dataIndex]; return w ? `S${w.n} · ${w.period}` : (items[0]?.label || ''); },
+    label: (c) => `${c.dataset.label}: ${fmtBRL(c.parsed.y)} · ${pct(c.parsed.y, metaTotal)}% da meta`
+  } };
 }
 
 function cascataAcumuladoAte(weeks) {
@@ -693,6 +741,7 @@ function updateMetasSummary() {
   renderChartMrrTotal();
   renderChartMrrQ(Q3_WEEKS, 100000, 'chart-mrr-q3', 'mrrQ3');
   renderChartMrrQ(Q4_WEEKS, 200000, 'chart-mrr-q4', 'mrrQ4');
+  renderChartReunioesAcum();
 }
 
 function onMrrRealizadoInput(key, val) {
@@ -762,7 +811,7 @@ function renderChartMrrTotal() {
       { label: 'Realizado', data: realizadoAcum, borderColor: '#9900FF', backgroundColor:'#9900FF22', fill:true, tension:.25, pointRadius:2 },
     ]},
     options: { responsive:true, interaction:{ mode:'index', intersect:false },
-      plugins:{ legend:{ position:'bottom' }, tooltip: mrrTooltip(totalMeta), vline: { index: currentWeekIdx() } },
+      plugins:{ legend:{ position:'bottom' }, tooltip: mrrTooltip(totalMeta, WEEKS), vline: { index: currentWeekIdx() } },
       scales: { y: { ticks: { callback: v => fmtBRL(v) } } } }
   });
 }
@@ -783,8 +832,34 @@ function renderChartMrrQ(weeks, meta, canvasId, key) {
       { label: 'Realizado', data: realizado, borderColor: '#7A00CC', backgroundColor:'#7A00CC22', fill:true, tension:.25, pointRadius:2 },
     ]},
     options: { responsive:true, interaction:{ mode:'index', intersect:false },
-      plugins:{ legend:{ position:'bottom' }, tooltip: mrrTooltip(meta), vline: { index: localIdx } },
+      plugins:{ legend:{ position:'bottom' }, tooltip: mrrTooltip(meta, weeks), vline: { index: localIdx } },
       scales: { y: { ticks: { callback: v => fmtBRL(v) } } } }
+  });
+}
+
+function renderChartReunioesAcum() {
+  const el = document.getElementById('chart-reunioes-acum');
+  if (!el) return;
+  const labels = WEEKS.map(w => 'S' + w.n);
+  const planAcum = WEEKS.map(w => w.reunAcum); // acumulado planejado (do plano)
+  let acc = 0;
+  const realAcum = WEEKS.map(w => { acc += (reunioesChips[w.n-1]?.realizadas || 0); return acc; });
+  const wk = currentWeekIdx();
+  destroyChart('reunioesAcum');
+  CHARTS.reunioesAcum = new Chart(el, {
+    type: 'line',
+    data: { labels, datasets: [
+      { label: 'Acumulado Planejado', data: planAcum, borderColor: '#999', borderDash:[5,4], pointRadius:0 },
+      { label: 'Acumulado Realizado', data: realAcum, borderColor: '#00B8A9', backgroundColor:'#00B8A922', fill:true, tension:.25, pointRadius:2 },
+    ]},
+    options: { responsive:true, interaction:{ mode:'index', intersect:false },
+      plugins:{ legend:{ position:'bottom' },
+        tooltip: { callbacks: {
+          title: (items) => { const w = WEEKS[items[0].dataIndex]; return w ? `S${w.n} · ${w.period}` : ''; },
+          label: (c) => { const meta = planAcum[c.dataIndex] || 0; return `${c.dataset.label}: ${c.parsed.y} reuniões${c.dataset.label.includes('Realizado') ? ` · ${pct(c.parsed.y, meta)}% do plano` : ''}`; }
+        } },
+        vline: { index: wk } },
+      scales: { y: { beginAtZero:true } } }
   });
 }
 
@@ -797,12 +872,13 @@ function getIncremento(idx) {
 
 function renderCascata() {
   const tbody = document.getElementById('cascata-tbody');
+  const wkNow = currentWeekIdx();
   tbody.innerHTML = WEEKS.map(w => {
     const idx = w.n-1;
     const row = cascataRows[idx] || { mrrFechado: 0 };
     const editado = cascataIncOverrides[idx] !== undefined && cascataIncOverrides[idx] !== null;
-    return `<tr class="${w.qEnd ? 'q-divider' : ''}">
-      <td class="font-semibold">S${w.n}</td>
+    return `<tr class="${w.qEnd ? 'q-divider ' : ''}${idx===wkNow ? 'week-atual' : ''}">
+      <td class="font-semibold">S${w.n}${idx===wkNow ? ' 📍' : ''}</td>
       <td>${w.period}</td>
       <td>
         <input type="number" step="0.01" class="admin-only w-28" value="${editado ? cascataIncOverrides[idx] : ''}" placeholder="${WEEKS[idx].mrrIncrement}"
@@ -884,14 +960,29 @@ function renderChartReunioesCascata() {
   const labels = WEEKS.map(w => 'S' + w.n);
   const meta = WEEKS.map(w => w.reunMeta);
   const realizado = WEEKS.map(w => reunioesChips[w.n-1]?.realizadas || 0);
+  // Acumulados até cada semana (meta = reunAcum do plano; realizado = soma corrente).
+  let ra = 0;
+  const realAcum = WEEKS.map(w => { ra += (reunioesChips[w.n-1]?.realizadas || 0); return ra; });
+  const metaAcum = WEEKS.map(w => w.reunAcum);
+  const wk = currentWeekIdx();
+  // Destaque da semana atual: borda mostarda grossa nas barras da semana.
+  const bordaAtual = (base) => WEEKS.map((w,i) => i === wk ? '#D4A017' : base);
+  const larguraAtual = WEEKS.map((w,i) => i === wk ? 3 : 1);
   destroyChart('reunioesCascata');
   CHARTS.reunioesCascata = new Chart(document.getElementById('chart-reunioes-cascata'), {
     type: 'bar',
     data: { labels, datasets: [
-      { label: 'Meta cascateada', data: meta, backgroundColor: '#D4A01766', borderColor:'#D4A017', borderWidth:1 },
-      { label: 'Realizado', data: realizado, backgroundColor: '#00B8A9AA', borderColor:'#00B8A9', borderWidth:1 },
+      { label: 'Meta cascateada', data: meta, backgroundColor: '#D4A01766', borderColor: bordaAtual('#D4A017'), borderWidth: larguraAtual },
+      { label: 'Realizado', data: realizado, backgroundColor: '#00B8A9AA', borderColor: bordaAtual('#00B8A9'), borderWidth: larguraAtual },
     ]},
-    options: { responsive:true, plugins:{ legend:{ position:'bottom' } } }
+    options: { responsive:true, interaction:{ mode:'index', intersect:false },
+      plugins:{ legend:{ position:'bottom' },
+        tooltip: { callbacks: {
+          title: (items) => { const w = WEEKS[items[0].dataIndex]; return w ? `S${w.n} · ${w.period}${items[0].dataIndex===wk ? ' · 📍 semana atual' : ''}` : ''; },
+          footer: (items) => { const i = items[0].dataIndex; return `Acumulado até aqui — meta: ${metaAcum[i]} · realizado: ${realAcum[i]}`; }
+        } },
+        vline: { index: wk } },
+    }
   });
 }
 
@@ -977,6 +1068,7 @@ function renderMetaSemanal() {
   const tbody = document.getElementById('metasemanal-tbody');
   const auto = abordagensRealizadasPorSemana();
   const autoCont = contatosRealizadosPorSemana();
+  const wkNow = currentWeekIdx();
   tbody.innerHTML = WEEKS.map(w => {
     const idx = w.n-1;
     const ms = metaSemanal[idx] || { metaAbordagens:0, metaReunioes:w.reunMeta||0, abordagensOverride:null };
@@ -988,8 +1080,8 @@ function renderMetaSemanal() {
     const adherA = pct(abordReal, ms.metaAbordagens);
     const adherR = pct(reunReal, ms.metaReunioes);
     const cor = a => a >= 100 ? 'var(--teal)' : (a >= 60 ? 'var(--mustard)' : 'var(--danger)');
-    return `<tr class="${w.qEnd ? 'q-divider' : ''}">
-      <td class="font-semibold">S${w.n}</td>
+    return `<tr class="${w.qEnd ? 'q-divider ' : ''}${idx===wkNow ? 'week-atual' : ''}">
+      <td class="font-semibold">S${w.n}${idx===wkNow ? ' 📍' : ''}</td>
       <td>${w.period}</td>
       <td><input type="number" min="0" class="admin-only w-16" value="${ms.metaAbordagens||''}" oninput="onMetaSemanalInput(${idx},'metaAbordagens',this.value)" placeholder="0" /><span class="viewer-only">${ms.metaAbordagens||0}</span></td>
       <td>
@@ -1003,13 +1095,11 @@ function renderMetaSemanal() {
         <span class="viewer-only font-bold">${contReal}</span>
         ${contEditado ? `<button class="admin-only text-[10px] underline" style="color:var(--text2);" onclick="resetContatos(${idx})">↺</button>` : ''}
       </td>
-      <td><input type="number" min="0" class="admin-only w-16" value="${ms.metaReunioes||''}" oninput="onMetaSemanalInput(${idx},'metaReunioes',this.value)" placeholder="0" /><span class="viewer-only">${ms.metaReunioes||0}</span></td>
-      <td><input type="number" min="0" class="admin-only w-14" value="${reunReal || ''}" oninput="onMetaSemanalReuniaoInput(${idx},this.value)" placeholder="0" title="Reuniões realizadas na semana (sincroniza com a Cascata Semanal)" /><span class="viewer-only font-bold">${reunReal}</span></td>
-      <td id="ms-adher-r-${idx}" class="text-[11px] font-bold" style="color:${cor(adherR)};">${adherR}%</td>
     </tr>`;
   }).join('');
 
   updateMetaSemanalTotals();
+  renderRVM();
 
   const temD = Object.keys(stageDNumMap()).length > 0;
   const statusEl = document.getElementById('ms-d1-status');
@@ -1044,6 +1134,7 @@ function onMetaSemanalInput(idx, field, val) {
   // Atualiza só os totais/aderências sem reconstruir a tabela (mantém foco no input).
   updateMetaSemanalTotals();
   updateConversaoLive();
+  updateRVMLive();
 }
 
 // Reuniões realizadas editadas na Meta Semanal — grava no mesmo lugar da Cascata (fica sincronizado).
@@ -1051,7 +1142,9 @@ function onMetaSemanalReuniaoInput(idx, val) {
   reunioesChips[idx] = { realizadas: parseInt(val) || 0 };
   saveJSON('rpov_reunioes_chips', reunioesChips);
   updateMetaSemanalTotals();
+  updateRVMLive();
   if (typeof renderChartReunioesCascata === 'function') renderChartReunioesCascata();
+  if (typeof renderChartReunioesAcum === 'function') renderChartReunioesAcum();
 }
 
 function updateMetaSemanalTotals() {
@@ -1062,11 +1155,8 @@ function updateMetaSemanalTotals() {
     const idx = w.n-1;
     const ms = metaSemanal[idx];
     const adherA = pct(getAbordagensRealizadas(idx, auto), ms.metaAbordagens);
-    const adherR = pct(reunioesChips[idx]?.realizadas||0, ms.metaReunioes);
     const ea = document.getElementById('ms-adher-a-'+idx);
-    const er = document.getElementById('ms-adher-r-'+idx);
     if (ea) { ea.textContent = adherA+'%'; ea.style.color = cor(adherA); }
-    if (er) { er.textContent = adherR+'%'; er.style.color = cor(adherR); }
   });
   const totMetaA = metaSemanal.reduce((s,m) => s + (m.metaAbordagens||0), 0);
   const totRealA = WEEKS.reduce((s,w) => s + getAbordagensRealizadas(w.n-1, auto), 0);
@@ -1078,7 +1168,6 @@ function updateMetaSemanalTotals() {
     <td colspan="2">TOTAL</td>
     <td>${totMetaA}</td><td>${totRealA}</td><td>${pct(totRealA,totMetaA)}%</td>
     <td>${totRealC}</td>
-    <td>${totMetaR}</td><td>${totRealR}</td><td>${pct(totRealR,totMetaR)}%</td>
   </tr>`;
 
   // Tiles do topo = SEMANA ATUAL (não o total do semestre).
@@ -1103,6 +1192,89 @@ function updateMetaSemanalTotals() {
 
   renderChartAbordagens(auto);
   renderChartContatos();
+}
+
+// ─── Tabela Reuniões, Vendas & MRR por Semana ───
+function renderRVM() {
+  const tbody = document.getElementById('rvm-tbody');
+  if (!tbody) return;
+  const wkNow = currentWeekIdx();
+  tbody.innerHTML = WEEKS.map(w => {
+    const idx = w.n-1;
+    const ms = metaSemanal[idx] || {};
+    const reunReal = reunioesChips[idx]?.realizadas || 0;
+    return `<tr class="${w.qEnd ? 'q-divider ' : ''}${idx===wkNow ? 'week-atual' : ''}">
+      <td class="font-semibold">S${w.n}${idx===wkNow ? ' 📍' : ''}</td>
+      <td>${w.period}</td>
+      <td><input type="number" min="0" class="admin-only w-14" value="${ms.metaReunioes||''}" oninput="onMetaSemanalInput(${idx},'metaReunioes',this.value)" placeholder="0" /><span class="viewer-only">${ms.metaReunioes||0}</span></td>
+      <td><input type="number" min="0" class="admin-only w-14" value="${reunReal || ''}" oninput="onMetaSemanalReuniaoInput(${idx},this.value)" placeholder="0" title="Reuniões realizadas (sincroniza com Cascata Semanal)" /><span class="viewer-only font-bold">${reunReal}</span></td>
+      <td id="rvm-ader-${idx}" class="text-[11px] font-bold"></td>
+      <td id="rvm-racp-${idx}" style="color:var(--text2);"></td>
+      <td id="rvm-racr-${idx}" class="font-semibold" style="color:var(--accent2);"></td>
+      <td style="color:var(--text2);">${w.vendasPlan||0}</td>
+      <td><input type="number" min="0" class="admin-only w-12" value="${vendasSemana[idx] || ''}" oninput="onVendaInput(${idx},this.value)" placeholder="0" title="Vendas realizadas na semana" /><span class="viewer-only font-bold">${vendasSemana[idx]||0}</span></td>
+      <td style="color:var(--text2);">${w.vendasAcumPlan||0}</td>
+      <td id="rvm-av-${idx}" class="font-semibold" style="color:var(--accent2);"></td>
+      <td><input type="number" step="0.01" min="0" class="admin-only w-24" value="${cascataRows[idx]?.mrrFechado || ''}" oninput="onRvmMrrInput(${idx},this.value)" placeholder="0" title="MRR fechado na semana (sincroniza com Cascata Semanal)" /><span class="viewer-only">${fmtBRL(cascataRows[idx]?.mrrFechado||0)}</span></td>
+      <td id="rvm-macp-${idx}" style="color:var(--text2);">${fmtBRL(w.mrrMeta)}</td>
+      <td id="rvm-macr-${idx}" class="font-semibold" style="color:var(--accent2);"></td>
+    </tr>`;
+  }).join('');
+  updateRVMLive();
+}
+
+// Atualiza acumulados/aderência/totais sem reconstruir inputs (mantém foco).
+function updateRVMLive() {
+  if (!document.getElementById('rvm-tbody')) return;
+  const cor = a => a>=100?'var(--teal)':(a>=60?'var(--mustard)':'var(--danger)');
+  let accReunReal = 0, accVendas = 0, accMrr = 0;
+  let accMetaReun = 0;
+  WEEKS.forEach(w => {
+    const idx = w.n-1;
+    const metaReun = metaSemanal[idx]?.metaReunioes || 0;
+    const reunReal = reunioesChips[idx]?.realizadas || 0;
+    accMetaReun += metaReun;
+    accReunReal += reunReal;
+    accVendas += (vendasSemana[idx] || 0);
+    accMrr += (cascataRows[idx]?.mrrFechado || 0);
+    const set = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
+    const adher = pct(reunReal, metaReun);
+    const ea = document.getElementById('rvm-ader-'+idx);
+    if (ea) { ea.textContent = adher+'%'; ea.style.color = cor(adher); }
+    set('rvm-racp-'+idx, accMetaReun);
+    set('rvm-racr-'+idx, accReunReal);
+    set('rvm-av-'+idx, accVendas);
+    set('rvm-macr-'+idx, fmtBRL(accMrr));
+    const macp = document.getElementById('rvm-macp-'+idx); if (macp) macp.textContent = fmtBRL(w.mrrMeta);
+  });
+  const totMetaR = metaSemanal.reduce((s,m)=>s+(m.metaReunioes||0),0);
+  const totRealR = reunioesChips.reduce((s,c)=>s+(c.realizadas||0),0);
+  const totVendas = vendasSemana.reduce((a,b)=>a+(b||0),0);
+  const totVendasPlan = WEEKS.reduce((s,w)=>s+(w.vendasPlan||0),0);
+  const totMrr = cascataRows.reduce((s,r)=>s+(r.mrrFechado||0),0);
+  const tf = document.getElementById('rvm-tfoot');
+  if (tf) tf.innerHTML = `<tr class="font-bold" style="background:#FAFAFA;">
+    <td colspan="2">TOTAL</td>
+    <td>${totMetaR}</td><td>${totRealR}</td><td>${pct(totRealR,totMetaR)}%</td>
+    <td>${accMetaReun}</td><td>${totRealR}</td>
+    <td>${totVendasPlan}</td><td>${totVendas}</td>
+    <td>${totVendasPlan}</td><td>${totVendas}</td>
+    <td>${fmtBRL(totMrr)}</td><td>${fmtBRL(300000)}</td><td>${fmtBRL(totMrr)}</td>
+  </tr>`;
+}
+
+function onVendaInput(idx, val) {
+  vendasSemana[idx] = parseInt(val) || 0;
+  saveJSON('rpov_vendas_semana', vendasSemana);
+  updateRVMLive();
+}
+
+function onRvmMrrInput(idx, val) {
+  cascataRows[idx] = { mrrFechado: parseFloat(val) || 0 };
+  saveJSON('rpov_cascata_rows', cascataRows);
+  updateRVMLive();
+  if (typeof updateCascataSummary === 'function') updateCascataSummary();
+  renderMetasGerais(); // MRR total/Q3/Q4 dependem disso
 }
 
 function resetAbordagens(idx) {
@@ -1156,11 +1328,12 @@ function renderConversaoAgendados() {
   const tbody = document.getElementById('conversao-tbody');
   if (!tbody) return;
   const autoAg = agendadosDaCoortePorSemana();
+  const wkNow = currentWeekIdx();
   tbody.innerHTML = WEEKS.map(w => {
     const idx = w.n-1;
     const agEdit = metaSemanal[idx]?.agendadosOverride !== undefined && metaSemanal[idx]?.agendadosOverride !== null;
-    return `<tr class="${w.qEnd ? 'q-divider' : ''}">
-      <td class="font-semibold">S${w.n}</td>
+    return `<tr class="${w.qEnd ? 'q-divider ' : ''}${idx===wkNow ? 'week-atual' : ''}">
+      <td class="font-semibold">S${w.n}${idx===wkNow ? ' 📍' : ''}</td>
       <td>${w.period}</td>
       <td id="conv-abord-${idx}"></td>
       <td>
@@ -2031,6 +2204,7 @@ async function publicarSnapshot() {
       hs_deleted2: [...hsDeleted2],
       cascata_inc_overrides: cascataIncOverrides,
       meta_semanal: metaSemanal,
+      vendas_semana: vendasSemana,
       clientes_fechados: clientesFechados,
       active_tab: localStorage.getItem('rpov_active_tab') || 'metas',
       snapshot_at: new Date().toISOString(),
@@ -2098,6 +2272,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (Array.isArray(d.hs_deleted2)) hsDeleted2 = new Set(d.hs_deleted2);
         if (d.cascata_inc_overrides) cascataIncOverrides = d.cascata_inc_overrides;
         if (Array.isArray(d.meta_semanal)) metaSemanal = d.meta_semanal;
+        if (Array.isArray(d.vendas_semana)) vendasSemana = d.vendas_semana;
         if (Array.isArray(d.clientes_fechados)) clientesFechados = d.clientes_fechados;
         renderAll();
         switchTab(d.active_tab || 'metas');
