@@ -978,10 +978,11 @@
       "id": "62639557892",
       "name": "Farmácia Indiana ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-07-14T19:11:49.474Z",
-        "2": "2026-07-16T13:11:12.533Z"
+        "2": "2026-07-16T13:11:12.533Z",
+        "3": "2026-08-11T13:39:55.794Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -1157,9 +1158,10 @@
       "id": "62639558179",
       "name": "Brisanet Telecomunicações ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-07-14T19:33:53.466Z"
+        "1": "2026-07-14T19:33:53.466Z",
+        "2": "2026-08-11T13:40:14.955Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -1477,7 +1479,13 @@
       },
       "reachedAgendado": false,
       "agendadoDate": null,
-      "notes": []
+      "notes": [
+        {
+          "body": "FUP com juliana",
+          "timestamp": "2026-08-11T14:49:19.525Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62660972669",
@@ -2413,24 +2421,6 @@
       ]
     },
     {
-      "id": "63327614826",
-      "name": "Loja do mecanico",
-      "amount": 0,
-      "stageId": "1398904715",
-      "dEntries": {
-        "1": "2026-07-31T19:56:09.427Z"
-      },
-      "reachedAgendado": false,
-      "agendadoDate": null,
-      "notes": [
-        {
-          "body": "Convite no linkedin https://www.linkedin.com/in/roberta-algarte-680a4246/",
-          "timestamp": "2026-07-31T19:56:20.568Z",
-          "author": ""
-        }
-      ]
-    },
-    {
       "id": "63361065805",
       "name": "Lojas Eskala",
       "amount": 0,
@@ -2596,13 +2586,19 @@
       "id": "63436309336",
       "name": "Mart Minas",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-04T17:00:40.251Z"
+        "1": "2026-08-04T17:00:40.251Z",
+        "2": "2026-08-11T13:16:56.821Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP feito",
+          "timestamp": "2026-08-11T13:17:03.359Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/sarah-n%C3%A9dir-8487b738/",
           "timestamp": "2026-08-04T17:00:37.472Z",
@@ -2704,13 +2700,19 @@
       "id": "63436311183",
       "name": "Drogas Clara",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-04T17:42:09.604Z"
+        "1": "2026-08-04T17:42:09.604Z",
+        "2": "2026-08-11T13:52:05.021Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-08-11T13:52:10.863Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/keniamatos/msg no linkedin",
           "timestamp": "2026-08-04T17:42:07.258Z",
@@ -2758,13 +2760,19 @@
       "id": "63436368945",
       "name": "Grupo MM Mercadomóveis",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-04T18:15:22.478Z"
+        "1": "2026-08-04T18:15:22.478Z",
+        "2": "2026-08-11T13:56:43.741Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-08-11T13:56:41.168Z",
+          "author": ""
+        },
         {
           "body": "nota no link https://www.linkedin.com/in/larissa-eleuterio1993/",
           "timestamp": "2026-08-04T18:15:20.232Z",
@@ -3304,13 +3312,19 @@
       "id": "63436824673",
       "name": "Condor Brasil I Atacado da Construção ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-07T19:38:18.627Z"
+        "1": "2026-08-07T19:38:18.627Z",
+        "2": "2026-08-11T13:49:45.867Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-08-11T13:49:43.281Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/duarte-ju/",
           "timestamp": "2026-08-07T19:38:16.374Z",
@@ -3322,9 +3336,10 @@
       "id": "63514003054",
       "name": "Crefaz ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-07T19:31:25.712Z"
+        "1": "2026-08-07T19:31:25.712Z",
+        "2": "2026-08-11T13:49:07.600Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -3508,13 +3523,19 @@
       "id": "63436807559",
       "name": "Savegnago Supermercados ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-07T21:33:41.994Z"
+        "1": "2026-08-07T21:33:41.994Z",
+        "2": "2026-08-11T13:43:44.027Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-08-11T13:43:49.578Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/danilocribeiro/",
           "timestamp": "2026-08-07T21:33:40.230Z",
@@ -3536,13 +3557,19 @@
       "id": "63578784078",
       "name": "Freitas ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-07T21:18:21.767Z"
+        "1": "2026-08-07T21:18:21.767Z",
+        "2": "2026-08-11T13:42:33.623Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-08-11T13:42:37.725Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/vyrlanelopes/",
           "timestamp": "2026-08-07T21:18:38.157Z",
@@ -3554,13 +3581,19 @@
       "id": "63578784080",
       "name": "FISIA ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-07T21:15:28.759Z"
+        "1": "2026-08-07T21:15:28.759Z",
+        "2": "2026-08-11T13:18:52.345Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-08-11T13:18:49.815Z",
+          "author": ""
+        },
         {
           "body": "fernanda.strutz@fisia.com.br",
           "timestamp": "2026-08-07T21:15:26.712Z",
@@ -3592,13 +3625,19 @@
       "id": "63436807564",
       "name": "Grupo Soma ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-07T21:12:48.348Z"
+        "1": "2026-08-07T21:12:48.348Z",
+        "2": "2026-08-11T13:18:10.392Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-08-11T13:18:08.286Z",
+          "author": ""
+        },
         {
           "body": "amanda.lins@somagrupo.com.br",
           "timestamp": "2026-08-07T21:12:46.427Z",
@@ -3610,13 +3649,19 @@
       "id": "63578784097",
       "name": "Inbrands ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-07T21:08:01.789Z"
+        "1": "2026-08-07T21:08:01.789Z",
+        "2": "2026-08-11T13:16:28.392Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup feito",
+          "timestamp": "2026-08-11T13:16:10.508Z",
+          "author": ""
+        },
         {
           "body": "luisa.andrade@inbrands.com.br",
           "timestamp": "2026-08-07T21:07:58.049Z",
@@ -3638,22 +3683,98 @@
       "id": "63578785433",
       "name": "Promofarma ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-07T21:02:44.886Z"
+        "1": "2026-08-07T21:02:44.886Z",
+        "2": "2026-08-11T13:15:24.340Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP feito",
+          "timestamp": "2026-08-11T13:15:21.064Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/peresmarcia/",
           "timestamp": "2026-08-07T21:02:42.402Z",
           "author": ""
         }
       ]
+    },
+    {
+      "id": "63717458073",
+      "name": "DealerHunter | InHire",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-11T14:26:32.919Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/paula-ribeiro-86b573197/",
+          "timestamp": "2026-08-11T14:26:35.679Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63718080777",
+      "name": "Portal Nova | InHire",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-11T14:30:00.672Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/deusa-paisani-a3ba12223/",
+          "timestamp": "2026-08-11T14:29:58.665Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63717458481",
+      "name": "Zerezes | inHire",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-11T14:34:56.660Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/juliana-nunes-114ab454/",
+          "timestamp": "2026-08-11T14:35:03.510Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63717398040",
+      "name": "Contabilizei | InHire",
+      "amount": 0,
+      "stageId": "1398904714",
+      "dEntries": {},
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/larissa-pagnussatto-0b7975193/",
+          "timestamp": "2026-08-11T14:39:36.004Z",
+          "author": ""
+        }
+      ]
     }
   ],
-  "hs_last_updated2": "10/08/2026, 17:05:32",
+  "hs_last_updated2": "11/08/2026, 11:52:26",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -3758,7 +3879,7 @@
     {
       "metaAbordagens": 40,
       "metaReunioes": 5,
-      "abordagensOverride": 0
+      "abordagensOverride": null
     },
     {
       "metaAbordagens": 0,
@@ -3898,6 +4019,6 @@
       "link": ""
     }
   ],
-  "active_tab": "metas",
-  "snapshot_at": "2026-08-10T20:11:44.978Z"
+  "active_tab": "metasemanal",
+  "snapshot_at": "2026-08-11T14:52:30.351Z"
 }
