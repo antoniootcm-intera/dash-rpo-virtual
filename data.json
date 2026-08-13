@@ -3864,9 +3864,201 @@
           "author": ""
         }
       ]
+    },
+    {
+      "id": "63765737641",
+      "name": "Unilever ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-13T18:31:03.522Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/jennifer-nogueira-79820785/",
+          "timestamp": "2026-08-13T18:31:08.409Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63767971928",
+      "name": "Bosch ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-13T18:20:20.908Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/deboraamello/",
+          "timestamp": "2026-08-13T18:20:28.868Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63813172627",
+      "name": "Banco PAN ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-13T18:11:22.318Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/leticiatmathiasg/",
+          "timestamp": "2026-08-13T18:11:31.270Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63767785319",
+      "name": "Grendene ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-13T17:58:54.584Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/giuliano-fornazier-77030129/",
+          "timestamp": "2026-08-13T17:58:59.543Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63765799804",
+      "name": "3M ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-13T17:42:50.824Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/naiara-lopes-ba9b3430/",
+          "timestamp": "2026-08-13T17:42:59.287Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63767911013",
+      "name": "BTG Pactual ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-13T16:23:14.904Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "http://www.linkedin.com/in/fguelfi",
+          "timestamp": "2026-08-13T16:23:18.747Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63765737893",
+      "name": "Allianz Brasil ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-13T16:25:41.265Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "http://www.linkedin.com/in/luanasiscatirh",
+          "timestamp": "2026-08-13T16:25:47.919Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63767785509",
+      "name": "Casa dos Ventos Energias Renováveis ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-13T16:24:10.851Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "http://www.linkedin.com/in/wanessa-cerqueira-francisco-733b3484",
+          "timestamp": "2026-08-13T16:24:32.806Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63834861449",
+      "name": "Cash Me | inHire",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-13T14:27:25.915Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63834745879",
+      "name": "International meal Company ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-13T17:50:47.762Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/jessica-banfi-20963bb0/",
+          "timestamp": "2026-08-13T17:50:57.348Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63837028776",
+      "name": "Grupo Civil",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-13T18:44:51.919Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/mariaclaragalvao/",
+          "timestamp": "2026-08-13T18:44:44.016Z",
+          "author": ""
+        }
+      ]
     }
   ],
-  "hs_last_updated2": "13/08/2026, 10:40:41",
+  "hs_last_updated2": "13/08/2026, 17:26:46",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -4112,5 +4304,5 @@
     }
   ],
   "active_tab": "metasemanal",
-  "snapshot_at": "2026-08-13T13:42:59.248Z"
+  "snapshot_at": "2026-08-13T20:26:51.806Z"
 }
