@@ -1436,13 +1436,20 @@
       "id": "62660909592",
       "name": "Alelo Brasil ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-07-16T13:51:33.519Z"
+        "1": "2026-07-16T13:51:33.519Z",
+        "2": "2026-08-11T17:26:56.782Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
-      "notes": []
+      "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-08-11T17:27:04.318Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "62660971675",
@@ -1618,11 +1625,19 @@
       "id": "63087218827",
       "name": "Alpargatas S.A. ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-12T18:45:29.124Z"
+      },
       "reachedAgendado": false,
       "agendadoDate": null,
-      "notes": []
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/natalie-mendes-a0676945/",
+          "timestamp": "2026-08-12T18:45:32.387Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63087218851",
@@ -1682,31 +1697,55 @@
       "id": "63125403397",
       "name": "Telefonica ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-12T19:40:52.171Z"
+      },
       "reachedAgendado": false,
       "agendadoDate": null,
-      "notes": []
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/veronica-batista-silva-corcete-2694b1178/",
+          "timestamp": "2026-08-12T19:40:59.486Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63087278643",
       "name": "PepsiCo ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-12T20:53:54.542Z"
+      },
       "reachedAgendado": false,
       "agendadoDate": null,
-      "notes": []
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/d%C3%A9bora-oliveira-523b67a9/",
+          "timestamp": "2026-08-12T20:54:03.885Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63087219204",
       "name": "Grupo Fleury ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-12T20:37:17.950Z"
+      },
       "reachedAgendado": false,
       "agendadoDate": null,
-      "notes": []
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/mariane-mrferreira/",
+          "timestamp": "2026-08-12T20:37:17.424Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63087278663",
@@ -1964,13 +2003,19 @@
       "id": "63125454459",
       "name": "XP Inc. ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-07-30T14:56:49.884Z"
+        "1": "2026-07-30T14:56:49.884Z",
+        "2": "2026-08-12T16:36:20.264Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Chamei pelo wpp",
+          "timestamp": "2026-08-12T16:36:31.190Z",
+          "author": ""
+        },
         {
           "body": "Contato feito com a Jéssica, que toca vagas de varejo.",
           "timestamp": "2026-07-30T14:56:45.038Z",
@@ -3162,9 +3207,10 @@
       "id": "63513997161",
       "name": "AUTOMOB ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-07T20:32:43.206Z"
+        "1": "2026-08-07T20:32:43.206Z",
+        "2": "2026-08-12T19:58:24.125Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -3391,31 +3437,55 @@
       "id": "63514024221",
       "name": "Rodobens ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-12T20:05:29.934Z"
+      },
       "reachedAgendado": false,
       "agendadoDate": null,
-      "notes": []
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/morettibruno/",
+          "timestamp": "2026-08-12T20:05:32.848Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63578785376",
       "name": "Shoulder ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-12T19:22:10.865Z"
+      },
       "reachedAgendado": false,
       "agendadoDate": null,
-      "notes": []
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/elisapierobom/",
+          "timestamp": "2026-08-12T19:22:07.472Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63514024230",
       "name": "Smart Fit ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-12T18:07:48.827Z"
+      },
       "reachedAgendado": false,
       "agendadoDate": null,
-      "notes": []
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/felipebracocasale/",
+          "timestamp": "2026-08-12T18:07:55.763Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63514023082",
@@ -3439,11 +3509,19 @@
       "id": "63513985645",
       "name": "Tel Contact Center ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-12T20:40:19.138Z"
+      },
       "reachedAgendado": false,
       "agendadoDate": null,
-      "notes": []
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/nadiamacedo/Por não termos o e-mail da cliente, entrei em contato com ela via WhatsApp",
+          "timestamp": "2026-08-12T20:41:15.060Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63436807551",
@@ -3485,11 +3563,19 @@
       "id": "63514024253",
       "name": "Grupo Saga ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-12T17:49:44.794Z"
+      },
       "reachedAgendado": false,
       "agendadoDate": null,
-      "notes": []
+      "notes": [
+        {
+          "body": "http://www.linkedin.com/in/thais-figueiredo-330032170https://www.linkedin.com/in/luisfilipeab/",
+          "timestamp": "2026-08-12T17:49:52.516Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63514024256",
@@ -3513,11 +3599,19 @@
       "id": "63578786370",
       "name": "Portobello Shop ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-12T18:21:47.940Z"
+      },
       "reachedAgendado": false,
       "agendadoDate": null,
-      "notes": []
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/franciely-monteiro-viana-35340a157/",
+          "timestamp": "2026-08-12T18:21:51.410Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63436807559",
@@ -3547,11 +3641,19 @@
       "id": "63578787423",
       "name": "Flora ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-12T12:30:53.183Z"
+      },
       "reachedAgendado": false,
       "agendadoDate": null,
-      "notes": []
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/alisonkeu/?skipRedirect=true",
+          "timestamp": "2026-08-12T12:31:06.620Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63578784078",
@@ -3605,21 +3707,19 @@
       "id": "63514024268",
       "name": "Paraná Banco S/A ",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-12T14:33:59.231Z"
+      },
       "reachedAgendado": false,
       "agendadoDate": null,
-      "notes": []
-    },
-    {
-      "id": "63436807563",
-      "name": "Grupo Skala ",
-      "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "reachedAgendado": false,
-      "agendadoDate": null,
-      "notes": []
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/brunafavarowagmacker/",
+          "timestamp": "2026-08-12T14:33:23.129Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "63436807564",
@@ -3668,16 +3768,6 @@
           "author": ""
         }
       ]
-    },
-    {
-      "id": "63514024275",
-      "name": "Millicom (Tigo) ",
-      "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
-      "reachedAgendado": false,
-      "agendadoDate": null,
-      "notes": []
     },
     {
       "id": "63578785433",
@@ -3761,8 +3851,10 @@
       "id": "63717398040",
       "name": "Contabilizei | InHire",
       "amount": 0,
-      "stageId": "1398904714",
-      "dEntries": {},
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-12T12:04:57.093Z"
+      },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
@@ -3774,7 +3866,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "11/08/2026, 11:52:26",
+  "hs_last_updated2": "13/08/2026, 10:40:41",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -4020,5 +4112,5 @@
     }
   ],
   "active_tab": "metasemanal",
-  "snapshot_at": "2026-08-11T14:52:30.351Z"
+  "snapshot_at": "2026-08-13T13:42:59.248Z"
 }
