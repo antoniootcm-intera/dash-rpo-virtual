@@ -754,13 +754,19 @@
       "id": "62638131586",
       "name": "Grupo QuintoAndar ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-07-27T14:16:21.031Z"
+        "1": "2026-07-27T14:16:21.031Z",
+        "2": "2026-08-14T19:40:53.980Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP realizado",
+          "timestamp": "2026-08-14T19:40:51.747Z",
+          "author": ""
+        },
         {
           "body": "Email enviado para a Julia prado. Ela segue a pagina da INTERA no linkedin e sao ex clientes.",
           "timestamp": "2026-07-27T14:16:18.085Z",
@@ -930,9 +936,10 @@
       "id": "62638141993",
       "name": "Unidas ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1399081987",
       "dEntries": {
-        "1": "2026-07-20T13:35:26.893Z"
+        "1": "2026-07-20T13:35:26.893Z",
+        "3": "2026-08-14T19:46:42.453Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -1008,9 +1015,10 @@
       "id": "62639557304",
       "name": "Chilli Beans ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1399081987",
       "dEntries": {
-        "1": "2026-07-23T14:13:20.893Z"
+        "1": "2026-07-23T14:13:20.893Z",
+        "3": "2026-08-14T19:51:19.513Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -2117,9 +2125,10 @@
       "id": "63125403985",
       "name": "Movida Aluguel de Carros ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-07-29T19:00:14.037Z"
+        "1": "2026-07-29T19:00:14.037Z",
+        "2": "2026-08-14T19:49:00.140Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -2153,9 +2162,10 @@
       "id": "63087219571",
       "name": "Tenda Atacado ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-07-29T18:38:21.616Z"
+        "1": "2026-07-29T18:38:21.616Z",
+        "2": "2026-08-14T19:48:47.408Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -2171,9 +2181,10 @@
       "id": "63087097738",
       "name": "Moura Dubeux ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-07-29T18:44:52.330Z"
+        "1": "2026-07-29T18:44:52.330Z",
+        "2": "2026-08-14T19:48:07.833Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -2189,9 +2200,10 @@
       "id": "63087278998",
       "name": "Avenida ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-07-29T18:16:01.401Z"
+        "1": "2026-07-29T18:16:01.401Z",
+        "2": "2026-08-14T19:45:02.442Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -2297,10 +2309,11 @@
       "id": "63125346457",
       "name": "Cacau Show ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-07-27T19:10:27.415Z",
-        "2": "2026-08-10T19:46:39.073Z"
+        "2": "2026-08-10T19:46:39.073Z",
+        "3": "2026-08-14T19:43:06.794Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -4056,9 +4069,219 @@
           "author": ""
         }
       ]
+    },
+    {
+      "id": "63925425750",
+      "name": "Bomix",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T18:49:06.271Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Por ser um nome muito genérico, não encontrei ele no Linkedin",
+          "timestamp": "2026-08-14T18:47:17.872Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63925425846",
+      "name": "Brisanet",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T18:34:09.227Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/simonecaixeta/",
+          "timestamp": "2026-08-14T18:34:17.631Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63925241491",
+      "name": "Cencosud",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T19:01:46.187Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/christianne-maria-ribeiro-533581a/",
+          "timestamp": "2026-08-14T19:01:55.474Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63925303612",
+      "name": "InfoTec",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T19:13:23.419Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/aline-bastos/",
+          "timestamp": "2026-08-14T19:12:38.396Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63925427894",
+      "name": "Espaço Laser",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T19:28:35.045Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/elisabete-cintra-478339170/",
+          "timestamp": "2026-08-14T19:28:42.954Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63929470547",
+      "name": "Libbs Farmacêutica",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T19:49:15.289Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/camilla-nassar-14278832/",
+          "timestamp": "2026-08-14T19:49:25.180Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63929470905",
+      "name": "Prati-Donaduzzi",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:00:18.299Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/fernandofrancisco79/",
+          "timestamp": "2026-08-14T20:00:26.561Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63925244797",
+      "name": "Adidas | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:23:05.651Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63929533313",
+      "name": "Any Any | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:23:28.751Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925492040",
+      "name": "Decathlon | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:23:44.682Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925244826",
+      "name": "Gazin | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:24:20.821Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925368389",
+      "name": "GPA | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:24:32.806Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925182558",
+      "name": "Grupo Dass | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:24:57.155Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925368398",
+      "name": "Grupo Mateus | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:25:10.466Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
     }
   ],
-  "hs_last_updated2": "13/08/2026, 17:26:46",
+  "hs_last_updated2": "14/08/2026, 17:25:16",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -4304,5 +4527,5 @@
     }
   ],
   "active_tab": "metasemanal",
-  "snapshot_at": "2026-08-13T20:26:51.806Z"
+  "snapshot_at": "2026-08-14T20:25:19.914Z"
 }
