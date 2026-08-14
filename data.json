@@ -84,7 +84,7 @@
       "realizadas": 3
     },
     {
-      "realizadas": 0
+      "realizadas": 2
     },
     {
       "realizadas": 0
@@ -4279,9 +4279,285 @@
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": []
+    },
+    {
+      "id": "63929471822",
+      "name": "Grupo Zaffari | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:26:35.255Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925492116",
+      "name": "Gucci | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:26:47.100Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925429809",
+      "name": "Havan | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:27:02.988Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925368445",
+      "name": "Levi | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:27:17.400Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925368452",
+      "name": "Strauss | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:27:32.206Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925244981",
+      "name": "LVMH | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:27:44.385Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925368468",
+      "name": "MANGO | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:28:00.339Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925429832",
+      "name": "NESTLÉ | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:28:16.723Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925182723",
+      "name": "Nespresso | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:28:30.650Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925182734",
+      "name": "Next | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:28:46.628Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925306023",
+      "name": "Oniverse | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:28:58.850Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925245019",
+      "name": "RD SAUDE | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:29:16.180Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925182750",
+      "name": "Farmacias Sao joao | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:29:37.272Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925306114",
+      "name": "REI | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:29:50.296Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925306120",
+      "name": "RGIS | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:30:03.546Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63929533513",
+      "name": "Sam's Club | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:30:17.819Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63929471921",
+      "name": "Samsonite | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:30:30.538Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925368601",
+      "name": "Shell | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:30:47.992Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925368607",
+      "name": "Sherwin-Williams | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:31:04.156Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925492281",
+      "name": "Shopee | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:31:17.157Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925245081",
+      "name": "Skechers | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:31:51.069Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63929472025",
+      "name": "Sodimac | Sequencia",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:32:02.482Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
+    },
+    {
+      "id": "63925245093",
+      "name": "Goodyear",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-14T20:32:15.614Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": []
     }
   ],
-  "hs_last_updated2": "14/08/2026, 17:25:16",
+  "hs_last_updated2": "14/08/2026, 17:32:22",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -4527,5 +4803,5 @@
     }
   ],
   "active_tab": "metasemanal",
-  "snapshot_at": "2026-08-14T20:25:19.914Z"
+  "snapshot_at": "2026-08-14T20:32:34.592Z"
 }
