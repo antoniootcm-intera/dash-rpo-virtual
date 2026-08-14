@@ -288,7 +288,7 @@
       "id": "62616673874",
       "name": "Renner | Fernanda Jacob | CG",
       "amount": 0,
-      "stageId": "1397554096",
+      "stageId": "1397554098",
       "notes": []
     },
     {
@@ -351,14 +351,14 @@
       "id": "62706348314",
       "name": "Cielo ",
       "amount": 120000,
-      "stageId": "1397554097",
+      "stageId": "1397554098",
       "notes": []
     },
     {
       "id": "62852981907",
       "name": "Facta | Priscila | CG",
       "amount": 0,
-      "stageId": "1397554097",
+      "stageId": "1397554098",
       "notes": [
         {
           "body": "FUP feito para entender se discutiram internamente.",
@@ -514,11 +514,42 @@
       "id": "63680205660",
       "name": "OXXO | Jeremias | OUT",
       "amount": 0,
+      "stageId": "1397554093",
+      "notes": [
+        {
+          "body": "Ficou acordado de darmos ingressos pro CORNARH",
+          "timestamp": "2026-08-14T20:33:27.446Z",
+          "author": ""
+        },
+        {
+          "body": "OXXO <> RPOvirtual INTERAhttps://tldv.io/app/meetings/6a7f184e86d9f9001327dc901. Itens de AçãoPaula enviar proposta e material sobre RPOvirtual para Thiago avaliar 01:15:06Thiago compartilhar WhatsApp com Paula para contato direto 01:15:04Paula agendar conversa com Thiago, Bruna e Jeremias para apresentar RPOvirtual 01:14:24Thiago avaliar material e levantar dúvidas para próxima reunião 01:15:26Paula enviar dados para gerar ingresso de visitante para Thiago, Rafa e Bruna 01:16:53Paula agendar follow-up na sexta-feira para avaliar andamento do tema 01:15:582. Estrutura Operacional OXXOThiago responsável por inaugurações e vagas operacionais de loja 07:00Bruna gerencia reposição de pessoal em lojas já inauguradas 13:16Jeremias cuida de vagas administrativas e gestão corporativa 09:16Time total de recrutamento possui 30 pessoas distribuídas entre os três 08:56Thiago entregou 28 lojas com cinco pessoas em março de 2026 16:303. Processo de Recrutamento Atual OXXOUtilizam plataformas Individ, Catho e InfoJobs para divulgar vagas 10:31Gabi funciona como plataforma de admissão integrada com folha de pagamento 10:02Octadesk usado para disparos em massa e gestão de candidatos 11:57Entrevistas em grupo para atendentes de loja com 600 vagas mensais 13:21Teste comportamental, matemática e português aplicado aos candidatos 14:12Avaliação médica realizada antes da emissão de documentação 14:574. Cronograma e Capacidade de EntregaSLA atendente 21 dias, encarregado 35-40 dias, líder 25 dias 17:33Ideal receber informações de lojas com mínimo 45 dias de antecedência 17:13Meta anual 135 lojas, já entregues 65 até agosto de 2026 21:22Outubro 15 lojas, novembro 20 lojas, dezembro quase 30 lojas previstas 21:33Dezembro é crítico por sazonalidade e projetos de verão simultâneos 21:45Cada analista do time fecha em média 40 posições, alguns 80-90 20:385. Desafios Operacionais IdentificadosEncarregado é maior dificuldade com apenas R$ 200 acima do atendente 17:48Responsabilidade do encarregado incompatível com mercado e salário 17:57Necessidade de CNPJ da loja antes de iniciar processo de admissão 22:57Baixa aderência de candidatos nas plataformas é principal dor 26:37Candidatos se inscrevem em múltiplas vagas reduzindo volume real 31:52Risco de desistência se concorrente oferecer R$ 50 a mais 24:006. Solução RPOvirtual PropostaRPOvirtual é serviço, não ferramenta, com agentes de IA integrados 16:17Entrevista por vídeo gravada disponível 24/7 para candidatos 37:04Entrevista por WhatsApp com áudio e transcrição automática 43:05Magalu reduziu SLA de encarregado de 25 para 12 dias 50:45Operador virtual toca 15-20 posições simultaneamente 57:01Automação de movimentação de candidatos dispara WhatsApp automático 54:127. Modelo de Precificação RPOvirtualRPOvirtual humano custa entre R$ 17-18 mil mensais na intera 01:04:44RPOvirtual virtual custa R$ 10 mil mensais com todos custos inclusos 01:05:18Proposta de lançamento válida de julho até final de setembro 01:04:44Sem fidelidade, contrato mensal com 30 dias de aviso prévio 01:05:18Renovação automática sem negociação mensal, cancelamento sem multa 01:09:10Incluso mídia paga, infraestrutura Raia, WhatsApp e relatórios semanais 01:04:038. Implementação e SuporteSetup requer duas semanas de alinhamento e detalhes operacionais 59:56Operador intera terá acesso ao ambiente OXXO como funcionário 01:00:16Operador participa de rituais semanais e grupo de comunicação diária 01:00:42CS dedicado gera relatório semanal assíncrono com dados de funil 01:02:31Análise mensal com CS e feedback direto ao operador possível 01:02:45Flexibilidade para ajustar estratégia sem necessidade de mudanças operacionais 01:10:539. Próximos Passos DiscussãoThiago apresentará material para Rafa, gerente e Bruna 01:15:10Possível piloto inicial com um RPOvirtual para testar modelo 01:08:45Thiago, Rafa e Bruna convidados para evento em São Paulo próxima semana 01:16:29Paula oferece ingressos de visitante para os três dias do evento 01:16:29Notas manuaisNenhuma nota manual",
+          "timestamp": "2026-08-14T20:33:17.686Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63925306216",
+      "name": "Delfia Tech | Vanessa | MKT",
+      "amount": 0,
+      "stageId": "1397554093",
+      "notes": [
+        {
+          "body": "[RPO] INTERA + Delfiahttps://tldv.io/app/meetings/6a7f22d2bf1c3500130c0e0a1. Itens de AçãoLetícia compartilhar descrição de vaga de técnico de Telecom com Antônio para parametrização 37:48Antônio parametrizar ferramenta para entrevistar perfil de técnico de Telecom 36:53Vanessa e Letícia fazer levantamento de composição das 129 vagas do projeto 45:13Vanessa compartilhar informações solicitadas por e-mail com Antônio 45:35Antônio enviar proposta de RPO virtual para Vanessa e Letícia 45:48Agendar teste de ferramenta para quinta-feira às 11 horas 46:33Antônio parametrizar ferramenta antes do encontro no evento para teste prático 47:202. Modelo de Serviço RPO VirtualRPO virtual funciona como assinatura mensal sem fidelidade mínima 41:02Valor mensal de RPO virtual é 10 mil reais, metade do RPO tradicional 41:07RPO virtual consegue tocar até 15 vagas por mês por posição 40:06Contagem de vagas considera perfil e localidade como unidades separadas 40:17Processo end-to-end utiliza Inteligência Artificial com relacionamento humano 38:09Recrutador da Intera parametriza solução sem necessidade de cliente mexer em ferramentas 38:423. Posições e Demandas de RecrutamentoDelfia trabalha com dois recrutadores para serviços gerenciados e corporativo 05:36Principais posições abertas: arquiteto de soluções e especialista em infraestrutura com segurança 03:53Posições sazonais incluem engenharia em Cloud com demanda variável 10:43Técnico de Telecom precisa de conhecimento em instalação e manutenção de fibra óptica 19:02Técnico de Telecom deve ter certificações NR10 e NR35 ou receber qualificação interna 19:02Vagas de técnico de Telecom distribuem-se em São Paulo, Santa Catarina, Curitiba, Bahia e Recife 21:15Projeto futuro prevê chegada de 129 vagas em negociação comercial 39:454. Histórico e Experiência PréviaLetícia trabalhou com Intera duas vezes pela Z1 absorvida pela Energia Cash 03:40Delfia nunca trabalhou com consultorias externas para recrutamento de tecnologia 06:07Intera atua com RPO tradicional apenas, não com outras modalidades de recrutamento 17:29Intera trabalha com vagas operacionais em Riachuelo, Cielo e empresas similares 20:015. Estratégias de Recrutamento e CanaisIntera utiliza Facebook e Instagram com resultados positivos em praças interioranas 32:06Delfia tem parceria com Ato Vagas para encontrar público operacional 32:32Meta alterou regras de WhatsApp oficial, derrubando números com muitas mensagens 32:53Intera qualificou base de 10 mil vendedores via WhatsApp oficial após mudanças 40:55Intera pode trabalhar com bases de candidatos já existentes da Delfia 45:39Delfia já esgotou bases de recrutamento e tem dificuldade em encontrar técnicos de Telecom 33:556. Entrevista Virtual com IAEntrevistadora virtual Íris faz perguntas comportamentais e técnicas de forma natural 35:11Entrevistadora virtual aprofunda respostas quando candidato demonstra profundidade 36:44Ferramenta pode ser parametrizada com hard skills, comportamentos e certificações necessárias 37:14Anúncios em Stories do Instagram podem ser confidenciais ou com nome da empresa 34:24Candidatos clicam em anúncio, interagem no WhatsApp e passam por qualificação antes entrevista 34:387. Resultados e AssertividadeIntera recrutou 25 candidatos em 12 dias, reduzindo SLA de contratação significativamente 22:5820 candidatos foram agendados com gestor, sete entrevistados presencialmente 23:34Cinco de sete candidatos entrevistados foram aprovados pelo gestor 23:34Três vagas abertas foram preenchidas com assertividade muito alta da entrevistadora 23:348. Considerações Comerciais e DesafiosDelfia tem preocupação com SLA comercial e questões salariais na negociação 04:36Delfia trabalha internamente questões de retenção e conquista de clientes 17:17Delfia tem volumetria variável de vagas entre meses com muito e pouco volume 25:23Delfia precisa de mínimo 30 vagas para vender RPO virtual internamente como projeto 44:36RPO de TI pode não fazer sentido para Delfia no momento por volume atual 45:51Delfia tem resistência interna sobre robotização e falta de contato humano 43:529. Próximos Passos e EncontrosVanessa e Letícia podem testar ferramenta no evento Colar na terça-feira 46:56Intera terá estande nos três dias do evento Colar em frente ao palco de IA 47:04Antônio enviará localização do estande por e-mail para Vanessa e Letícia 47:18Notas manuaisNenhuma nota manual",
+          "timestamp": "2026-08-14T20:35:44.951Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "63929472117",
+      "name": "Lojas Edmil | Márcia | OUT",
+      "amount": 0,
       "stageId": "1397554092",
       "notes": []
     }
   ],
-  "hs_last_updated": "10/08/2026, 17:05:32",
+  "hs_last_updated": "14/08/2026, 17:47:28",
   "mrr_overrides": {
     "total": {
       "value": 41000,
@@ -587,6 +618,12 @@
     },
     "63436402725": {
       "canal": "CG"
+    },
+    "63680205660": {
+      "canal": "OUT"
+    },
+    "63925306216": {
+      "canal": "MKT"
     }
   },
   "hs_deleted": [],
@@ -4557,7 +4594,7 @@
       "notes": []
     }
   ],
-  "hs_last_updated2": "14/08/2026, 17:32:22",
+  "hs_last_updated2": "14/08/2026, 17:47:33",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -4803,5 +4840,5 @@
     }
   ],
   "active_tab": "metasemanal",
-  "snapshot_at": "2026-08-14T20:32:34.592Z"
+  "snapshot_at": "2026-08-14T20:47:42.343Z"
 }
