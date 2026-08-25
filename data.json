@@ -90,7 +90,7 @@
       "realizadas": 0
     },
     {
-      "realizadas": 0
+      "realizadas": 3
     },
     {
       "realizadas": 0
@@ -229,6 +229,10 @@
     "OUT": {
       "sal": 0,
       "conv": 0
+    },
+    "CONARH": {
+      "sal": 0,
+      "conv": 0
     }
   },
   "hs_stages": [
@@ -331,7 +335,7 @@
       "id": "62628787280",
       "name": "Osklen | Bianca | RE",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554091",
       "notes": []
     },
     {
@@ -545,11 +549,239 @@
       "id": "63929472117",
       "name": "Lojas Edmil | Márcia | OUT",
       "amount": 0,
+      "stageId": "1397554091",
+      "notes": []
+    },
+    {
+      "id": "64288759475",
+      "name": "Mills | Tatiane | MKT",
+      "amount": 0,
+      "stageId": "1397554094",
+      "notes": [
+        {
+          "body": "[RPO] INTERA + Millshttps://tldv.io/app/meetings/6a8c3231e5e74400135307cc1. Itens de AçãoAntônio enviar proposta formalizada e minuto de contrato padrão até final do dia 37:24Tatiane enviar link da vaga operacional com maior volume para parametrização 38:54Antônio parametrizar entrevistadora virtual para vaga operacional selecionada 38:32Agendar segunda conversa ainda essa semana para teste com simulação de candidatos 38:43Tatiane compartilhar WhatsApp com Antônio para comunicação contínua 43:552. Contexto da Empresa MillsMills é empresa responsável por linha amarela, ultra logística e plataforma aérea 02:33Estrutura de recrutamento dividida em sete pessoas na coordenação de leves 06:19Quatro pessoas na coordenação de linha amarela, além das coordenadoras divisões 06:19Operações em Sumaré, Assis, Contagem, Betim, Parauapebas e mais de 80 unidades 31:083. Demanda de RecrutamentoVagas remanescentes deveriam ter fechado até 31 de julho 04:21Meta de zerar vagas até meados de setembro para início em outubro 04:43Contratações com SLA de 30 dias para admissões em outubro 04:5630% das vagas são motorista, 65% entre mecânico, soldador e técnico 28:00Auxiliares de manutenção e serviços gerais totalizam 82 posições operacionais 30:47Total de 147 vagas operacionais a preencher 30:474. Solução Intera - Recrutamento Virtual com IAPlataforma utiliza entrevistadora virtual Íris para conduzir entrevistas automatizadas 18:19Candidatos acessam link, sem necessidade de download, podem usar celular 24:49Sistema gera gravação, transcrição e nota automática para cada competência 18:39Taxa de conversão de finalista para contratado beira 70% 22:37Plataforma detecta quando candidato sai da tela durante entrevista 26:55Um recrutador virtual consegue tocar até 15 vagas simultâneas por mês 33:53Múltiplas posições da mesma vaga contam como uma única vaga 34:045. Modelo de Operação InteraRecrutador alocado dentro da organização Mills fica responsável pelo sucesso 32:50Recrutador tem acesso a Slack, Teams e GAP para informações e rituais 33:02Recrutador faz alinhamento com gestor para abertura de novas vagas 33:13Mills não precisa mexer na ferramenta, recrutador gerencia tudo 33:37Intera faz promoção em mídias sociais para atrair candidatos 35:506. Modelo de PrecificaçãoPreço a partir de 17 mil reais mensais para recrutador virtual 35:32Recrutador tradicional custa dobro do preço, geralmente 20 mil para cima 35:32Assinatura mensal sem alteração por custo de contratação ou mídia 35:50Contrato fechado tradicional é 6 ou 12 meses, modelo Intera é mensal 36:15Cancelamento sem multa, apenas aviso prévio de 30 dias necessário 36:52Sem custo de onboarding, contagem começa após parametrização da vaga 36:257. Clientes e Casos de SucessoModelo bem aceito no Conan com reações positivas dos participantes 39:12Intera atua com Renner, Magalu, Cielo, faca promotora e DM cartões 39:20Posições operacionais têm sido muito bem recebidas pela plataforma 20:578. Próximas Etapas AcordadasTatiane vai alinhar com coordenações sobre plano estratégico para zerar vagas 40:17Tatiane vai colocar Antônio em contato com pessoa que executará projeto 40:17Teste será feito com simulação de candidatos da Mills 38:43Antônio tem reunião às 10 e 11 para falar do mesmo serviço 40:50Notas manuaisNenhuma nota manual",
+          "timestamp": "2026-08-25T01:48:47.015Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64288821088",
+      "name": "Apsis Consultoria | Letícia | CONARH",
+      "amount": 0,
+      "stageId": "1397554094",
+      "notes": [
+        {
+          "body": "Apsis consultoria <> RPOvirtualhttps://tldv.io/app/meetings/6a8c4040f857620013dc083a1. Itens de AçãoAntônio enviar apresentação e minuta contratual padrão para Letícia até final do dia 33:04Letícia avaliar minuta contratual com jurídico para agilizar processo futuro 32:44Letícia indicar mensalmente andamento das demandas e avisar sobre complicações 32:092. Escopo da SoluçãoSolução atende picos de projetos operacionais com contratação rápida 03:39Inteligência Artificial realiza entrevistas automaticamente sem custo de mídia paga 02:45Candidatos qualificados via WhatsApp com output final sendo agendamento com gestor 11:34Plataforma utiliza Instagram, Facebook e base de dados do Vem de Vaga 11:153. Perfil de Demanda da RPOvirtualDemandas são projetos pontuais de auxiliar de inventário e estoque 15:36Projetos variam de uma noite até três meses com possível deslocamento entre estados 11:20Maioria dos projetos concentra-se em São Paulo e interior 22:17Requisitos mínimos incluem nível médio e habilidade com celular 22:59Demanda sazonal aumenta após eleições e períodos de Copa do Mundo 16:55Final do ano apresenta maior demanda de mão de obra 27:224. Modelo de ContrataçãoProjetos pontuais utilizam prestação de serviço autônomo com diária 22:48Projetos com dedicação maior definem valor mensal segunda a sexta 28:49Tempo de mobilização varia entre cinco a sete dias normalmente 22:59Indústrias podem estender prazo até dez dias por exigências documentais 22:395. Estrutura Interna da RPOvirtualLetícia responsável por seleção com suporte de uma analista e estagiária 24:13Projetos estratégicos com grande volume passam por validação da CEO 29:20Banco de talentos robusto em São Paulo atende demandas menores rapidamente 23:44Não utiliza consultoria de recrutamento externa, gerencia internamente 24:586. Proposta ComercialAssinatura mensal de R$ 10 mil para até 15 vagas simultâneas 27:50Sem fidelidade mínima, cancelamento possível a qualquer momento 27:40Valor inferior a recrutador tradicional (R$ 18 mil) e contratação CLT 27:50Vagas podem ser divididas entre dois clientes diferentes sem restrição 27:45Solução faz sentido para demandas sazonais da RPOvirtual 28:347. Desafios IdentificadosBloqueios de WhatsApp foram problema em projeto anterior de 800 vagas 30:28Dificuldade em alcançar candidatos em regiões remotas e distantes 17:17Projetos atípicos com horários irregulares exigem equipes dispostas a viajar 18:568. Próximos Passos AcordadosParametrização necessária alguns dias antes do fechamento do projeto 25:49Comunicação mensal entre Antônio e Letícia sobre andamento das demandas 32:09Output final do processo será validado conforme características específicas de cada projeto 31:06Notas manuaisNenhuma nota manual",
+          "timestamp": "2026-08-25T01:52:24.632Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64291641783",
+      "name": "Mamba Digital | Gabriel | CONARH",
+      "amount": 0,
+      "stageId": "1397554094",
+      "notes": [
+        {
+          "body": "Mamba Digital <> RPOvirtualhttps://tldv.io/app/meetings/6a8c4e4bb3d01b00133fd8231. Itens de AçãoAntônio enviar proposta formalizada por e-mail até final do dia 26:25Gabriel receber proposta com detalhes da solução de atração e entrevista 25:012. Demonstração da PlataformaAntônio parametrizou vaga de atendente comercial com competências específicas incluindo resiliência e qualificação de leads 07:37Sistema realiza entrevista automatizada com perguntas comportamentais e solicita exemplos concretos 15:51Entrevista gera relatório com avaliação detalhada de competências e feedback construtivo 16:03Plataforma se retroalimenta e adapta perguntas conforme respostas do candidato 19:233. Fluxo de Atração e QualificaçãoVagas parametrizadas geram anúncios automáticos no Facebook e Instagram 20:59Candidatos são direcionados para WhatsApp onde ocorre qualificação inicial 21:28Após qualificação, candidato recebe link para entrevista automatizada 22:234. Modelo de Negócio e PreçosAssinatura mensal sem fidelidade mínima permite cancelamento a qualquer momento 23:57Custo de 10 mil reais mensais é mais barato que RPA tradicional de 18 mil 24:05Limite de 15 vagas simultâneas por mês pode ser aumentado com investimento em mídia paga 23:21RPOvirtual oferece flexibilidade para contratar conforme demanda de picos de vagas 24:385. Casos de Uso e AplicabilidadeSolução é adequada para posições operacionais como atendente comercial, closer e assistente de sucesso 20:22RPOvirtual tem atualmente seis ou sete posições abertas com volume mensal consistente 20:14Plataforma permite parametrização com metodologias específicas como Winning by Design 25:31Sistema adapta-se tanto para avaliações comportamentais quanto técnicas conforme necessidade 26:066. Feedback e ImpressõesGabriel considerou entrevista técnica bem estruturada com delay aceitável e perguntas relevantes 15:07Plataforma superou expectativas de Gabriel que havia visto demonstração anterior rápida 25:03Gabriel percebeu fluidez do processo e potencial fit com realidade operacional da empresa 19:48Notas manuaisNenhuma nota manual",
+          "timestamp": "2026-08-25T01:55:48.368Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64333539088",
+      "name": "Frigo Service | Maria | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333293091",
+      "name": "Stefanini | Aline | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333539122",
+      "name": "Newcom | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333293108",
+      "name": "Bravolog | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64338114408",
+      "name": "Fiberhome | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64338114424",
+      "name": "Esportes Gaming Brasil | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333477442",
+      "name": "Fast Shop | Renan | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333355137",
+      "name": "Ativa Online | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64338176656",
+      "name": "Grupo Femina | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333539211",
+      "name": "Grupo Colina | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333477495",
+      "name": "Bonin Engenharia | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64338176688",
+      "name": "Wishin | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333539247",
+      "name": "MartinLog | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333477527",
+      "name": "Dotseg | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64338114581",
+      "name": "Grupo Sadde | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333477549",
+      "name": "Obramax | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64338114606",
+      "name": "Prompt | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333231367",
+      "name": "Grupo Cosmobeauty | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333293346",
+      "name": "GVA | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333355346",
+      "name": "Stoque | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64338176846",
+      "name": "3M | CONARH ",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333355377",
+      "name": "Montreal Moda e Casa | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64338176867",
+      "name": "Sipal | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64338176881",
+      "name": "Helppi | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333293418",
+      "name": "Viniplast | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333539432",
+      "name": "Transben | CONARH",
+      "amount": 0,
+      "stageId": "1397554092",
+      "notes": []
+    },
+    {
+      "id": "64333355436",
+      "name": "Vale Verde UBF | CONARH",
+      "amount": 0,
       "stageId": "1397554092",
       "notes": []
     }
   ],
-  "hs_last_updated": "14/08/2026, 17:47:28",
+  "hs_last_updated": "25/08/2026, 17:58:45",
   "mrr_overrides": {
     "total": {
       "value": 41000,
@@ -573,7 +805,13 @@
     },
     "RE": {},
     "MKT": {},
-    "OUT": {}
+    "OUT": {},
+    "CONARH": {
+      "sal": {
+        "value": 32,
+        "locked": true
+      }
+    }
   },
   "hs_overrides": {
     "62661040054": {
@@ -624,6 +862,9 @@
     },
     "63925306216": {
       "canal": "MKT"
+    },
+    "64333539088": {
+      "canal": "CONARH"
     }
   },
   "hs_deleted": [],
@@ -1670,13 +1911,19 @@
       "id": "63087218827",
       "name": "Alpargatas S.A. ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-12T18:45:29.124Z"
+        "1": "2026-08-12T18:45:29.124Z",
+        "2": "2026-08-19T13:28:09.981Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Fiz o primeiro fup em 19/08",
+          "timestamp": "2026-08-19T13:27:43.275Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/natalie-mendes-a0676945/",
           "timestamp": "2026-08-12T18:45:32.387Z",
@@ -1742,13 +1989,19 @@
       "id": "63125403397",
       "name": "Telefonica ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-12T19:40:52.171Z"
+        "1": "2026-08-12T19:40:52.171Z",
+        "2": "2026-08-19T13:21:26.164Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Fiz o primeiro FUP em 19/08",
+          "timestamp": "2026-08-19T13:21:05.761Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/veronica-batista-silva-corcete-2694b1178/",
           "timestamp": "2026-08-12T19:40:59.486Z",
@@ -1778,13 +2031,19 @@
       "id": "63087219204",
       "name": "Grupo Fleury ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-12T20:37:17.950Z"
+        "1": "2026-08-12T20:37:17.950Z",
+        "2": "2026-08-19T22:25:02.319Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Primeiro FUP",
+          "timestamp": "2026-08-19T22:24:19.594Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/mariane-mrferreira/",
           "timestamp": "2026-08-12T20:37:17.424Z",
@@ -3487,13 +3746,19 @@
       "id": "63514024221",
       "name": "Rodobens ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-12T20:05:29.934Z"
+        "1": "2026-08-12T20:05:29.934Z",
+        "2": "2026-08-19T22:28:30.813Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Primeiro FUP",
+          "timestamp": "2026-08-19T22:28:22.254Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/morettibruno/",
           "timestamp": "2026-08-12T20:05:32.848Z",
@@ -3505,13 +3770,19 @@
       "id": "63578785376",
       "name": "Shoulder ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-12T19:22:10.865Z"
+        "1": "2026-08-12T19:22:10.865Z",
+        "2": "2026-08-19T22:31:07.283Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Primeiro FUP",
+          "timestamp": "2026-08-19T22:30:50.472Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/elisapierobom/",
           "timestamp": "2026-08-12T19:22:07.472Z",
@@ -3523,13 +3794,19 @@
       "id": "63514024230",
       "name": "Smart Fit ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-12T18:07:48.827Z"
+        "1": "2026-08-12T18:07:48.827Z",
+        "2": "2026-08-19T13:41:27.453Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Realizei o primeiro FUP",
+          "timestamp": "2026-08-19T13:41:05.822Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/felipebracocasale/",
           "timestamp": "2026-08-12T18:07:55.763Z",
@@ -3621,6 +3898,11 @@
       "agendadoDate": null,
       "notes": [
         {
+          "body": "Contato errado",
+          "timestamp": "2026-08-19T21:02:20.122Z",
+          "author": ""
+        },
+        {
           "body": "http://www.linkedin.com/in/thais-figueiredo-330032170https://www.linkedin.com/in/luisfilipeab/",
           "timestamp": "2026-08-12T17:49:52.516Z",
           "author": ""
@@ -3649,13 +3931,19 @@
       "id": "63578786370",
       "name": "Portobello Shop ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-12T18:21:47.940Z"
+        "1": "2026-08-12T18:21:47.940Z",
+        "2": "2026-08-19T13:34:44.185Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Realizei o primeiro FUP hoje em 19/08",
+          "timestamp": "2026-08-19T13:34:25.505Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/franciely-monteiro-viana-35340a157/",
           "timestamp": "2026-08-12T18:21:51.410Z",
@@ -3757,13 +4045,19 @@
       "id": "63514024268",
       "name": "Paraná Banco S/A ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-12T14:33:59.231Z"
+        "1": "2026-08-12T14:33:59.231Z",
+        "2": "2026-08-19T22:06:11.666Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Fup em 20/08",
+          "timestamp": "2026-08-19T22:05:37.055Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/brunafavarowagmacker/",
           "timestamp": "2026-08-12T14:33:23.129Z",
@@ -3927,6 +4221,11 @@
       "agendadoDate": null,
       "notes": [
         {
+          "body": "O E-mail esta incorreto, tentar novo e-mail.",
+          "timestamp": "2026-08-19T13:15:45.804Z",
+          "author": ""
+        },
+        {
           "body": "https://www.linkedin.com/in/jennifer-nogueira-79820785/",
           "timestamp": "2026-08-13T18:31:08.409Z",
           "author": ""
@@ -3937,13 +4236,19 @@
       "id": "63767971928",
       "name": "Bosch ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-13T18:20:20.908Z"
+        "1": "2026-08-13T18:20:20.908Z",
+        "2": "2026-08-19T22:19:39.941Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Primeiro FUP",
+          "timestamp": "2026-08-19T22:19:22.206Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/deboraamello/",
           "timestamp": "2026-08-13T18:20:28.868Z",
@@ -3955,13 +4260,19 @@
       "id": "63813172627",
       "name": "Banco PAN ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-13T18:11:22.318Z"
+        "1": "2026-08-13T18:11:22.318Z",
+        "2": "2026-08-19T22:44:55.212Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Primeiro FUP",
+          "timestamp": "2026-08-19T22:44:43.214Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/leticiatmathiasg/",
           "timestamp": "2026-08-13T18:11:31.270Z",
@@ -3973,13 +4284,19 @@
       "id": "63767785319",
       "name": "Grendene ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-13T17:58:54.584Z"
+        "1": "2026-08-13T17:58:54.584Z",
+        "2": "2026-08-19T21:41:04.143Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Primeiro fup em19/08",
+          "timestamp": "2026-08-19T21:40:50.074Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/giuliano-fornazier-77030129/",
           "timestamp": "2026-08-13T17:58:59.543Z",
@@ -4009,13 +4326,24 @@
       "id": "63767911013",
       "name": "BTG Pactual ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1399081991",
       "dEntries": {
-        "1": "2026-08-13T16:23:14.904Z"
+        "1": "2026-08-13T16:23:14.904Z",
+        "2": "2026-08-19T22:53:37.619Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Cliente não tem interesse e pediu para não manda mais e-mail sobre.",
+          "timestamp": "2026-08-21T18:54:19.343Z",
+          "author": ""
+        },
+        {
+          "body": "Primeiro FUP",
+          "timestamp": "2026-08-19T22:53:20.183Z",
+          "author": ""
+        },
         {
           "body": "http://www.linkedin.com/in/fguelfi",
           "timestamp": "2026-08-13T16:23:18.747Z",
@@ -4027,13 +4355,19 @@
       "id": "63765737893",
       "name": "Allianz Brasil ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-13T16:25:41.265Z"
+        "1": "2026-08-13T16:25:41.265Z",
+        "2": "2026-08-19T22:48:50.729Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Primeiro FUP",
+          "timestamp": "2026-08-19T22:48:28.947Z",
+          "author": ""
+        },
         {
           "body": "http://www.linkedin.com/in/luanasiscatirh",
           "timestamp": "2026-08-13T16:25:47.919Z",
@@ -4052,6 +4386,16 @@
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Contato errado",
+          "timestamp": "2026-08-19T21:06:19.436Z",
+          "author": ""
+        },
+        {
+          "body": "Contato errado",
+          "timestamp": "2026-08-19T21:03:48.657Z",
+          "author": ""
+        },
         {
           "body": "http://www.linkedin.com/in/wanessa-cerqueira-francisco-733b3484",
           "timestamp": "2026-08-13T16:24:32.806Z",
@@ -4093,13 +4437,19 @@
       "id": "63837028776",
       "name": "Grupo Civil",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-13T18:44:51.919Z"
+        "1": "2026-08-13T18:44:51.919Z",
+        "2": "2026-08-19T22:39:57.352Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Primeiro FUP",
+          "timestamp": "2026-08-19T22:40:10.512Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/mariaclaragalvao/",
           "timestamp": "2026-08-13T18:44:44.016Z",
@@ -4111,13 +4461,19 @@
       "id": "63925425750",
       "name": "Bomix",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-14T18:49:06.271Z"
+        "1": "2026-08-14T18:49:06.271Z",
+        "2": "2026-08-21T18:46:56.559Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Primeiro FUP",
+          "timestamp": "2026-08-21T18:46:48.853Z",
+          "author": ""
+        },
         {
           "body": "Por ser um nome muito genérico, não encontrei ele no Linkedin",
           "timestamp": "2026-08-14T18:47:17.872Z",
@@ -4137,6 +4493,11 @@
       "agendadoDate": null,
       "notes": [
         {
+          "body": "Primeiro FUP",
+          "timestamp": "2026-08-21T18:52:38.961Z",
+          "author": ""
+        },
+        {
           "body": "https://www.linkedin.com/in/simonecaixeta/",
           "timestamp": "2026-08-14T18:34:17.631Z",
           "author": ""
@@ -4147,13 +4508,19 @@
       "id": "63925241491",
       "name": "Cencosud",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-14T19:01:46.187Z"
+        "1": "2026-08-14T19:01:46.187Z",
+        "2": "2026-08-19T22:15:49.134Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Primeiro FUP",
+          "timestamp": "2026-08-19T22:16:07.297Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/christianne-maria-ribeiro-533581a/",
           "timestamp": "2026-08-14T19:01:55.474Z",
@@ -4165,13 +4532,19 @@
       "id": "63925303612",
       "name": "InfoTec",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-14T19:13:23.419Z"
+        "1": "2026-08-14T19:13:23.419Z",
+        "2": "2026-08-21T18:42:33.926Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Primeiro FUP",
+          "timestamp": "2026-08-21T18:42:48.059Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/aline-bastos/",
           "timestamp": "2026-08-14T19:12:38.396Z",
@@ -4191,6 +4564,11 @@
       "agendadoDate": null,
       "notes": [
         {
+          "body": "Primeiro FUP",
+          "timestamp": "2026-08-21T18:39:56.237Z",
+          "author": ""
+        },
+        {
           "body": "https://www.linkedin.com/in/elisabete-cintra-478339170/",
           "timestamp": "2026-08-14T19:28:42.954Z",
           "author": ""
@@ -4201,13 +4579,19 @@
       "id": "63929470547",
       "name": "Libbs Farmacêutica",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-14T19:49:15.289Z"
+        "1": "2026-08-14T19:49:15.289Z",
+        "2": "2026-08-19T22:35:56.264Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Primeiro FUP",
+          "timestamp": "2026-08-19T22:35:46.575Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/camilla-nassar-14278832/",
           "timestamp": "2026-08-14T19:49:25.180Z",
@@ -4219,13 +4603,19 @@
       "id": "63929470905",
       "name": "Prati-Donaduzzi",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-14T20:00:18.299Z"
+        "1": "2026-08-14T20:00:18.299Z",
+        "2": "2026-08-21T18:35:38.253Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Primeiro FUP",
+          "timestamp": "2026-08-21T18:35:32.837Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/fernandofrancisco79/",
           "timestamp": "2026-08-14T20:00:26.561Z",
@@ -4592,9 +4982,81 @@
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": []
+    },
+    {
+      "id": "64058797638",
+      "name": "ATA Tensoativos",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-17T18:11:03.071Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Não encontrei o Linkedin da cliente.",
+          "timestamp": "2026-08-17T18:12:01.252Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64058799478",
+      "name": "DB1",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-17T18:52:33.329Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/catiana-suenaga-santos/",
+          "timestamp": "2026-08-17T18:52:45.607Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64056343898",
+      "name": "Eurofarma",
+      "amount": 0,
+      "stageId": "1399081990",
+      "dEntries": {
+        "1": "2026-08-18T17:04:32.107Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/eloisa-brito-b2bb96/",
+          "timestamp": "2026-08-18T17:04:44.904Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64133406742",
+      "name": "WorkOn Group",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-18T17:26:36.771Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Não encontrei no Linkedin",
+          "timestamp": "2026-08-18T17:26:49.905Z",
+          "author": ""
+        }
+      ]
     }
   ],
-  "hs_last_updated2": "14/08/2026, 17:47:33",
+  "hs_last_updated2": "25/08/2026, 17:59:01",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -4839,6 +5301,6 @@
       "link": ""
     }
   ],
-  "active_tab": "metasemanal",
-  "snapshot_at": "2026-08-14T20:47:42.343Z"
+  "active_tab": "metas",
+  "snapshot_at": "2026-08-25T20:59:08.987Z"
 }
