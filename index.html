@@ -67,6 +67,7 @@
   .badge-re { background: var(--teal-light); color: var(--teal); }
   .badge-mkt { background: #E8ECFB; color: #3B4A9C; }
   .badge-out { background: var(--mustard-light); color: #8a6d00; }
+  .badge-conarh { background: #FBE0E8; color: #B03060; }
   .badge-nd { background: #eee; color: #888; }
   ::-webkit-scrollbar { height: 8px; width: 8px; }
   ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 8px; }
@@ -391,13 +392,14 @@
       <span>Realizadas → RE: <b id="sal-log-re">0</b></span>
       <span>Realizadas → MKT: <b id="sal-log-mkt">0</b></span>
       <span>Realizadas → OUT: <b id="sal-log-out">0</b></span>
+      <span>Realizadas → CONARH: <b id="sal-log-conarh">0</b></span>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════ TAB 5: CONVERSÃO POR CANAL ══════════════════ -->
 <section id="tab-conversao" class="tab-panel space-y-6">
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="canal-cards"></div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4" id="canal-cards"></div>
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
     <div class="card p-5">
@@ -533,22 +535,23 @@ function saveJSON(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
 let cascataRows   = loadJSON('rpov_cascata_rows', WEEKS.map(() => ({ mrrFechado: 0 })));
 let reunioesChips = loadJSON('rpov_reunioes_chips', WEEKS.map(() => ({ realizadas: 0 })));
 let reunioesLog   = loadJSON('rpov_reunioes_log', []);
-let canalMetas    = loadJSON('rpov_canal_metas', { CG:{sal:0,conv:0}, RE:{sal:0,conv:0}, MKT:{sal:0,conv:0}, OUT:{sal:0,conv:0} });
+let canalMetas    = loadJSON('rpov_canal_metas', { CG:{sal:0,conv:0}, RE:{sal:0,conv:0}, MKT:{sal:0,conv:0}, OUT:{sal:0,conv:0}, CONARH:{sal:0,conv:0} });
 let hsStages      = loadJSON('rpov_hs_stages', []);
 let hsDeals       = loadJSON('rpov_hs_deals', []);
 let hsLastUpdated = localStorage.getItem('rpov_hs_last_updated') || '';
 let mrrOverrides  = loadJSON('rpov_mrr_overrides', { total:{value:0,locked:false}, q3:{value:0,locked:false}, q4:{value:0,locked:false} });
-let canalOverrides = loadJSON('rpov_canal_overrides', { CG:{}, RE:{}, MKT:{}, OUT:{} });
+let canalOverrides = loadJSON('rpov_canal_overrides', { CG:{}, RE:{}, MKT:{}, OUT:{}, CONARH:{} });
 
-// Migração: cluster "NF" (networking forte) virou "CG" (Clientes do Grupo); garante MKT presente.
-function migrateCanalNFtoCG(obj, mktDefault) {
+// Migração: cluster "NF" (networking forte) virou "CG"; garante MKT e CONARH presentes.
+function migrateCanalNFtoCG(obj, makeDefault) {
   if (obj && obj.NF && !obj.CG) { obj.CG = obj.NF; delete obj.NF; }
   if (obj && obj.LF && !obj.OUT) { obj.OUT = obj.LF; delete obj.LF; }
-  if (obj && !obj.MKT) obj.MKT = mktDefault;
+  if (obj && !obj.MKT) obj.MKT = makeDefault();
+  if (obj && !obj.CONARH) obj.CONARH = makeDefault();
   return obj;
 }
-canalMetas = migrateCanalNFtoCG(canalMetas, { sal:0, conv:0 });
-canalOverrides = migrateCanalNFtoCG(canalOverrides, {});
+canalMetas = migrateCanalNFtoCG(canalMetas, () => ({ sal:0, conv:0 }));
+canalOverrides = migrateCanalNFtoCG(canalOverrides, () => ({}));
 saveJSON('rpov_canal_metas', canalMetas);
 saveJSON('rpov_canal_overrides', canalOverrides);
 let hsOverrides   = loadJSON('rpov_hs_overrides', {});
@@ -601,6 +604,7 @@ function pct(a,b) { return b > 0 ? Math.round((a/b)*1000)/10 : 0; }
 function escapeHtml(s) { return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function detectCanal(name) {
   const s = String(name || '').toUpperCase();
+  if (/\bCONARH\b/.test(s)) return 'CONARH';
   if (/\bCG\b/.test(s)) return 'CG';
   if (/\bRE\b/.test(s)) return 'RE';
   if (/\bMKT\b/.test(s)) return 'MKT';
@@ -801,13 +805,14 @@ function onClienteField(i, field, val) {
 function renderChartMrrTotal() {
   const labels = WEEKS.map(w => 'S' + w.n);
   const totalMeta = 300000;
-  const linear = WEEKS.map(w => Math.round(totalMeta * (w.n / WEEKS.length)));
+  // Meta = MRR planejado ACUMULADO de cada semana (do plano da cascata): 0 → 300k.
+  const planejado = WEEKS.map(w => w.mrrMeta || 0);
   const realizadoAcum = cascataAcumuladoAte(WEEKS);
   destroyChart('mrrTotal');
   CHARTS.mrrTotal = new Chart(document.getElementById('chart-mrr-total'), {
     type: 'line',
     data: { labels, datasets: [
-      { label: 'Meta Linear', data: linear, borderColor: '#999', borderDash:[5,4], pointRadius:0, tension:0 },
+      { label: 'Meta Planejada', data: planejado, borderColor: '#999', borderDash:[5,4], pointRadius:0, tension:.25 },
       { label: 'Realizado', data: realizadoAcum, borderColor: '#9900FF', backgroundColor:'#9900FF22', fill:true, tension:.25, pointRadius:2 },
     ]},
     options: { responsive:true, interaction:{ mode:'index', intersect:false },
@@ -818,7 +823,11 @@ function renderChartMrrTotal() {
 
 function renderChartMrrQ(weeks, meta, canvasId, key) {
   const labels = weeks.map(w => 'S' + w.n);
-  const linear = weeks.map((w,i) => Math.round(meta * ((i+1) / weeks.length)));
+  // Meta = MRR planejado ACUMULADO de cada semana (do plano da cascata), relativo ao trimestre.
+  // base = MRR planejado acumulado até a semana anterior ao 1º dia do trimestre (0 no Q3, 100k no Q4).
+  const firstN = weeks[0].n;
+  const base = firstN > 1 ? (WEEKS[firstN-2].mrrMeta || 0) : 0;
+  const planejado = weeks.map(w => (w.mrrMeta || 0) - base);
   let acc = 0;
   const realizado = weeks.map(w => { acc += (cascataRows[w.n-1]?.mrrFechado||0); return acc; });
   // Índice da semana atual DENTRO deste trimestre (ou -1 se estamos fora dele).
@@ -828,7 +837,7 @@ function renderChartMrrQ(weeks, meta, canvasId, key) {
   CHARTS[key] = new Chart(document.getElementById(canvasId), {
     type: 'line',
     data: { labels, datasets: [
-      { label: 'Meta Linear', data: linear, borderColor: '#999', borderDash:[5,4], pointRadius:0 },
+      { label: 'Meta Planejada', data: planejado, borderColor: '#999', borderDash:[5,4], pointRadius:0, tension:.25 },
       { label: 'Realizado', data: realizado, borderColor: '#7A00CC', backgroundColor:'#7A00CC22', fill:true, tension:.25, pointRadius:2 },
     ]},
     options: { responsive:true, interaction:{ mode:'index', intersect:false },
@@ -1442,6 +1451,7 @@ const CANAL_COLORS = {
   RE:   { bg:'var(--teal-light)',   color:'var(--teal)' },
   MKT:  { bg:'#E8ECFB', color:'#3B4A9C' },
   OUT:  { bg:'var(--mustard-light)', color:'#8A6D00' },
+  CONARH: { bg:'#FBE0E8', color:'#B03060' },
 };
 const STATUS_COLORS = {
   'Agendada':  { bg:'#E8ECFB', color:'#3B4A9C' },
@@ -1463,7 +1473,7 @@ function renderReunioesLog() {
     <td><input type="text" class="admin-only w-40" value="${escapeHtml(r.cliente||'')}" oninput="onReuniaoField(${i},'cliente',this.value)" /><span class="viewer-only">${escapeHtml(r.cliente||'')}</span></td>
     <td>
       <select class="admin-only" style="${pillStyle(CANAL_COLORS, r.canal||'')}" onchange="onReuniaoField(${i},'canal',this.value)">
-        ${['','CG','RE','MKT','OUT'].map(c => `<option value="${c}" ${r.canal===c?'selected':''}>${c||'—'}</option>`).join('')}
+        ${['','CG','RE','MKT','OUT','CONARH'].map(c => `<option value="${c}" ${r.canal===c?'selected':''}>${c||'—'}</option>`).join('')}
       </select>
       <span class="viewer-only badge" style="${pillStyle(CANAL_COLORS, r.canal||'')}">${r.canal||'—'}</span>
     </td>
@@ -1478,12 +1488,13 @@ function renderReunioesLog() {
     <td class="admin-only"><button class="text-red-600 text-xs font-semibold" onclick="removeReuniaoRow(${i})">Remover</button></td>
   </tr>`).join('') || `<tr><td colspan="6" style="color:var(--muted);">Nenhuma reunião cadastrada.</td></tr>`;
 
-  const counts = { CG:0, RE:0, MKT:0, OUT:0 };
+  const counts = { CG:0, RE:0, MKT:0, OUT:0, CONARH:0 };
   reunioesLog.forEach(r => { if (r.status === 'Realizada' && counts[r.canal] !== undefined) counts[r.canal]++; });
   document.getElementById('sal-log-cg').textContent = counts.CG;
   document.getElementById('sal-log-re').textContent = counts.RE;
   document.getElementById('sal-log-mkt').textContent = counts.MKT;
   document.getElementById('sal-log-out').textContent = counts.OUT;
+  document.getElementById('sal-log-conarh').textContent = counts.CONARH;
 }
 
 function addReuniaoRow() {
@@ -1536,8 +1547,8 @@ function canalOverrideRow(canal, field, label, value, autoValue) {
 }
 
 function renderConversao() {
-  const canais = ['CG','RE','MKT','OUT'];
-  const colorMap = { CG:'var(--accent)', RE:'var(--teal)', MKT:'#3B4A9C', OUT:'var(--mustard)' };
+  const canais = ['CG','RE','MKT','OUT','CONARH'];
+  const colorMap = { CG:'var(--accent)', RE:'var(--teal)', MKT:'#3B4A9C', OUT:'var(--mustard)', CONARH:'#B03060' };
   const cardsEl = document.getElementById('canal-cards');
   cardsEl.innerHTML = canais.map(c => {
     const st = canalStats(c);
@@ -1603,7 +1614,7 @@ function resetCanalAuto(canal, field) {
 }
 
 function renderConversaoCharts() {
-  const canais = ['CG','RE','MKT','OUT'];
+  const canais = ['CG','RE','MKT','OUT','CONARH'];
   destroyChart('sal');
   CHARTS.sal = new Chart(document.getElementById('chart-sal'), {
     type: 'bar',
@@ -1706,7 +1717,7 @@ function renderKanban() {
             <div class="flex items-center gap-1 flex-wrap">
               <input type="number" step="0.01" class="w-16 text-xs" style="min-width:0;" value="${d.amount||''}" oninput="onKanbanDealField('${d.id}','amount',this.value,'${st.id}')" />
               <select id="kanban-canal-${d.id}" class="text-xs" style="${pillStyle(CANAL_COLORS, canal||'')}" onchange="onKanbanDealField('${d.id}','canal',this.value,'${st.id}')">
-                ${['','CG','RE','MKT','OUT'].map(c => `<option value="${c}" ${(d.canal||'')===c?'selected':''}>${c || 'auto'}</option>`).join('')}
+                ${['','CG','RE','MKT','OUT','CONARH'].map(c => `<option value="${c}" ${(d.canal||'')===c?'selected':''}>${c || 'auto'}</option>`).join('')}
               </select>
               <span class="flex-1"></span>
               ${overridden ? `<button class="text-[10px] underline" style="color:var(--text2);" onclick="undoKanbanOverride('${d.id}')" title="Desfazer edição manual">↺</button>` : ''}
@@ -1899,7 +1910,7 @@ function renderKanban2() {
             <div class="flex items-center gap-1 flex-wrap">
               <input type="number" step="0.01" class="w-16 text-xs" style="min-width:0;" value="${d.amount||''}" oninput="onKanbanDealField2('${d.id}','amount',this.value,'${st.id}')" />
               <select id="kanban2-canal-${d.id}" class="text-xs" style="${pillStyle(CANAL_COLORS, canal||'')}" onchange="onKanbanDealField2('${d.id}','canal',this.value,'${st.id}')">
-                ${['','CG','RE','MKT','OUT'].map(c => `<option value="${c}" ${(d.canal||'')===c?'selected':''}>${c || 'auto'}</option>`).join('')}
+                ${['','CG','RE','MKT','OUT','CONARH'].map(c => `<option value="${c}" ${(d.canal||'')===c?'selected':''}>${c || 'auto'}</option>`).join('')}
               </select>
               <span class="flex-1"></span>
               ${overridden ? `<button class="text-[10px] underline" style="color:var(--text2);" onclick="undoKanbanOverride2('${d.id}')" title="Desfazer edição manual">↺</button>` : ''}
