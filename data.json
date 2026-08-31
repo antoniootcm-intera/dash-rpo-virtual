@@ -609,14 +609,20 @@
       "id": "64333539122",
       "name": "Newcom | CONARH",
       "amount": 0,
-      "stageId": "1397554092",
-      "notes": []
+      "stageId": "1397554099",
+      "notes": [
+        {
+          "body": "Poucas vagas pro RPO virtual.",
+          "timestamp": "2026-08-26T21:43:03.129Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "64333293108",
       "name": "Bravolog | CONARH",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554094",
       "notes": []
     },
     {
@@ -658,7 +664,7 @@
       "id": "64333539211",
       "name": "Grupo Colina | CONARH",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554094",
       "notes": []
     },
     {
@@ -781,7 +787,7 @@
       "notes": []
     }
   ],
-  "hs_last_updated": "25/08/2026, 17:58:45",
+  "hs_last_updated": "31/08/2026, 08:50:16",
   "mrr_overrides": {
     "total": {
       "value": 41000,
@@ -3836,13 +3842,19 @@
       "id": "63513985645",
       "name": "Tel Contact Center ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-12T20:40:19.138Z"
+        "1": "2026-08-12T20:40:19.138Z",
+        "2": "2026-08-26T19:32:30.468Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Segundo FUP",
+          "timestamp": "2026-08-26T19:32:52.903Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/nadiamacedo/Por não termos o e-mail da cliente, entrei em contato com ela via WhatsApp",
           "timestamp": "2026-08-12T20:41:15.060Z",
@@ -5056,7 +5068,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "25/08/2026, 17:59:01",
+  "hs_last_updated2": "31/08/2026, 08:49:40",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -5301,6 +5313,6 @@
       "link": ""
     }
   ],
-  "active_tab": "cascata",
-  "snapshot_at": "2026-08-28T21:12:31.941Z"
+  "active_tab": "metas",
+  "snapshot_at": "2026-08-31T12:19:07.617Z"
 }
