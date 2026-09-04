@@ -93,7 +93,7 @@
       "realizadas": 9
     },
     {
-      "realizadas": 0
+      "realizadas": 5
     },
     {
       "realizadas": 0
@@ -813,7 +813,7 @@
       ]
     }
   ],
-  "hs_last_updated": "31/08/2026, 09:58:05",
+  "hs_last_updated": "31/08/2026, 17:07:36",
   "mrr_overrides": {
     "total": {
       "value": 41000,
@@ -1943,14 +1943,20 @@
       "id": "63087218827",
       "name": "Alpargatas S.A. ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-12T18:45:29.124Z",
-        "2": "2026-08-19T13:28:09.981Z"
+        "2": "2026-08-19T13:28:09.981Z",
+        "3": "2026-09-03T12:54:17.804Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "2° FUP",
+          "timestamp": "2026-09-03T12:54:47.388Z",
+          "author": ""
+        },
         {
           "body": "Fiz o primeiro fup em 19/08",
           "timestamp": "2026-08-19T13:27:43.275Z",
@@ -2021,14 +2027,20 @@
       "id": "63125403397",
       "name": "Telefonica ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-12T19:40:52.171Z",
-        "2": "2026-08-19T13:21:26.164Z"
+        "2": "2026-08-19T13:21:26.164Z",
+        "3": "2026-08-31T14:37:03.728Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "3° FUP",
+          "timestamp": "2026-08-31T14:36:51.812Z",
+          "author": ""
+        },
         {
           "body": "Fiz o primeiro FUP em 19/08",
           "timestamp": "2026-08-19T13:21:05.761Z",
@@ -2063,14 +2075,25 @@
       "id": "63087219204",
       "name": "Grupo Fleury ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-12T20:37:17.950Z",
-        "2": "2026-08-19T22:25:02.319Z"
+        "2": "2026-08-19T22:25:02.319Z",
+        "3": "2026-09-03T14:06:01.651Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "CONTATO INCORRETO",
+          "timestamp": "2026-09-04T12:01:12.600Z",
+          "author": ""
+        },
+        {
+          "body": "2° FUP",
+          "timestamp": "2026-09-03T14:04:37.405Z",
+          "author": ""
+        },
         {
           "body": "Primeiro FUP",
           "timestamp": "2026-08-19T22:24:19.594Z",
@@ -3778,14 +3801,20 @@
       "id": "63514024221",
       "name": "Rodobens ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-12T20:05:29.934Z",
-        "2": "2026-08-19T22:28:30.813Z"
+        "2": "2026-08-19T22:28:30.813Z",
+        "3": "2026-08-31T18:40:17.464Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Fiz o 3° contato",
+          "timestamp": "2026-08-31T18:41:02.841Z",
+          "author": ""
+        },
         {
           "body": "Primeiro FUP",
           "timestamp": "2026-08-19T22:28:22.254Z",
@@ -3802,14 +3831,20 @@
       "id": "63578785376",
       "name": "Shoulder ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-12T19:22:10.865Z",
-        "2": "2026-08-19T22:31:07.283Z"
+        "2": "2026-08-19T22:31:07.283Z",
+        "3": "2026-08-31T18:29:22.468Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Fiz o 3° contato",
+          "timestamp": "2026-08-31T18:31:37.537Z",
+          "author": ""
+        },
         {
           "body": "Primeiro FUP",
           "timestamp": "2026-08-19T22:30:50.472Z",
@@ -3826,14 +3861,20 @@
       "id": "63514024230",
       "name": "Smart Fit ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-12T18:07:48.827Z",
-        "2": "2026-08-19T13:41:27.453Z"
+        "2": "2026-08-19T13:41:27.453Z",
+        "3": "2026-09-03T12:49:51.725Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Realizei o 2° FUP",
+          "timestamp": "2026-09-03T12:49:42.171Z",
+          "author": ""
+        },
         {
           "body": "Realizei o primeiro FUP",
           "timestamp": "2026-08-19T13:41:05.822Z",
@@ -3969,14 +4010,20 @@
       "id": "63578786370",
       "name": "Portobello Shop ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-12T18:21:47.940Z",
-        "2": "2026-08-19T13:34:44.185Z"
+        "2": "2026-08-19T13:34:44.185Z",
+        "3": "2026-08-31T14:34:15.516Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "3° FUP",
+          "timestamp": "2026-08-31T14:33:56.515Z",
+          "author": ""
+        },
         {
           "body": "Realizei o primeiro FUP hoje em 19/08",
           "timestamp": "2026-08-19T13:34:25.505Z",
@@ -4083,14 +4130,20 @@
       "id": "63514024268",
       "name": "Paraná Banco S/A ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-12T14:33:59.231Z",
-        "2": "2026-08-19T22:06:11.666Z"
+        "2": "2026-08-19T22:06:11.666Z",
+        "3": "2026-08-31T14:28:56.376Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "3° FUP",
+          "timestamp": "2026-08-31T14:28:33.855Z",
+          "author": ""
+        },
         {
           "body": "Fup em 20/08",
           "timestamp": "2026-08-19T22:05:37.055Z",
@@ -4251,13 +4304,23 @@
       "id": "63765737641",
       "name": "Unilever ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-13T18:31:03.522Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "CONTATO INCORRETO",
+          "timestamp": "2026-09-04T12:02:09.417Z",
+          "author": ""
+        },
+        {
+          "body": "E-mail não encontrado. Verificar com Marçal",
+          "timestamp": "2026-09-03T12:55:49.365Z",
+          "author": ""
+        },
         {
           "body": "O E-mail esta incorreto, tentar novo e-mail.",
           "timestamp": "2026-08-19T13:15:45.804Z",
@@ -4274,14 +4337,20 @@
       "id": "63767971928",
       "name": "Bosch ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-13T18:20:20.908Z",
-        "2": "2026-08-19T22:19:39.941Z"
+        "2": "2026-08-19T22:19:39.941Z",
+        "3": "2026-08-31T18:14:46.906Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Fiz o 2° FUP",
+          "timestamp": "2026-08-31T18:18:13.305Z",
+          "author": ""
+        },
         {
           "body": "Primeiro FUP",
           "timestamp": "2026-08-19T22:19:22.206Z",
@@ -4298,14 +4367,20 @@
       "id": "63813172627",
       "name": "Banco PAN ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-13T18:11:22.318Z",
-        "2": "2026-08-19T22:44:55.212Z"
+        "2": "2026-08-19T22:44:55.212Z",
+        "3": "2026-08-31T14:30:30.474Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Terceiro FUP",
+          "timestamp": "2026-08-31T14:04:26.074Z",
+          "author": ""
+        },
         {
           "body": "Primeiro FUP",
           "timestamp": "2026-08-19T22:44:43.214Z",
@@ -4322,14 +4397,20 @@
       "id": "63767785319",
       "name": "Grendene ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-13T17:58:54.584Z",
-        "2": "2026-08-19T21:41:04.143Z"
+        "2": "2026-08-19T21:41:04.143Z",
+        "3": "2026-08-31T19:02:46.058Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Fiz o 3° contato",
+          "timestamp": "2026-08-31T19:02:44.381Z",
+          "author": ""
+        },
         {
           "body": "Primeiro fup em19/08",
           "timestamp": "2026-08-19T21:40:50.074Z",
@@ -4484,6 +4565,11 @@
       "agendadoDate": null,
       "notes": [
         {
+          "body": "Mandei um retorno para ela e aguardarei retorno",
+          "timestamp": "2026-09-03T12:50:36.171Z",
+          "author": ""
+        },
+        {
           "body": "Primeiro FUP",
           "timestamp": "2026-08-19T22:40:10.512Z",
           "author": ""
@@ -4499,14 +4585,20 @@
       "id": "63925425750",
       "name": "Bomix",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-14T18:49:06.271Z",
-        "2": "2026-08-21T18:46:56.559Z"
+        "2": "2026-08-21T18:46:56.559Z",
+        "3": "2026-08-31T13:11:27.004Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Terceiro FUP",
+          "timestamp": "2026-08-31T13:11:48.319Z",
+          "author": ""
+        },
         {
           "body": "Primeiro FUP",
           "timestamp": "2026-08-21T18:46:48.853Z",
@@ -4523,13 +4615,19 @@
       "id": "63925425846",
       "name": "Brisanet",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-14T18:34:09.227Z"
+        "1": "2026-08-14T18:34:09.227Z",
+        "2": "2026-09-04T12:34:04.663Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Segundo FUP",
+          "timestamp": "2026-09-04T12:34:32.768Z",
+          "author": ""
+        },
         {
           "body": "Primeiro FUP",
           "timestamp": "2026-08-21T18:52:38.961Z",
@@ -4546,14 +4644,20 @@
       "id": "63925241491",
       "name": "Cencosud",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-14T19:01:46.187Z",
-        "2": "2026-08-19T22:15:49.134Z"
+        "2": "2026-08-19T22:15:49.134Z",
+        "3": "2026-08-31T14:26:57.861Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "3° FUP",
+          "timestamp": "2026-08-31T14:27:26.732Z",
+          "author": ""
+        },
         {
           "body": "Primeiro FUP",
           "timestamp": "2026-08-19T22:16:07.297Z",
@@ -4594,13 +4698,19 @@
       "id": "63925427894",
       "name": "Espaço Laser",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1399081987",
       "dEntries": {
-        "1": "2026-08-14T19:28:35.045Z"
+        "1": "2026-08-14T19:28:35.045Z",
+        "3": "2026-08-31T18:11:16.066Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Fiz o 3° FUP",
+          "timestamp": "2026-08-31T18:12:01.133Z",
+          "author": ""
+        },
         {
           "body": "Primeiro FUP",
           "timestamp": "2026-08-21T18:39:56.237Z",
@@ -4617,14 +4727,20 @@
       "id": "63929470547",
       "name": "Libbs Farmacêutica",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-14T19:49:15.289Z",
-        "2": "2026-08-19T22:35:56.264Z"
+        "2": "2026-08-19T22:35:56.264Z",
+        "3": "2026-08-31T14:17:18.591Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Terceiro FUP",
+          "timestamp": "2026-08-31T14:18:03.845Z",
+          "author": ""
+        },
         {
           "body": "Primeiro FUP",
           "timestamp": "2026-08-19T22:35:46.575Z",
@@ -4641,7 +4757,7 @@
       "id": "63929470905",
       "name": "Prati-Donaduzzi",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-14T20:00:18.299Z",
         "2": "2026-08-21T18:35:38.253Z"
@@ -4649,6 +4765,11 @@
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Retorno do cliente.Ariany, boa tarde!No momento, não estamos abertos a este tipo de parceria, pois não viabilizamos orçamento para tal ação.Caso isso mude no futuro, faremos contato para entender como trabalham.Atenciosamente,",
+          "timestamp": "2026-08-31T13:53:37.841Z",
+          "author": ""
+        },
         {
           "body": "Primeiro FUP",
           "timestamp": "2026-08-21T18:35:32.837Z",
@@ -5025,13 +5146,19 @@
       "id": "64058797638",
       "name": "ATA Tensoativos",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-17T18:11:03.071Z"
+        "1": "2026-08-17T18:11:03.071Z",
+        "2": "2026-09-03T13:01:30.370Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "1° fup",
+          "timestamp": "2026-09-03T13:01:22.912Z",
+          "author": ""
+        },
         {
           "body": "Não encontrei o Linkedin da cliente.",
           "timestamp": "2026-08-17T18:12:01.252Z",
@@ -5043,13 +5170,19 @@
       "id": "64058799478",
       "name": "DB1",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-17T18:52:33.329Z"
+        "1": "2026-08-17T18:52:33.329Z",
+        "2": "2026-09-03T12:58:57.154Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "1° fup",
+          "timestamp": "2026-09-03T13:00:21.275Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/catiana-suenaga-santos/",
           "timestamp": "2026-08-17T18:52:45.607Z",
@@ -5079,22 +5212,670 @@
       "id": "64133406742",
       "name": "WorkOn Group",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-18T17:26:36.771Z"
+        "1": "2026-08-18T17:26:36.771Z",
+        "2": "2026-09-03T12:56:56.155Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "1° FUP",
+          "timestamp": "2026-09-03T12:57:10.896Z",
+          "author": ""
+        },
         {
           "body": "Não encontrei no Linkedin",
           "timestamp": "2026-08-18T17:26:49.905Z",
           "author": ""
         }
       ]
+    },
+    {
+      "id": "64519544471",
+      "name": "Zamp | BK | CONARH",
+      "amount": 0,
+      "stageId": "1398904716",
+      "dEntries": {
+        "1": "2026-08-31T20:21:39.315Z",
+        "2": "2026-09-04T12:16:07.665Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "1° fup",
+          "timestamp": "2026-09-04T12:16:21.858Z",
+          "author": ""
+        },
+        {
+          "body": "https://www.linkedin.com/in/beatriz-romano-483325229/",
+          "timestamp": "2026-08-31T20:21:36.668Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64524577330",
+      "name": "Tivit | AlmaViva | CONARH",
+      "amount": 0,
+      "stageId": "1398904716",
+      "dEntries": {
+        "1": "2026-08-31T21:16:28.833Z",
+        "2": "2026-09-04T12:11:39.393Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "1° FUP",
+          "timestamp": "2026-09-04T12:11:57.228Z",
+          "author": ""
+        },
+        {
+          "body": "https://www.linkedin.com/in/sara-abreu-2a839019b/",
+          "timestamp": "2026-08-31T20:26:06.254Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64519362371",
+      "name": "Spani Atacadista - CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-08-31T21:22:10.772Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/deniseterramaia/",
+          "timestamp": "2026-08-31T21:21:22.711Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64524519599",
+      "name": "Somapay | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-01T12:11:11.452Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/caroline-sales/",
+          "timestamp": "2026-08-31T21:26:53.176Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64519498407",
+      "name": "7LM Empreendimentos Imobiliarios | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-01T12:57:40.765Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/luc%C3%A9lia-ferreira-4149412a/",
+          "timestamp": "2026-09-01T12:57:40.785Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64519498574",
+      "name": "Arezzo&co | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-01T12:59:11.054Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/luc%C3%A9lia-ferreira-4149412a/",
+          "timestamp": "2026-09-01T12:59:12.235Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64524593760",
+      "name": "Banco BIB | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-01T13:23:56.364Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/maria-eduarda-boaventura-320724313/",
+          "timestamp": "2026-09-01T13:23:57.965Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64524659327",
+      "name": "Best Life Seguros | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-01T14:01:26.546Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Não foi encontrado no Linkedin",
+          "timestamp": "2026-09-01T13:52:33.903Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64524538260",
+      "name": "Blue Cycle e Fishing | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-01T14:37:25.250Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/isabela-lima-xavier/",
+          "timestamp": "2026-09-01T14:18:55.419Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64519381919",
+      "name": "Cacau Show | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-01T14:37:27.222Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/carina-carreira-7024ab98/",
+          "timestamp": "2026-09-01T14:28:37.044Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64524540180",
+      "name": "Certel | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-01T15:08:50.782Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/andreia-hauschild-89898427/",
+          "timestamp": "2026-09-01T14:58:24.064Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64519503751",
+      "name": "CNL Concessionaria Novo Litoral | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-01T17:48:48.001Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/larissasantana2306/",
+          "timestamp": "2026-09-01T15:12:18.908Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64519510094",
+      "name": "Coelho da Fonseca | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-01T18:11:38.877Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/renata-ferreira-694560158/",
+          "timestamp": "2026-09-01T17:58:50.376Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64524487442",
+      "name": "Comeri Litoral Comercio de Veiculos | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-01T18:16:20.620Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Linkedin não encontrado",
+          "timestamp": "2026-09-01T18:16:23.055Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64524487821",
+      "name": "COOP Cooperativa de Consumo | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-01T18:37:14.448Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/fernandamassa/",
+          "timestamp": "2026-09-01T18:25:15.479Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64519454777",
+      "name": "Cresol | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-01T18:40:27.582Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/beatriz-kirchner-38a6b2174/",
+          "timestamp": "2026-09-01T18:38:30.399Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64524488870",
+      "name": "D'Avo Supermercados | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-01T19:57:55.469Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/n%C3%ADvea-fernandes-do-nascimento-ramalho-045b2426/",
+          "timestamp": "2026-09-01T18:48:41.085Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64519394433",
+      "name": "Felicio Vigorito",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-01T19:57:57.678Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Linkedin não encontrado",
+          "timestamp": "2026-09-01T18:57:02.798Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64524674471",
+      "name": "Rede Graal | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-02T13:43:59.945Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/tatiane-contrijane-814515a9/",
+          "timestamp": "2026-09-01T20:20:09.442Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64524493314",
+      "name": "Grupo Bancorbrás",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-02T13:43:56.275Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/jumiguel/",
+          "timestamp": "2026-09-01T20:24:50.777Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64575216759",
+      "name": "GRUPO FT | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-02T14:04:24.823Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Linkedin não encontrado",
+          "timestamp": "2026-09-02T13:55:41.982Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64575224455",
+      "name": "Grupo Mateus | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-02T14:16:23.590Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/marina-coelho-10b918172/",
+          "timestamp": "2026-09-02T14:02:55.051Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64576941088",
+      "name": "Grupo Raviera | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-02T14:36:04.247Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/karlasouzafrancischetto/",
+          "timestamp": "2026-09-02T14:23:08.944Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64577003018",
+      "name": "GRUPO RIVESA | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-02T14:51:38.706Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/tatianeterezan/",
+          "timestamp": "2026-09-02T14:29:21.510Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64576756041",
+      "name": "Grupo Vigorito | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-02T17:10:33.086Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/viviane-massonetto-261a7a75/",
+          "timestamp": "2026-09-02T14:43:21.389Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64576756622",
+      "name": "Grupofarma / Drogaria Teixeira | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-02T17:38:50.629Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Linkedin não encontrado",
+          "timestamp": "2026-09-02T14:54:47.591Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64576255159",
+      "name": "Hirota Food Supermercados | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-02T17:38:53.401Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Linkedin não encontrado",
+          "timestamp": "2026-09-02T15:06:35.047Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64576762776",
+      "name": "Joint Billion Brazil (Plaza Network) | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-02T18:03:25.362Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/melissabarros/",
+          "timestamp": "2026-09-02T17:11:19.014Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64576825112",
+      "name": "Nagumo | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-02T18:03:34.871Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/gabriele-andrade-2300702b8/",
+          "timestamp": "2026-09-02T17:38:38.639Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64576202372",
+      "name": "Rede Wellness Club | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-02T18:45:12.541Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/anacristinamanfredo/",
+          "timestamp": "2026-09-02T18:38:52.947Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64576263715",
+      "name": "Poliedro Educacao | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-02T18:57:44.483Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/andre-daniel/",
+          "timestamp": "2026-09-02T18:46:55.569Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64576828956",
+      "name": "Sabrina Drugstore | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-02T19:20:15.580Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "Linkedin não encontrado",
+          "timestamp": "2026-09-02T18:53:28.662Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64576264334",
+      "name": "Sicoob Uni Sudeste | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-02T19:28:14.788Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/andr%C3%A9ia-guimar%C3%A3es-79b889161/",
+          "timestamp": "2026-09-02T19:09:54.901Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64576829721",
+      "name": "Sicredi | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-02T19:53:32.852Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "https://www.linkedin.com/in/francelidelega/",
+          "timestamp": "2026-09-02T19:20:01.839Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "64576768524",
+      "name": "Silicone Center | CONARH",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-09-03T12:26:50.914Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "LINKEDIN NÃO ENCONTRADO",
+          "timestamp": "2026-09-02T19:28:00.526Z",
+          "author": ""
+        }
+      ]
     }
   ],
-  "hs_last_updated2": "31/08/2026, 09:58:12",
+  "hs_last_updated2": "04/09/2026, 14:03:27",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -5212,7 +5993,7 @@
       "abordagensOverride": null
     },
     {
-      "metaAbordagens": 0,
+      "metaAbordagens": 40,
       "metaReunioes": 7,
       "abordagensOverride": null
     },
@@ -5340,5 +6121,5 @@
     }
   ],
   "active_tab": "metasemanal",
-  "snapshot_at": "2026-08-31T12:58:17.692Z"
+  "snapshot_at": "2026-09-04T17:04:20.733Z"
 }
