@@ -6014,17 +6014,17 @@
       "abordagensOverride": null
     },
     {
-      "metaAbordagens": 0,
+      "metaAbordagens": 40,
       "metaReunioes": 8,
       "abordagensOverride": null
     },
     {
-      "metaAbordagens": 0,
+      "metaAbordagens": 40,
       "metaReunioes": 8,
       "abordagensOverride": null
     },
     {
-      "metaAbordagens": 0,
+      "metaAbordagens": 40,
       "metaReunioes": 8,
       "abordagensOverride": null
     },
@@ -6136,6 +6136,6 @@
       "link": ""
     }
   ],
-  "active_tab": "kanban",
-  "snapshot_at": "2026-09-04T17:27:53.948Z"
+  "active_tab": "metasemanal",
+  "snapshot_at": "2026-09-04T17:31:44.947Z"
 }
