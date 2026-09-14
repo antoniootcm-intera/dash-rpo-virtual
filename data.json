@@ -96,7 +96,7 @@
       "realizadas": 5
     },
     {
-      "realizadas": 2
+      "realizadas": 3
     },
     {
       "realizadas": 0
@@ -2025,7 +2025,7 @@
       "id": "63087218827",
       "name": "Alpargatas S.A. ",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-12T18:45:29.124Z",
         "2": "2026-08-19T13:28:09.981Z",
@@ -3883,7 +3883,7 @@
       "id": "63514024221",
       "name": "Rodobens ",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-12T20:05:29.934Z",
         "2": "2026-08-19T22:28:30.813Z",
@@ -3913,7 +3913,7 @@
       "id": "63578785376",
       "name": "Shoulder ",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-12T19:22:10.865Z",
         "2": "2026-08-19T22:31:07.283Z",
@@ -3943,7 +3943,7 @@
       "id": "63514024230",
       "name": "Smart Fit ",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-12T18:07:48.827Z",
         "2": "2026-08-19T13:41:27.453Z",
@@ -4212,7 +4212,7 @@
       "id": "63514024268",
       "name": "Paraná Banco S/A ",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-12T14:33:59.231Z",
         "2": "2026-08-19T22:06:11.666Z",
@@ -4419,7 +4419,7 @@
       "id": "63767971928",
       "name": "Bosch ",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-13T18:20:20.908Z",
         "2": "2026-08-19T22:19:39.941Z",
@@ -4479,7 +4479,7 @@
       "id": "63767785319",
       "name": "Grendene ",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-13T17:58:54.584Z",
         "2": "2026-08-19T21:41:04.143Z",
@@ -4667,7 +4667,7 @@
       "id": "63925425750",
       "name": "Bomix",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-14T18:49:06.271Z",
         "2": "2026-08-21T18:46:56.559Z",
@@ -5252,14 +5252,20 @@
       "id": "64058799478",
       "name": "DB1",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-17T18:52:33.329Z",
-        "2": "2026-09-03T12:58:57.154Z"
+        "2": "2026-09-03T12:58:57.154Z",
+        "3": "2026-09-09T20:41:34.072Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "2° FUP, se não tiver retorno descartar.",
+          "timestamp": "2026-09-09T20:42:12.970Z",
+          "author": ""
+        },
         {
           "body": "1° fup",
           "timestamp": "2026-09-03T13:00:21.275Z",
@@ -5276,12 +5282,12 @@
       "id": "64056343898",
       "name": "Eurofarma",
       "amount": 0,
-      "stageId": "1399081990",
+      "stageId": "1398903677",
       "dEntries": {
         "1": "2026-08-18T17:04:32.107Z"
       },
-      "reachedAgendado": false,
-      "agendadoDate": null,
+      "reachedAgendado": true,
+      "agendadoDate": "2026-08-18T17:04:32.107Z",
       "notes": [
         {
           "body": "https://www.linkedin.com/in/eloisa-brito-b2bb96/",
@@ -5318,14 +5324,20 @@
       "id": "64519544471",
       "name": "Zamp | BK | CONARH",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-31T20:21:39.315Z",
-        "2": "2026-09-04T12:16:07.665Z"
+        "2": "2026-09-04T12:16:07.665Z",
+        "3": "2026-09-09T14:18:13.624Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-09T14:18:59.926Z",
+          "author": ""
+        },
         {
           "body": "1° fup",
           "timestamp": "2026-09-04T12:16:21.858Z",
@@ -5342,14 +5354,20 @@
       "id": "64524577330",
       "name": "Tivit | AlmaViva | CONARH",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-31T21:16:28.833Z",
-        "2": "2026-09-04T12:11:39.393Z"
+        "2": "2026-09-04T12:11:39.393Z",
+        "3": "2026-09-09T14:19:08.579Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-09T14:17:02.259Z",
+          "author": ""
+        },
         {
           "body": "1° FUP",
           "timestamp": "2026-09-04T12:11:57.228Z",
@@ -5366,13 +5384,19 @@
       "id": "64519362371",
       "name": "Spani Atacadista - CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-08-31T21:22:10.772Z"
+        "1": "2026-08-31T21:22:10.772Z",
+        "2": "2026-09-09T14:14:06.739Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-09T14:14:31.395Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/deniseterramaia/",
           "timestamp": "2026-08-31T21:21:22.711Z",
@@ -5384,13 +5408,19 @@
       "id": "64524519599",
       "name": "Somapay | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-09-01T12:11:11.452Z"
+        "1": "2026-09-01T12:11:11.452Z",
+        "2": "2026-09-09T14:06:51.161Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup whatsapp",
+          "timestamp": "2026-09-09T14:07:12.430Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/caroline-sales/",
           "timestamp": "2026-08-31T21:26:53.176Z",
@@ -5636,13 +5666,18 @@
       "id": "64524487821",
       "name": "COOP Cooperativa de Consumo | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398903677",
       "dEntries": {
         "1": "2026-09-01T18:37:14.448Z"
       },
-      "reachedAgendado": false,
-      "agendadoDate": null,
+      "reachedAgendado": true,
+      "agendadoDate": "2026-09-01T18:37:14.448Z",
       "notes": [
+        {
+          "body": "Reunião agendada para dia 21/09",
+          "timestamp": "2026-09-08T20:05:48.287Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/fernandamassa/",
           "timestamp": "2026-09-01T18:25:15.479Z",
@@ -5678,13 +5713,19 @@
       "id": "64524488870",
       "name": "D'Avo Supermercados | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-09-01T19:57:55.469Z"
+        "1": "2026-09-01T19:57:55.469Z",
+        "2": "2026-09-08T20:04:05.256Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-08T20:04:26.891Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/n%C3%ADvea-fernandes-do-nascimento-ramalho-045b2426/",
           "timestamp": "2026-09-01T18:48:41.085Z",
@@ -5696,13 +5737,19 @@
       "id": "64519394433",
       "name": "Felicio Vigorito",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-09-01T19:57:57.678Z"
+        "1": "2026-09-01T19:57:57.678Z",
+        "2": "2026-09-08T20:09:56.299Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-08T20:10:20.248Z",
+          "author": ""
+        },
         {
           "body": "Linkedin não encontrado",
           "timestamp": "2026-09-01T18:57:02.798Z",
@@ -5714,13 +5761,19 @@
       "id": "64524674471",
       "name": "Rede Graal | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-09-02T13:43:59.945Z"
+        "1": "2026-09-02T13:43:59.945Z",
+        "2": "2026-09-08T20:10:43.344Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-08T20:11:09.108Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/tatiane-contrijane-814515a9/",
           "timestamp": "2026-09-01T20:20:09.442Z",
@@ -5732,13 +5785,25 @@
       "id": "64524493314",
       "name": "Grupo Bancorbrás",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1399081987",
       "dEntries": {
-        "1": "2026-09-02T13:43:56.275Z"
+        "1": "2026-09-02T13:43:56.275Z",
+        "2": "2026-09-08T20:15:56.513Z",
+        "3": "2026-09-11T14:44:13.965Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "A Juliana, pessoa com quem falamos no CONARH, passou o contato do coordenador do RH. Já mandei e-mail e aguardarei retorno.",
+          "timestamp": "2026-09-11T14:34:42.035Z",
+          "author": ""
+        },
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-08T20:16:16.776Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/jumiguel/",
           "timestamp": "2026-09-01T20:24:50.777Z",
@@ -5750,13 +5815,19 @@
       "id": "64575216759",
       "name": "GRUPO FT | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-09-02T14:04:24.823Z"
+        "1": "2026-09-02T14:04:24.823Z",
+        "2": "2026-09-09T13:11:43.870Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-09T13:12:07.553Z",
+          "author": ""
+        },
         {
           "body": "Linkedin não encontrado",
           "timestamp": "2026-09-02T13:55:41.982Z",
@@ -5768,13 +5839,19 @@
       "id": "64575224455",
       "name": "Grupo Mateus | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-09-02T14:16:23.590Z"
+        "1": "2026-09-02T14:16:23.590Z",
+        "2": "2026-09-09T13:12:37.330Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-09T13:13:05.435Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/marina-coelho-10b918172/",
           "timestamp": "2026-09-02T14:02:55.051Z",
@@ -5786,13 +5863,19 @@
       "id": "64576941088",
       "name": "Grupo Raviera | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-09-02T14:36:04.247Z"
+        "1": "2026-09-02T14:36:04.247Z",
+        "2": "2026-09-09T13:20:55.361Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-09T13:21:26.312Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/karlasouzafrancischetto/",
           "timestamp": "2026-09-02T14:23:08.944Z",
@@ -5804,13 +5887,19 @@
       "id": "64577003018",
       "name": "GRUPO RIVESA | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398903677",
       "dEntries": {
-        "1": "2026-09-02T14:51:38.706Z"
+        "1": "2026-09-02T14:51:38.706Z",
+        "2": "2026-09-09T13:23:39.308Z"
       },
-      "reachedAgendado": false,
-      "agendadoDate": null,
+      "reachedAgendado": true,
+      "agendadoDate": "2026-09-02T14:51:38.706Z",
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-09T13:24:12.792Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/tatianeterezan/",
           "timestamp": "2026-09-02T14:29:21.510Z",
@@ -5822,13 +5911,25 @@
       "id": "64576756041",
       "name": "Grupo Vigorito | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1399081987",
       "dEntries": {
-        "1": "2026-09-02T17:10:33.086Z"
+        "1": "2026-09-02T17:10:33.086Z",
+        "2": "2026-09-09T13:28:07.249Z",
+        "3": "2026-09-11T14:44:01.813Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "A Viviane contato do CONARH, passou o e-mail da pessoa que atua em R&S, mandei e-mail e aguardarei retorno.",
+          "timestamp": "2026-09-11T14:32:08.001Z",
+          "author": ""
+        },
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-09T13:28:36.014Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/viviane-massonetto-261a7a75/",
           "timestamp": "2026-09-02T14:43:21.389Z",
@@ -5840,13 +5941,19 @@
       "id": "64576756622",
       "name": "Grupofarma / Drogaria Teixeira | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-09-02T17:38:50.629Z"
+        "1": "2026-09-02T17:38:50.629Z",
+        "2": "2026-09-09T13:33:20.536Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-09T13:33:24.407Z",
+          "author": ""
+        },
         {
           "body": "Linkedin não encontrado",
           "timestamp": "2026-09-02T14:54:47.591Z",
@@ -5866,6 +5973,11 @@
       "agendadoDate": null,
       "notes": [
         {
+          "body": "FUP por WhatsApp falho por número incorreto, farei um novo fup por e-mail.",
+          "timestamp": "2026-09-09T13:37:00.332Z",
+          "author": ""
+        },
+        {
           "body": "Linkedin não encontrado",
           "timestamp": "2026-09-02T15:06:35.047Z",
           "author": ""
@@ -5876,13 +5988,19 @@
       "id": "64576762776",
       "name": "Joint Billion Brazil (Plaza Network) | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-09-02T18:03:25.362Z"
+        "1": "2026-09-02T18:03:25.362Z",
+        "2": "2026-09-09T13:43:55.548Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WhatsApp",
+          "timestamp": "2026-09-09T13:44:22.335Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/melissabarros/",
           "timestamp": "2026-09-02T17:11:19.014Z",
@@ -5894,13 +6012,19 @@
       "id": "64576825112",
       "name": "Nagumo | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-09-02T18:03:34.871Z"
+        "1": "2026-09-02T18:03:34.871Z",
+        "2": "2026-09-09T13:44:36.243Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-09T13:45:02.228Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/gabriele-andrade-2300702b8/",
           "timestamp": "2026-09-02T17:38:38.639Z",
@@ -5912,13 +6036,19 @@
       "id": "64576202372",
       "name": "Rede Wellness Club | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-09-02T18:45:12.541Z"
+        "1": "2026-09-02T18:45:12.541Z",
+        "2": "2026-09-09T13:50:59.500Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-09T13:51:26.900Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/anacristinamanfredo/",
           "timestamp": "2026-09-02T18:38:52.947Z",
@@ -5948,13 +6078,19 @@
       "id": "64576828956",
       "name": "Sabrina Drugstore | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-09-02T19:20:15.580Z"
+        "1": "2026-09-02T19:20:15.580Z",
+        "2": "2026-09-09T13:57:50.499Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-09T13:58:10.042Z",
+          "author": ""
+        },
         {
           "body": "Linkedin não encontrado",
           "timestamp": "2026-09-02T18:53:28.662Z",
@@ -5966,13 +6102,19 @@
       "id": "64576264334",
       "name": "Sicoob Uni Sudeste | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-09-02T19:28:14.788Z"
+        "1": "2026-09-02T19:28:14.788Z",
+        "2": "2026-09-09T13:56:44.442Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-09T13:56:44.859Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/andr%C3%A9ia-guimar%C3%A3es-79b889161/",
           "timestamp": "2026-09-02T19:09:54.901Z",
@@ -5984,13 +6126,19 @@
       "id": "64576829721",
       "name": "Sicredi | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-09-02T19:53:32.852Z"
+        "1": "2026-09-02T19:53:32.852Z",
+        "2": "2026-09-09T14:01:51.513Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-09T14:02:18.825Z",
+          "author": ""
+        },
         {
           "body": "https://www.linkedin.com/in/francelidelega/",
           "timestamp": "2026-09-02T19:20:01.839Z",
@@ -6002,13 +6150,19 @@
       "id": "64576768524",
       "name": "Silicone Center | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "dEntries": {
-        "1": "2026-09-03T12:26:50.914Z"
+        "1": "2026-09-03T12:26:50.914Z",
+        "2": "2026-09-09T14:03:02.302Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP WHATSAPP",
+          "timestamp": "2026-09-09T14:03:25.028Z",
+          "author": ""
+        },
         {
           "body": "LINKEDIN NÃO ENCONTRADO",
           "timestamp": "2026-09-02T19:28:00.526Z",
@@ -6017,7 +6171,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "08/09/2026, 16:59:51",
+  "hs_last_updated2": "14/09/2026, 10:05:24",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -6142,7 +6296,8 @@
     {
       "metaAbordagens": 40,
       "metaReunioes": 8,
-      "abordagensOverride": null
+      "abordagensOverride": 30,
+      "contatosOverride": 64
     },
     {
       "metaAbordagens": 40,
@@ -6267,6 +6422,6 @@
       "link": ""
     }
   ],
-  "active_tab": "kanban",
-  "snapshot_at": "2026-09-09T17:07:13.539Z"
+  "active_tab": "metasemanal",
+  "snapshot_at": "2026-09-14T13:05:48.779Z"
 }
