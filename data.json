@@ -299,7 +299,7 @@
       "id": "62616675984",
       "name": "Pernambucanas | Cristiane | OUT",
       "amount": 0,
-      "stageId": "1397554097",
+      "stageId": "1397554096",
       "notes": [
         {
           "body": "FUP feito buscando agendar a demo prática.",
@@ -443,7 +443,7 @@
       "id": "63083888724",
       "name": "Magalu | Jaqueline | CG",
       "amount": 0,
-      "stageId": "1397554091",
+      "stageId": "1397554093",
       "notes": []
     },
     {
@@ -457,7 +457,7 @@
       "id": "63327423351",
       "name": "KFC Brasil | Elizabete | OUT",
       "amount": 0,
-      "stageId": "1397554095",
+      "stageId": "1397554100",
       "notes": [
         {
           "body": "RPOvirtual <> Demo prática KFChttps://tldv.io/app/meetings/6a74bd8f7fa21d0013b90f951. Itens de AçãoAntônio to formalize discussion and send scorecard print to Erika 01:11:40Antônio to export recording and send to Erika 01:11:48Erika to discuss RPO virtual with Beth and provide feedback by Friday 01:05:39Antônio to follow up with Erika by Tuesday if no response received 01:06:21Antônio to align with technology team on geolocation radius capabilities 47:30Antônio to design solution for multiple shopping centers per vacancy 39:102. Visão Geral da Solução RPO VirtualPlataforma automatiza campanhas em Instagram e Facebook com geolocalização para atrair candidatos 11:18Candidatos clicam em anúncio e caem no WhatsApp para qualificação automática 12:05IA coleta informações do candidato e realiza triagem automática de fit com vaga 14:46IA inscreve candidato automaticamente após confirmação, eliminando barreira de formulário 15:47Entrevista por IA pode ser realizada a qualquer hora, permitindo múltiplas entrevistas simultâneas 19:193. Jornada do CandidatoCandidato recebe anúncio geolocalizado no Instagram, Facebook ou Stories 12:17VV WhatsApp interage com candidato solicitando nome, idade, currículo e CEP 13:09CEP permite direcionar candidato para unidade mais próxima dentro da zona 13:43IA parametriza perguntas personalizadas conforme critérios do cliente 14:08Candidato sem currículo recebe perguntas sobre experiência profissional e escolaridade 17:25IA preenche formulário com informações do currículo ou conversa, sem candidato sair do WhatsApp 17:464. Benefícios da Entrevista por IAEntrevista individual com IA extrai mais informações que dinâmica em grupo 23:47Candidatos chegam ao gestor com melhor fit após triagem individualizada 23:55Solução permite falar com mais pessoas mantendo qualidade individualizada 24:07Candidatos podem fazer entrevista em qualquer horário, inclusive madrugada 19:56Fluxo adapta-se aos hábitos das pessoas via WhatsApp com áudio ou texto 21:025. Estrutura da Entrevista por IAIris faz perguntas sobre competências como atendimento ao cliente e proatividade 59:03IA faz perguntas de apoio dinamicamente conforme respostas do candidato 57:18Entrevista dura no máximo 20 minutos, variando conforme interação do candidato 58:16IA fornece nota e análise detalhada de cada competência avaliada 58:55Gravação e transcrição completa da entrevista fica disponível para consulta 59:10Perguntas são totalmente personalizáveis conforme necessidades do cliente 01:02:566. Modelo de Negócio e CapacidadeRPO virtual atende 15 perfis simultâneos por unidade ou região 36:47Sem limite de contratações por vaga aberta, variando conforme região 26:35Exemplo Magalu: 20 pessoas validadas, 7 presenciais, 5 contratadas 25:21Número de finalistas aumenta ao longo dos meses conforme IA aprende 26:24Serviço oferecido com condição de lançamento até final de agosto 01:06:57Assinatura mensal com possibilidade de cancelamento a qualquer momento 01:06:577. Desafio de Vagas Críticas da KFCKFC tem 146 posições abertas em lojas críticas com alta rotatividade 33:58Desvio de vagas muda diariamente conforme entradas e demissões 34:16Dashboard atualizado uma vez por dia, não refletindo realidade futura 34:44Turnover muito alto, com 270 demissões e 380 contratações em julho 42:24Vagas críticas mudam constantemente entre lojas, impossibilitando previsibilidade 35:198. Estratégia de Implementação PropostaComeçar com vagas que nunca fecham por natureza do negócio 46:05Testar com 15 vagas em regionais mais difíceis antes de expandir 31:17Uma vaga pode alimentar múltiplos shoppings próximos na mesma região 39:10Flexibilizar modelo por região em vez de por shopping individual 48:34Redirecionar candidatos entre lojas próximas quando uma vaga fecha 39:319. Integração com Base de Leads ExistenteKFC tem média de 10 mil candidaturas por mês de parceiros 01:08:06VV WhatsApp qualificará leads existentes, solicitando CEP para direcionamento 01:08:27Candidatos não aproveitados por geolocalização vão para banco para futuras vagas 01:10:51Integração de leads aumenta volume de candidatos entrevistados e aprovados 01:09:0010. Aplicabilidade para Vagas de LiderançaSolução também funciona para vagas de liderança de equipe e loja 01:02:40Perguntas por competência fazem sentido para seleção de liderança 01:02:23IA pode fazer perguntas mais detalhistas e exploratórias para liderança 01:03:08Candidatos empregados podem fazer entrevista fora do horário comercial 20:1311. Próximos Passos ComerciaisErika to discuss with Beth and director before providing definitive response 01:06:08Antônio to discuss regional versus unit-based pricing with team 27:52Ambas as partes alinhadas em testar solução antes de decisão final 01:07:41Notas manuaisNenhuma nota manual",
@@ -518,7 +518,7 @@
       "id": "63680205660",
       "name": "OXXO | Jeremias | OUT",
       "amount": 0,
-      "stageId": "1397554095",
+      "stageId": "1397554100",
       "notes": [
         {
           "body": "Ficou acordado de darmos ingressos pro CORNARH",
@@ -626,13 +626,6 @@
       "notes": []
     },
     {
-      "id": "64338114408",
-      "name": "Fiberhome | CONARH",
-      "amount": 0,
-      "stageId": "1397554092",
-      "notes": []
-    },
-    {
       "id": "64338114424",
       "name": "Esportes Gaming Brasil | CONARH",
       "amount": 0,
@@ -657,14 +650,14 @@
       "id": "64338176656",
       "name": "Grupo Femina | CONARH",
       "amount": 0,
-      "stageId": "1397554094",
+      "stageId": "1397554095",
       "notes": []
     },
     {
       "id": "64333539211",
       "name": "Grupo Colina | CONARH",
       "amount": 0,
-      "stageId": "1397554095",
+      "stageId": "1397554100",
       "notes": []
     },
     {
@@ -699,14 +692,14 @@
       "id": "64338114581",
       "name": "Grupo Sadde | CONARH",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554091",
       "notes": []
     },
     {
       "id": "64333477549",
       "name": "Obramax | CONARH",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554091",
       "notes": []
     },
     {
@@ -741,21 +734,21 @@
       "id": "64338176846",
       "name": "3M | CONARH ",
       "amount": 0,
-      "stageId": "1397554094",
+      "stageId": "1397554095",
       "notes": []
     },
     {
       "id": "64333355377",
       "name": "Montreal Moda e Casa | CONARH",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554094",
       "notes": []
     },
     {
       "id": "64338176867",
       "name": "Sipal | CONARH",
       "amount": 0,
-      "stageId": "1397554094",
+      "stageId": "1397554095",
       "notes": []
     },
     {
@@ -776,14 +769,14 @@
       "id": "64333539432",
       "name": "Transben | CONARH",
       "amount": 0,
-      "stageId": "1397554093",
+      "stageId": "1397554094",
       "notes": []
     },
     {
       "id": "64333355436",
       "name": "Vale Verde UBF | CONARH",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554091",
       "notes": []
     },
     {
@@ -816,7 +809,7 @@
       "id": "64627831306",
       "name": "Localiza | CG",
       "amount": 0,
-      "stageId": "1397554093",
+      "stageId": "1397554095",
       "notes": []
     },
     {
@@ -830,18 +823,39 @@
       "id": "64779632500",
       "name": "COOP | CONARH",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554094",
       "notes": []
     },
     {
       "id": "64779632524",
       "name": "Eurofarma | OUT",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554094",
+      "notes": []
+    },
+    {
+      "id": "64986037874",
+      "name": "Grupo Rivesa",
+      "amount": 0,
+      "stageId": "1397554094",
+      "notes": []
+    },
+    {
+      "id": "65027066382",
+      "name": "Pirancajuba",
+      "amount": 0,
+      "stageId": "1397554095",
+      "notes": []
+    },
+    {
+      "id": "65076876068",
+      "name": "Grupo Rivesa | CONARH",
+      "amount": 0,
+      "stageId": "1397554091",
       "notes": []
     }
   ],
-  "hs_last_updated": "09/09/2026, 14:06:33",
+  "hs_last_updated": "22/09/2026, 15:56:55",
   "mrr_overrides": {
     "total": {
       "value": 51000,
@@ -3992,7 +4006,7 @@
       "id": "63513985645",
       "name": "Tel Contact Center ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-12T20:40:19.138Z",
         "2": "2026-08-26T19:32:30.468Z"
@@ -6108,9 +6122,10 @@
       "id": "64576255159",
       "name": "Hirota Food Supermercados | CONARH",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1399081987",
       "dEntries": {
-        "1": "2026-09-02T17:38:53.401Z"
+        "1": "2026-09-02T17:38:53.401Z",
+        "3": "2026-09-22T14:45:55.492Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -6366,7 +6381,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "22/09/2026, 10:58:57",
+  "hs_last_updated2": "22/09/2026, 15:57:04",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -6618,6 +6633,6 @@
       "link": ""
     }
   ],
-  "active_tab": "metasemanal",
-  "snapshot_at": "2026-09-22T13:59:32.993Z"
+  "active_tab": "kanban",
+  "snapshot_at": "2026-09-22T18:57:12.655Z"
 }
