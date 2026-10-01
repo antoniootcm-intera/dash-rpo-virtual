@@ -31,7 +31,7 @@
       "mrrFechado": 0
     },
     {
-      "mrrFechado": 0
+      "mrrFechado": 10000
     },
     {
       "mrrFechado": 0
@@ -102,10 +102,10 @@
       "realizadas": 2
     },
     {
-      "realizadas": 2
+      "realizadas": 3
     },
     {
-      "realizadas": 0
+      "realizadas": 2
     },
     {
       "realizadas": 0
@@ -353,8 +353,8 @@
     },
     {
       "id": "62706348314",
-      "name": "Cielo ",
-      "amount": 120000,
+      "name": "Cielo | CG",
+      "amount": 10000,
       "stageId": "1397554098",
       "notes": []
     },
@@ -436,14 +436,14 @@
       "id": "63083883404",
       "name": "Bradesco | Thais |  MKT",
       "amount": 0,
-      "stageId": "1397554095",
+      "stageId": "1397554100",
       "notes": []
     },
     {
       "id": "63083888724",
-      "name": "Magalu | Jaqueline | CG",
+      "name": "Magalu | Caio | CG",
       "amount": 0,
-      "stageId": "1397554093",
+      "stageId": "1397554094",
       "notes": []
     },
     {
@@ -582,7 +582,7 @@
       "id": "64291641783",
       "name": "Mamba Digital | Gabriel | CONARH",
       "amount": 0,
-      "stageId": "1397554094",
+      "stageId": "1397554100",
       "notes": [
         {
           "body": "Mamba Digital <> RPOvirtualhttps://tldv.io/app/meetings/6a8c4e4bb3d01b00133fd8231. Itens de AçãoAntônio enviar proposta formalizada por e-mail até final do dia 26:25Gabriel receber proposta com detalhes da solução de atração e entrevista 25:012. Demonstração da PlataformaAntônio parametrizou vaga de atendente comercial com competências específicas incluindo resiliência e qualificação de leads 07:37Sistema realiza entrevista automatizada com perguntas comportamentais e solicita exemplos concretos 15:51Entrevista gera relatório com avaliação detalhada de competências e feedback construtivo 16:03Plataforma se retroalimenta e adapta perguntas conforme respostas do candidato 19:233. Fluxo de Atração e QualificaçãoVagas parametrizadas geram anúncios automáticos no Facebook e Instagram 20:59Candidatos são direcionados para WhatsApp onde ocorre qualificação inicial 21:28Após qualificação, candidato recebe link para entrevista automatizada 22:234. Modelo de Negócio e PreçosAssinatura mensal sem fidelidade mínima permite cancelamento a qualquer momento 23:57Custo de 10 mil reais mensais é mais barato que RPA tradicional de 18 mil 24:05Limite de 15 vagas simultâneas por mês pode ser aumentado com investimento em mídia paga 23:21RPOvirtual oferece flexibilidade para contratar conforme demanda de picos de vagas 24:385. Casos de Uso e AplicabilidadeSolução é adequada para posições operacionais como atendente comercial, closer e assistente de sucesso 20:22RPOvirtual tem atualmente seis ou sete posições abertas com volume mensal consistente 20:14Plataforma permite parametrização com metodologias específicas como Winning by Design 25:31Sistema adapta-se tanto para avaliações comportamentais quanto técnicas conforme necessidade 26:066. Feedback e ImpressõesGabriel considerou entrevista técnica bem estruturada com delay aceitável e perguntas relevantes 15:07Plataforma superou expectativas de Gabriel que havia visto demonstração anterior rápida 25:03Gabriel percebeu fluidez do processo e potencial fit com realidade operacional da empresa 19:48Notas manuaisNenhuma nota manual",
@@ -734,7 +734,7 @@
       "id": "64338176846",
       "name": "3M | CONARH ",
       "amount": 0,
-      "stageId": "1397554095",
+      "stageId": "1397554094",
       "notes": []
     },
     {
@@ -816,14 +816,14 @@
       "id": "64737062157",
       "name": "Grupo Carrefour | CONARH",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554093",
       "notes": []
     },
     {
       "id": "64779632500",
       "name": "COOP | CONARH",
       "amount": 0,
-      "stageId": "1397554094",
+      "stageId": "1397554095",
       "notes": []
     },
     {
@@ -837,7 +837,7 @@
       "id": "64986037874",
       "name": "Grupo Rivesa",
       "amount": 0,
-      "stageId": "1397554094",
+      "stageId": "1397554095",
       "notes": []
     },
     {
@@ -853,16 +853,30 @@
       "amount": 0,
       "stageId": "1397554091",
       "notes": []
+    },
+    {
+      "id": "65489655094",
+      "name": "Grupo Melo Cordeiro | CONARH",
+      "amount": 0,
+      "stageId": "1397554093",
+      "notes": []
+    },
+    {
+      "id": "65428601699",
+      "name": "FIESP | OUT",
+      "amount": 0,
+      "stageId": "1397554093",
+      "notes": []
     }
   ],
-  "hs_last_updated": "22/09/2026, 15:56:55",
+  "hs_last_updated": "01/10/2026, 11:46:26",
   "mrr_overrides": {
     "total": {
       "value": 51000,
       "locked": true
     },
     "q3": {
-      "value": 51000,
+      "value": 61000,
       "locked": true
     },
     "q4": {
@@ -2123,7 +2137,7 @@
       "id": "63125403397",
       "name": "Telefonica ",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-12T19:40:52.171Z",
         "2": "2026-08-19T13:21:26.164Z",
@@ -4596,13 +4610,18 @@
       "id": "63767785509",
       "name": "Casa dos Ventos Energias Renováveis ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-13T16:24:10.851Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "E-mail errado",
+          "timestamp": "2026-09-23T21:12:48.795Z",
+          "author": ""
+        },
         {
           "body": "Contato errado",
           "timestamp": "2026-08-19T21:06:19.436Z",
@@ -4654,7 +4673,7 @@
       "id": "63837028776",
       "name": "Grupo Civil",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-13T18:44:51.919Z",
         "2": "2026-08-19T22:39:57.352Z"
@@ -4718,7 +4737,7 @@
       "id": "63925425846",
       "name": "Brisanet",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-14T18:34:09.227Z",
         "2": "2026-09-04T12:34:04.663Z"
@@ -4777,7 +4796,7 @@
       "id": "63925303612",
       "name": "InfoTec",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-14T19:13:23.419Z",
         "2": "2026-08-21T18:42:33.926Z"
@@ -4830,7 +4849,7 @@
       "id": "63929470547",
       "name": "Libbs Farmacêutica",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-14T19:49:15.289Z",
         "2": "2026-08-19T22:35:56.264Z",
@@ -5249,14 +5268,20 @@
       "id": "64058797638",
       "name": "ATA Tensoativos",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-08-17T18:11:03.071Z",
-        "2": "2026-09-03T13:01:30.370Z"
+        "2": "2026-09-03T13:01:30.370Z",
+        "3": "2026-09-24T14:19:34.692Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Fiz um último FUP",
+          "timestamp": "2026-09-24T14:20:03.313Z",
+          "author": ""
+        },
         {
           "body": "1° fup",
           "timestamp": "2026-09-03T13:01:22.912Z",
@@ -5273,7 +5298,7 @@
       "id": "64058799478",
       "name": "DB1",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-17T18:52:33.329Z",
         "2": "2026-09-03T12:58:57.154Z",
@@ -5321,7 +5346,7 @@
       "id": "64133406742",
       "name": "WorkOn Group",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-18T17:26:36.771Z",
         "2": "2026-09-03T12:56:56.155Z"
@@ -5350,7 +5375,7 @@
       "id": "64519544471",
       "name": "Zamp | BK | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-31T20:21:39.315Z",
         "2": "2026-09-04T12:16:07.665Z",
@@ -5386,7 +5411,7 @@
       "id": "64524577330",
       "name": "Tivit | AlmaViva | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-08-31T21:16:28.833Z",
         "2": "2026-09-04T12:11:39.393Z",
@@ -5422,15 +5447,21 @@
       "id": "64519362371",
       "name": "Spani Atacadista - CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-08-31T21:22:10.772Z",
         "2": "2026-09-09T14:14:06.739Z",
-        "3": "2026-09-16T14:35:55.525Z"
+        "3": "2026-09-16T14:35:55.525Z",
+        "4": "2026-09-28T18:55:14.706Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Se não houver retorno, fechar.",
+          "timestamp": "2026-09-28T18:55:43.906Z",
+          "author": ""
+        },
         {
           "body": "Mais um FUP pelo WhatsApp",
           "timestamp": "2026-09-16T14:36:36.828Z",
@@ -5452,15 +5483,21 @@
       "id": "64524519599",
       "name": "Somapay | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-01T12:11:11.452Z",
         "2": "2026-09-09T14:06:51.161Z",
-        "3": "2026-09-16T17:26:54.116Z"
+        "3": "2026-09-16T17:26:54.116Z",
+        "4": "2026-09-30T13:08:02.298Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Se não tiver retorno, fechar o card.",
+          "timestamp": "2026-09-30T13:09:01.856Z",
+          "author": ""
+        },
         {
           "body": "Mais um FUP pelo WhatsApp",
           "timestamp": "2026-09-16T17:27:09.607Z",
@@ -5482,10 +5519,11 @@
       "id": "64519498407",
       "name": "7LM Empreendimentos Imobiliarios | CONARH",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "dEntries": {
         "1": "2026-09-01T12:57:40.765Z",
-        "2": "2026-09-08T17:37:14.911Z"
+        "2": "2026-09-08T17:37:14.911Z",
+        "3": "2026-09-28T18:50:59.857Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -5511,15 +5549,21 @@
       "id": "64519498574",
       "name": "Arezzo&co | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-01T12:59:11.054Z",
         "2": "2026-09-08T17:34:07.133Z",
-        "3": "2026-09-21T13:29:06.670Z"
+        "3": "2026-09-21T13:29:06.670Z",
+        "4": "2026-09-28T19:10:37.096Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Fup WhatsAPP, se não retornar fechar",
+          "timestamp": "2026-09-28T19:11:20.843Z",
+          "author": ""
+        },
         {
           "body": "Está de férias retorna em 23/09",
           "timestamp": "2026-09-21T13:29:38.724Z",
@@ -5541,15 +5585,21 @@
       "id": "64524593760",
       "name": "Banco BIB | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-01T13:23:56.364Z",
         "2": "2026-09-08T17:41:17.843Z",
-        "3": "2026-09-21T13:27:38.126Z"
+        "3": "2026-09-21T13:27:38.126Z",
+        "4": "2026-09-28T19:12:00.828Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Se não tiver retorno, fechar.",
+          "timestamp": "2026-09-28T19:12:41.880Z",
+          "author": ""
+        },
         {
           "body": "WhatsApp",
           "timestamp": "2026-09-21T13:28:01.860Z",
@@ -5571,15 +5621,21 @@
       "id": "64524659327",
       "name": "Best Life Seguros | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-01T14:01:26.546Z",
         "2": "2026-09-08T17:45:33.127Z",
-        "3": "2026-09-21T12:58:40.893Z"
+        "3": "2026-09-21T12:58:40.893Z",
+        "4": "2026-09-29T12:56:47.131Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "último Fup",
+          "timestamp": "2026-09-29T12:57:21.676Z",
+          "author": ""
+        },
         {
           "body": "WhatsApp",
           "timestamp": "2026-09-21T12:59:00.011Z",
@@ -5601,15 +5657,21 @@
       "id": "64524538260",
       "name": "Blue Cycle e Fishing | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-01T14:37:25.250Z",
         "2": "2026-09-08T17:48:05.951Z",
-        "3": "2026-09-21T12:56:18.442Z"
+        "3": "2026-09-21T12:56:18.442Z",
+        "4": "2026-09-30T13:33:38.348Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Fechar",
+          "timestamp": "2026-09-30T13:34:01.497Z",
+          "author": ""
+        },
         {
           "body": "WhatsApp",
           "timestamp": "2026-09-21T12:56:40.435Z",
@@ -5631,15 +5693,21 @@
       "id": "64519381919",
       "name": "Cacau Show | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-01T14:37:27.222Z",
         "2": "2026-09-08T18:24:37.454Z",
-        "3": "2026-09-21T12:54:40.834Z"
+        "3": "2026-09-21T12:54:40.834Z",
+        "4": "2026-09-29T12:57:54.185Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Último Fup",
+          "timestamp": "2026-09-29T12:58:23.332Z",
+          "author": ""
+        },
         {
           "body": "WhatsApp",
           "timestamp": "2026-09-21T12:55:18.855Z",
@@ -5661,14 +5729,19 @@
       "id": "64524540180",
       "name": "Certel | CONARH",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1398903677",
       "dEntries": {
         "1": "2026-09-01T15:08:50.782Z",
         "2": "2026-09-21T12:52:13.806Z"
       },
-      "reachedAgendado": false,
-      "agendadoDate": null,
+      "reachedAgendado": true,
+      "agendadoDate": "2026-09-01T15:08:50.782Z",
       "notes": [
+        {
+          "body": "Agendado para o dia 06/10",
+          "timestamp": "2026-09-25T12:37:04.421Z",
+          "author": ""
+        },
         {
           "body": "FUP por E-mail",
           "timestamp": "2026-09-21T12:52:38.696Z",
@@ -5685,15 +5758,21 @@
       "id": "64519503751",
       "name": "CNL Concessionaria Novo Litoral | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-01T17:48:48.001Z",
         "2": "2026-09-08T18:34:33.511Z",
-        "3": "2026-09-21T12:49:51.676Z"
+        "3": "2026-09-21T12:49:51.676Z",
+        "4": "2026-09-29T12:59:01.830Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Último FUP",
+          "timestamp": "2026-09-29T12:59:24.857Z",
+          "author": ""
+        },
         {
           "body": "WhatsApp",
           "timestamp": "2026-09-21T12:50:20.339Z",
@@ -5745,15 +5824,21 @@
       "id": "64524487442",
       "name": "Comeri Litoral Comercio de Veiculos | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-01T18:16:20.620Z",
         "2": "2026-09-08T19:54:49.675Z",
-        "3": "2026-09-21T12:47:42.920Z"
+        "3": "2026-09-21T12:47:42.920Z",
+        "4": "2026-09-29T13:00:42.118Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Último FUP",
+          "timestamp": "2026-09-29T13:00:42.990Z",
+          "author": ""
+        },
         {
           "body": "WhatsApp",
           "timestamp": "2026-09-21T12:48:05.713Z",
@@ -5783,6 +5868,11 @@
       "agendadoDate": "2026-09-01T18:37:14.448Z",
       "notes": [
         {
+          "body": "Aguardando  retorno da cliente após reunião",
+          "timestamp": "2026-09-29T14:03:11.722Z",
+          "author": ""
+        },
+        {
           "body": "Reunião agendada para dia 21/09",
           "timestamp": "2026-09-08T20:05:48.287Z",
           "author": ""
@@ -5798,15 +5888,21 @@
       "id": "64519454777",
       "name": "Cresol | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-01T18:40:27.582Z",
         "2": "2026-09-08T19:55:20.282Z",
-        "3": "2026-09-21T12:47:04.462Z"
+        "3": "2026-09-21T12:47:04.462Z",
+        "4": "2026-09-29T14:01:37.020Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "último FUP",
+          "timestamp": "2026-09-29T14:01:37.561Z",
+          "author": ""
+        },
         {
           "body": "WhatsApp",
           "timestamp": "2026-09-21T12:47:28.902Z",
@@ -5828,15 +5924,21 @@
       "id": "64524488870",
       "name": "D'Avo Supermercados | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-01T19:57:55.469Z",
         "2": "2026-09-08T20:04:05.256Z",
-        "3": "2026-09-21T12:42:56.034Z"
+        "3": "2026-09-21T12:42:56.034Z",
+        "4": "2026-09-28T18:53:19.620Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Se não tiver retorno, fechar.",
+          "timestamp": "2026-09-28T18:53:54.220Z",
+          "author": ""
+        },
         {
           "body": "Fup WhatsApp",
           "timestamp": "2026-09-21T12:43:22.323Z",
@@ -5888,14 +5990,20 @@
       "id": "64524674471",
       "name": "Rede Graal | CONARH",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-09-02T13:43:59.945Z",
-        "2": "2026-09-08T20:10:43.344Z"
+        "2": "2026-09-08T20:10:43.344Z",
+        "3": "2026-09-24T14:23:18.221Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Mais um FUP pelo WhatsApp, aguardarei retorno. Caso não responda, fechar o ticket.",
+          "timestamp": "2026-09-24T14:24:15.111Z",
+          "author": ""
+        },
         {
           "body": "FUP WHATSAPP",
           "timestamp": "2026-09-08T20:11:09.108Z",
@@ -6008,15 +6116,21 @@
       "id": "64576941088",
       "name": "Grupo Raviera | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-02T14:36:04.247Z",
         "2": "2026-09-09T13:20:55.361Z",
-        "3": "2026-09-17T18:44:22.188Z"
+        "3": "2026-09-17T18:44:22.188Z",
+        "4": "2026-09-29T12:52:42.106Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Fiz último FUP pelo whatsapp",
+          "timestamp": "2026-09-29T12:53:13.114Z",
+          "author": ""
+        },
         {
           "body": "Mais um FUP pelo WhatsApp",
           "timestamp": "2026-09-17T18:44:42.237Z",
@@ -6047,6 +6161,11 @@
       "agendadoDate": "2026-09-02T14:51:38.706Z",
       "notes": [
         {
+          "body": "Verificar qual retorno",
+          "timestamp": "2026-09-28T19:03:10.248Z",
+          "author": ""
+        },
+        {
           "body": "FUP WHATSAPP",
           "timestamp": "2026-09-09T13:24:12.792Z",
           "author": ""
@@ -6062,15 +6181,21 @@
       "id": "64576756041",
       "name": "Grupo Vigorito | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-02T17:10:33.086Z",
         "2": "2026-09-09T13:28:07.249Z",
-        "3": "2026-09-11T14:44:01.813Z"
+        "3": "2026-09-11T14:44:01.813Z",
+        "4": "2026-09-28T19:05:33.647Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Caso não tenha retorno, fechar.",
+          "timestamp": "2026-09-28T19:06:11.895Z",
+          "author": ""
+        },
         {
           "body": "A Viviane contato do CONARH, passou o e-mail da pessoa que atua em R&S, mandei e-mail e aguardarei retorno.",
           "timestamp": "2026-09-11T14:32:08.001Z",
@@ -6092,15 +6217,21 @@
       "id": "64576756622",
       "name": "Grupofarma / Drogaria Teixeira | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-02T17:38:50.629Z",
         "2": "2026-09-09T13:33:20.536Z",
-        "3": "2026-09-17T18:41:52.889Z"
+        "3": "2026-09-17T18:41:52.889Z",
+        "4": "2026-09-30T13:28:34.522Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Fechar",
+          "timestamp": "2026-09-30T13:28:39.769Z",
+          "author": ""
+        },
         {
           "body": "Mais um FUP pelo WhatsApp",
           "timestamp": "2026-09-17T18:42:10.496Z",
@@ -6122,10 +6253,11 @@
       "id": "64576255159",
       "name": "Hirota Food Supermercados | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-02T17:38:53.401Z",
-        "3": "2026-09-22T14:45:55.492Z"
+        "3": "2026-09-22T14:45:55.492Z",
+        "4": "2026-09-28T18:50:14.787Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -6146,11 +6278,12 @@
       "id": "64576762776",
       "name": "Joint Billion Brazil (Plaza Network) | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-02T18:03:25.362Z",
         "2": "2026-09-09T13:43:55.548Z",
-        "3": "2026-09-17T18:39:45.317Z"
+        "3": "2026-09-17T18:39:45.317Z",
+        "4": "2026-09-30T13:29:01.226Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -6186,6 +6319,11 @@
       "agendadoDate": null,
       "notes": [
         {
+          "body": "Se não tiver retorno, fechar o card",
+          "timestamp": "2026-09-30T13:15:58.630Z",
+          "author": ""
+        },
+        {
           "body": "Mais um FUP pelo WhatsApp",
           "timestamp": "2026-09-17T18:37:44.443Z",
           "author": ""
@@ -6206,15 +6344,21 @@
       "id": "64576202372",
       "name": "Rede Wellness Club | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-02T18:45:12.541Z",
         "2": "2026-09-09T13:50:59.500Z",
-        "3": "2026-09-16T17:36:44.682Z"
+        "3": "2026-09-16T17:36:44.682Z",
+        "4": "2026-09-30T13:26:46.892Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Fechar",
+          "timestamp": "2026-09-30T13:27:11.517Z",
+          "author": ""
+        },
         {
           "body": "Mais um Fup WHATSAPP",
           "timestamp": "2026-09-16T17:37:04.513Z",
@@ -6294,15 +6438,21 @@
       "id": "64576264334",
       "name": "Sicoob Uni Sudeste | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-02T19:28:14.788Z",
         "2": "2026-09-09T13:56:44.442Z",
-        "3": "2026-09-16T17:33:19.141Z"
+        "3": "2026-09-16T17:33:19.141Z",
+        "4": "2026-09-28T19:09:03.930Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP por e-mail. Se não responder, fechar",
+          "timestamp": "2026-09-28T19:08:35.290Z",
+          "author": ""
+        },
         {
           "body": "Mais um FUP pelo WhatsApp",
           "timestamp": "2026-09-16T17:35:05.400Z",
@@ -6324,15 +6474,21 @@
       "id": "64576829721",
       "name": "Sicredi | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "dEntries": {
         "1": "2026-09-02T19:53:32.852Z",
         "2": "2026-09-09T14:01:51.513Z",
-        "3": "2026-09-16T17:31:50.736Z"
+        "3": "2026-09-16T17:31:50.736Z",
+        "4": "2026-09-30T13:13:55.388Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Se não tiver retorno, fechar o card.",
+          "timestamp": "2026-09-30T13:14:38.855Z",
+          "author": ""
+        },
         {
           "body": "Mais um FUP pelo WhatsApp",
           "timestamp": "2026-09-16T17:32:14.660Z",
@@ -6354,7 +6510,7 @@
       "id": "64576768524",
       "name": "Silicone Center | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-09-03T12:26:50.914Z",
         "2": "2026-09-09T14:03:02.302Z",
@@ -6381,7 +6537,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "22/09/2026, 15:57:04",
+  "hs_last_updated2": "01/10/2026, 11:08:44",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -6518,10 +6674,11 @@
     {
       "metaAbordagens": 40,
       "metaReunioes": 8,
-      "abordagensOverride": null
+      "abordagensOverride": 47,
+      "contatosOverride": 66
     },
     {
-      "metaAbordagens": 0,
+      "metaAbordagens": 40,
       "metaReunioes": 8,
       "abordagensOverride": null
     },
@@ -6631,8 +6788,13 @@
       "nome": "Pravaler",
       "valor": 10000,
       "link": ""
+    },
+    {
+      "nome": "Pernambucanas",
+      "valor": 10000,
+      "link": ""
     }
   ],
   "active_tab": "kanban",
-  "snapshot_at": "2026-09-22T18:57:12.655Z"
+  "snapshot_at": "2026-10-01T14:46:30.085Z"
 }
