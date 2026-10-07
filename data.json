@@ -108,7 +108,7 @@
       "realizadas": 2
     },
     {
-      "realizadas": 0
+      "realizadas": 1
     },
     {
       "realizadas": 0
@@ -6549,9 +6549,207 @@
           "author": ""
         }
       ]
+    },
+    {
+      "id": "65580114068",
+      "name": "Balaroti ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-10-02T17:51:39.532Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "http://www.linkedin.com/in/marcela-bittencourt-08559795",
+          "timestamp": "2026-10-02T14:40:37.663Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "65580238732",
+      "name": "Grupo Itavema ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-10-02T17:51:37.403Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "http://www.linkedin.com/in/jo%c3%a3o-carlos-jovino-de-souza-7096a04b",
+          "timestamp": "2026-10-02T14:52:28.181Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "65580547107",
+      "name": "São Vicente ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-10-02T17:51:35.043Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "http://www.linkedin.com/in/fernanda-ferreira-trevizan-42b58b14a",
+          "timestamp": "2026-10-02T15:34:04.646Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "65578195079",
+      "name": "Grupo Trigo",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-10-02T17:51:32.901Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "http://www.linkedin.com/in/giovanna-tonon",
+          "timestamp": "2026-10-02T15:39:10.214Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "65580614178",
+      "name": "Atakarejo ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-10-02T18:13:28.289Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "http://www.linkedin.com/in/debora-abenhaim-5a36ba176",
+          "timestamp": "2026-10-02T18:13:58.989Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "65578201723",
+      "name": "Roldão Atacadista ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-10-02T18:39:51.333Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "http://www.linkedin.com/in/cintia-bezerra-ferreira-prates-804b58a1",
+          "timestamp": "2026-10-02T18:40:20.990Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "65580615426",
+      "name": "Sonda Delivery ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-10-02T18:55:28.433Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "http://www.linkedin.com/in/ad%c3%a9lia-amaro-86b02a21",
+          "timestamp": "2026-10-02T18:56:41.372Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "65580492686",
+      "name": "Supermercados BH ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-10-02T19:01:21.511Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "http://www.linkedin.com/in/elizene-martins-9aa9b8115",
+          "timestamp": "2026-10-02T19:02:22.065Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "65578326186",
+      "name": "Unicred ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-10-02T19:08:43.724Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "http://www.linkedin.com/in/melissa-zeni-83a71539",
+          "timestamp": "2026-10-02T19:09:18.549Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "65580555695",
+      "name": "Unifique | RPO Virtual",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-10-02T19:23:15.688Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "http://www.linkedin.com/in/anapaulaoliveira1",
+          "timestamp": "2026-10-02T19:24:49.473Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "65578327181",
+      "name": "Óticas Diniz ",
+      "amount": 0,
+      "stageId": "1398904715",
+      "dEntries": {
+        "1": "2026-10-02T19:37:32.201Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "http://www.linkedin.com/in/gabriela-luzia-3850932a4",
+          "timestamp": "2026-10-02T19:38:03.811Z",
+          "author": ""
+        }
+      ]
     }
   ],
-  "hs_last_updated2": "01/10/2026, 11:08:44",
+  "hs_last_updated2": "05/10/2026, 14:35:55",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -6809,6 +7007,6 @@
       "link": ""
     }
   ],
-  "active_tab": "kanban",
-  "snapshot_at": "2026-10-01T17:53:39.313Z"
+  "active_tab": "cascata",
+  "snapshot_at": "2026-10-07T20:56:29.229Z"
 }
