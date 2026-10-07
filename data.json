@@ -322,7 +322,7 @@
       "id": "62619521145",
       "name": "Riachuelo | Johnny | CG",
       "amount": 0,
-      "stageId": "1397554091",
+      "stageId": "1397554092",
       "notes": [
         {
           "body": "FUP para reagendar a call que foi no show.",
@@ -418,7 +418,7 @@
       "id": "63083878957",
       "name": "Centauro | Jaqueline | OUT",
       "amount": 0,
-      "stageId": "1397554093",
+      "stageId": "1397554100",
       "notes": [
         {
           "body": "Tentar contato com a pessoa correta.",
@@ -595,7 +595,7 @@
       "id": "64333539088",
       "name": "Frigo Service | Maria | CONARH",
       "amount": 0,
-      "stageId": "1397554094",
+      "stageId": "1397554100",
       "notes": []
     },
     {
@@ -636,7 +636,7 @@
       "id": "64333477442",
       "name": "Fast Shop | Renan | CONARH",
       "amount": 0,
-      "stageId": "1397554094",
+      "stageId": "1397554100",
       "notes": []
     },
     {
@@ -816,7 +816,7 @@
       "id": "64737062157",
       "name": "Grupo Carrefour | CONARH",
       "amount": 0,
-      "stageId": "1397554093",
+      "stageId": "1397554094",
       "notes": []
     },
     {
@@ -834,13 +834,6 @@
       "notes": []
     },
     {
-      "id": "64986037874",
-      "name": "Grupo Rivesa",
-      "amount": 0,
-      "stageId": "1397554095",
-      "notes": []
-    },
-    {
       "id": "65027066382",
       "name": "Pirancajuba",
       "amount": 0,
@@ -851,7 +844,7 @@
       "id": "65076876068",
       "name": "Grupo Rivesa | CONARH",
       "amount": 0,
-      "stageId": "1397554091",
+      "stageId": "1397554095",
       "notes": []
     },
     {
@@ -879,11 +872,11 @@
       "id": "65428609293",
       "name": "Natura",
       "amount": 0,
-      "stageId": "1397554093",
+      "stageId": "1397554099",
       "notes": []
     }
   ],
-  "hs_last_updated": "01/10/2026, 14:53:35",
+  "hs_last_updated": "07/10/2026, 19:09:35",
   "mrr_overrides": {
     "total": {
       "value": 51000,
@@ -1021,6 +1014,12 @@
     },
     "64434416534": {
       "canal": "CG"
+    },
+    "65428601699": {
+      "canal": "OUT"
+    },
+    "65489655094": {
+      "canal": "CONARH"
     }
   },
   "hs_deleted": [],
@@ -5497,7 +5496,7 @@
       "id": "64524519599",
       "name": "Somapay | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-09-01T12:11:11.452Z",
         "2": "2026-09-09T14:06:51.161Z",
@@ -6323,7 +6322,7 @@
       "id": "64576825112",
       "name": "Nagumo | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-09-02T18:03:34.871Z",
         "2": "2026-09-09T13:44:36.243Z",
@@ -6358,7 +6357,7 @@
       "id": "64576202372",
       "name": "Rede Wellness Club | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "dEntries": {
         "1": "2026-09-02T18:45:12.541Z",
         "2": "2026-09-09T13:50:59.500Z",
@@ -6749,7 +6748,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "05/10/2026, 14:35:55",
+  "hs_last_updated2": "07/10/2026, 17:56:43",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -7007,6 +7006,6 @@
       "link": ""
     }
   ],
-  "active_tab": "cascata",
-  "snapshot_at": "2026-10-07T20:56:29.229Z"
+  "active_tab": "kanban",
+  "snapshot_at": "2026-10-07T22:09:45.940Z"
 }
