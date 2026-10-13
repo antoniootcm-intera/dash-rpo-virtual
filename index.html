@@ -72,6 +72,16 @@
   ::-webkit-scrollbar { height: 8px; width: 8px; }
   ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 8px; }
   .no-print { }
+  table.pq4 th, table.pq4 td { padding: 7px 8px; }
+  table.pq4 thead th { position: static; }
+  table.pq4 tr.pq4-grupo th { font-size: 10px; letter-spacing: .06em; border-bottom: 2px solid var(--border); }
+  table.pq4 th.g-out { background: #FBF3DC; } table.pq4 th.g-evt { background: #EEF0FB; }
+  table.pq4 th.g-res { background: #E3F6F3; } table.pq4 th.g-venda, table.pq4 th.g-prop { background: #F3E5FF; }
+  table.pq4 td.zero { color: #C8C8C8; }
+  table.pq4 td.sep-l, table.pq4 th.sep-l { border-left: 1px solid var(--border); }
+  table.pq4 tfoot td { background: #FAFAFA; font-weight: 700; }
+  .base-chip { border: 1px solid var(--border); border-radius: 999px; padding: 2px 10px; font-weight: 600; background: #fff; color: var(--text2); }
+  .base-chip.on { background: var(--black); color: #fff; border-color: var(--black); }
 </style>
 </head>
 <body class="min-h-screen">
@@ -131,10 +141,10 @@
     <div class="tab-btn active" data-tab="metas" onclick="switchTab('metas')" style="color:#eee;">Metas Gerais</div>
     <div class="tab-btn" data-tab="cascata" onclick="switchTab('cascata')" style="color:#eee;">Cascata Semanal</div>
     <div class="tab-btn" data-tab="metasemanal" onclick="switchTab('metasemanal')" style="color:#eee;">Meta Semanal</div>
-    <div class="tab-btn" data-tab="planejamento" onclick="switchTab('planejamento')" style="color:#eee;">Planejamento Cascata</div>
     <div class="tab-btn" data-tab="reunioes" onclick="switchTab('reunioes')" style="color:#eee;">Reuniões Agendadas</div>
     <div class="tab-btn" data-tab="conversao" onclick="switchTab('conversao')" style="color:#eee;">Conversão por Canal</div>
     <div class="tab-btn" data-tab="kanban" onclick="switchTab('kanban')" style="color:#eee;">Pipeline</div>
+    <div class="tab-btn" data-tab="base" onclick="switchTab('base')" style="color:#eee;">Empresas &amp; Contatos</div>
   </nav>
 </header>
 
@@ -285,6 +295,47 @@
     <div id="ms-d1-status" class="admin-only text-xs mt-3" style="color:var(--text2);">Contagem automática pelo pipeline de pré-vendas.</div>
   </div>
 
+  <div class="card p-5">
+    <div class="flex items-start justify-between flex-wrap gap-4 mb-4">
+      <div>
+        <h3 class="text-sm font-bold" style="color:var(--black);">Plano Q4: reta final</h3>
+        <p class="text-xs" style="color:var(--text2);">Metas por semana de S14 a S23, replanejadas em 13/10. Já alimentam as tabelas abaixo e a Cascata Semanal.</p>
+      </div>
+      <div style="min-width:280px;flex:0 1 360px;">
+        <div class="flex items-baseline justify-between text-xs mb-1" style="color:var(--text2);">
+          <span>Reuniões realizadas desde S14</span>
+          <span><b id="pq4-realizado" class="text-base" style="color:var(--black);">0</b> de <b>60</b> até 28/11</span>
+        </div>
+        <div class="progress-track" style="height:12px;position:relative;">
+          <div id="pq4-barra" class="progress-fill" style="width:0%;background:var(--teal);"></div>
+          <div id="pq4-marca" title="Meta acumulada até a semana atual" style="position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--black);left:0;"></div>
+        </div>
+        <div class="text-[11px] mt-1" style="color:var(--muted);" id="pq4-legenda"></div>
+      </div>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="pq4">
+        <thead>
+          <tr class="pq4-grupo">
+            <th rowspan="2" style="text-align:left;">Período</th>
+            <th colspan="3" class="g-out">Prospecção outbound</th>
+            <th rowspan="2" class="g-venda">Vendas<br>realizadas</th>
+            <th colspan="7" class="g-evt">Eventos e ABM</th>
+            <th colspan="3" class="g-res">Resultado</th>
+            <th rowspan="2" class="g-prop">Propostas<br>enviadas</th>
+          </tr>
+          <tr>
+            <th class="g-out">Contas novas<br>a abordar</th><th class="g-out">Reuniões<br>marcadas</th><th class="g-out">Reuniões<br>realizadas</th>
+            <th class="g-evt">Convites<br>de evento</th><th class="g-evt">InHire<br>Experience</th><th class="g-evt">Jantar<br>SP</th><th class="g-evt">Jantar<br>Recife</th><th class="g-evt">Recrutar no<br>Varejo</th><th class="g-evt">ABM<br>direto</th><th class="g-evt">Realizadas<br>ABM + eventos</th>
+            <th class="g-res">TOTAL reuniões<br>realizadas</th><th class="g-res">Acumulado</th><th class="g-res" style="min-width:110px;">% da meta de 60</th>
+          </tr>
+        </thead>
+        <tbody id="planoq4-tbody"></tbody>
+        <tfoot id="planoq4-tfoot"></tfoot>
+      </table>
+    </div>
+  </div>
+
   <div class="card p-5 overflow-x-auto">
     <h3 class="text-sm font-bold mb-1" style="color:var(--black);">Prospecção por Semana — Abordagens & Contatos</h3>
     <p class="text-xs mb-3" style="color:var(--text2);"><b>Abordagens</b> = novos cards que entraram em D1 na semana (tem meta). <b>Contatos</b> = cada avanço no funil (D1→D2, D2→D3…), inclui a 1ª abordagem — só realizado, sem meta. Automático pelo pipeline de pré-vendas e editável à mão.</p>
@@ -292,7 +343,7 @@
       <thead>
         <tr>
           <th>Semana</th><th>Período</th>
-          <th>Meta<br>Abordagens</th><th>Abordagens<br>Realizadas</th><th>Ader.</th>
+          <th>Meta contas<br>a abordar</th><th>Abordagens<br>Realizadas</th><th>Ader.</th>
           <th>Contatos<br>Realizados</th>
         </tr>
       </thead>
@@ -350,27 +401,6 @@
   <div class="card p-5">
     <h3 class="text-sm font-bold mb-3" style="color:var(--black);">Conversão Abordados → Agendados por Semana</h3>
     <canvas id="chart-conversao" height="110"></canvas>
-  </div>
-</section>
-
-<!-- ══════════════════ TAB 3: PLANEJAMENTO CASCATA ══════════════════ -->
-<section id="tab-planejamento" class="tab-panel space-y-4">
-  <div class="card p-5 overflow-x-auto">
-    <h3 class="text-sm font-bold mb-1" style="color:var(--black);">Plano Original — Referência (não editável)</h3>
-    <p class="text-xs mb-3" style="color:var(--text2);">13/07/2026 a 18/12/2026</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Semana</th><th>Período</th>
-          <th># Reuniões<br>Clientes Atuais</th><th># Reuniões<br>Recuperação</th><th># Reuniões<br>Marketing</th>
-          <th>Reuniões<br>Realizadas</th><th>Acumulado<br>Reuniões</th>
-          <th>Vendas</th><th>Acumulado<br>Vendas</th><th>MRR</th>
-        </tr>
-      </thead>
-      <tbody id="planejamento-tbody"></tbody>
-      <tfoot id="planejamento-tfoot"></tfoot>
-    </table>
-    <p class="text-xs mt-4 italic" style="color:var(--muted);">Ajuste para começar o mkt na 2ª quinzena de agosto · Mais reuniões dos outros 2 clusters no Q3.</p>
   </div>
 </section>
 
@@ -446,8 +476,66 @@
   </div>
 </section>
 
+<!-- ══════════════════ TAB: EMPRESAS & CONTATOS (base única de prospecção) ══════════════════ -->
+<section id="tab-base" class="tab-panel space-y-4">
+  <div id="base-vazia" class="card p-6 text-sm" style="display:none;color:var(--text2);">
+    A base de empresas e contatos fica só no dashboard local (tem e-mail e telefone de pessoas, por isso não vai para o link publicado).
+  </div>
+  <div id="base-conteudo" class="space-y-4">
+    <div id="base-kpis" class="grid gap-3" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr));"></div>
+
+    <div class="card p-4 space-y-3">
+      <div class="flex flex-wrap items-center gap-2">
+        <div class="flex rounded-lg overflow-hidden" style="border:1px solid var(--border);">
+          <button id="base-vis-emp" class="px-3 py-1.5 text-sm font-semibold" onclick="baseSetVisao('empresas')">Empresas</button>
+          <button id="base-vis-cont" class="px-3 py-1.5 text-sm font-semibold" onclick="baseSetVisao('contatos')">Contatos</button>
+        </div>
+        <input id="base-busca" type="text" placeholder="Buscar empresa, pessoa, cargo ou e-mail…" class="flex-1" style="min-width:220px;" oninput="baseFiltroMudou()" />
+        <select id="base-engaj" onchange="baseFiltroMudou()">
+          <option value="">Todos os engajamentos</option>
+          <option value="reuniao">Já teve reunião (funil RPO Virtual)</option>
+          <option value="prevendas">Prospectada no pré-vendas</option>
+          <option value="sem-card">Sem card no HubSpot</option>
+          <option value="conarh">CONARH: conversamos e agendamos reunião</option>
+          <option value="inhire">Convidada ao InHire Experience</option>
+          <option value="inscrito">Tem inscrito no InHire Experience</option>
+          <option value="revisar">Tier a revisar</option>
+        </select>
+        <button class="btn-ghost text-sm" onclick="baseExportarCSV()">⬇ Exportar CSV</button>
+        <button id="base-btn-atualizar" class="admin-only btn-mustard text-sm" onclick="baseAtualizarCards()">🔄 Atualizar cards do HubSpot</button>
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <span style="color:var(--muted);font-weight:700;">TIER</span>
+        <span id="base-chips-tier" class="flex flex-wrap gap-1"></span>
+        <span style="color:var(--muted);font-weight:700;margin-left:10px;">ORIGEM</span>
+        <span id="base-chips-origem" class="flex flex-wrap gap-1"></span>
+        <span id="base-contagem" class="ml-auto" style="color:var(--text2);"></span>
+      </div>
+    </div>
+
+    <div class="card overflow-hidden">
+      <div class="overflow-x-auto" style="max-height:70vh;overflow-y:auto;">
+        <table id="base-tabela"><thead id="base-thead"></thead><tbody id="base-tbody"></tbody></table>
+      </div>
+      <div id="base-mais" class="p-3 text-center" style="display:none;">
+        <button class="btn-ghost text-sm" onclick="baseMostrarMais()">Mostrar mais</button>
+      </div>
+    </div>
+    <p class="text-xs" style="color:var(--muted);" id="base-rodape"></p>
+  </div>
+</section>
+
+<!-- Modal: card da empresa -->
+<div id="base-modal" style="display:none;position:fixed;inset:0;z-index:9997;background:rgba(0,0,0,.6);align-items:flex-start;justify-content:center;padding:24px 16px;overflow-y:auto;" onclick="if(event.target===this) baseFecharCard();">
+  <div class="card p-6" style="max-width:860px;width:100%;">
+    <div id="base-modal-body"></div>
+  </div>
+</div>
+
 </main>
 
+<!-- Dados da base (arquivo local, gerado por base-rpo-virtual/scripts/gerar.py). No link publicado ele não existe. -->
+<script src="dados/base-empresas.js" onerror="window.RPOV_BASE=null"></script>
 <script>
 // ═══════════════════════════ MODE ═══════════════════════════
 const IS_VIEWER = !['localhost','127.0.0.1'].includes(location.hostname);
@@ -520,8 +608,38 @@ WEEKS[5].mrrIncrement = 10000; // ajuste manual do incremento planejado da S6 (n
 // Meta de reuniões por semana (planilha oficial) e vendas planejadas por semana — recalcula acumulados.
 const _REUN_META = [3,3,3,4,5,5,6,7,8,8,8,5,5,6,6,6,7,7,7,7,8,0,0];
 const _VENDAS_PLAN = [0,0,0,1,1,0,1,1,1,0,1,0,1,1,1,1,1,1,2,2,2,0,0];
-let _accReun = 0, _accVenda = 0;
+// Plano original guardado à parte (referência; a aba Planejamento Cascata foi removida em 13/10/2026).
+const _REUN_META_ORIG = _REUN_META.slice();
+
+// ── Replanejamento Q4 (13/10/2026): reta final com InHire Experience, jantares, Recrutar no Varejo e ABM.
+// Vale de S14 (semana do 13/10) a S23. Meta de 60 reuniões realizadas até 28/11.
+// Colunas: contas novas a abordar (outbound), reuniões marcadas (outbound),
+// reuniões realizadas (outbound), vendas, convites de evento, reuniões por canal (InHire Exp., Jantar SP, Jantar Recife,
+// Recrutar no Varejo, ABM direto), reuniões realizadas ABM + eventos, TOTAL reuniões realizadas, acumulado, % da meta de 60, propostas.
+const PLANO_Q4_INICIO = 13; // índice de S14
+const PLANO_Q4_META = 60;
+const PLANO_Q4 = [
+  { periodo:'13-17/10',   marco:'InHire Experience (15/10) · cadências no ar · convites 21/10 e 5/11', contas:65, marcadas:0, realOut:0, vendas:0, convites:75, inhire:2, jantarSP:0, jantarRecife:0, recrutar:0, abm:0, abmEventos:2,  total:2,  acum:2,  pct:3,   propostas:0 },
+  { periodo:'20-24/10',   marco:'Jantar SP (qua 21/10) + presenciais',                                 contas:65, marcadas:3, realOut:0, vendas:0, convites:90, inhire:2, jantarSP:3, jantarRecife:0, recrutar:0, abm:1, abmEventos:6,  total:6,  acum:8,  pct:13,  propostas:1 },
+  { periodo:'27-31/10',   marco:'Jantar Recife (qua 28/10) + presenciais NE',                          contas:65, marcadas:6, realOut:2, vendas:0, convites:40, inhire:1, jantarSP:4, jantarRecife:2, recrutar:0, abm:1, abmEventos:8,  total:10, acum:17, pct:29,  propostas:3 },
+  { periodo:'3-6/11',     marco:'Recrutar no Varejo SP (qui 5/11) · feriado 2/11',                     contas:65, marcadas:7, realOut:4, vendas:0, convites:0,  inhire:0, jantarSP:1, jantarRecife:3, recrutar:6, abm:2, abmEventos:12, total:16, acum:33, pct:55,  propostas:5 },
+  { periodo:'9-13/11',    marco:'Semana presencial pós-evento em SP',                                  contas:25, marcadas:7, realOut:5, vendas:0, convites:0,  inhire:0, jantarSP:0, jantarRecife:1, recrutar:6, abm:2, abmEventos:9,  total:14, acum:47, pct:79,  propostas:8 },
+  { periodo:'16-20/11',   marco:'Propostas · feriado 20/11',                                           contas:0,    marcadas:5, realOut:5, vendas:0, convites:0,  inhire:0, jantarSP:0, jantarRecife:0, recrutar:2, abm:1, abmEventos:3,  total:8,  acum:55, pct:92,  propostas:7 },
+  { periodo:'23-28/11',   marco:'Corte de reuniões novas (28/11)',                                     contas:0,    marcadas:3, realOut:4, vendas:0, convites:0,  inhire:0, jantarSP:0, jantarRecife:0, recrutar:0, abm:1, abmEventos:1,  total:5,  acum:60, pct:100, propostas:4 },
+  { periodo:'30/11-4/12', marco:'Fechamento',                                                          contas:0,    marcadas:1, realOut:2, vendas:1, convites:0,  inhire:0, jantarSP:0, jantarRecife:0, recrutar:0, abm:0, abmEventos:0,  total:2,  acum:62, pct:103, propostas:2 },
+  { periodo:'7-11/12',    marco:'Fechamento',                                                          contas:0,    marcadas:0, realOut:0, vendas:0, convites:0,  inhire:0, jantarSP:0, jantarRecife:0, recrutar:0, abm:0, abmEventos:0,  total:0,  acum:62, pct:104, propostas:1 },
+  { periodo:'14-18/12',   marco:'Assinaturas até 15/12',                                               contas:0,    marcadas:0, realOut:0, vendas:0, convites:0,  inhire:0, jantarSP:0, jantarRecife:0, recrutar:0, abm:0, abmEventos:0,  total:0,  acum:62, pct:104, propostas:0 },
+];
+const PLANO_Q4_TOTAIS = {
+  ate2811: { contas:285, marcadas:31, realOut:20, vendas:0, convites:205, inhire:4, jantarSP:8, jantarRecife:6, recrutar:14, abm:8, abmEventos:40, total:60, pct:100, propostas:27.7 },
+  q4:      { contas:285, marcadas:31, realOut:22, vendas:1, convites:205, inhire:4, jantarSP:8, jantarRecife:6, recrutar:14, abm:8, abmEventos:40, total:62, pct:null, propostas:31.1 },
+};
+PLANO_Q4.forEach((p, i) => { _REUN_META[PLANO_Q4_INICIO + i] = p.total; _VENDAS_PLAN[PLANO_Q4_INICIO + i] = p.vendas; });
+
+let _accReun = 0, _accVenda = 0, _accReunOrig = 0;
 WEEKS.forEach((w,i) => {
+  w.reunMetaOrig = _REUN_META_ORIG[i];
+  _accReunOrig += w.reunMetaOrig; w.reunAcumOrig = _accReunOrig;
   w.reunMeta = _REUN_META[i];
   _accReun += w.reunMeta; w.reunAcum = _accReun;
   w.vendasPlan = _VENDAS_PLAN[i];
@@ -572,6 +690,18 @@ if (localStorage.getItem('rpov_metareun_v2') !== '1') {
   saveJSON('rpov_meta_semanal', metaSemanal);
   localStorage.setItem('rpov_metareun_v2', '1');
 }
+// Aplica UMA VEZ o replanejamento Q4 (13/10/2026) nas metas de S14 a S23: reuniões = TOTAL reuniões realizadas,
+// abordagens = contas novas a abordar (outbound). Semanas anteriores e ajustes manuais posteriores ficam intactos.
+if (localStorage.getItem('rpov_plano_q4_v1') !== '1') {
+  PLANO_Q4.forEach((p, i) => {
+    const idx = PLANO_Q4_INICIO + i;
+    metaSemanal[idx] = metaSemanal[idx] || { abordagensOverride: null };
+    metaSemanal[idx].metaReunioes = p.total;
+    metaSemanal[idx].metaAbordagens = p.contas;
+  });
+  saveJSON('rpov_meta_semanal', metaSemanal);
+  localStorage.setItem('rpov_plano_q4_v1', '1');
+}
 // Vendas realizadas por semana (editável à mão).
 let vendasSemana = loadJSON('rpov_vendas_semana', WEEKS.map(() => 0));
 // Abordagens e contatos são contados pelas DATAS REAIS de entrada em cada etapa D (hs_date_entered_*),
@@ -620,6 +750,7 @@ function setStatus(msg, color) {
 
 // ═══════════════════════════ TABS ═══════════════════════════
 function switchTab(id) {
+  if (!document.getElementById('tab-' + id)) id = 'metas'; // aba removida (ex.: Planejamento Cascata) cai em Metas Gerais
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === id));
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === 'tab-' + id));
   localStorage.setItem('rpov_active_tab', id);
@@ -1073,7 +1204,48 @@ function getAgendadosRealizados(idx, autoArr) {
   return (ov === undefined || ov === null) ? (auto[idx] || 0) : ov;
 }
 
+function renderPlanoQ4() {
+  const tbody = document.getElementById('planoq4-tbody');
+  if (!tbody) return;
+  const wkNow = currentWeekIdx();
+  const c = (v, extra) => `<td class="${(v || 0) === 0 ? 'zero ' : ''}${extra || ''}">${(v || 0).toLocaleString('pt-BR')}</td>`;
+  const barra = pct => `<div class="flex items-center gap-2"><div class="progress-track" style="height:6px;flex:1;"><div class="progress-fill" style="width:${Math.min(pct, 100)}%;background:${pct >= 100 ? 'var(--teal)' : 'var(--mustard)'};"></div></div><span class="text-[11px] font-semibold" style="width:34px;text-align:right;">${pct}%</span></div>`;
+  tbody.innerHTML = PLANO_Q4.map((p, i) => {
+    const idx = PLANO_Q4_INICIO + i, w = WEEKS[idx];
+    return `<tr class="${idx === wkNow ? 'week-atual' : ''}${i === 6 ? ' q-divider' : ''}" title="${p.marco}">
+      <td style="text-align:left;white-space:nowrap;"><b>${p.periodo}</b>${idx === wkNow ? ' 📍' : ''} <span class="text-[10px]" style="color:var(--muted);">S${w.n}</span></td>
+      ${c(p.contas, 'font-semibold sep-l')}${c(p.marcadas)}${c(p.realOut)}
+      ${c(p.vendas, 'sep-l font-semibold')}
+      ${c(p.convites, 'sep-l')}${c(p.inhire)}${c(p.jantarSP)}${c(p.jantarRecife)}${c(p.recrutar)}${c(p.abm)}${c(p.abmEventos)}
+      ${c(p.total, 'sep-l font-bold')}<td style="color:var(--text2);">${p.acum}</td><td>${barra(p.pct)}</td>
+      ${c(p.propostas, 'sep-l')}
+    </tr>`;
+  }).join('');
+  // Totais oficiais da planilha (os valores semanais são arredondados de decimais; a soma das linhas pode dar 1 a mais).
+  const linha = (rotulo, t) => `<tr>
+    <td style="text-align:left;">${rotulo}</td>
+    <td class="sep-l">${t.contas}</td><td>${t.marcadas}</td><td>${t.realOut}</td>
+    <td class="sep-l">${t.vendas}</td>
+    <td class="sep-l">${t.convites}</td><td>${t.inhire}</td><td>${t.jantarSP}</td><td>${t.jantarRecife}</td><td>${t.recrutar}</td><td>${t.abm.toLocaleString('pt-BR', { minimumFractionDigits: 1 })}</td><td>${t.abmEventos}</td>
+    <td class="sep-l">${t.total}</td><td></td><td>${t.pct ? t.pct + '%' : ''}</td>
+    <td class="sep-l">${t.propostas.toLocaleString('pt-BR')}</td></tr>`;
+  document.getElementById('planoq4-tfoot').innerHTML =
+    linha('Total até 28/11 (S1-S7)', PLANO_Q4_TOTAIS.ate2811) + linha('Total Q4 (S1-S10)', PLANO_Q4_TOTAIS.q4);
+  // Resumo: realizado desde S14 x meta de 60, com marca da meta acumulada até a semana atual
+  let real = 0, metaAteAgora = 0;
+  PLANO_Q4.forEach((p, i) => {
+    const idx = PLANO_Q4_INICIO + i;
+    if (wkNow < 0 || idx <= wkNow) { real += reunioesChips[idx]?.realizadas || 0; metaAteAgora = p.acum; }
+  });
+  document.getElementById('pq4-realizado').textContent = real;
+  document.getElementById('pq4-barra').style.width = Math.min(real / PLANO_Q4_META * 100, 100) + '%';
+  document.getElementById('pq4-marca').style.left = Math.min(metaAteAgora / PLANO_Q4_META * 100, 100) + '%';
+  document.getElementById('pq4-legenda').textContent =
+    `Meta acumulada até a semana atual: ${metaAteAgora} (linha preta) · ${real >= metaAteAgora ? 'no ritmo' : 'faltam ' + (metaAteAgora - real) + ' para o ritmo'}`;
+}
+
 function renderMetaSemanal() {
+  renderPlanoQ4();
   const tbody = document.getElementById('metasemanal-tbody');
   const auto = abordagensRealizadasPorSemana();
   const autoCont = contatosRealizadosPorSemana();
@@ -1270,6 +1442,7 @@ function updateRVMLive() {
     <td>${totVendasPlan}</td><td>${totVendas}</td>
     <td>${fmtBRL(totMrr)}</td><td>${fmtBRL(180000)}</td><td>${fmtBRL(totMrr)}</td>
   </tr>`;
+  renderPlanoQ4(); // tabela só de leitura: pode redesenhar a cada digitação sem perder foco
 }
 
 function onVendaInput(idx, val) {
@@ -1417,32 +1590,6 @@ function renderChartConversao(autoAbord, autoAg) {
 }
 
 // ═══════════════════════════ TAB 3: PLANEJAMENTO CASCATA ═══════════════════════════
-function renderPlanejamento() {
-  const tbody = document.getElementById('planejamento-tbody');
-  const dash = v => (v === null || v === undefined) ? '—' : fmtNum(v);
-  tbody.innerHTML = WEEKS.map(w => `<tr class="${w.qEnd ? 'q-divider' : ''}">
-    <td class="font-semibold">S${w.n}</td>
-    <td>${w.period}</td>
-    <td>${dash(w.atuais)}</td>
-    <td>${dash(w.recup)}</td>
-    <td>${dash(w.mkt)}</td>
-    <td class="font-semibold">${w.reunMeta || '—'}</td>
-    <td>${w.reunAcum}</td>
-    <td>${dash(w.vendasMeta)}</td>
-    <td>${dash(w.vendasAcum)}</td>
-    <td style="color:var(--accent2);font-weight:600;">${w.mrrMeta ? fmtBRL(w.mrrMeta) : '—'}</td>
-  </tr>`).join('');
-
-  const sum = (f) => WEEKS.reduce((s,w) => s + (w[f]||0), 0);
-  // Totais conforme fornecidos no plano original (a soma literal da coluna Vendas dá 32, mas o
-  // total de referência informado é 30 — mantido como está por fidelidade à fonte).
-  document.getElementById('planejamento-tfoot').innerHTML = `<tr class="font-bold" style="background:#FAFAFA;">
-    <td colspan="2">TOTAL</td>
-    <td>${sum('atuais')}</td><td>${sum('recup')}</td><td>${sum('mkt')}</td>
-    <td>${sum('reunMeta')}</td><td>—</td>
-    <td>30</td><td>—</td><td>—</td>
-  </tr>`;
-}
 
 // ═══════════════════════════ TAB 4: REUNIÕES AGENDADAS ═══════════════════════════
 const CANAL_COLORS = {
@@ -1817,7 +1964,7 @@ async function carregarPipeline() {
       setStatus('Buscando negócios (página ' + pagina + ')…', 'blue');
       const body = {
         filterGroups: [{ filters: [{ propertyName:'pipeline', operator:'EQ', value: pipelineId }] }],
-        properties: ['dealname','amount','dealstage'],
+        properties: ['dealname','amount','dealstage','createdate'],
         limit: 100,
         ...(after ? { after } : {})
       };
@@ -1840,6 +1987,7 @@ async function carregarPipeline() {
       name: d.properties?.dealname || '',
       amount: parseFloat(d.properties?.amount) || 0,
       stageId: d.properties?.dealstage || null,
+      created: (d.properties?.createdate || '').slice(0, 10),
       notes: notesAntigas[d.id] || [],
     }));
     hsLastUpdated = new Date().toLocaleString('pt-BR');
@@ -1851,6 +1999,7 @@ async function carregarPipeline() {
     // Renderiza o pipeline IMEDIATAMENTE — observações vêm depois, em segundo plano
     renderKanban();
     renderConversao();
+    renderBase();  // aba Empresas & Contatos absorve cards novos / etapas novas
     setStatus('✓ ' + hsDeals.length + ' deals carregados — buscando observações…', 'green');
 
     carregarNotasEmBackground(token, hsDeals, () => { renderKanban(); saveJSON('rpov_hs_deals', hsDeals); }, '1');
@@ -2139,6 +2288,7 @@ async function carregarPipeline2() {
         name: props.dealname || '',
         amount: parseFloat(props.amount) || 0,
         stageId: props.dealstage || null,
+        created: (props.createdate || '').slice(0, 10),
         dEntries,
         reachedAgendado,
         agendadoDate,
@@ -2155,6 +2305,7 @@ async function carregarPipeline2() {
 
     renderKanban2();
     renderMetaSemanal();  // abordagens e contatos são recalculados das datas reais (d.dEntries)
+    renderBase();         // aba Empresas & Contatos absorve cards novos / etapas novas
     setStatus('✓ ' + hsDeals2.length + ' deals de pré-vendas carregados — buscando observações…', 'green');
 
     carregarNotasEmBackground(token, hsDeals2, () => { renderKanban2(); saveJSON('rpov_hs_deals2', hsDeals2); }, '2');
@@ -2246,17 +2397,343 @@ async function publicarSnapshot() {
   }
 }
 
+// ═══════════════════════════ TAB: EMPRESAS & CONTATOS ═══════════════════════════
+// Base única de quem já foi abordado (cards de pré-vendas e RPO Virtual, sequências, CONARH, InHire Experience).
+// Os dados vêm de dados/base-empresas.js. Tier editado aqui fica salvo neste navegador (rpov_base_tier_ov).
+const BASE_TIERS = {
+  1: { nome: 'Tier 1', desc: 'Varejo, chão de loja, +5 mil func.', bg: '#000', fg: '#D4A017' },
+  2: { nome: 'Tier 2', desc: 'Varejo, chão de loja, até 5 mil',   bg: '#D4A017', fg: '#000' },
+  3: { nome: 'Tier 3', desc: 'Vendas consultivas',                bg: '#9900FF', fg: '#fff' },
+  4: { nome: 'Tier 4', desc: 'Outros com vagas operacionais',     bg: '#00B8A9', fg: '#fff' },
+  5: { nome: 'Tier 5', desc: 'Sem vagas operacionais',            bg: '#BBBBBB', fg: '#222' },
+};
+const BASE_ORIGENS = [
+  { k: 'OUT',    label: 'OUT',        cls: 'badge-out',    tip: 'Prospecção outbound (pré-vendas e sequências frias)' },
+  { k: 'CG',     label: 'CG',         cls: 'badge-cg',     tip: 'Clientes do grupo' },
+  { k: 'MKT',    label: 'MKT',        cls: 'badge-mkt',    tip: 'Leads de site e inbound' },
+  { k: 'CONARH', label: 'CONARH',     cls: 'badge-conarh', tip: 'Conversamos no CONARH e agendamos reunião (não quer dizer que a reunião aconteceu)' },
+  { k: 'INHIRE', label: 'InHire Experience', cls: 'badge-re',     tip: 'Convidada ao InHire Experience' },
+];
+const BASE_PAGINA = 300;
+let baseVisao = localStorage.getItem('rpov_base_visao') || 'empresas';
+let baseTierSel = new Set(), baseOrigemSel = new Set();
+let baseLimite = BASE_PAGINA;
+let baseTierOv = loadJSON('rpov_base_tier_ov', {});
+let baseEmpByKey = {}, baseContById = {};
+
+function baseTemDados() { return window.RPOV_BASE && Array.isArray(window.RPOV_BASE.empresas); }
+function baseEsc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function baseNorm(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
+function baseTier(e) { const o = baseTierOv[e.k]; return o ? o.tier : e.tier; }
+function baseTierMotivo(e) { const o = baseTierOv[e.k]; return o ? (o.motivo || 'Ajustado manualmente') : e.tier_motivo; }
+function baseTierBadge(t, extra) {
+  const d = BASE_TIERS[t];
+  return `<span class="badge" style="background:${d.bg};color:${d.fg};" title="${baseEsc(d.desc)}">T${t}${extra || ''}</span>`;
+}
+function baseOrigemBadges(e) {
+  return BASE_ORIGENS.filter(o => e.marc[o.k]).map(o => `<span class="badge ${o.cls}" title="${baseEsc(o.tip)}">${o.label}</span>`).join(' ')
+    + (e.outras_origens || []).map(o => ` <span class="badge badge-nd">${baseEsc(o)}</span>`).join('');
+}
+
+// ── Cards ao vivo: os funis carregados na aba Pipeline (hsDeals = RPO Virtual, hsDeals2 = Pré-vendas)
+// substituem os cards da base. Card novo entra na empresa certa pelo nome; empresa desconhecida entra como "nova".
+let baseEmps = [];
+let baseInfoAoVivo = '';
+const BASE_MARC = { OUT:'OUT', CG:'CG', MKT:'MKT', CONARH:'CONARH', RE:'RE', NF:'NF', INHIRE:'INDICAÇÃO INHIRE', SEQUENCIA:'OUT' };
+const BASE_STOP = new Set(['sa','s','a','ltda','inc','the','de','do','da','e','co','me','eireli']);
+const BASE_ORDEM_RPO = ['HR | SQL (Lead qualificado', "OPP's (reunião de vendas agendada)", 'REUNIÃO REALIZADA', 'PROPOSTA ENVIADA (OPP)', 'FOLLOW UP',
+  'NEGOCIAÇÃO', 'HOMOLOGAÇÃO | CONTRATO', 'NEGÓCIO FECHADO', 'DESQUALIFICADA', 'NEGÓCIO PERDIDO'];
+const BASE_POS_REUNIAO = new Set(['REUNIÃO REALIZADA', 'PROPOSTA ENVIADA (OPP)', 'FOLLOW UP', 'NEGOCIAÇÃO', 'HOMOLOGAÇÃO | CONTRATO', 'NEGÓCIO FECHADO', 'NEGÓCIO PERDIDO', 'DESQUALIFICADA']);
+
+function baseNomeNorm(s) {
+  return baseNorm(s).replace(/[^a-z0-9]+/g, ' ').trim().split(' ').filter(t => t && !BASE_STOP.has(t)).join(' ');
+}
+function baseParseCard(nome) {
+  const partes = String(nome || '').split(/\s*\|\s*|\s+-\s+(?=CONARH)/i).map(x => x.trim()).filter(Boolean);
+  let empresa = partes[0] || '';
+  const marcas = [];
+  partes.slice(1).forEach(p => {
+    const u = baseNorm(p).toUpperCase();
+    if (BASE_MARC[u]) marcas.push(BASE_MARC[u]);
+    else if (u === 'BK') empresa += ' BK';
+  });
+  return { empresa, marcas };
+}
+function baseReuniao(e) {
+  const rpo = e.rpo.slice().sort((a, b) => BASE_ORDEM_RPO.indexOf(a.etapa) - BASE_ORDEM_RPO.indexOf(b.etapa));
+  e.rpo = rpo;
+  if (rpo.length) {
+    const top = rpo[rpo.length - 1].etapa;
+    return BASE_POS_REUNIAO.has(top) ? 'Realizada' : (/agendada/i.test(top) ? 'Agendada' : 'Card criado');
+  }
+  return e.prevendas.some(c => /agendad/i.test(c.etapa)) ? 'Agendada (pré-vendas)' : null;
+}
+function baseMontarComHubSpot() {
+  baseEmps = RPOV_BASE.empresas.map(e => ({ ...e, marc: { ...e.marc }, outras_origens: [...(e.outras_origens || [])],
+    prevendas: [...e.prevendas], rpo: [...e.rpo], novo: false }));
+  baseEmpByKey = {};
+  baseEmps.forEach(e => { baseEmpByKey[e.k] = e; });
+  const cardDono = {};
+  RPOV_BASE.empresas.forEach(e => e.prevendas.concat(e.rpo).forEach(c => { cardDono[c.id] = e.k; }));
+  const alias = RPOV_BASE.alias || {};
+  const funis = [];
+  if (hsDeals2.length) funis.push({ funil: 'Pré-vendas', deals: hsDeals2, stages: hsStages2, campo: 'prevendas', quando: hsLastUpdated2 });
+  if (hsDeals.length)  funis.push({ funil: 'RPO Virtual', deals: hsDeals, stages: hsStages, campo: 'rpo', quando: hsLastUpdated });
+  let novosCards = 0, novasEmp = 0;
+  funis.forEach(f => {
+    baseEmps.forEach(e => { e[f.campo] = []; });
+    const etapa = id => (f.stages.find(s => s.id === id) || {}).label || '';
+    f.deals.forEach(d => {
+      const { empresa, marcas } = baseParseCard(d.name);
+      const n = baseNomeNorm(empresa);
+      let k = cardDono[d.id] || alias[n] || (baseEmpByKey[n] ? n : null);
+      if (!cardDono[d.id]) novosCards++;
+      let e = k && baseEmpByKey[k];
+      if (!e) {
+        k = n || ('card-' + d.id);
+        e = { k, nome: empresa || d.name, tier: 4, tier_motivo: 'Empresa nova no HubSpot, tier ainda não definido', tier_revisar: true,
+          func: null, setor: null, cidade: null, uf: null, dominios: [], novo: true,
+          marc: { OUT: false, CG: false, MKT: false, CONARH: false, INHIRE: false }, outras_origens: [],
+          prevendas: [], rpo: [], reuniao: null, sequencias: [], inhire_inscritos: [], n_contatos: 0, contatos: [] };
+        baseEmps.push(e); baseEmpByKey[k] = e; novasEmp++;
+      }
+      e[f.campo].push({ id: d.id, nome: d.name, etapa: etapa(d.stageId), criado: d.created || '' });
+      const ms = marcas.length ? marcas : (f.funil === 'Pré-vendas' ? ['OUT'] : []);
+      ms.forEach(m => {
+        if (m in e.marc) e.marc[m] = true;
+        else if (!e.outras_origens.includes(m)) e.outras_origens.push(m);
+      });
+    });
+  });
+  baseEmps.forEach(e => { e.reuniao = baseReuniao(e); });
+  baseEmps.sort((a, b) => baseNorm(a.nome).localeCompare(baseNorm(b.nome)));
+  baseInfoAoVivo = funis.length
+    ? 'Cards ao vivo do HubSpot: ' + funis.map(f => `${f.funil} carregado em ${f.quando || '?'}`).join(' · ')
+      + ` (${novosCards} cards novos desde a base, ${novasEmp} empresas novas).`
+    : 'Cards ainda não carregados do HubSpot nesta máquina: clique em "🔄 Atualizar cards do HubSpot".';
+}
+async function baseAtualizarCards() {
+  const btn = document.getElementById('base-btn-atualizar');
+  btn.disabled = true; btn.textContent = '⏳ Atualizando…';
+  try { await carregarPipeline2(); await carregarPipeline(); }
+  finally { btn.disabled = false; btn.textContent = '🔄 Atualizar cards do HubSpot'; renderBase(); }
+}
+
+function renderBase() {
+  const tem = baseTemDados();
+  document.getElementById('base-vazia').style.display = tem ? 'none' : 'block';
+  document.getElementById('base-conteudo').style.display = tem ? '' : 'none';
+  if (!tem) return;
+  baseContById = {};
+  RPOV_BASE.contatos.forEach(c => { baseContById[c.id] = c; });
+  baseMontarComHubSpot();
+  // chips (estrutura fixa; clique só alterna a classe e redesenha a tabela)
+  document.getElementById('base-chips-tier').innerHTML = [1,2,3,4,5].map(t =>
+    `<button class="base-chip" data-tier="${t}" onclick="baseToggleTier(${t})" title="${baseEsc(BASE_TIERS[t].desc)}">${BASE_TIERS[t].nome}</button>`).join('');
+  document.getElementById('base-chips-origem').innerHTML = BASE_ORIGENS.map(o =>
+    `<button class="base-chip" data-origem="${o.k}" onclick="baseToggleOrigem('${o.k}')" title="${baseEsc(o.tip)}">${o.label}</button>`).join('');
+  document.getElementById('base-rodape').textContent =
+    `Base gerada em ${RPOV_BASE.gerado_em.split('-').reverse().join('/')} a partir do HubSpot (cards de Pré-vendas RPO Virtual e RPO Virtual, sequências RPOvirtual Extra Fim de Ano, RPOv Contatos Frios, InterAgente teste 2 e InHire Experience), da lista de convidados do InHire Experience e das reuniões do CONARH. `
+    + 'Card sem marcador no pré-vendas conta como OUT. Sequência: o HubSpot só informa a última sequência de cada contato. '
+    + baseInfoAoVivo;
+  baseAtualizarChips();
+  baseAtualizarKpis();
+  baseDesenharTabela();
+}
+
+function baseAtualizarChips() {
+  document.querySelectorAll('#base-chips-tier .base-chip').forEach(b => b.classList.toggle('on', baseTierSel.has(+b.dataset.tier)));
+  document.querySelectorAll('#base-chips-origem .base-chip').forEach(b => b.classList.toggle('on', baseOrigemSel.has(b.dataset.origem)));
+  const on = 'background:var(--black);color:#fff;', off = 'background:#fff;color:var(--text2);';
+  document.getElementById('base-vis-emp').style.cssText = baseVisao === 'empresas' ? on : off;
+  document.getElementById('base-vis-cont').style.cssText = baseVisao === 'contatos' ? on : off;
+}
+function baseToggleTier(t) { baseTierSel.has(t) ? baseTierSel.delete(t) : baseTierSel.add(t); baseLimite = BASE_PAGINA; baseAtualizarChips(); baseDesenharTabela(); }
+function baseToggleOrigem(k) { baseOrigemSel.has(k) ? baseOrigemSel.delete(k) : baseOrigemSel.add(k); baseLimite = BASE_PAGINA; baseAtualizarChips(); baseDesenharTabela(); }
+function baseSetVisao(v) { baseVisao = v; localStorage.setItem('rpov_base_visao', v); baseLimite = BASE_PAGINA; baseAtualizarChips(); baseDesenharTabela(); }
+function baseFiltroMudou() { baseLimite = BASE_PAGINA; baseDesenharTabela(); }
+function baseMostrarMais() { baseLimite += BASE_PAGINA; baseDesenharTabela(); }
+
+function baseEmpresaPassa(e) {
+  if (baseTierSel.size && !baseTierSel.has(baseTier(e))) return false;
+  // origens: a empresa precisa ter TODAS as selecionadas (ex.: OUT + InHire = abordada nos dois)
+  for (const k of baseOrigemSel) if (!e.marc[k]) return false;
+  const f = document.getElementById('base-engaj').value;
+  if (f === 'reuniao' && !(e.rpo.length || e.reuniao)) return false;
+  if (f === 'prevendas' && !e.prevendas.length) return false;
+  if (f === 'sem-card' && (e.prevendas.length || e.rpo.length)) return false;
+  if (f === 'conarh' && !e.marc.CONARH) return false;
+  if (f === 'inhire' && !e.marc.INHIRE) return false;
+  if (f === 'inscrito' && !e.inhire_inscritos.length) return false;
+  if (f === 'revisar' && !(e.tier_revisar && !baseTierOv[e.k])) return false;
+  return true;
+}
+function baseFiltrar() {
+  const q = baseNorm(document.getElementById('base-busca').value.trim());
+  const emps = baseEmps.filter(baseEmpresaPassa);
+  if (baseVisao === 'empresas') {
+    return emps.filter(e => !q || baseNorm(e.nome).includes(q) ||
+      e.contatos.some(id => { const c = baseContById[id]; return c && baseNorm([c.nome, c.email, c.cargo].join(' ')).includes(q); }));
+  }
+  const ok = new Set(emps.map(e => e.k));
+  return RPOV_BASE.contatos.filter(c => ok.has(c.k) &&
+    (!q || baseNorm([c.nome, c.email, c.cargo, baseEmpByKey[c.k].nome].join(' ')).includes(q)));
+}
+
+function baseAtualizarKpis() {
+  const E = baseEmps;
+  const n = f => E.filter(f).length;
+  const kpi = (label, val, sub, cor) => `<div class="card p-3"><div class="text-xs font-semibold" style="color:var(--text2);">${label}</div>
+    <div class="font-brand font-extrabold text-2xl" style="color:${cor || 'var(--black)'};">${val.toLocaleString('pt-BR')}</div>
+    ${sub ? `<div class="text-xs" style="color:var(--muted);">${sub}</div>` : ''}</div>`;
+  const porTier = [1,2,3,4,5].map(t => n(e => baseTier(e) === t));
+  document.getElementById('base-kpis').innerHTML =
+    kpi('Empresas', E.length, `${RPOV_BASE.contatos.length.toLocaleString('pt-BR')} contatos`) +
+    porTier.map((v, i) => kpi(BASE_TIERS[i + 1].nome, v, BASE_TIERS[i + 1].desc)).join('') +
+    kpi('Prospectadas', n(e => e.prevendas.length), 'com card no pré-vendas') +
+    kpi('Com reunião', n(e => e.rpo.length || e.reuniao), 'card no funil RPO Virtual', 'var(--accent2)') +
+    kpi('CONARH', n(e => e.marc.CONARH), 'conversamos no evento e agendamos reunião (não quer dizer que aconteceu)') +
+    kpi('InHire Experience', n(e => e.marc.INHIRE), `${n(e => e.inhire_inscritos.length)} com inscrito`);
+}
+
+function baseDesenharTabela() {
+  const rows = baseFiltrar();
+  const thead = document.getElementById('base-thead'), tbody = document.getElementById('base-tbody');
+  const L = 'style="text-align:left;"';
+  const vis = rows.slice(0, baseLimite);
+  if (baseVisao === 'empresas') {
+    thead.innerHTML = `<tr><th ${L}>Empresa</th><th>Tier</th><th ${L}>Origem</th><th ${L}>Pré-vendas</th><th ${L}>Reunião (RPO Virtual)</th><th ${L}>Sequências</th><th>Inscritos InHire Experience</th><th>Contatos</th></tr>`;
+    tbody.innerHTML = vis.map(e => {
+      const t = baseTier(e);
+      const pre = e.prevendas.map(c => baseEsc(c.etapa)).join('<br>') || '<span style="color:var(--muted);">—</span>';
+      const rpo = e.rpo.length ? `<b>${baseEsc(e.reuniao)}</b><br><span style="color:var(--text2);">${baseEsc(e.rpo[e.rpo.length - 1].etapa)}</span>`
+        : (e.reuniao ? baseEsc(e.reuniao) : '<span style="color:var(--muted);">—</span>');
+      return `<tr style="cursor:pointer;" onclick="baseAbrirCard('${baseEsc(e.k)}')">
+        <td ${L}><b>${baseEsc(e.nome)}</b>${e.novo ? ' <span class="badge badge-mkt" title="Empresa que entrou por card novo no HubSpot, depois da geração da base">nova</span>' : ''}${e.func ? `<div class="text-xs" style="color:var(--muted);">${e.func.toLocaleString('pt-BR')} func.</div>` : ''}</td>
+        <td>${baseTierBadge(t, (e.tier_revisar && !baseTierOv[e.k]) ? ' ?' : '')}</td>
+        <td ${L}>${baseOrigemBadges(e)}</td>
+        <td ${L} class="text-xs">${pre}</td>
+        <td ${L} class="text-xs">${rpo}</td>
+        <td ${L} class="text-xs">${e.sequencias.map(baseEsc).join('<br>') || '<span style="color:var(--muted);">—</span>'}</td>
+        <td>${e.inhire_inscritos.length || ''}</td>
+        <td>${e.n_contatos}</td></tr>`;
+    }).join('');
+  } else {
+    thead.innerHTML = `<tr><th ${L}>Nome</th><th ${L}>Cargo</th><th ${L}>Empresa</th><th>Tier</th><th ${L}>E-mail</th><th ${L}>Telefone</th><th ${L}>Sequência</th><th>Card</th><th>InHire Experience</th></tr>`;
+    tbody.innerHTML = vis.map(c => {
+      const e = baseEmpByKey[c.k];
+      const inh = c.inhire_inscrito ? '<span class="badge badge-re">inscrito</span>' : (c.inhire_convidado ? '<span class="badge badge-nd">convidado</span>' : '');
+      return `<tr style="cursor:pointer;" onclick="baseAbrirCard('${baseEsc(c.k)}')">
+        <td ${L}><b>${baseEsc(c.nome)}</b></td><td ${L} class="text-xs">${baseEsc(c.cargo)}</td>
+        <td ${L}>${baseEsc(e.nome)}</td><td>${baseTierBadge(baseTier(e))}</td>
+        <td ${L} class="text-xs">${baseEsc(c.email)}</td><td ${L} class="text-xs">${baseEsc(c.tel)}</td>
+        <td ${L} class="text-xs">${baseEsc(c.seq)}</td><td>${c.cards.length ? '✓' : ''}</td><td>${inh}</td></tr>`;
+    }).join('');
+  }
+  if (!rows.length) tbody.innerHTML = `<tr><td colspan="9" class="p-6" style="color:var(--muted);">Nada encontrado com esses filtros.</td></tr>`;
+  document.getElementById('base-mais').style.display = rows.length > baseLimite ? 'block' : 'none';
+  document.getElementById('base-contagem').textContent =
+    `${rows.length.toLocaleString('pt-BR')} ${baseVisao === 'empresas' ? 'empresas' : 'contatos'}` + (rows.length > baseLimite ? ` (mostrando ${baseLimite})` : '');
+}
+
+function baseAbrirCard(k) {
+  const e = baseEmpByKey[k];
+  if (!e) return;
+  const t = baseTier(e);
+  const ponto = (ok, titulo, detalhe) => `<div class="flex gap-3 py-2" style="border-bottom:1px solid var(--border);">
+      <div style="width:22px;flex-shrink:0;font-size:15px;">${ok ? '✅' : '<span style="color:#ccc;">○</span>'}</div>
+      <div class="min-w-0"><div class="text-sm font-semibold" style="color:${ok ? 'var(--black)' : 'var(--muted)'};">${titulo}</div>
+      ${detalhe ? `<div class="text-xs" style="color:var(--text2);">${detalhe}</div>` : ''}</div></div>`;
+  const dt = d => d ? d.split('-').reverse().join('/') : '';
+  const cards = (lst) => lst.map(c => `${baseEsc(c.nome)} · <b>${baseEsc(c.etapa)}</b> · criado em ${dt(c.criado)}`).join('<br>');
+  const cts = e.contatos.map(id => baseContById[id]).filter(Boolean);
+  const pontos =
+    ponto(e.prevendas.length, 'Prospectada (card no Pré-vendas RPO Virtual)', cards(e.prevendas)) +
+    ponto(e.rpo.length || e.reuniao, 'Reunião (funil RPO Virtual)', e.rpo.length ? `<b>${baseEsc(e.reuniao)}</b><br>` + cards(e.rpo) : baseEsc(e.reuniao || '')) +
+    ponto(e.marc.CONARH, 'CONARH: conversamos no evento e agendamos reunião', 'Se a reunião aconteceu, veja "Reunião (funil RPO Virtual)" acima') +
+    ponto(e.marc.INHIRE, 'Convidada ao InHire Experience', e.inhire_inscritos.length
+      ? 'Inscritos: ' + e.inhire_inscritos.map(i => baseEsc(i.nome) + (i.mesma_pessoa ? ' (contato nosso)' : '')).join(', ') : 'Ninguém da empresa se inscreveu') +
+    ponto(e.sequencias.length, 'Sequências de e-mail', e.sequencias.map(baseEsc).join(', ')) +
+    ponto(e.marc.CG, 'Cliente do grupo (CG)', '') +
+    ponto(e.marc.MKT, 'Lead de marketing (site ou inbound)', '');
+  const ov = baseTierOv[e.k];
+  document.getElementById('base-modal-body').innerHTML = `
+    <div class="flex items-start justify-between gap-3 mb-3">
+      <div class="min-w-0">
+        <h2 class="font-brand font-extrabold text-xl" style="color:var(--black);">${baseEsc(e.nome)}</h2>
+        <div class="text-xs mt-1" style="color:var(--text2);">${[e.func ? e.func.toLocaleString('pt-BR') + ' funcionários' : '', e.setor ? e.setor.replace(/_/g, ' ').toLowerCase() : '', [e.cidade, e.uf].filter(Boolean).join(' / '), (e.dominios || []).join(', ')].filter(Boolean).map(baseEsc).join(' · ')}</div>
+        <div class="mt-2">${baseOrigemBadges(e)}</div>
+      </div>
+      <button onclick="baseFecharCard()" class="text-lg leading-none" style="color:var(--text2);">✕</button>
+    </div>
+    <div class="grid gap-4" style="grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);">
+      <div><div class="text-xs font-bold mb-1" style="color:var(--muted);letter-spacing:.04em;">PONTOS DE ENGAJAMENTO</div>${pontos}</div>
+      <div>
+        <div class="text-xs font-bold mb-1" style="color:var(--muted);letter-spacing:.04em;">TIER</div>
+        <div class="card p-3">
+          <div class="flex items-center gap-2 mb-2">${baseTierBadge(t)} <span class="text-sm font-semibold">${baseEsc(BASE_TIERS[t].desc)}</span></div>
+          <div class="text-xs mb-2" style="color:var(--text2);">${baseEsc(baseTierMotivo(e))}${e.tier_revisar && !ov ? ' <b style="color:var(--danger);">(a revisar: empresa não confirmada na pesquisa)</b>' : ''}</div>
+          <div class="admin-only flex items-center gap-2 flex-wrap">
+            <select id="base-tier-sel">${[1,2,3,4,5].map(x => `<option value="${x}" ${x === t ? 'selected' : ''}>${BASE_TIERS[x].nome}: ${BASE_TIERS[x].desc}</option>`).join('')}</select>
+            <button class="btn-primary text-xs" onclick="baseSalvarTier('${baseEsc(e.k)}')">Salvar tier</button>
+            ${ov ? `<button class="btn-ghost text-xs" onclick="baseResetTier('${baseEsc(e.k)}')">↺ voltar ao automático (T${e.tier})</button>` : ''}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-xs font-bold mt-5 mb-1" style="color:var(--muted);letter-spacing:.04em;">CONTATOS (${cts.length})</div>
+    <div class="overflow-x-auto"><table><thead><tr><th style="text-align:left;">Nome</th><th style="text-align:left;">Cargo</th><th style="text-align:left;">E-mail</th><th style="text-align:left;">Telefone</th><th style="text-align:left;">Sequência</th><th>InHire Experience</th></tr></thead><tbody>
+      ${cts.map(c => `<tr><td style="text-align:left;"><b>${baseEsc(c.nome)}</b>${c.cards.length ? ' <span class="badge badge-nd" title="Ligado a um card">card</span>' : ''}</td>
+        <td style="text-align:left;" class="text-xs">${baseEsc(c.cargo)}</td><td style="text-align:left;" class="text-xs">${baseEsc(c.email)}</td>
+        <td style="text-align:left;" class="text-xs">${baseEsc(c.tel)}</td><td style="text-align:left;" class="text-xs">${baseEsc(c.seq)}${c.seq_data ? ' · ' + dt(c.seq_data) : ''}</td>
+        <td>${c.inhire_inscrito ? '<span class="badge badge-re">inscrito</span>' : (c.inhire_convidado ? '<span class="badge badge-nd">convidado</span>' : '')}</td></tr>`).join('')
+        || '<tr><td colspan="6" style="color:var(--muted);">Nenhum contato associado no HubSpot.</td></tr>'}
+    </tbody></table></div>`;
+  document.getElementById('base-modal').style.display = 'flex';
+}
+function baseFecharCard() { document.getElementById('base-modal').style.display = 'none'; }
+function baseSalvarTier(k) {
+  const e = baseEmpByKey[k];
+  const t = +document.getElementById('base-tier-sel').value;
+  if (t === e.tier) delete baseTierOv[k]; else baseTierOv[k] = { tier: t, motivo: 'Ajustado manualmente', em: new Date().toISOString() };
+  saveJSON('rpov_base_tier_ov', baseTierOv);
+  baseAtualizarKpis(); baseDesenharTabela(); baseAbrirCard(k);
+}
+function baseResetTier(k) { delete baseTierOv[k]; saveJSON('rpov_base_tier_ov', baseTierOv); baseAtualizarKpis(); baseDesenharTabela(); baseAbrirCard(k); }
+
+function baseExportarCSV() {
+  const rows = baseFiltrar();
+  const q = v => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
+  const X = b => b ? 'X' : '';
+  let linhas;
+  if (baseVisao === 'empresas') {
+    linhas = [['Empresa','Tier','Motivo do tier','OUT','CG','MKT','CONARH','InHire Experience','Etapa pré-vendas','Reunião','Etapa RPO Virtual','Sequências','Inscritos InHire Experience','Nº contatos']]
+      .concat(rows.map(e => [e.nome, baseTier(e), baseTierMotivo(e), X(e.marc.OUT), X(e.marc.CG), X(e.marc.MKT), X(e.marc.CONARH), X(e.marc.INHIRE),
+        e.prevendas.map(c => c.etapa).join(' / '), e.reuniao || '', e.rpo.map(c => c.etapa).join(' / '), e.sequencias.join(', '),
+        e.inhire_inscritos.map(i => i.nome).join(', '), e.n_contatos]));
+  } else {
+    linhas = [['Empresa','Tier','Nome','Cargo','E-mail','Telefone','OUT','CG','MKT','CONARH','InHire Experience','Sequência','Ligado a card','Inscrito InHire Experience']]
+      .concat(rows.map(c => { const e = baseEmpByKey[c.k]; return [e.nome, baseTier(e), c.nome, c.cargo, c.email, c.tel, X(e.marc.OUT), X(e.marc.CG), X(e.marc.MKT),
+        X(e.marc.CONARH), X(e.marc.INHIRE), c.seq || '', X(c.cards.length), X(c.inhire_inscrito)]; }));
+  }
+  const blob = new Blob(['﻿' + linhas.map(l => l.map(q).join(';')).join('\n')], { type: 'text/csv;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `base-rpo-virtual-${baseVisao}.csv`;
+  a.click();
+}
+
 // ═══════════════════════════ INIT ═══════════════════════════
 function renderAll() {
   renderMetasGerais();
   renderClientes();
   renderCascata();
   renderMetaSemanal();
-  renderPlanejamento();
   renderReunioesLog();
   renderConversao();
   renderKanban();
   renderKanban2();
+  renderBase();
 }
 
 window.addEventListener('DOMContentLoaded', () => {
