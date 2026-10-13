@@ -108,7 +108,7 @@
       "realizadas": 2
     },
     {
-      "realizadas": 1
+      "realizadas": 2
     },
     {
       "realizadas": 0
@@ -293,6 +293,7 @@
       "name": "Renner | Fernanda Jacob | CG",
       "amount": 0,
       "stageId": "1397554098",
+      "created": "2026-07-13",
       "notes": []
     },
     {
@@ -300,6 +301,7 @@
       "name": "Pernambucanas | Cristiane | OUT",
       "amount": 0,
       "stageId": "1397554096",
+      "created": "2026-07-13",
       "notes": [
         {
           "body": "FUP feito buscando agendar a demo prática.",
@@ -323,6 +325,7 @@
       "name": "Riachuelo | Johnny | CG",
       "amount": 0,
       "stageId": "1397554092",
+      "created": "2026-07-13",
       "notes": [
         {
           "body": "FUP para reagendar a call que foi no show.",
@@ -336,6 +339,7 @@
       "name": "Osklen | Bianca | RE",
       "amount": 0,
       "stageId": "1397554100",
+      "created": "2026-07-14",
       "notes": []
     },
     {
@@ -343,6 +347,7 @@
       "name": "Harsco Environmental | Gabi | OUT",
       "amount": 0,
       "stageId": "1397554100",
+      "created": "2026-07-15",
       "notes": [
         {
           "body": "https://tldv.io/app/meetings/6a57d518332a4d0013eecc85/Reuniao realizada hoje 15/07Lead tem muitas vagas operacionais, mas nao comerciais. Vagas de operador de carregamento e motorista de caminhao. Vou tentar agendar uma demo com a Iris.",
@@ -356,6 +361,7 @@
       "name": "Cielo | CG",
       "amount": 10000,
       "stageId": "1397554098",
+      "created": "2026-07-16",
       "notes": []
     },
     {
@@ -363,6 +369,7 @@
       "name": "Facta | Priscila | CG",
       "amount": 0,
       "stageId": "1397554098",
+      "created": "2026-07-20",
       "notes": [
         {
           "body": "FUP feito para entender se discutiram internamente.",
@@ -396,6 +403,7 @@
       "name": "DM | Letícia | CG",
       "amount": 0,
       "stageId": "1397554097",
+      "created": "2026-07-21",
       "notes": [
         {
           "body": "Demo realizada! Proposta feita com o cliente50% de desconto nos 3 primeiros mesesfidelidade mínimaproposta válida 31/07",
@@ -419,6 +427,7 @@
       "name": "Centauro | Jaqueline | OUT",
       "amount": 0,
       "stageId": "1397554100",
+      "created": "2026-07-24",
       "notes": [
         {
           "body": "Tentar contato com a pessoa correta.",
@@ -437,6 +446,7 @@
       "name": "Bradesco | Thais |  MKT",
       "amount": 0,
       "stageId": "1397554100",
+      "created": "2026-07-24",
       "notes": []
     },
     {
@@ -444,6 +454,7 @@
       "name": "Magalu | Caio | CG",
       "amount": 0,
       "stageId": "1397554094",
+      "created": "2026-07-24",
       "notes": []
     },
     {
@@ -451,6 +462,7 @@
       "name": "Stone | Bruna",
       "amount": 0,
       "stageId": "1397554095",
+      "created": "2026-07-27",
       "notes": []
     },
     {
@@ -458,6 +470,7 @@
       "name": "KFC Brasil | Elizabete | OUT",
       "amount": 0,
       "stageId": "1397554100",
+      "created": "2026-07-31",
       "notes": [
         {
           "body": "RPOvirtual <> Demo prática KFChttps://tldv.io/app/meetings/6a74bd8f7fa21d0013b90f951. Itens de AçãoAntônio to formalize discussion and send scorecard print to Erika 01:11:40Antônio to export recording and send to Erika 01:11:48Erika to discuss RPO virtual with Beth and provide feedback by Friday 01:05:39Antônio to follow up with Erika by Tuesday if no response received 01:06:21Antônio to align with technology team on geolocation radius capabilities 47:30Antônio to design solution for multiple shopping centers per vacancy 39:102. Visão Geral da Solução RPO VirtualPlataforma automatiza campanhas em Instagram e Facebook com geolocalização para atrair candidatos 11:18Candidatos clicam em anúncio e caem no WhatsApp para qualificação automática 12:05IA coleta informações do candidato e realiza triagem automática de fit com vaga 14:46IA inscreve candidato automaticamente após confirmação, eliminando barreira de formulário 15:47Entrevista por IA pode ser realizada a qualquer hora, permitindo múltiplas entrevistas simultâneas 19:193. Jornada do CandidatoCandidato recebe anúncio geolocalizado no Instagram, Facebook ou Stories 12:17VV WhatsApp interage com candidato solicitando nome, idade, currículo e CEP 13:09CEP permite direcionar candidato para unidade mais próxima dentro da zona 13:43IA parametriza perguntas personalizadas conforme critérios do cliente 14:08Candidato sem currículo recebe perguntas sobre experiência profissional e escolaridade 17:25IA preenche formulário com informações do currículo ou conversa, sem candidato sair do WhatsApp 17:464. Benefícios da Entrevista por IAEntrevista individual com IA extrai mais informações que dinâmica em grupo 23:47Candidatos chegam ao gestor com melhor fit após triagem individualizada 23:55Solução permite falar com mais pessoas mantendo qualidade individualizada 24:07Candidatos podem fazer entrevista em qualquer horário, inclusive madrugada 19:56Fluxo adapta-se aos hábitos das pessoas via WhatsApp com áudio ou texto 21:025. Estrutura da Entrevista por IAIris faz perguntas sobre competências como atendimento ao cliente e proatividade 59:03IA faz perguntas de apoio dinamicamente conforme respostas do candidato 57:18Entrevista dura no máximo 20 minutos, variando conforme interação do candidato 58:16IA fornece nota e análise detalhada de cada competência avaliada 58:55Gravação e transcrição completa da entrevista fica disponível para consulta 59:10Perguntas são totalmente personalizáveis conforme necessidades do cliente 01:02:566. Modelo de Negócio e CapacidadeRPO virtual atende 15 perfis simultâneos por unidade ou região 36:47Sem limite de contratações por vaga aberta, variando conforme região 26:35Exemplo Magalu: 20 pessoas validadas, 7 presenciais, 5 contratadas 25:21Número de finalistas aumenta ao longo dos meses conforme IA aprende 26:24Serviço oferecido com condição de lançamento até final de agosto 01:06:57Assinatura mensal com possibilidade de cancelamento a qualquer momento 01:06:577. Desafio de Vagas Críticas da KFCKFC tem 146 posições abertas em lojas críticas com alta rotatividade 33:58Desvio de vagas muda diariamente conforme entradas e demissões 34:16Dashboard atualizado uma vez por dia, não refletindo realidade futura 34:44Turnover muito alto, com 270 demissões e 380 contratações em julho 42:24Vagas críticas mudam constantemente entre lojas, impossibilitando previsibilidade 35:198. Estratégia de Implementação PropostaComeçar com vagas que nunca fecham por natureza do negócio 46:05Testar com 15 vagas em regionais mais difíceis antes de expandir 31:17Uma vaga pode alimentar múltiplos shoppings próximos na mesma região 39:10Flexibilizar modelo por região em vez de por shopping individual 48:34Redirecionar candidatos entre lojas próximas quando uma vaga fecha 39:319. Integração com Base de Leads ExistenteKFC tem média de 10 mil candidaturas por mês de parceiros 01:08:06VV WhatsApp qualificará leads existentes, solicitando CEP para direcionamento 01:08:27Candidatos não aproveitados por geolocalização vão para banco para futuras vagas 01:10:51Integração de leads aumenta volume de candidatos entrevistados e aprovados 01:09:0010. Aplicabilidade para Vagas de LiderançaSolução também funciona para vagas de liderança de equipe e loja 01:02:40Perguntas por competência fazem sentido para seleção de liderança 01:02:23IA pode fazer perguntas mais detalhistas e exploratórias para liderança 01:03:08Candidatos empregados podem fazer entrevista fora do horário comercial 20:1311. Próximos Passos ComerciaisErika to discuss with Beth and director before providing definitive response 01:06:08Antônio to discuss regional versus unit-based pricing with team 27:52Ambas as partes alinhadas em testar solução antes de decisão final 01:07:41Notas manuaisNenhuma nota manual",
@@ -481,6 +494,7 @@
       "name": "Caffeine Army | Mac | CG",
       "amount": 0,
       "stageId": "1397554099",
+      "created": "2026-08-03",
       "notes": [
         {
           "body": "Caffeine Army + RPOvirtual INTERAhttps://tldv.io/app/meetings/6a74d9a628b02e00132409fb1. Itens de AçãoAntônio to connect Maria with responsible person for WinRAR interview module 27:18Maria to review contract for second Maurício chair position 28:53Taís to review and sign contract for second Maurício chair position 29:042. Visão Geral do Serviço RPO VirtualRPO Virtual combina expertise em consultoria de RH com tecnologia de IA para automação de recrutamento 02:08Serviço entrega finalistas para aprovação do gestor, não apenas uma ferramenta 02:36Processo automatizado inclui campanhas de anúncios, triagem, inscrição e entrevista com IA 02:54Especializado em vagas de vendas com alto volume e rotatividade elevada 05:07Reduz SLA eliminando barreiras de agendamento e disponibilidade do candidato 06:083. Funcionalidades TécnicasAnúncios automatizados veiculados via Meta, Facebook e Instagram para localidades específicas 02:54WhatsApp \"Vem de Vaga\" realiza triagem automatizada coletando informações e currículo 03:18IA inscreve candidatos automaticamente reduzindo desistências no processo 03:56Entrevistas conduzidas por agente IA com interação natural, não apenas checklist 04:04Agente IA opera 24/7 permitindo entrevistas em horários flexíveis 06:12Avaliação por competências com notas para cada critério estabelecido 17:24Gestor acessa gravação, transcrição e notas de todas as entrevistas via plataforma 18:074. Modelo OperacionalPessoa recrutadora da Intera parametriza e orquestra todo o processo 08:44Recrutadora participa de reuniões semanais e alinhamentos com time cliente 19:30Cada RPO Virtual toca até 15 vagas simultâneas por mês 20:42Recrutadora não é exclusiva, atende múltiplos clientes simultaneamente 21:10Todas informações de conversão por etapa ficam acessíveis ao cliente 09:175. Resultados e Casos de SucessoMagalu: 43 entrevistas em 12 dias, 25 aprovadas, 20 agendadas com gestor 10:18Magalu: 5 dias para aprovados, 7 dias adicionais para admissão 11:33Gerentes de loja Magalu aprovaram perfis e solicitaram uso em outras vagas 11:18NPS de satisfação dos candidatos é 4.2 de 5 28:10Base proprietária de mais de 15 mil pessoas já entrevistadas 12:136. Precificação e ComparaçãoRPO tradicional custa 15 mil reais por cadeira 20:58RPO Virtual toca 15 vagas por 10 mil reais mensais 21:07Não cobra por anúncio gerado, diferente de outras soluções 19:047. Análise de Fit para ClienteMaria identifica volume insuficiente de vagas comerciais para justificar investimento 22:08Cliente opera com apenas 3 vagas mensais atualmente 23:37Vagas de atendimento/CX e comercial são as principais demandas 23:12Antônio reconhece que solução não faz sentido para momento atual 26:548. Alternativas PropostasMódulo de entrevista por IA do WinRAR pode ajudar time cliente 27:09Entrevistas por WhatsApp disponíveis para posições operacionais 27:51Parametrização de entrevistas por IA é simples com campos básicos 27:25Notas manuaisNenhuma nota manual",
@@ -499,6 +513,7 @@
       "name": "Lojas Colombo | Taís | OUT",
       "amount": 0,
       "stageId": "1397554100",
+      "created": "2026-08-03",
       "notes": [
         {
           "body": "Lojas Colombo <> RPOvirtual INTERAhttps://tldv.io/app/meetings/6a749367237bfc00138292541. Itens de AçãoAntônio agendar reunião de demonstração prática com Liane para dia 18 de agosto às 14 horas 39:20Antônio enviar e-mail formalizando a conversa e link da gravação para Liane 39:42Liane conversar com Taís sobre apresentação do serviço RPOvirtual 39:232. Sobre o Serviço RPOvirtualRPOvirtual oferece recrutamento de ponta a ponta usando agentes de IA para vagas operacionais 00:46Serviço especializado em vagas de vendedor e atendente, com mais de 15 mil entrevistas realizadas 13:33Agente de IA conduz entrevista conversacional natural via WhatsApp com candidatos 08:44Cada RPOvirtual toca 15 vagas simultâneas por mês, com custo de 10 mil reais mensais 32:44Serviço inclui atração, triagem, entrevistas e documentação sem custos variáveis por contratação 34:36Recrutador humano alocado faz alinhamento semanal e participa de reuniões internas do cliente 30:083. Estrutura de Recrutamento Lojas ColomboColombo trabalha com quatro recrutadoras e lojas têm autonomia na seleção de candidatos 01:21Gerentes regionais fazem primeira entrevista, depois candidatos passam por avaliações comportamentais 06:01Vagas operacionais têm SLA de 22 a 35 dias para contratação 04:06Liane é analista de recrutamento responsável pela área, Taís é gerente de recursos humanos 02:30Vendedores são recrutados em parceria com gerentes de loja que auxiliam na divulgação 03:074. Desafios de Recrutamento ColomboColombo tem dificuldade em atrair candidatos em cidades menores com menor proximidade ao portal 22:18Colombo está expandindo com abertura de lojas em Registro e outras praças no Rio Grande do Sul 00:37Colombo não trabalha com consultoria externa para recrutamento atualmente 03:305. Funcionalidades do ServiçoCandidatos interagem via WhatsApp após clicar em anúncio, sem necessidade de acessar portal 22:41Agente de IA qualifica candidato e sugere vagas dentro de raio de até 30 km de preferência 26:40Candidatos podem ficar em banco de talentos se não houver vaga próxima disponível 26:11Dashboard fornece acesso a entrevistas gravadas, transcrições e notas de avaliação parametrizadas 13:18Recrutador RPOvirtual envia links de vídeos e avaliações diretamente ao gerente de loja 31:31Dados de candidatos são documentados na ferramenta RPOvirtual e integrados ao sistema cliente 23:076. Casos de SucessoMagalu teve 37 entrevistas realizadas com agente de IA em shopping com dificuldade de atração 17:15Facta Promotora utiliza serviço como pioneira de IA em recrutamento no Rio Grande do Sul 08:58Gerentes de loja apreciaram ferramenta e alguns solicitaram uso em outros tipos de vagas 14:06Notas manuaisNenhuma nota manual",
@@ -512,6 +527,7 @@
       "name": "Lojas Rede | joanita | OUT",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-10",
       "notes": []
     },
     {
@@ -519,6 +535,7 @@
       "name": "OXXO | Jeremias | OUT",
       "amount": 0,
       "stageId": "1397554100",
+      "created": "2026-08-10",
       "notes": [
         {
           "body": "Ficou acordado de darmos ingressos pro CORNARH",
@@ -537,6 +554,7 @@
       "name": "Delfia Tech | Vanessa | MKT",
       "amount": 0,
       "stageId": "1397554100",
+      "created": "2026-08-14",
       "notes": [
         {
           "body": "[RPO] INTERA + Delfiahttps://tldv.io/app/meetings/6a7f22d2bf1c3500130c0e0a1. Itens de AçãoLetícia compartilhar descrição de vaga de técnico de Telecom com Antônio para parametrização 37:48Antônio parametrizar ferramenta para entrevistar perfil de técnico de Telecom 36:53Vanessa e Letícia fazer levantamento de composição das 129 vagas do projeto 45:13Vanessa compartilhar informações solicitadas por e-mail com Antônio 45:35Antônio enviar proposta de RPO virtual para Vanessa e Letícia 45:48Agendar teste de ferramenta para quinta-feira às 11 horas 46:33Antônio parametrizar ferramenta antes do encontro no evento para teste prático 47:202. Modelo de Serviço RPO VirtualRPO virtual funciona como assinatura mensal sem fidelidade mínima 41:02Valor mensal de RPO virtual é 10 mil reais, metade do RPO tradicional 41:07RPO virtual consegue tocar até 15 vagas por mês por posição 40:06Contagem de vagas considera perfil e localidade como unidades separadas 40:17Processo end-to-end utiliza Inteligência Artificial com relacionamento humano 38:09Recrutador da Intera parametriza solução sem necessidade de cliente mexer em ferramentas 38:423. Posições e Demandas de RecrutamentoDelfia trabalha com dois recrutadores para serviços gerenciados e corporativo 05:36Principais posições abertas: arquiteto de soluções e especialista em infraestrutura com segurança 03:53Posições sazonais incluem engenharia em Cloud com demanda variável 10:43Técnico de Telecom precisa de conhecimento em instalação e manutenção de fibra óptica 19:02Técnico de Telecom deve ter certificações NR10 e NR35 ou receber qualificação interna 19:02Vagas de técnico de Telecom distribuem-se em São Paulo, Santa Catarina, Curitiba, Bahia e Recife 21:15Projeto futuro prevê chegada de 129 vagas em negociação comercial 39:454. Histórico e Experiência PréviaLetícia trabalhou com Intera duas vezes pela Z1 absorvida pela Energia Cash 03:40Delfia nunca trabalhou com consultorias externas para recrutamento de tecnologia 06:07Intera atua com RPO tradicional apenas, não com outras modalidades de recrutamento 17:29Intera trabalha com vagas operacionais em Riachuelo, Cielo e empresas similares 20:015. Estratégias de Recrutamento e CanaisIntera utiliza Facebook e Instagram com resultados positivos em praças interioranas 32:06Delfia tem parceria com Ato Vagas para encontrar público operacional 32:32Meta alterou regras de WhatsApp oficial, derrubando números com muitas mensagens 32:53Intera qualificou base de 10 mil vendedores via WhatsApp oficial após mudanças 40:55Intera pode trabalhar com bases de candidatos já existentes da Delfia 45:39Delfia já esgotou bases de recrutamento e tem dificuldade em encontrar técnicos de Telecom 33:556. Entrevista Virtual com IAEntrevistadora virtual Íris faz perguntas comportamentais e técnicas de forma natural 35:11Entrevistadora virtual aprofunda respostas quando candidato demonstra profundidade 36:44Ferramenta pode ser parametrizada com hard skills, comportamentos e certificações necessárias 37:14Anúncios em Stories do Instagram podem ser confidenciais ou com nome da empresa 34:24Candidatos clicam em anúncio, interagem no WhatsApp e passam por qualificação antes entrevista 34:387. Resultados e AssertividadeIntera recrutou 25 candidatos em 12 dias, reduzindo SLA de contratação significativamente 22:5820 candidatos foram agendados com gestor, sete entrevistados presencialmente 23:34Cinco de sete candidatos entrevistados foram aprovados pelo gestor 23:34Três vagas abertas foram preenchidas com assertividade muito alta da entrevistadora 23:348. Considerações Comerciais e DesafiosDelfia tem preocupação com SLA comercial e questões salariais na negociação 04:36Delfia trabalha internamente questões de retenção e conquista de clientes 17:17Delfia tem volumetria variável de vagas entre meses com muito e pouco volume 25:23Delfia precisa de mínimo 30 vagas para vender RPO virtual internamente como projeto 44:36RPO de TI pode não fazer sentido para Delfia no momento por volume atual 45:51Delfia tem resistência interna sobre robotização e falta de contato humano 43:529. Próximos Passos e EncontrosVanessa e Letícia podem testar ferramenta no evento Colar na terça-feira 46:56Intera terá estande nos três dias do evento Colar em frente ao palco de IA 47:04Antônio enviará localização do estande por e-mail para Vanessa e Letícia 47:18Notas manuaisNenhuma nota manual",
@@ -550,6 +568,7 @@
       "name": "Lojas Edmil | Márcia | OUT",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-14",
       "notes": []
     },
     {
@@ -557,6 +576,7 @@
       "name": "Mills | Tatiane | MKT",
       "amount": 0,
       "stageId": "1397554095",
+      "created": "2026-08-25",
       "notes": [
         {
           "body": "[RPO] INTERA + Millshttps://tldv.io/app/meetings/6a8c3231e5e74400135307cc1. Itens de AçãoAntônio enviar proposta formalizada e minuto de contrato padrão até final do dia 37:24Tatiane enviar link da vaga operacional com maior volume para parametrização 38:54Antônio parametrizar entrevistadora virtual para vaga operacional selecionada 38:32Agendar segunda conversa ainda essa semana para teste com simulação de candidatos 38:43Tatiane compartilhar WhatsApp com Antônio para comunicação contínua 43:552. Contexto da Empresa MillsMills é empresa responsável por linha amarela, ultra logística e plataforma aérea 02:33Estrutura de recrutamento dividida em sete pessoas na coordenação de leves 06:19Quatro pessoas na coordenação de linha amarela, além das coordenadoras divisões 06:19Operações em Sumaré, Assis, Contagem, Betim, Parauapebas e mais de 80 unidades 31:083. Demanda de RecrutamentoVagas remanescentes deveriam ter fechado até 31 de julho 04:21Meta de zerar vagas até meados de setembro para início em outubro 04:43Contratações com SLA de 30 dias para admissões em outubro 04:5630% das vagas são motorista, 65% entre mecânico, soldador e técnico 28:00Auxiliares de manutenção e serviços gerais totalizam 82 posições operacionais 30:47Total de 147 vagas operacionais a preencher 30:474. Solução Intera - Recrutamento Virtual com IAPlataforma utiliza entrevistadora virtual Íris para conduzir entrevistas automatizadas 18:19Candidatos acessam link, sem necessidade de download, podem usar celular 24:49Sistema gera gravação, transcrição e nota automática para cada competência 18:39Taxa de conversão de finalista para contratado beira 70% 22:37Plataforma detecta quando candidato sai da tela durante entrevista 26:55Um recrutador virtual consegue tocar até 15 vagas simultâneas por mês 33:53Múltiplas posições da mesma vaga contam como uma única vaga 34:045. Modelo de Operação InteraRecrutador alocado dentro da organização Mills fica responsável pelo sucesso 32:50Recrutador tem acesso a Slack, Teams e GAP para informações e rituais 33:02Recrutador faz alinhamento com gestor para abertura de novas vagas 33:13Mills não precisa mexer na ferramenta, recrutador gerencia tudo 33:37Intera faz promoção em mídias sociais para atrair candidatos 35:506. Modelo de PrecificaçãoPreço a partir de 17 mil reais mensais para recrutador virtual 35:32Recrutador tradicional custa dobro do preço, geralmente 20 mil para cima 35:32Assinatura mensal sem alteração por custo de contratação ou mídia 35:50Contrato fechado tradicional é 6 ou 12 meses, modelo Intera é mensal 36:15Cancelamento sem multa, apenas aviso prévio de 30 dias necessário 36:52Sem custo de onboarding, contagem começa após parametrização da vaga 36:257. Clientes e Casos de SucessoModelo bem aceito no Conan com reações positivas dos participantes 39:12Intera atua com Renner, Magalu, Cielo, faca promotora e DM cartões 39:20Posições operacionais têm sido muito bem recebidas pela plataforma 20:578. Próximas Etapas AcordadasTatiane vai alinhar com coordenações sobre plano estratégico para zerar vagas 40:17Tatiane vai colocar Antônio em contato com pessoa que executará projeto 40:17Teste será feito com simulação de candidatos da Mills 38:43Antônio tem reunião às 10 e 11 para falar do mesmo serviço 40:50Notas manuaisNenhuma nota manual",
@@ -570,6 +590,7 @@
       "name": "Apsis Consultoria | Letícia | CONARH",
       "amount": 0,
       "stageId": "1397554099",
+      "created": "2026-08-25",
       "notes": [
         {
           "body": "Apsis consultoria <> RPOvirtualhttps://tldv.io/app/meetings/6a8c4040f857620013dc083a1. Itens de AçãoAntônio enviar apresentação e minuta contratual padrão para Letícia até final do dia 33:04Letícia avaliar minuta contratual com jurídico para agilizar processo futuro 32:44Letícia indicar mensalmente andamento das demandas e avisar sobre complicações 32:092. Escopo da SoluçãoSolução atende picos de projetos operacionais com contratação rápida 03:39Inteligência Artificial realiza entrevistas automaticamente sem custo de mídia paga 02:45Candidatos qualificados via WhatsApp com output final sendo agendamento com gestor 11:34Plataforma utiliza Instagram, Facebook e base de dados do Vem de Vaga 11:153. Perfil de Demanda da RPOvirtualDemandas são projetos pontuais de auxiliar de inventário e estoque 15:36Projetos variam de uma noite até três meses com possível deslocamento entre estados 11:20Maioria dos projetos concentra-se em São Paulo e interior 22:17Requisitos mínimos incluem nível médio e habilidade com celular 22:59Demanda sazonal aumenta após eleições e períodos de Copa do Mundo 16:55Final do ano apresenta maior demanda de mão de obra 27:224. Modelo de ContrataçãoProjetos pontuais utilizam prestação de serviço autônomo com diária 22:48Projetos com dedicação maior definem valor mensal segunda a sexta 28:49Tempo de mobilização varia entre cinco a sete dias normalmente 22:59Indústrias podem estender prazo até dez dias por exigências documentais 22:395. Estrutura Interna da RPOvirtualLetícia responsável por seleção com suporte de uma analista e estagiária 24:13Projetos estratégicos com grande volume passam por validação da CEO 29:20Banco de talentos robusto em São Paulo atende demandas menores rapidamente 23:44Não utiliza consultoria de recrutamento externa, gerencia internamente 24:586. Proposta ComercialAssinatura mensal de R$ 10 mil para até 15 vagas simultâneas 27:50Sem fidelidade mínima, cancelamento possível a qualquer momento 27:40Valor inferior a recrutador tradicional (R$ 18 mil) e contratação CLT 27:50Vagas podem ser divididas entre dois clientes diferentes sem restrição 27:45Solução faz sentido para demandas sazonais da RPOvirtual 28:347. Desafios IdentificadosBloqueios de WhatsApp foram problema em projeto anterior de 800 vagas 30:28Dificuldade em alcançar candidatos em regiões remotas e distantes 17:17Projetos atípicos com horários irregulares exigem equipes dispostas a viajar 18:568. Próximos Passos AcordadosParametrização necessária alguns dias antes do fechamento do projeto 25:49Comunicação mensal entre Antônio e Letícia sobre andamento das demandas 32:09Output final do processo será validado conforme características específicas de cada projeto 31:06Notas manuaisNenhuma nota manual",
@@ -583,6 +604,7 @@
       "name": "Mamba Digital | Gabriel | CONARH",
       "amount": 0,
       "stageId": "1397554100",
+      "created": "2026-08-25",
       "notes": [
         {
           "body": "Mamba Digital <> RPOvirtualhttps://tldv.io/app/meetings/6a8c4e4bb3d01b00133fd8231. Itens de AçãoAntônio enviar proposta formalizada por e-mail até final do dia 26:25Gabriel receber proposta com detalhes da solução de atração e entrevista 25:012. Demonstração da PlataformaAntônio parametrizou vaga de atendente comercial com competências específicas incluindo resiliência e qualificação de leads 07:37Sistema realiza entrevista automatizada com perguntas comportamentais e solicita exemplos concretos 15:51Entrevista gera relatório com avaliação detalhada de competências e feedback construtivo 16:03Plataforma se retroalimenta e adapta perguntas conforme respostas do candidato 19:233. Fluxo de Atração e QualificaçãoVagas parametrizadas geram anúncios automáticos no Facebook e Instagram 20:59Candidatos são direcionados para WhatsApp onde ocorre qualificação inicial 21:28Após qualificação, candidato recebe link para entrevista automatizada 22:234. Modelo de Negócio e PreçosAssinatura mensal sem fidelidade mínima permite cancelamento a qualquer momento 23:57Custo de 10 mil reais mensais é mais barato que RPA tradicional de 18 mil 24:05Limite de 15 vagas simultâneas por mês pode ser aumentado com investimento em mídia paga 23:21RPOvirtual oferece flexibilidade para contratar conforme demanda de picos de vagas 24:385. Casos de Uso e AplicabilidadeSolução é adequada para posições operacionais como atendente comercial, closer e assistente de sucesso 20:22RPOvirtual tem atualmente seis ou sete posições abertas com volume mensal consistente 20:14Plataforma permite parametrização com metodologias específicas como Winning by Design 25:31Sistema adapta-se tanto para avaliações comportamentais quanto técnicas conforme necessidade 26:066. Feedback e ImpressõesGabriel considerou entrevista técnica bem estruturada com delay aceitável e perguntas relevantes 15:07Plataforma superou expectativas de Gabriel que havia visto demonstração anterior rápida 25:03Gabriel percebeu fluidez do processo e potencial fit com realidade operacional da empresa 19:48Notas manuaisNenhuma nota manual",
@@ -596,6 +618,7 @@
       "name": "Frigo Service | Maria | CONARH",
       "amount": 0,
       "stageId": "1397554100",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -603,6 +626,7 @@
       "name": "Stefanini | Aline | CONARH",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -610,6 +634,7 @@
       "name": "Newcom | CONARH",
       "amount": 0,
       "stageId": "1397554099",
+      "created": "2026-08-25",
       "notes": [
         {
           "body": "Poucas vagas pro RPO virtual.",
@@ -623,6 +648,7 @@
       "name": "Bravolog | CONARH",
       "amount": 0,
       "stageId": "1397554094",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -630,6 +656,7 @@
       "name": "Esportes Gaming Brasil | CONARH",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -637,6 +664,7 @@
       "name": "Fast Shop | Renan | CONARH",
       "amount": 0,
       "stageId": "1397554100",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -644,6 +672,7 @@
       "name": "Ativa Online | CONARH",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -651,6 +680,7 @@
       "name": "Grupo Femina | CONARH",
       "amount": 0,
       "stageId": "1397554095",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -658,6 +688,7 @@
       "name": "Grupo Colina | CONARH",
       "amount": 0,
       "stageId": "1397554100",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -665,6 +696,7 @@
       "name": "Bonin Engenharia | CONARH",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -672,6 +704,7 @@
       "name": "Wishin | CONARH",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -679,6 +712,7 @@
       "name": "MartinLog | CONARH",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -686,6 +720,7 @@
       "name": "Dotseg | CONARH",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -693,6 +728,7 @@
       "name": "Grupo Sadde | CONARH",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -700,6 +736,7 @@
       "name": "Obramax | CONARH",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -707,6 +744,7 @@
       "name": "Prompt | CONARH",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -714,6 +752,7 @@
       "name": "Grupo Cosmobeauty | CONARH",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -721,6 +760,7 @@
       "name": "GVA | CONARH",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -728,6 +768,7 @@
       "name": "Stoque | CONARH",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -735,6 +776,7 @@
       "name": "3M | CONARH ",
       "amount": 0,
       "stageId": "1397554094",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -742,6 +784,7 @@
       "name": "Montreal Moda e Casa | CONARH",
       "amount": 0,
       "stageId": "1397554094",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -749,6 +792,7 @@
       "name": "Sipal | CONARH",
       "amount": 0,
       "stageId": "1397554095",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -756,6 +800,7 @@
       "name": "Helppi | CONARH",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -763,6 +808,7 @@
       "name": "Viniplast | CONARH",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -770,6 +816,7 @@
       "name": "Transben | CONARH",
       "amount": 0,
       "stageId": "1397554094",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -777,6 +824,7 @@
       "name": "Vale Verde UBF | CONARH",
       "amount": 0,
       "stageId": "1397554091",
+      "created": "2026-08-25",
       "notes": []
     },
     {
@@ -784,6 +832,7 @@
       "name": "Santander | Bruna | CONARH",
       "amount": 0,
       "stageId": "1397554096",
+      "created": "2026-08-31",
       "notes": [
         {
           "body": "Primeira reuniao realizada. Reuniao com compras já. Demos start na homologação.",
@@ -797,6 +846,7 @@
       "name": "Pravaler | Gabriela | CG",
       "amount": 0,
       "stageId": "1397554097",
+      "created": "2026-08-31",
       "notes": [
         {
           "body": "Apresentacao feita. Demo feita. Contrato enviado para começar homologação.",
@@ -810,6 +860,7 @@
       "name": "Localiza | CG",
       "amount": 0,
       "stageId": "1397554095",
+      "created": "2026-09-04",
       "notes": []
     },
     {
@@ -817,6 +868,7 @@
       "name": "Grupo Carrefour | CONARH",
       "amount": 0,
       "stageId": "1397554094",
+      "created": "2026-09-08",
       "notes": []
     },
     {
@@ -824,6 +876,7 @@
       "name": "COOP | CONARH",
       "amount": 0,
       "stageId": "1397554095",
+      "created": "2026-09-08",
       "notes": []
     },
     {
@@ -831,6 +884,7 @@
       "name": "Eurofarma | OUT",
       "amount": 0,
       "stageId": "1397554094",
+      "created": "2026-09-08",
       "notes": []
     },
     {
@@ -838,6 +892,7 @@
       "name": "Pirancajuba",
       "amount": 0,
       "stageId": "1397554095",
+      "created": "2026-09-14",
       "notes": []
     },
     {
@@ -845,6 +900,7 @@
       "name": "Grupo Rivesa | CONARH",
       "amount": 0,
       "stageId": "1397554095",
+      "created": "2026-09-21",
       "notes": []
     },
     {
@@ -852,6 +908,7 @@
       "name": "Grupo Melo Cordeiro | CONARH",
       "amount": 0,
       "stageId": "1397554093",
+      "created": "2026-10-01",
       "notes": []
     },
     {
@@ -859,6 +916,7 @@
       "name": "FIESP | OUT",
       "amount": 0,
       "stageId": "1397554093",
+      "created": "2026-10-01",
       "notes": []
     },
     {
@@ -866,6 +924,7 @@
       "name": "Leo Madeiras",
       "amount": 0,
       "stageId": "1397554093",
+      "created": "2026-10-01",
       "notes": []
     },
     {
@@ -873,10 +932,11 @@
       "name": "Natura",
       "amount": 0,
       "stageId": "1397554099",
+      "created": "2026-10-01",
       "notes": []
     }
   ],
-  "hs_last_updated": "07/10/2026, 19:09:35",
+  "hs_last_updated": "13/10/2026, 16:10:30",
   "mrr_overrides": {
     "total": {
       "value": 51000,
@@ -1086,6 +1146,7 @@
       "name": "Sicredi  |  Raquel  |  RE",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-04-15",
       "dEntries": {
         "1": "2026-07-14T21:51:34.598Z",
         "2": "2026-07-16T13:09:59.249Z",
@@ -1116,6 +1177,7 @@
       "name": "Grupo Boticário | Sheila | NF",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-14T18:50:53.687Z"
       },
@@ -1139,6 +1201,7 @@
       "name": "Itau BBA ",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-20T13:09:38.903Z",
         "2": "2026-07-29T14:40:12.112Z",
@@ -1169,6 +1232,7 @@
       "name": "Icatu Seguros ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-23T14:14:04.857Z",
         "2": "2026-07-23T14:14:34.144Z"
@@ -1188,6 +1252,7 @@
       "name": "Grupo QuintoAndar ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-27T14:16:21.031Z",
         "2": "2026-08-14T19:40:53.980Z"
@@ -1212,6 +1277,7 @@
       "name": "Supermercado Nordestão ",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-23T14:20:07.064Z",
         "2": "2026-08-04T21:00:50.006Z",
@@ -1237,6 +1303,7 @@
       "name": "Drogal ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-20T13:15:19.142Z"
       },
@@ -1249,6 +1316,7 @@
       "name": "OXXO Brasil ",
       "amount": 0,
       "stageId": "1398903677",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-20T13:15:34.468Z",
         "2": "2026-07-22T17:48:42.859Z"
@@ -1273,6 +1341,7 @@
       "name": "CVC ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-20T13:20:14.589Z",
         "2": "2026-07-29T14:10:13.309Z"
@@ -1297,6 +1366,7 @@
       "name": "Farmácias Pague Menos ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-23T14:28:55.487Z",
         "2": "2026-08-10T19:39:17.505Z"
@@ -1321,6 +1391,7 @@
       "name": "Grupo CAOA ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-20T13:25:50.584Z",
         "2": "2026-07-29T14:13:41.766Z"
@@ -1345,6 +1416,7 @@
       "name": "Drogaria Araujo S/A ",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-15T15:18:45.669Z",
         "2": "2026-07-17T19:52:32.194Z",
@@ -1370,6 +1442,7 @@
       "name": "Unidas ",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-20T13:35:26.893Z",
         "3": "2026-08-14T19:46:42.453Z"
@@ -1394,6 +1467,7 @@
       "name": "Home Center Ferreira Costa ",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-15T14:56:28.343Z",
         "2": "2026-07-17T19:52:29.357Z",
@@ -1419,6 +1493,7 @@
       "name": "Farmácia Indiana ",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-14T19:11:49.474Z",
         "2": "2026-07-16T13:11:12.533Z",
@@ -1449,6 +1524,7 @@
       "name": "Chilli Beans ",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-23T14:13:20.893Z",
         "3": "2026-08-14T19:51:19.513Z"
@@ -1473,6 +1549,7 @@
       "name": "Natura ",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-15T14:49:47.503Z",
         "2": "2026-07-17T19:52:26.843Z",
@@ -1493,6 +1570,7 @@
       "name": "Supermercados Guanabara ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-27T14:06:35.439Z"
       },
@@ -1505,6 +1583,7 @@
       "name": "Marisa S.A. ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-20T13:43:34.792Z",
         "2": "2026-07-29T14:09:21.601Z"
@@ -1529,6 +1608,7 @@
       "name": "CENTAURO ",
       "amount": 0,
       "stageId": "1398903677",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-23T14:36:56.152Z",
         "2": "2026-07-23T14:36:53.804Z"
@@ -1548,6 +1628,7 @@
       "name": "Grupo Carrefour Brasil ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-20T13:48:39.615Z"
       },
@@ -1571,6 +1652,7 @@
       "name": "Cobasi ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-20T13:52:50.241Z",
         "2": "2026-07-29T14:11:30.017Z"
@@ -1600,6 +1682,7 @@
       "name": "Brisanet Telecomunicações ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-14T19:33:53.466Z",
         "2": "2026-08-11T13:40:14.955Z"
@@ -1613,6 +1696,7 @@
       "name": "Assaí Atacadista ",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-15T15:04:43.631Z",
         "2": "2026-07-17T19:52:24.494Z",
@@ -1633,6 +1717,7 @@
       "name": "Grupo Ri Happy ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-23T13:49:07.806Z"
       },
@@ -1651,6 +1736,7 @@
       "name": "Cencosud S.A. ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-23T14:03:36.434Z",
         "2": "2026-07-29T14:49:58.584Z"
@@ -1675,6 +1761,7 @@
       "name": "Petlove ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-17T20:14:33.190Z",
         "2": "2026-07-29T14:07:00.233Z"
@@ -1699,6 +1786,7 @@
       "name": "americanas s.a. ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-15T12:43:01.870Z"
       },
@@ -1711,6 +1799,7 @@
       "name": "C&A Brasil ",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-15T12:34:52.586Z",
         "2": "2026-07-29T14:01:26.282Z",
@@ -1732,6 +1821,7 @@
       "name": "Fast Shop S/A ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-17T18:53:01.986Z",
         "2": "2026-07-17T19:52:21.390Z"
@@ -1756,6 +1846,7 @@
       "name": "Monte Carlo ",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-23T13:57:32.475Z",
         "2": "2026-07-29T14:43:33.571Z",
@@ -1786,6 +1877,7 @@
       "name": "Facta promotora",
       "amount": 0,
       "stageId": "1398903677",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-14T19:28:39.795Z",
         "2": "2026-07-16T14:07:59.725Z"
@@ -1805,6 +1897,7 @@
       "name": "Localiza",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-14T19:30:31.971Z",
         "2": "2026-07-16T12:51:57.391Z"
@@ -1824,6 +1917,7 @@
       "name": "Reagendamento Renner",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-14T19:50:28.624Z"
       },
@@ -1836,6 +1930,7 @@
       "name": "DM",
       "amount": 0,
       "stageId": "1398903677",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-14T22:16:56.475Z"
       },
@@ -1854,6 +1949,7 @@
       "name": "Ambev",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-14",
       "dEntries": {
         "1": "2026-07-14T22:28:49.249Z"
       },
@@ -1866,6 +1962,7 @@
       "name": "Lello Condomínios",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-15",
       "dEntries": {
         "1": "2026-07-15T14:49:25.085Z"
       },
@@ -1878,6 +1975,7 @@
       "name": "Alelo Brasil ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-15",
       "dEntries": {
         "1": "2026-07-16T13:51:33.519Z",
         "2": "2026-08-11T17:26:56.782Z"
@@ -1897,6 +1995,7 @@
       "name": "Contabilizei ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-15",
       "dEntries": {
         "1": "2026-07-16T13:46:40.738Z"
       },
@@ -1909,6 +2008,7 @@
       "name": "IPNET ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-15",
       "dEntries": {
         "1": "2026-07-16T13:38:54.538Z",
         "2": "2026-07-27T19:41:28.110Z"
@@ -1922,6 +2022,7 @@
       "name": "Pravaler ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-15",
       "dEntries": {
         "1": "2026-07-16T13:31:45.809Z"
       },
@@ -1940,6 +2041,7 @@
       "name": "Ultragaz ",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-07-15",
       "dEntries": {
         "1": "2026-07-15T18:32:23.274Z",
         "2": "2026-07-17T19:52:16.020Z",
@@ -1970,6 +2072,7 @@
       "name": "Zig. The Global Funtech ",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-07-15",
       "dEntries": {
         "1": "2026-07-16T13:17:34.106Z",
         "2": "2026-07-22T17:42:32.416Z",
@@ -2000,6 +2103,7 @@
       "name": "Arezzo&Co ",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-07-15",
       "dEntries": {
         "1": "2026-07-15T17:54:12.196Z",
         "2": "2026-08-04T21:00:04.718Z",
@@ -2025,6 +2129,7 @@
       "name": "Grupo Comolatti",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-16",
       "dEntries": {
         "1": "2026-07-16T13:59:51.685Z"
       },
@@ -2037,6 +2142,7 @@
       "name": "Natura ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-24",
       "dEntries": {
         "1": "2026-07-24T17:16:31.924Z"
       },
@@ -2055,6 +2161,7 @@
       "name": "Stone ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-24",
       "dEntries": {
         "1": "2026-07-24T17:18:50.889Z"
       },
@@ -2067,6 +2174,7 @@
       "name": "Alpargatas S.A. ",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-08-12T18:45:29.124Z",
         "2": "2026-08-19T13:28:09.981Z",
@@ -2097,6 +2205,7 @@
       "name": "Lojas Torra ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T16:40:49.484Z"
       },
@@ -2115,6 +2224,7 @@
       "name": "Lojas REDE ",
       "amount": 0,
       "stageId": "1398903677",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T16:38:28.088Z"
       },
@@ -2133,6 +2243,7 @@
       "name": "Lojas Besni ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T16:36:07.020Z"
       },
@@ -2151,6 +2262,7 @@
       "name": "Telefonica ",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-08-12T19:40:52.171Z",
         "2": "2026-08-19T13:21:26.164Z",
@@ -2182,6 +2294,7 @@
       "name": "PepsiCo ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-08-12T20:53:54.542Z"
       },
@@ -2200,6 +2313,7 @@
       "name": "Grupo Fleury ",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-08-12T20:37:17.950Z",
         "2": "2026-08-19T22:25:02.319Z",
@@ -2235,6 +2349,7 @@
       "name": "Loovi ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T16:32:39.304Z"
       },
@@ -2253,6 +2368,7 @@
       "name": "Consórcio Embracon ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T16:29:16.279Z"
       },
@@ -2271,6 +2387,7 @@
       "name": "Cia. Hering ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T16:20:45.772Z"
       },
@@ -2289,6 +2406,7 @@
       "name": "Burger King ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-08-04T19:45:49.445Z"
       },
@@ -2307,6 +2425,7 @@
       "name": "Arco Educação ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T16:27:20.073Z"
       },
@@ -2325,6 +2444,7 @@
       "name": "Petz ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T16:12:54.793Z"
       },
@@ -2343,6 +2463,7 @@
       "name": "Decolar ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T16:09:36.152Z"
       },
@@ -2361,6 +2482,7 @@
       "name": "Kopenhagen e Chocolates Brasil Cacau (Grupo CRM) ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T16:05:39.757Z"
       },
@@ -2379,6 +2501,7 @@
       "name": "Ipiranga ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T14:11:03.086Z"
       },
@@ -2397,6 +2520,7 @@
       "name": "Hortifruti ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T16:02:42.672Z"
       },
@@ -2415,6 +2539,7 @@
       "name": "Mottu ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T14:30:57.161Z"
       },
@@ -2433,6 +2558,7 @@
       "name": "KFC Brasil ",
       "amount": 0,
       "stageId": "1398903677",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T14:56:57.710Z"
       },
@@ -2451,6 +2577,7 @@
       "name": "Casas Bahia ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-29T19:09:23.931Z"
       },
@@ -2469,6 +2596,7 @@
       "name": "Banco Mercantil ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T15:28:41.506Z"
       },
@@ -2487,6 +2615,7 @@
       "name": "XP Inc. ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-30T14:56:49.884Z",
         "2": "2026-08-12T16:36:20.264Z"
@@ -2511,6 +2640,7 @@
       "name": "V4 Company ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T14:53:20.086Z"
       },
@@ -2529,6 +2659,7 @@
       "name": "Bluefit Academia ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T14:26:17.913Z"
       },
@@ -2547,6 +2678,7 @@
       "name": "Grupo Souza Lima ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T15:10:45.393Z"
       },
@@ -2565,6 +2697,7 @@
       "name": "Volkswagen ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T15:20:44.117Z"
       },
@@ -2583,6 +2716,7 @@
       "name": "ALE Combustíveis ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T14:15:23.645Z"
       },
@@ -2601,6 +2735,7 @@
       "name": "Movida Aluguel de Carros ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-29T19:00:14.037Z",
         "2": "2026-08-14T19:49:00.140Z"
@@ -2620,6 +2755,7 @@
       "name": "SulAmérica ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-31T15:02:02.980Z"
       },
@@ -2638,6 +2774,7 @@
       "name": "Tenda Atacado ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-29T18:38:21.616Z",
         "2": "2026-08-14T19:48:47.408Z"
@@ -2657,6 +2794,7 @@
       "name": "Moura Dubeux ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-29T18:44:52.330Z",
         "2": "2026-08-14T19:48:07.833Z"
@@ -2676,6 +2814,7 @@
       "name": "Avenida ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-29T18:16:01.401Z",
         "2": "2026-08-14T19:45:02.442Z"
@@ -2695,6 +2834,7 @@
       "name": "Grupo Equatorial ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-29T18:27:29.906Z"
       },
@@ -2713,6 +2853,7 @@
       "name": "Raízen ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-27T19:54:20.565Z",
         "2": "2026-08-10T19:47:33.811Z"
@@ -2737,6 +2878,7 @@
       "name": "RedeFlex Comércio e Serviço de Telefonia Ltda ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-27T19:51:04.022Z",
         "2": "2026-08-10T19:48:56.812Z"
@@ -2761,6 +2903,7 @@
       "name": "Bacio di Latte ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-27T19:16:47.758Z",
         "2": "2026-08-10T19:49:59.966Z"
@@ -2785,6 +2928,7 @@
       "name": "Cacau Show ",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-27T19:10:27.415Z",
         "2": "2026-08-10T19:46:39.073Z",
@@ -2810,6 +2954,7 @@
       "name": "Hapvida NotreDame Intermédica ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-27T19:47:17.150Z"
       },
@@ -2838,6 +2983,7 @@
       "name": "PagBank ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-27T19:36:03.504Z",
         "2": "2026-08-10T19:45:19.953Z"
@@ -2862,6 +3008,7 @@
       "name": "Porto ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-07-27",
       "dEntries": {
         "1": "2026-07-27T19:01:30.833Z",
         "2": "2026-08-10T19:44:26.358Z"
@@ -2886,6 +3033,7 @@
       "name": "Lojas Quero-Quero",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-31",
       "dEntries": {
         "1": "2026-07-31T19:32:06.321Z"
       },
@@ -2904,6 +3052,7 @@
       "name": "Lojas Lebes",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-31",
       "dEntries": {
         "1": "2026-07-31T19:37:11.297Z"
       },
@@ -2922,6 +3071,7 @@
       "name": "Lojas Colombo",
       "amount": 0,
       "stageId": "1398903677",
+      "created": "2026-07-31",
       "dEntries": {
         "1": "2026-07-31T19:42:16.318Z"
       },
@@ -2940,6 +3090,7 @@
       "name": "Lojas Cem",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-31",
       "dEntries": {
         "1": "2026-07-31T19:49:03.611Z"
       },
@@ -2958,6 +3109,7 @@
       "name": "Lojas Eskala",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-31",
       "dEntries": {
         "1": "2026-07-31T21:00:55.498Z"
       },
@@ -2976,6 +3128,7 @@
       "name": "Lojas Benoit",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-31",
       "dEntries": {
         "1": "2026-07-31T21:05:58.891Z"
       },
@@ -2994,6 +3147,7 @@
       "name": "Lojas Edmil",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-31",
       "dEntries": {
         "1": "2026-07-31T21:12:43.900Z"
       },
@@ -3012,6 +3166,7 @@
       "name": "Grupo DPSP",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-31",
       "dEntries": {
         "1": "2026-07-31T21:20:31.820Z"
       },
@@ -3030,6 +3185,7 @@
       "name": "Grupo Mundial Mix",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-31",
       "dEntries": {
         "1": "2026-07-31T21:27:23.137Z"
       },
@@ -3048,6 +3204,7 @@
       "name": "Grupo Muffato",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-31",
       "dEntries": {
         "1": "2026-07-31T21:30:56.904Z"
       },
@@ -3066,6 +3223,7 @@
       "name": "H&M",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-31",
       "dEntries": {
         "1": "2026-07-31T21:35:59.286Z"
       },
@@ -3084,6 +3242,7 @@
       "name": "Grupo Pereira",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-07-31",
       "dEntries": {
         "1": "2026-07-31T21:40:21.669Z"
       },
@@ -3102,6 +3261,7 @@
       "name": "Constance Calçados",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T16:55:30.092Z"
       },
@@ -3120,6 +3280,7 @@
       "name": "Mart Minas",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T17:00:40.251Z",
         "2": "2026-08-11T13:16:56.821Z"
@@ -3144,6 +3305,7 @@
       "name": "Frigelar",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T17:04:22.146Z"
       },
@@ -3162,6 +3324,7 @@
       "name": "Tauste",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T17:11:02.208Z"
       },
@@ -3180,6 +3343,7 @@
       "name": "Leroy Merlin",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T17:21:08.146Z"
       },
@@ -3198,6 +3362,7 @@
       "name": "L'oréal",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T17:27:19.733Z"
       },
@@ -3216,6 +3381,7 @@
       "name": "Grupo Carboni",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T17:38:21.691Z"
       },
@@ -3234,6 +3400,7 @@
       "name": "Drogas Clara",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T17:42:09.604Z",
         "2": "2026-08-11T13:52:05.021Z"
@@ -3258,6 +3425,7 @@
       "name": "Grupo Ramasa",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T17:45:28.837Z"
       },
@@ -3276,6 +3444,7 @@
       "name": "Supermercado Bahamas",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T17:51:14.805Z"
       },
@@ -3294,6 +3463,7 @@
       "name": "Grupo MM Mercadomóveis",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T18:15:22.478Z",
         "2": "2026-08-11T13:56:43.741Z"
@@ -3318,6 +3488,7 @@
       "name": "Autozone",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T19:55:46.146Z"
       },
@@ -3336,6 +3507,7 @@
       "name": "Supermercados Grick",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T19:59:35.501Z"
       },
@@ -3354,6 +3526,7 @@
       "name": "Confiança Supermercados",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T20:02:55.528Z"
       },
@@ -3372,6 +3545,7 @@
       "name": "Inditex Brasil",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T20:08:05.750Z"
       },
@@ -3390,6 +3564,7 @@
       "name": "Grupo Pereira",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T20:35:55.344Z"
       },
@@ -3408,6 +3583,7 @@
       "name": "Supermercados Avenida",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T20:38:51.642Z"
       },
@@ -3426,6 +3602,7 @@
       "name": "Bigmais Supermercados",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T20:41:46.519Z"
       },
@@ -3444,6 +3621,7 @@
       "name": "Cantu Store",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T20:59:00.529Z"
       },
@@ -3462,6 +3640,7 @@
       "name": "Superlegal brinquedos",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T21:05:57.658Z"
       },
@@ -3480,6 +3659,7 @@
       "name": "Grupo Saga",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T21:10:36.341Z"
       },
@@ -3498,6 +3678,7 @@
       "name": "Pontal Calçados",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T21:13:28.793Z"
       },
@@ -3516,6 +3697,7 @@
       "name": "Ayumi Supermercados",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T21:17:29.163Z"
       },
@@ -3534,6 +3716,7 @@
       "name": "Grupo Hope",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T21:21:22.496Z"
       },
@@ -3552,6 +3735,7 @@
       "name": "Grupo SBF",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T21:31:17.815Z"
       },
@@ -3570,6 +3754,7 @@
       "name": "Sephora",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T21:36:04.156Z"
       },
@@ -3588,6 +3773,7 @@
       "name": "Kalunga",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T21:42:17.668Z"
       },
@@ -3606,6 +3792,7 @@
       "name": "Carajás home Center",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T21:48:34.415Z"
       },
@@ -3624,6 +3811,7 @@
       "name": "Casa do construtor",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T21:57:36.109Z"
       },
@@ -3642,6 +3830,7 @@
       "name": "Zema",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T22:02:40.154Z"
       },
@@ -3660,6 +3849,7 @@
       "name": "Sacolão",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-04",
       "dEntries": {
         "1": "2026-08-04T22:07:26.001Z"
       },
@@ -3678,6 +3868,7 @@
       "name": "ABC da Construção S.A. ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T19:55:11.807Z"
       },
@@ -3696,6 +3887,7 @@
       "name": "AUTOMOB ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T20:32:43.206Z",
         "2": "2026-08-12T19:58:24.125Z"
@@ -3715,6 +3907,7 @@
       "name": "Agibank ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T20:25:40.452Z"
       },
@@ -3733,6 +3926,7 @@
       "name": "Agricopel ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T20:17:50.466Z"
       },
@@ -3751,6 +3945,7 @@
       "name": "Alloha Fibra ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T20:14:50.179Z"
       },
@@ -3769,6 +3964,7 @@
       "name": "Angeloni ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T20:11:25.886Z"
       },
@@ -3787,6 +3983,7 @@
       "name": "CLAMED - Cia Latino Americana de Medicamentos ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T20:08:44.880Z"
       },
@@ -3805,6 +4002,7 @@
       "name": "Caedu ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T20:04:52.839Z",
         "2": "2026-08-10T19:36:35.604Z"
@@ -3829,6 +4027,7 @@
       "name": "Claro Brasil ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T19:46:31.461Z"
       },
@@ -3847,6 +4046,7 @@
       "name": "Condor Brasil I Atacado da Construção ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T19:38:18.627Z",
         "2": "2026-08-11T13:49:45.867Z"
@@ -3871,6 +4071,7 @@
       "name": "Crefaz ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T19:31:25.712Z",
         "2": "2026-08-11T13:49:07.600Z"
@@ -3890,6 +4091,7 @@
       "name": "Grupo Energisa ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T19:24:32.152Z"
       },
@@ -3908,6 +4110,7 @@
       "name": "Grupo Madero ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T19:20:39.189Z"
       },
@@ -3926,6 +4129,7 @@
       "name": "Rodobens ",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-12T20:05:29.934Z",
         "2": "2026-08-19T22:28:30.813Z",
@@ -3956,6 +4160,7 @@
       "name": "Shoulder ",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-12T19:22:10.865Z",
         "2": "2026-08-19T22:31:07.283Z",
@@ -3986,6 +4191,7 @@
       "name": "Smart Fit ",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-12T18:07:48.827Z",
         "2": "2026-08-19T13:41:27.453Z",
@@ -4016,6 +4222,7 @@
       "name": "VESTE S/A ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T21:42:38.150Z"
       },
@@ -4034,6 +4241,7 @@
       "name": "Tel Contact Center ",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-12T20:40:19.138Z",
         "2": "2026-08-26T19:32:30.468Z"
@@ -4058,6 +4266,7 @@
       "name": "Grupo Oscar Calçados ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T21:40:42.325Z"
       },
@@ -4076,6 +4285,7 @@
       "name": "Grupo Panvel ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T21:30:51.030Z"
       },
@@ -4094,6 +4304,7 @@
       "name": "Grupo Saga ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-12T17:49:44.794Z"
       },
@@ -4117,6 +4328,7 @@
       "name": "Organização Verdemar ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T21:36:15.651Z"
       },
@@ -4135,6 +4347,7 @@
       "name": "Portobello Shop ",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-12T18:21:47.940Z",
         "2": "2026-08-19T13:34:44.185Z",
@@ -4165,6 +4378,7 @@
       "name": "Savegnago Supermercados ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T21:33:41.994Z",
         "2": "2026-08-11T13:43:44.027Z"
@@ -4189,6 +4403,7 @@
       "name": "Flora ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-12T12:30:53.183Z"
       },
@@ -4207,6 +4422,7 @@
       "name": "Freitas ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T21:18:21.767Z",
         "2": "2026-08-11T13:42:33.623Z"
@@ -4231,6 +4447,7 @@
       "name": "FISIA ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T21:15:28.759Z",
         "2": "2026-08-11T13:18:52.345Z"
@@ -4255,6 +4472,7 @@
       "name": "Paraná Banco S/A ",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-12T14:33:59.231Z",
         "2": "2026-08-19T22:06:11.666Z",
@@ -4285,6 +4503,7 @@
       "name": "Grupo Soma ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T21:12:48.348Z",
         "2": "2026-08-11T13:18:10.392Z"
@@ -4309,6 +4528,7 @@
       "name": "Inbrands ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T21:08:01.789Z",
         "2": "2026-08-11T13:16:28.392Z"
@@ -4333,6 +4553,7 @@
       "name": "Promofarma ",
       "amount": 0,
       "stageId": "1398904716",
+      "created": "2026-08-07",
       "dEntries": {
         "1": "2026-08-07T21:02:44.886Z",
         "2": "2026-08-11T13:15:24.340Z"
@@ -4357,6 +4578,7 @@
       "name": "DealerHunter | InHire",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-11",
       "dEntries": {
         "1": "2026-08-11T14:26:32.919Z"
       },
@@ -4375,6 +4597,7 @@
       "name": "Portal Nova | InHire",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-11",
       "dEntries": {
         "1": "2026-08-11T14:30:00.672Z"
       },
@@ -4393,6 +4616,7 @@
       "name": "Zerezes | inHire",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-11",
       "dEntries": {
         "1": "2026-08-11T14:34:56.660Z"
       },
@@ -4411,6 +4635,7 @@
       "name": "Contabilizei | InHire",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-11",
       "dEntries": {
         "1": "2026-08-12T12:04:57.093Z"
       },
@@ -4429,6 +4654,7 @@
       "name": "Unilever ",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-13",
       "dEntries": {
         "1": "2026-08-13T18:31:03.522Z"
       },
@@ -4462,6 +4688,7 @@
       "name": "Bosch ",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-13",
       "dEntries": {
         "1": "2026-08-13T18:20:20.908Z",
         "2": "2026-08-19T22:19:39.941Z",
@@ -4492,6 +4719,7 @@
       "name": "Banco PAN ",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-13",
       "dEntries": {
         "1": "2026-08-13T18:11:22.318Z",
         "2": "2026-08-19T22:44:55.212Z",
@@ -4522,6 +4750,7 @@
       "name": "Grendene ",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-13",
       "dEntries": {
         "1": "2026-08-13T17:58:54.584Z",
         "2": "2026-08-19T21:41:04.143Z",
@@ -4552,6 +4781,7 @@
       "name": "3M ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-13",
       "dEntries": {
         "1": "2026-08-13T17:42:50.824Z"
       },
@@ -4570,6 +4800,7 @@
       "name": "BTG Pactual ",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-13",
       "dEntries": {
         "1": "2026-08-13T16:23:14.904Z",
         "2": "2026-08-19T22:53:37.619Z"
@@ -4599,6 +4830,7 @@
       "name": "Allianz Brasil ",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-13",
       "dEntries": {
         "1": "2026-08-13T16:25:41.265Z",
         "2": "2026-08-19T22:48:50.729Z",
@@ -4624,6 +4856,7 @@
       "name": "Casa dos Ventos Energias Renováveis ",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-13",
       "dEntries": {
         "1": "2026-08-13T16:24:10.851Z"
       },
@@ -4657,6 +4890,7 @@
       "name": "Cash Me | inHire",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-13",
       "dEntries": {
         "1": "2026-08-13T14:27:25.915Z"
       },
@@ -4669,6 +4903,7 @@
       "name": "International meal Company ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-13",
       "dEntries": {
         "1": "2026-08-13T17:50:47.762Z"
       },
@@ -4687,6 +4922,7 @@
       "name": "Grupo Civil",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-13",
       "dEntries": {
         "1": "2026-08-13T18:44:51.919Z",
         "2": "2026-08-19T22:39:57.352Z"
@@ -4721,6 +4957,7 @@
       "name": "Bomix",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T18:49:06.271Z",
         "2": "2026-08-21T18:46:56.559Z",
@@ -4751,6 +4988,7 @@
       "name": "Brisanet",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T18:34:09.227Z",
         "2": "2026-09-04T12:34:04.663Z"
@@ -4780,6 +5018,7 @@
       "name": "Cencosud",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T19:01:46.187Z",
         "2": "2026-08-19T22:15:49.134Z",
@@ -4810,6 +5049,7 @@
       "name": "InfoTec",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T19:13:23.419Z",
         "2": "2026-08-21T18:42:33.926Z"
@@ -4834,6 +5074,7 @@
       "name": "Espaço Laser",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T19:28:35.045Z",
         "3": "2026-08-31T18:11:16.066Z"
@@ -4863,6 +5104,7 @@
       "name": "Libbs Farmacêutica",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T19:49:15.289Z",
         "2": "2026-08-19T22:35:56.264Z",
@@ -4893,6 +5135,7 @@
       "name": "Prati-Donaduzzi",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:00:18.299Z",
         "2": "2026-08-21T18:35:38.253Z"
@@ -4922,6 +5165,7 @@
       "name": "Adidas | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:23:05.651Z"
       },
@@ -4934,6 +5178,7 @@
       "name": "Any Any | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:23:28.751Z"
       },
@@ -4946,6 +5191,7 @@
       "name": "Decathlon | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:23:44.682Z"
       },
@@ -4958,6 +5204,7 @@
       "name": "Gazin | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:24:20.821Z"
       },
@@ -4970,6 +5217,7 @@
       "name": "GPA | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:24:32.806Z"
       },
@@ -4982,6 +5230,7 @@
       "name": "Grupo Dass | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:24:57.155Z"
       },
@@ -4994,6 +5243,7 @@
       "name": "Grupo Mateus | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:25:10.466Z"
       },
@@ -5006,6 +5256,7 @@
       "name": "Grupo Zaffari | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:26:35.255Z"
       },
@@ -5018,6 +5269,7 @@
       "name": "Gucci | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:26:47.100Z"
       },
@@ -5030,6 +5282,7 @@
       "name": "Havan | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:27:02.988Z"
       },
@@ -5042,6 +5295,7 @@
       "name": "Levi | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:27:17.400Z"
       },
@@ -5054,6 +5308,7 @@
       "name": "Strauss | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:27:32.206Z"
       },
@@ -5066,6 +5321,7 @@
       "name": "LVMH | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:27:44.385Z"
       },
@@ -5078,6 +5334,7 @@
       "name": "MANGO | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:28:00.339Z"
       },
@@ -5090,6 +5347,7 @@
       "name": "NESTLÉ | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:28:16.723Z"
       },
@@ -5102,6 +5360,7 @@
       "name": "Nespresso | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:28:30.650Z"
       },
@@ -5114,6 +5373,7 @@
       "name": "Next | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:28:46.628Z"
       },
@@ -5126,6 +5386,7 @@
       "name": "Oniverse | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:28:58.850Z"
       },
@@ -5138,6 +5399,7 @@
       "name": "RD SAUDE | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:29:16.180Z"
       },
@@ -5150,6 +5412,7 @@
       "name": "Farmacias Sao joao | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:29:37.272Z"
       },
@@ -5162,6 +5425,7 @@
       "name": "REI | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:29:50.296Z"
       },
@@ -5174,6 +5438,7 @@
       "name": "RGIS | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:30:03.546Z"
       },
@@ -5186,6 +5451,7 @@
       "name": "Sam's Club | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:30:17.819Z"
       },
@@ -5198,6 +5464,7 @@
       "name": "Samsonite | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:30:30.538Z"
       },
@@ -5210,6 +5477,7 @@
       "name": "Shell | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:30:47.992Z"
       },
@@ -5222,6 +5490,7 @@
       "name": "Sherwin-Williams | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:31:04.156Z"
       },
@@ -5234,6 +5503,7 @@
       "name": "Shopee | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:31:17.157Z"
       },
@@ -5246,6 +5516,7 @@
       "name": "Skechers | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:31:51.069Z"
       },
@@ -5258,6 +5529,7 @@
       "name": "Sodimac | Sequencia",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:32:02.482Z"
       },
@@ -5270,6 +5542,7 @@
       "name": "Goodyear",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-08-14",
       "dEntries": {
         "1": "2026-08-14T20:32:15.614Z"
       },
@@ -5282,6 +5555,7 @@
       "name": "ATA Tensoativos",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-08-17",
       "dEntries": {
         "1": "2026-08-17T18:11:03.071Z",
         "2": "2026-09-03T13:01:30.370Z",
@@ -5312,6 +5586,7 @@
       "name": "DB1",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-17",
       "dEntries": {
         "1": "2026-08-17T18:52:33.329Z",
         "2": "2026-09-03T12:58:57.154Z",
@@ -5342,6 +5617,7 @@
       "name": "Eurofarma",
       "amount": 0,
       "stageId": "1398903677",
+      "created": "2026-08-18",
       "dEntries": {
         "1": "2026-08-18T17:04:32.107Z"
       },
@@ -5360,6 +5636,7 @@
       "name": "WorkOn Group",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-18",
       "dEntries": {
         "1": "2026-08-18T17:26:36.771Z",
         "2": "2026-09-03T12:56:56.155Z"
@@ -5389,6 +5666,7 @@
       "name": "Zamp | BK | CONARH",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-31",
       "dEntries": {
         "1": "2026-08-31T20:21:39.315Z",
         "2": "2026-09-04T12:16:07.665Z",
@@ -5425,6 +5703,7 @@
       "name": "Tivit | AlmaViva | CONARH",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-31",
       "dEntries": {
         "1": "2026-08-31T21:16:28.833Z",
         "2": "2026-09-04T12:11:39.393Z",
@@ -5461,6 +5740,7 @@
       "name": "Spani Atacadista - CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-08-31",
       "dEntries": {
         "1": "2026-08-31T21:22:10.772Z",
         "2": "2026-09-09T14:14:06.739Z",
@@ -5497,6 +5777,7 @@
       "name": "Somapay | CONARH",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-08-31",
       "dEntries": {
         "1": "2026-09-01T12:11:11.452Z",
         "2": "2026-09-09T14:06:51.161Z",
@@ -5533,6 +5814,7 @@
       "name": "7LM Empreendimentos Imobiliarios | CONARH",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T12:57:40.765Z",
         "2": "2026-09-08T17:37:14.911Z",
@@ -5563,6 +5845,7 @@
       "name": "Arezzo&co | CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T12:59:11.054Z",
         "2": "2026-09-08T17:34:07.133Z",
@@ -5599,6 +5882,7 @@
       "name": "Banco BIB | CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T13:23:56.364Z",
         "2": "2026-09-08T17:41:17.843Z",
@@ -5635,6 +5919,7 @@
       "name": "Best Life Seguros | CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T14:01:26.546Z",
         "2": "2026-09-08T17:45:33.127Z",
@@ -5671,6 +5956,7 @@
       "name": "Blue Cycle e Fishing | CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T14:37:25.250Z",
         "2": "2026-09-08T17:48:05.951Z",
@@ -5707,6 +5993,7 @@
       "name": "Cacau Show | CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T14:37:27.222Z",
         "2": "2026-09-08T18:24:37.454Z",
@@ -5743,6 +6030,7 @@
       "name": "Certel | CONARH",
       "amount": 0,
       "stageId": "1398903677",
+      "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T15:08:50.782Z",
         "2": "2026-09-21T12:52:13.806Z"
@@ -5772,6 +6060,7 @@
       "name": "CNL Concessionaria Novo Litoral | CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T17:48:48.001Z",
         "2": "2026-09-08T18:34:33.511Z",
@@ -5808,6 +6097,7 @@
       "name": "Coelho da Fonseca | CONARH",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T18:11:38.877Z",
         "2": "2026-09-08T18:37:35.696Z",
@@ -5838,6 +6128,7 @@
       "name": "Comeri Litoral Comercio de Veiculos | CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T18:16:20.620Z",
         "2": "2026-09-08T19:54:49.675Z",
@@ -5874,6 +6165,7 @@
       "name": "COOP Cooperativa de Consumo | CONARH",
       "amount": 0,
       "stageId": "1398903677",
+      "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T18:37:14.448Z"
       },
@@ -5902,6 +6194,7 @@
       "name": "Cresol | CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T18:40:27.582Z",
         "2": "2026-09-08T19:55:20.282Z",
@@ -5938,6 +6231,7 @@
       "name": "D'Avo Supermercados | CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T19:57:55.469Z",
         "2": "2026-09-08T20:04:05.256Z",
@@ -5974,6 +6268,7 @@
       "name": "Felicio Vigorito",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T19:57:57.678Z",
         "2": "2026-09-08T20:09:56.299Z",
@@ -6004,6 +6299,7 @@
       "name": "Rede Graal | CONARH",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-02T13:43:59.945Z",
         "2": "2026-09-08T20:10:43.344Z",
@@ -6034,6 +6330,7 @@
       "name": "Grupo Bancorbrás",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-02T13:43:56.275Z",
         "2": "2026-09-08T20:15:56.513Z",
@@ -6070,6 +6367,7 @@
       "name": "GRUPO FT | CONARH",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T14:04:24.823Z",
         "2": "2026-09-09T13:11:43.870Z",
@@ -6100,6 +6398,7 @@
       "name": "Grupo Mateus | CONARH",
       "amount": 0,
       "stageId": "1399081987",
+      "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T14:16:23.590Z",
         "2": "2026-09-09T13:12:37.330Z",
@@ -6130,6 +6429,7 @@
       "name": "Grupo Raviera | CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T14:36:04.247Z",
         "2": "2026-09-09T13:20:55.361Z",
@@ -6166,6 +6466,7 @@
       "name": "GRUPO RIVESA | CONARH",
       "amount": 0,
       "stageId": "1398903677",
+      "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T14:51:38.706Z",
         "2": "2026-09-09T13:23:39.308Z"
@@ -6195,6 +6496,7 @@
       "name": "Grupo Vigorito | CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T17:10:33.086Z",
         "2": "2026-09-09T13:28:07.249Z",
@@ -6231,6 +6533,7 @@
       "name": "Grupofarma / Drogaria Teixeira | CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T17:38:50.629Z",
         "2": "2026-09-09T13:33:20.536Z",
@@ -6267,6 +6570,7 @@
       "name": "Hirota Food Supermercados | CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T17:38:53.401Z",
         "3": "2026-09-22T14:45:55.492Z",
@@ -6292,6 +6596,7 @@
       "name": "Joint Billion Brazil (Plaza Network) | CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T18:03:25.362Z",
         "2": "2026-09-09T13:43:55.548Z",
@@ -6323,6 +6628,7 @@
       "name": "Nagumo | CONARH",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T18:03:34.871Z",
         "2": "2026-09-09T13:44:36.243Z",
@@ -6358,6 +6664,7 @@
       "name": "Rede Wellness Club | CONARH",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T18:45:12.541Z",
         "2": "2026-09-09T13:50:59.500Z",
@@ -6394,6 +6701,7 @@
       "name": "Poliedro Educacao | CONARH",
       "amount": 0,
       "stageId": "1398903677",
+      "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T18:57:44.483Z"
       },
@@ -6417,6 +6725,7 @@
       "name": "Sabrina Drugstore | CONARH",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T19:20:15.580Z",
         "2": "2026-09-09T13:57:50.499Z",
@@ -6452,6 +6761,7 @@
       "name": "Sicoob Uni Sudeste | CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T19:28:14.788Z",
         "2": "2026-09-09T13:56:44.442Z",
@@ -6488,6 +6798,7 @@
       "name": "Sicredi | CONARH",
       "amount": 0,
       "stageId": "1399081988",
+      "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T19:53:32.852Z",
         "2": "2026-09-09T14:01:51.513Z",
@@ -6524,6 +6835,7 @@
       "name": "Silicone Center | CONARH",
       "amount": 0,
       "stageId": "1399081991",
+      "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-03T12:26:50.914Z",
         "2": "2026-09-09T14:03:02.302Z",
@@ -6553,13 +6865,20 @@
       "id": "65580114068",
       "name": "Balaroti ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
+      "created": "2026-10-02",
       "dEntries": {
-        "1": "2026-10-02T17:51:39.532Z"
+        "1": "2026-10-02T17:51:39.532Z",
+        "2": "2026-10-08T13:11:23.429Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "1° FUP",
+          "timestamp": "2026-10-08T13:11:37.314Z",
+          "author": ""
+        },
         {
           "body": "http://www.linkedin.com/in/marcela-bittencourt-08559795",
           "timestamp": "2026-10-02T14:40:37.663Z",
@@ -6571,13 +6890,20 @@
       "id": "65580238732",
       "name": "Grupo Itavema ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
+      "created": "2026-10-02",
       "dEntries": {
-        "1": "2026-10-02T17:51:37.403Z"
+        "1": "2026-10-02T17:51:37.403Z",
+        "2": "2026-10-08T13:23:42.709Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "1° fup",
+          "timestamp": "2026-10-08T13:24:16.103Z",
+          "author": ""
+        },
         {
           "body": "http://www.linkedin.com/in/jo%c3%a3o-carlos-jovino-de-souza-7096a04b",
           "timestamp": "2026-10-02T14:52:28.181Z",
@@ -6589,13 +6915,20 @@
       "id": "65580547107",
       "name": "São Vicente ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
+      "created": "2026-10-02",
       "dEntries": {
-        "1": "2026-10-02T17:51:35.043Z"
+        "1": "2026-10-02T17:51:35.043Z",
+        "2": "2026-10-08T13:33:44.733Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "1° FUP",
+          "timestamp": "2026-10-08T13:33:58.564Z",
+          "author": ""
+        },
         {
           "body": "http://www.linkedin.com/in/fernanda-ferreira-trevizan-42b58b14a",
           "timestamp": "2026-10-02T15:34:04.646Z",
@@ -6607,13 +6940,20 @@
       "id": "65578195079",
       "name": "Grupo Trigo",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
+      "created": "2026-10-02",
       "dEntries": {
-        "1": "2026-10-02T17:51:32.901Z"
+        "1": "2026-10-02T17:51:32.901Z",
+        "2": "2026-10-08T13:37:03.217Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "1° FUP",
+          "timestamp": "2026-10-08T13:37:13.081Z",
+          "author": ""
+        },
         {
           "body": "http://www.linkedin.com/in/giovanna-tonon",
           "timestamp": "2026-10-02T15:39:10.214Z",
@@ -6625,13 +6965,20 @@
       "id": "65580614178",
       "name": "Atakarejo ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
+      "created": "2026-10-02",
       "dEntries": {
-        "1": "2026-10-02T18:13:28.289Z"
+        "1": "2026-10-02T18:13:28.289Z",
+        "2": "2026-10-08T19:33:46.886Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "1° fup",
+          "timestamp": "2026-10-08T19:34:20.269Z",
+          "author": ""
+        },
         {
           "body": "http://www.linkedin.com/in/debora-abenhaim-5a36ba176",
           "timestamp": "2026-10-02T18:13:58.989Z",
@@ -6644,6 +6991,7 @@
       "name": "Roldão Atacadista ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-10-02",
       "dEntries": {
         "1": "2026-10-02T18:39:51.333Z"
       },
@@ -6662,6 +7010,7 @@
       "name": "Sonda Delivery ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-10-02",
       "dEntries": {
         "1": "2026-10-02T18:55:28.433Z"
       },
@@ -6680,6 +7029,7 @@
       "name": "Supermercados BH ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-10-02",
       "dEntries": {
         "1": "2026-10-02T19:01:21.511Z"
       },
@@ -6698,6 +7048,7 @@
       "name": "Unicred ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-10-02",
       "dEntries": {
         "1": "2026-10-02T19:08:43.724Z"
       },
@@ -6716,6 +7067,7 @@
       "name": "Unifique | RPO Virtual",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-10-02",
       "dEntries": {
         "1": "2026-10-02T19:23:15.688Z"
       },
@@ -6734,6 +7086,7 @@
       "name": "Óticas Diniz ",
       "amount": 0,
       "stageId": "1398904715",
+      "created": "2026-10-02",
       "dEntries": {
         "1": "2026-10-02T19:37:32.201Z"
       },
@@ -6746,9 +7099,29 @@
           "author": ""
         }
       ]
+    },
+    {
+      "id": "65718156802",
+      "name": "Le biscuit ",
+      "amount": 0,
+      "stageId": "1398904716",
+      "created": "2026-10-08",
+      "dEntries": {
+        "1": "2026-10-08T13:46:29.733Z",
+        "2": "2026-10-08T13:46:29.733Z"
+      },
+      "reachedAgendado": false,
+      "agendadoDate": null,
+      "notes": [
+        {
+          "body": "1° FUP",
+          "timestamp": "2026-10-08T13:47:07.185Z",
+          "author": ""
+        }
+      ]
     }
   ],
-  "hs_last_updated2": "07/10/2026, 17:56:43",
+  "hs_last_updated2": "13/10/2026, 16:10:28",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -6899,43 +7272,43 @@
       "abordagensOverride": null
     },
     {
+      "metaAbordagens": 65,
+      "metaReunioes": 2,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 65,
+      "metaReunioes": 6,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 65,
+      "metaReunioes": 10,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 65,
+      "metaReunioes": 16,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 25,
+      "metaReunioes": 14,
+      "abordagensOverride": null
+    },
+    {
       "metaAbordagens": 0,
       "metaReunioes": 8,
       "abordagensOverride": null
     },
     {
       "metaAbordagens": 0,
-      "metaReunioes": 9,
+      "metaReunioes": 5,
       "abordagensOverride": null
     },
     {
       "metaAbordagens": 0,
-      "metaReunioes": 9,
-      "abordagensOverride": null
-    },
-    {
-      "metaAbordagens": 0,
-      "metaReunioes": 9,
-      "abordagensOverride": null
-    },
-    {
-      "metaAbordagens": 0,
-      "metaReunioes": 9,
-      "abordagensOverride": null
-    },
-    {
-      "metaAbordagens": 0,
-      "metaReunioes": 0,
-      "abordagensOverride": null
-    },
-    {
-      "metaAbordagens": 0,
-      "metaReunioes": 0,
-      "abordagensOverride": null
-    },
-    {
-      "metaAbordagens": 0,
-      "metaReunioes": 0,
+      "metaReunioes": 2,
       "abordagensOverride": null
     },
     {
@@ -7006,6 +7379,6 @@
       "link": ""
     }
   ],
-  "active_tab": "kanban",
-  "snapshot_at": "2026-10-07T22:09:45.940Z"
+  "active_tab": "base",
+  "snapshot_at": "2026-10-13T19:25:05.708Z"
 }
