@@ -479,7 +479,8 @@
 <!-- ══════════════════ TAB: EMPRESAS & CONTATOS (base única de prospecção) ══════════════════ -->
 <section id="tab-base" class="tab-panel space-y-4">
   <div id="base-vazia" class="card p-6 text-sm" style="display:none;color:var(--text2);">
-    A base de empresas e contatos fica só no dashboard local (tem e-mail e telefone de pessoas, por isso não vai para o link publicado).
+    <span class="admin-only">O arquivo da base não foi encontrado em dados/base-empresas.js.</span>
+    <span class="viewer-only" id="base-vazia-viewer">Carregando a base protegida… Se não aparecer, saia e entre de novo com a senha.</span>
   </div>
   <div id="base-conteudo" class="space-y-4">
     <div id="base-kpis" class="grid gap-3" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr));"></div>
@@ -490,15 +491,25 @@
           <button id="base-vis-emp" class="px-3 py-1.5 text-sm font-semibold" onclick="baseSetVisao('empresas')">Empresas</button>
           <button id="base-vis-cont" class="px-3 py-1.5 text-sm font-semibold" onclick="baseSetVisao('contatos')">Contatos</button>
         </div>
-        <input id="base-busca" type="text" placeholder="Buscar empresa, pessoa, cargo ou e-mail…" class="flex-1" style="min-width:220px;" oninput="baseFiltroMudou()" />
-        <select id="base-engaj" onchange="baseFiltroMudou()">
+        <input id="base-busca" type="text" placeholder="Buscar empresa, pessoa, cargo ou e-mail…" class="flex-1 viewer-filtro" style="min-width:220px;" oninput="baseFiltroMudou()" />
+        <select id="base-reuniao" class="viewer-filtro" onchange="baseFiltroMudou()" title="Reunião no funil RPO Virtual" style="font-weight:600;">
+          <option value="">Reunião RPO Virtual: todas</option>
+          <option value="realizada">✅ Reunião realizada</option>
+          <option value="agendada">📅 Reunião agendada (ainda não aconteceu)</option>
+          <option value="qualquer">Qualquer card no funil RPO Virtual</option>
+          <option value="sem">Sem reunião</option>
+        </select>
+        <select id="base-origem" class="viewer-filtro" onchange="baseFiltroMudou()" title="De onde o contato foi inputado no HubSpot"><option value="">Todas as origens</option></select>
+        <select id="base-engaj" class="viewer-filtro" onchange="baseFiltroMudou()">
           <option value="">Todos os engajamentos</option>
-          <option value="reuniao">Já teve reunião (funil RPO Virtual)</option>
           <option value="prevendas">Prospectada no pré-vendas</option>
           <option value="sem-card">Sem card no HubSpot</option>
           <option value="conarh">CONARH: conversamos e agendamos reunião</option>
           <option value="inhire">Convidada ao InHire Experience</option>
           <option value="inscrito">Tem inscrito no InHire Experience</option>
+          <option value="baseinhire-inscrito">⭐ Base InHire com inscrito no InHire Experience</option>
+          <option value="baseinhire-sem-engaj">Base InHire sem nenhum engajamento</option>
+          <option value="sem-engaj">Sem nenhum engajamento (qualquer origem)</option>
           <option value="revisar">Tier a revisar</option>
         </select>
         <button class="btn-ghost text-sm" onclick="baseExportarCSV()">⬇ Exportar CSV</button>
@@ -507,9 +518,9 @@
       <div class="flex flex-wrap items-center gap-2 text-xs">
         <span style="color:var(--muted);font-weight:700;">TIER</span>
         <span id="base-chips-tier" class="flex flex-wrap gap-1"></span>
-        <span style="color:var(--muted);font-weight:700;margin-left:10px;">ORIGEM</span>
+        <span style="color:var(--muted);font-weight:700;margin-left:10px;">ENGAJAMENTO</span>
         <span id="base-chips-origem" class="flex flex-wrap gap-1"></span>
-        <span id="base-contagem" class="ml-auto" style="color:var(--text2);"></span>
+        <span id="base-contagem" class="ml-auto" style="background:var(--black);color:#fff;border-radius:999px;padding:4px 12px;font-weight:600;font-size:12px;"></span>
       </div>
     </div>
 
@@ -535,7 +546,10 @@
 </main>
 
 <!-- Dados da base (arquivo local, gerado por base-rpo-virtual/scripts/gerar.py). No link publicado ele não existe. -->
-<script src="dados/base-empresas.js" onerror="window.RPOV_BASE=null"></script>
+<script>
+  // carrega sempre a versão mais nova do arquivo de dados (evita o navegador usar uma cópia antiga em cache)
+  document.write('<script src="dados/base-empresas.js?t=' + Date.now() + '" onerror="window.RPOV_BASE=null"><\/script>');
+</script>
 <script>
 // ═══════════════════════════ MODE ═══════════════════════════
 const IS_VIEWER = !['localhost','127.0.0.1'].includes(location.hostname);
@@ -547,11 +561,60 @@ async function sha256Hex(text) {
   return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
+// ── Base de empresas e contatos no link publicado ──
+// O repositório do GitHub é público: a senha da tela não protege arquivos. Por isso a base (com e-mail e telefone)
+// sobe CRIPTOGRAFADA com a própria senha do link (PBKDF2 + AES-GCM). Sem a senha o arquivo é ilegível.
+const BASE_ENC_FILE = 'dados/base-empresas.enc.json';
+function u8ToB64(u8) { let s = ''; for (let i = 0; i < u8.length; i += 0x8000) s += String.fromCharCode.apply(null, u8.subarray(i, i + 0x8000)); return btoa(s); }
+function b64ToU8(b64) { const s = atob(b64); const u8 = new Uint8Array(s.length); for (let i = 0; i < s.length; i++) u8[i] = s.charCodeAt(i); return u8; }
+async function baseChaveDaSenha(senha, salt) {
+  const mat = await crypto.subtle.importKey('raw', new TextEncoder().encode(senha), 'PBKDF2', false, ['deriveKey']);
+  return crypto.subtle.deriveKey({ name: 'PBKDF2', salt, iterations: 310000, hash: 'SHA-256' }, mat, { name: 'AES-GCM', length: 256 }, true, ['encrypt', 'decrypt']);
+}
+async function gz(u8, modo) { return new Uint8Array(await new Response(new Blob([u8]).stream().pipeThrough(modo === 'c' ? new CompressionStream('gzip') : new DecompressionStream('gzip'))).arrayBuffer()); }
+async function baseCriptografar(senha, obj) {
+  const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12));
+  const key = await baseChaveDaSenha(senha, salt);
+  const plano = await gz(new TextEncoder().encode(JSON.stringify(obj)), 'c');
+  const ct = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, plano));
+  return { v: 1, salt: u8ToB64(salt), iv: u8ToB64(iv), ct: u8ToB64(ct) };
+}
+// Viewer: abre a base com a senha digitada (ou com a chave guardada nesta sessão do navegador)
+async function baseAbrirProtegida(senha) {
+  try {
+    const r = await fetch(BASE_ENC_FILE + '?t=' + Date.now(), { cache: 'no-store' });
+    if (!r.ok) throw new Error('sem arquivo');
+    const pkg = await r.json();
+    let key;
+    if (senha) {
+      key = await baseChaveDaSenha(senha, b64ToU8(pkg.salt));
+      sessionStorage.setItem('rpov_base_key', u8ToB64(new Uint8Array(await crypto.subtle.exportKey('raw', key))));
+    } else {
+      const raw = sessionStorage.getItem('rpov_base_key');
+      if (!raw) throw new Error('sem chave');
+      key = await crypto.subtle.importKey('raw', b64ToU8(raw), 'AES-GCM', false, ['decrypt']);
+    }
+    const plano = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64ToU8(pkg.iv) }, key, b64ToU8(pkg.ct));
+    const d = JSON.parse(new TextDecoder().decode(await gz(new Uint8Array(plano), 'd')));
+    window.RPOV_BASE = d.base;
+    baseTierOv = d.tier_ov || {};
+    baseLinksOv = d.links_ov || {};
+    renderBase();
+  } catch (e) {
+    const el = document.getElementById('base-vazia-viewer');
+    if (el) el.textContent = e.message === 'sem arquivo'
+      ? 'A base de empresas e contatos ainda não foi publicada.'
+      : 'Não foi possível abrir a base protegida. Recarregue a página e entre de novo com a senha.';
+    if (e.message !== 'sem arquivo') sessionStorage.removeItem('rpov_base_key');
+  }
+}
+
 async function checkViewerPassword() {
   const input = document.getElementById('viewer-gate-input');
   const err = document.getElementById('viewer-gate-error');
   const hash = await sha256Hex(input.value);
   if (hash === VIEWER_PASSWORD_HASH) {
+    baseAbrirProtegida(input.value);
     sessionStorage.setItem('rpov_viewer_unlocked', '1');
     document.getElementById('viewer-gate').style.display = 'none';
     document.body.style.overflow = '';
@@ -2334,7 +2397,7 @@ async function publicarSnapshot() {
   const tsLabel = new Date().toLocaleString('pt-BR');
 
   async function pushFile(filename, contentBase64, message) {
-    const getRes = await fetch(API(filename), { headers: AUTH });
+    const getRes = await fetch(API(filename), { headers: { ...AUTH, 'Accept': 'application/vnd.github.object' } });
     const sha = getRes.ok ? (await getRes.json()).sha : undefined;
     const body = { message, content: contentBase64 };
     if (sha) body.sha = sha;
@@ -2375,6 +2438,24 @@ async function publicarSnapshot() {
     btn.innerHTML = '⏳ data.json…';
     await pushFile('data.json', toB64(JSON.stringify(snapshot, null, 2)), `snapshot ${tsLabel}`);
 
+    // Base de empresas e contatos: sobe criptografada com a senha do link (nunca em texto aberto)
+    let baseMsg = '';
+    if (baseTemDados()) {
+      const senha = prompt('Para publicar a aba Empresas & Contatos, digite a senha do link publicado (a mesma que seu chefe usa).\n\nA base sobe criptografada com essa senha. Deixe em branco para publicar sem a base.');
+      if (senha) {
+        if (await sha256Hex(senha) !== VIEWER_PASSWORD_HASH) {
+          baseMsg = ' Base de contatos NÃO publicada: senha diferente da do link.';
+        } else {
+          btn.innerHTML = '⏳ base protegida…';
+          const pkg = await baseCriptografar(senha, { base: window.RPOV_BASE, tier_ov: baseTierOv, links_ov: baseLinksOv, publicado_em: new Date().toISOString() });
+          await pushFile(BASE_ENC_FILE, btoa(JSON.stringify(pkg)), `base protegida ${tsLabel}`);
+          baseMsg = ' Aba Empresas & Contatos publicada (protegida pela senha).';
+        }
+      } else {
+        baseMsg = ' Aba Empresas & Contatos não foi atualizada no link.';
+      }
+    }
+
     btn.innerHTML = '⏳ index.html…';
     let htmlSource = null;
     try {
@@ -2385,7 +2466,7 @@ async function publicarSnapshot() {
     if (htmlSource) {
       htmlSource = htmlSource.replace(/(localStorage\.setItem\(['"](?:rpov_hs_token|rpov_gh_token)['"],\s*['"])[^'"]*(['"])/g, '$1$2');
       await pushFile('index.html', toB64(htmlSource), `dash update ${tsLabel}`);
-      setStatus('✓ Publicado! Link atualiza em ~30s → antoniootcm-intera.github.io/dash-rpo-virtual/', 'green');
+      setStatus('✓ Publicado! Link atualiza em ~30s → antoniootcm-intera.github.io/dash-rpo-virtual/' + baseMsg, baseMsg.includes('NÃO') ? 'orange' : 'green');
     } else {
       setStatus('⚠ data.json publicado. index.html não atualizado (fetch local falhou).', 'orange');
     }
@@ -2422,6 +2503,36 @@ let baseTierOv = loadJSON('rpov_base_tier_ov', {});
 let baseEmpByKey = {}, baseContById = {};
 
 function baseTemDados() { return window.RPOV_BASE && Array.isArray(window.RPOV_BASE.empresas); }
+let baseLinksOv = loadJSON('rpov_base_links_ov', {});
+// Links da empresa: o que veio dos scripts + o que foi colado/corrigido aqui (salvo neste navegador)
+function baseLinks(e) {
+  const b = e.links || {}, ov = baseLinksOv[e.k] || {};
+  let carreiras = (b.carreiras || []).slice();
+  if (ov.carreiras) carreiras = [{ url: ov.carreiras, ats: 'editado aqui', fonte: 'editado no dashboard' }].concat(carreiras.filter(c => c.url !== ov.carreiras));
+  return { site: ov.site || b.site || '', linkedin: ov.linkedin || b.linkedin || '', carreiras };
+}
+function baseUrl(u) { u = String(u || '').trim(); return /^https?:\/\//i.test(u) ? u : (u ? 'https://' + u : ''); }
+function baseBuscaLinkedin(e) { return 'https://www.linkedin.com/search/results/companies/?keywords=' + encodeURIComponent(e.nome); }
+function baseBuscaCarreiras(e) { return 'https://www.google.com/search?q=' + encodeURIComponent(`"${e.nome}" trabalhe conosco vagas`); }
+// Ícones compactos para a linha da tabela (link encontrado = cheio; sem link = busca, apagado)
+function baseLinksMini(e) {
+  const l = baseLinks(e), st = 'onclick="event.stopPropagation()" target="_blank" rel="noopener"';
+  const chip = (href, txt, ok, tit) => `<a href="${baseEsc(href)}" ${st} title="${baseEsc(tit)}" class="text-xs" style="display:inline-block;margin-right:6px;font-weight:600;text-decoration:none;color:${ok ? 'var(--accent2)' : 'var(--muted)'};${ok ? '' : 'opacity:.55;'}">${txt}</a>`;
+  return `<div style="margin-top:2px;">` +
+    (l.site ? chip(baseUrl(l.site), '🌐 site', true, l.site) : '') +
+    chip(l.linkedin ? baseUrl(l.linkedin) : baseBuscaLinkedin(e), 'in LinkedIn', !!l.linkedin, l.linkedin || 'Sem link salvo: abre a busca no LinkedIn') +
+    chip(l.carreiras.length ? baseUrl(l.carreiras[0].url) : baseBuscaCarreiras(e), '💼 carreiras' + (l.carreiras.length && l.carreiras[0].aviso ? ' ⚠' : ''), !!l.carreiras.length, l.carreiras.length ? l.carreiras[0].url + (l.carreiras[0].aviso ? ' (' + l.carreiras[0].aviso + ')' : '') : 'Sem página salva: abre a busca no Google') +
+    `</div>`;
+}
+function baseSalvarLinks(k) {
+  const v = id => (document.getElementById(id).value || '').trim();
+  const o = { site: v('base-lk-site'), linkedin: v('base-lk-li'), carreiras: v('base-lk-car') };
+  Object.keys(o).forEach(x => { if (!o[x]) delete o[x]; });
+  if (Object.keys(o).length) baseLinksOv[k] = o; else delete baseLinksOv[k];
+  saveJSON('rpov_base_links_ov', baseLinksOv);
+  baseDesenharTabela(); baseAbrirCard(k);
+}
+
 function baseEsc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function baseNorm(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
 function baseTier(e) { const o = baseTierOv[e.k]; return o ? o.tier : e.tier; }
@@ -2429,6 +2540,30 @@ function baseTierMotivo(e) { const o = baseTierOv[e.k]; return o ? (o.motivo || 
 function baseTierBadge(t, extra) {
   const d = BASE_TIERS[t];
   return `<span class="badge" style="background:${d.bg};color:${d.fg};" title="${baseEsc(d.desc)}">T${t}${extra || ''}</span>`;
+}
+// Origem = de onde o contato foi inputado no HubSpot (Apollo, arquivo importado, formulário, cadastro manual).
+// Pontos de engajamento = o que fizemos com a empresa (OUT, CG, MKT, CONARH, InHire Experience).
+function baseOrigemCurta(o) {
+  if (!o) return '';
+  if (o === 'Apollo (integração)') return 'Apollo';
+  if (o.startsWith('Importação: ')) return '📄 ' + o.slice(12);
+  if (o.startsWith('Planilha de convidados do InHire Experience')) return '📄 Convidados InHire Experience (planilha)';
+  return o;
+}
+function baseOrigensHtml(e, max) {
+  const os = e.origens_registro || [];
+  if (!os.length) return '<span style="color:var(--muted);">—</span>';
+  const mostra = os.slice(0, max || 2).map(o => `<div class="text-xs" title="${baseEsc(o.nome)}: ${o.n} contato(s)" style="white-space:nowrap;max-width:220px;overflow:hidden;text-overflow:ellipsis;">${baseEsc(baseOrigemCurta(o.nome))} <span style="color:var(--muted);">(${o.n})</span></div>`).join('');
+  return mostra + (os.length > (max || 2) ? `<div class="text-[10px]" style="color:var(--muted);">+${os.length - (max || 2)} origens</div>` : '');
+}
+function basePreencherOrigens() {
+  const sel = document.getElementById('base-origem');
+  const atual = sel.value;
+  const cnt = {};
+  RPOV_BASE.contatos.forEach(c => { if (c.origem) cnt[c.origem] = (cnt[c.origem] || 0) + 1; });
+  sel.innerHTML = '<option value="">Todas as origens</option>' + Object.entries(cnt).sort((a, b) => b[1] - a[1])
+    .map(([o, n]) => `<option value="${baseEsc(o)}">${baseEsc(baseOrigemCurta(o))} (${n})</option>`).join('');
+  sel.value = atual;
 }
 function baseOrigemBadges(e) {
   return BASE_ORIGENS.filter(o => e.marc[o.k]).map(o => `<span class="badge ${o.cls}" title="${baseEsc(o.tip)}">${o.label}</span>`).join(' ')
@@ -2494,7 +2629,7 @@ function baseMontarComHubSpot() {
         e = { k, nome: empresa || d.name, tier: 4, tier_motivo: 'Empresa nova no HubSpot, tier ainda não definido', tier_revisar: true,
           func: null, setor: null, cidade: null, uf: null, dominios: [], novo: true,
           marc: { OUT: false, CG: false, MKT: false, CONARH: false, INHIRE: false }, outras_origens: [],
-          prevendas: [], rpo: [], reuniao: null, sequencias: [], inhire_inscritos: [], n_contatos: 0, contatos: [] };
+          prevendas: [], rpo: [], reuniao: null, sequencias: [], inhire_inscritos: [], n_contatos: 0, contatos: [], origens_registro: [] };
         baseEmps.push(e); baseEmpByKey[k] = e; novasEmp++;
       }
       e[f.campo].push({ id: d.id, nome: d.name, etapa: etapa(d.stageId), criado: d.created || '' });
@@ -2526,6 +2661,7 @@ function renderBase() {
   if (!tem) return;
   baseContById = {};
   RPOV_BASE.contatos.forEach(c => { baseContById[c.id] = c; });
+  basePreencherOrigens();
   baseMontarComHubSpot();
   // chips (estrutura fixa; clique só alterna a classe e redesenha a tabela)
   document.getElementById('base-chips-tier').innerHTML = [1,2,3,4,5].map(t =>
@@ -2551,38 +2687,69 @@ function baseAtualizarChips() {
 function baseToggleTier(t) { baseTierSel.has(t) ? baseTierSel.delete(t) : baseTierSel.add(t); baseLimite = BASE_PAGINA; baseAtualizarChips(); baseDesenharTabela(); }
 function baseToggleOrigem(k) { baseOrigemSel.has(k) ? baseOrigemSel.delete(k) : baseOrigemSel.add(k); baseLimite = BASE_PAGINA; baseAtualizarChips(); baseDesenharTabela(); }
 function baseSetVisao(v) { baseVisao = v; localStorage.setItem('rpov_base_visao', v); baseLimite = BASE_PAGINA; baseAtualizarChips(); baseDesenharTabela(); }
+function baseFiltrarOrigem(v) {
+  const sel = document.getElementById('base-origem');
+  sel.value = sel.value === v ? '' : v;
+  baseFiltroMudou();
+  document.getElementById('base-tabela').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+function baseFiltrarReuniao(v) {
+  const sel = document.getElementById('base-reuniao');
+  sel.value = sel.value === v ? '' : v;   // segundo clique no mesmo quadro limpa o filtro
+  baseFiltroMudou();
+  document.getElementById('base-tabela').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 function baseFiltroMudou() { baseLimite = BASE_PAGINA; baseDesenharTabela(); }
 function baseMostrarMais() { baseLimite += BASE_PAGINA; baseDesenharTabela(); }
 
+// Engajamento = qualquer ação nossa com a empresa: card no pré-vendas ou no RPO Virtual, OUT/CG/MKT/CONARH,
+// convite ou inscrito no InHire Experience, sequência de e-mail ou outro marcador de card. Origem (de onde veio) não conta.
+function baseTemEngajamento(e) {
+  return !!(e.prevendas.length || e.rpo.length || e.reuniao || e.sequencias.length || e.inhire_inscritos.length
+    || (e.outras_origens || []).length || Object.values(e.marc).some(Boolean));
+}
 function baseEmpresaPassa(e) {
   if (baseTierSel.size && !baseTierSel.has(baseTier(e))) return false;
   // origens: a empresa precisa ter TODAS as selecionadas (ex.: OUT + InHire = abordada nos dois)
   for (const k of baseOrigemSel) if (!e.marc[k]) return false;
+  const og = document.getElementById('base-origem').value;
+  if (og && !(e.origens_registro || []).some(o => o.nome === og)) return false;
   const f = document.getElementById('base-engaj').value;
-  if (f === 'reuniao' && !(e.rpo.length || e.reuniao)) return false;
+  const fr = document.getElementById('base-reuniao').value;
+  if (fr === 'realizada' && e.reuniao !== 'Realizada') return false;
+  if (fr === 'agendada' && !(e.reuniao === 'Agendada' || e.reuniao === 'Agendada (pré-vendas)')) return false;
+  if (fr === 'qualquer' && !e.rpo.length) return false;
+  if (fr === 'sem' && (e.rpo.length || e.reuniao)) return false;
   if (f === 'prevendas' && !e.prevendas.length) return false;
   if (f === 'sem-card' && (e.prevendas.length || e.rpo.length)) return false;
   if (f === 'conarh' && !e.marc.CONARH) return false;
   if (f === 'inhire' && !e.marc.INHIRE) return false;
   if (f === 'inscrito' && !e.inhire_inscritos.length) return false;
+  if (f === 'baseinhire-inscrito' && !(e.base_inhire && e.inhire_inscritos.length)) return false;
+  if (f === 'baseinhire-sem-engaj' && !(e.base_inhire && !baseTemEngajamento(e))) return false;
+  if (f === 'sem-engaj' && baseTemEngajamento(e)) return false;
   if (f === 'revisar' && !(e.tier_revisar && !baseTierOv[e.k])) return false;
   return true;
 }
-function baseFiltrar() {
+function baseFiltrar(visao) {
+  visao = visao || baseVisao;
   const q = baseNorm(document.getElementById('base-busca').value.trim());
   const emps = baseEmps.filter(baseEmpresaPassa);
-  if (baseVisao === 'empresas') {
+  if (visao === 'empresas') {
     return emps.filter(e => !q || baseNorm(e.nome).includes(q) ||
       e.contatos.some(id => { const c = baseContById[id]; return c && baseNorm([c.nome, c.email, c.cargo].join(' ')).includes(q); }));
   }
   const ok = new Set(emps.map(e => e.k));
-  return RPOV_BASE.contatos.filter(c => ok.has(c.k) &&
+  const og = document.getElementById('base-origem').value;
+  return RPOV_BASE.contatos.filter(c => ok.has(c.k) && (!og || c.origem === og) &&
     (!q || baseNorm([c.nome, c.email, c.cargo, baseEmpByKey[c.k].nome].join(' ')).includes(q)));
 }
 
 function baseAtualizarKpis() {
   const E = baseEmps;
   const n = f => E.filter(f).length;
+  const kpiClick = (label, val, sub, cor, filtro) => `<div class="card p-3" style="cursor:pointer;" title="Filtrar a lista" onclick="baseFiltrarReuniao('${filtro}')"><div class="text-xs font-semibold" style="color:var(--text2);">${label}</div>
+    <div class="font-brand font-extrabold text-2xl" style="color:${cor};">${val.toLocaleString('pt-BR')}</div><div class="text-xs" style="color:var(--muted);">${sub}</div></div>`;
   const kpi = (label, val, sub, cor) => `<div class="card p-3"><div class="text-xs font-semibold" style="color:var(--text2);">${label}</div>
     <div class="font-brand font-extrabold text-2xl" style="color:${cor || 'var(--black)'};">${val.toLocaleString('pt-BR')}</div>
     ${sub ? `<div class="text-xs" style="color:var(--muted);">${sub}</div>` : ''}</div>`;
@@ -2591,7 +2758,11 @@ function baseAtualizarKpis() {
     kpi('Empresas', E.length, `${RPOV_BASE.contatos.length.toLocaleString('pt-BR')} contatos`) +
     porTier.map((v, i) => kpi(BASE_TIERS[i + 1].nome, v, BASE_TIERS[i + 1].desc)).join('') +
     kpi('Prospectadas', n(e => e.prevendas.length), 'com card no pré-vendas') +
-    kpi('Com reunião', n(e => e.rpo.length || e.reuniao), 'card no funil RPO Virtual', 'var(--accent2)') +
+    kpiClick('Reunião realizada', n(e => e.reuniao === 'Realizada'), 'clique para filtrar', 'var(--accent2)', 'realizada') +
+    kpiClick('Reunião agendada', n(e => e.reuniao === 'Agendada' || e.reuniao === 'Agendada (pré-vendas)'), 'ainda não aconteceu · clique para filtrar', 'var(--teal)', 'agendada') +
+    `<div class="card p-3" style="cursor:pointer;" title="Filtrar pela origem Base InHire" onclick="baseFiltrarOrigem('Base InHire')"><div class="text-xs font-semibold" style="color:var(--text2);">Base InHire</div>
+      <div class="font-brand font-extrabold text-2xl">${RPOV_BASE.contatos.filter(c => c.origem === 'Base InHire').length}</div>
+      <div class="text-xs" style="color:var(--muted);">contatos importados · ${n(e => e.base_inhire && e.inhire_inscritos.length)} empresas com ⭐ inscrito</div></div>` +
     kpi('CONARH', n(e => e.marc.CONARH), 'conversamos no evento e agendamos reunião (não quer dizer que aconteceu)') +
     kpi('InHire Experience', n(e => e.marc.INHIRE), `${n(e => e.inhire_inscritos.length)} com inscrito`);
 }
@@ -2602,16 +2773,18 @@ function baseDesenharTabela() {
   const L = 'style="text-align:left;"';
   const vis = rows.slice(0, baseLimite);
   if (baseVisao === 'empresas') {
-    thead.innerHTML = `<tr><th ${L}>Empresa</th><th>Tier</th><th ${L}>Origem</th><th ${L}>Pré-vendas</th><th ${L}>Reunião (RPO Virtual)</th><th ${L}>Sequências</th><th>Inscritos InHire Experience</th><th>Contatos</th></tr>`;
+    thead.innerHTML = `<tr><th ${L}>Empresa</th><th>Tier</th><th ${L}>Pontos de engajamento</th><th ${L}>Origem</th><th ${L}>Pré-vendas</th><th ${L}>Reunião (RPO Virtual)</th><th ${L}>Sequências</th><th>Inscritos InHire Experience</th><th>Contatos</th></tr>`;
     tbody.innerHTML = vis.map(e => {
       const t = baseTier(e);
       const pre = e.prevendas.map(c => baseEsc(c.etapa)).join('<br>') || '<span style="color:var(--muted);">—</span>';
       const rpo = e.rpo.length ? `<b>${baseEsc(e.reuniao)}</b><br><span style="color:var(--text2);">${baseEsc(e.rpo[e.rpo.length - 1].etapa)}</span>`
         : (e.reuniao ? baseEsc(e.reuniao) : '<span style="color:var(--muted);">—</span>');
-      return `<tr style="cursor:pointer;" onclick="baseAbrirCard('${baseEsc(e.k)}')">
-        <td ${L}><b>${baseEsc(e.nome)}</b>${e.novo ? ' <span class="badge badge-mkt" title="Empresa que entrou por card novo no HubSpot, depois da geração da base">nova</span>' : ''}${e.func ? `<div class="text-xs" style="color:var(--muted);">${e.func.toLocaleString('pt-BR')} func.</div>` : ''}</td>
+      const destaque = e.base_inhire && e.inhire_inscritos.length;
+      return `<tr style="cursor:pointer;${destaque ? 'background:#FFF6D6;' : ''}" onclick="baseAbrirCard('${baseEsc(e.k)}')">
+        <td ${L}><b>${baseEsc(e.nome)}</b>${destaque ? ` <span class="badge" style="background:var(--mustard);color:#000;" title="Empresa da Base InHire com inscrito no InHire Experience: ${baseEsc(e.inhire_inscritos.map(i => i.nome).join(', '))}">⭐ inscrito no InHire Experience</span>` : ''}${e.novo ? ' <span class="badge badge-mkt" title="Empresa que entrou por card novo no HubSpot, depois da geração da base">nova</span>' : ''}${e.func ? `<div class="text-xs" style="color:var(--muted);">${e.func.toLocaleString('pt-BR')} func.</div>` : ''}${baseLinksMini(e)}</td>
         <td>${baseTierBadge(t, (e.tier_revisar && !baseTierOv[e.k]) ? ' ?' : '')}</td>
         <td ${L}>${baseOrigemBadges(e)}</td>
+        <td ${L}>${baseOrigensHtml(e, 2)}</td>
         <td ${L} class="text-xs">${pre}</td>
         <td ${L} class="text-xs">${rpo}</td>
         <td ${L} class="text-xs">${e.sequencias.map(baseEsc).join('<br>') || '<span style="color:var(--muted);">—</span>'}</td>
@@ -2619,21 +2792,26 @@ function baseDesenharTabela() {
         <td>${e.n_contatos}</td></tr>`;
     }).join('');
   } else {
-    thead.innerHTML = `<tr><th ${L}>Nome</th><th ${L}>Cargo</th><th ${L}>Empresa</th><th>Tier</th><th ${L}>E-mail</th><th ${L}>Telefone</th><th ${L}>Sequência</th><th>Card</th><th>InHire Experience</th></tr>`;
+    thead.innerHTML = `<tr><th ${L}>Nome</th><th ${L}>Cargo</th><th ${L}>Empresa</th><th>Tier</th><th ${L}>E-mail</th><th ${L}>Telefone</th><th ${L}>Origem</th><th ${L}>Sequência</th><th>Card</th><th>InHire Experience</th></tr>`;
     tbody.innerHTML = vis.map(c => {
       const e = baseEmpByKey[c.k];
-      const inh = c.inhire_inscrito ? '<span class="badge badge-re">inscrito</span>' : (c.inhire_convidado ? '<span class="badge badge-nd">convidado</span>' : '');
-      return `<tr style="cursor:pointer;" onclick="baseAbrirCard('${baseEsc(c.k)}')">
+      const inh = c.inhire_inscrito ? '<span class="badge" style="background:var(--mustard);color:#000;">⭐ inscrito</span>' : (c.inhire_convidado ? '<span class="badge badge-nd">convidado</span>' : '');
+      return `<tr style="cursor:pointer;${c.inhire_inscrito ? 'background:#FFF6D6;' : ''}" onclick="baseAbrirCard('${baseEsc(c.k)}')">
         <td ${L}><b>${baseEsc(c.nome)}</b></td><td ${L} class="text-xs">${baseEsc(c.cargo)}</td>
         <td ${L}>${baseEsc(e.nome)}</td><td>${baseTierBadge(baseTier(e))}</td>
         <td ${L} class="text-xs">${baseEsc(c.email)}</td><td ${L} class="text-xs">${baseEsc(c.tel)}</td>
+        <td ${L} class="text-xs" title="${baseEsc(c.origem)}">${baseEsc(baseOrigemCurta(c.origem))}</td>
         <td ${L} class="text-xs">${baseEsc(c.seq)}</td><td>${c.cards.length ? '✓' : ''}</td><td>${inh}</td></tr>`;
     }).join('');
   }
-  if (!rows.length) tbody.innerHTML = `<tr><td colspan="9" class="p-6" style="color:var(--muted);">Nada encontrado com esses filtros.</td></tr>`;
+  if (!rows.length) tbody.innerHTML = `<tr><td colspan="10" class="p-6" style="color:var(--muted);">Nada encontrado com esses filtros.</td></tr>`;
   document.getElementById('base-mais').style.display = rows.length > baseLimite ? 'block' : 'none';
-  document.getElementById('base-contagem').textContent =
-    `${rows.length.toLocaleString('pt-BR')} ${baseVisao === 'empresas' ? 'empresas' : 'contatos'}` + (rows.length > baseLimite ? ` (mostrando ${baseLimite})` : '');
+  // contagem dos dois lados com os mesmos filtros: empresas e contatos
+  const nEmp = baseVisao === 'empresas' ? rows.length : baseFiltrar('empresas').length;
+  const nCont = baseVisao === 'contatos' ? rows.length : baseFiltrar('contatos').length;
+  const fmt = n => n.toLocaleString('pt-BR');
+  document.getElementById('base-contagem').innerHTML =
+    `${fmt(nEmp)} empresas · ${fmt(nCont)} contatos` + (rows.length > baseLimite ? ` <span style="opacity:.6;font-weight:400;">(mostrando ${baseLimite})</span>` : '');
 }
 
 function baseAbrirCard(k) {
@@ -2669,6 +2847,25 @@ function baseAbrirCard(k) {
     <div class="grid gap-4" style="grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);">
       <div><div class="text-xs font-bold mb-1" style="color:var(--muted);letter-spacing:.04em;">PONTOS DE ENGAJAMENTO</div>${pontos}</div>
       <div>
+        <div class="text-xs font-bold mb-1" style="color:var(--muted);letter-spacing:.04em;">LINKS DA EMPRESA</div>
+        <div class="card p-3 mb-4 text-xs">${(() => {
+          const l = baseLinks(e), a = (u, t) => `<a href="${baseEsc(baseUrl(u))}" target="_blank" rel="noopener" style="color:var(--accent2);font-weight:600;word-break:break-all;">${baseEsc(t || u)}</a>`;
+          const nada = (busca, txt) => `<span style="color:var(--muted);">não encontrado · </span><a href="${baseEsc(busca)}" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:underline;">${txt}</a>`;
+          const linha = (rot, conteudo) => `<div class="flex gap-2 py-1" style="border-bottom:1px solid var(--border);"><span style="width:78px;flex-shrink:0;color:var(--text2);">${rot}</span><div class="min-w-0">${conteudo}</div></div>`;
+          return linha('🌐 Site', l.site ? a(l.site, l.site.replace(/^https?:\/\//, '')) : '<span style="color:var(--muted);">não encontrado</span>') +
+            linha('in LinkedIn', l.linkedin ? a(l.linkedin, l.linkedin.replace(/^https?:\/\/(www\.)?/, '')) : nada(baseBuscaLinkedin(e), 'buscar no LinkedIn')) +
+            linha('💼 Carreiras', l.carreiras.length ? l.carreiras.map(c => a(c.url, c.url.replace(/^https?:\/\//, '')) + ` <span style="color:var(--muted);">(${baseEsc(c.ats)} · ${baseEsc(c.fonte)})</span>` + (c.aviso ? ` <b style="color:var(--danger);">${baseEsc(c.aviso)}</b>` : '')).join('<br>') : nada(baseBuscaCarreiras(e), 'buscar no Google')) +
+            `<details class="admin-only mt-2"><summary style="cursor:pointer;color:var(--text2);">✏️ colar ou corrigir links</summary>
+              <div class="grid gap-1 mt-2">
+                <input type="text" id="base-lk-site" placeholder="Site (ex.: empresa.com.br)" value="${baseEsc((baseLinksOv[e.k] || {}).site || '')}">
+                <input type="text" id="base-lk-li" placeholder="LinkedIn (ex.: linkedin.com/company/...)" value="${baseEsc((baseLinksOv[e.k] || {}).linkedin || '')}">
+                <input type="text" id="base-lk-car" placeholder="Página de carreiras" value="${baseEsc((baseLinksOv[e.k] || {}).carreiras || '')}">
+                <button class="btn-primary text-xs" onclick="baseSalvarLinks('${baseEsc(e.k)}')">Salvar links</button>
+                <span style="color:var(--muted);">Fica salvo neste navegador. Campo vazio volta ao link automático.</span>
+              </div></details>`;
+        })()}</div>
+        <div class="text-xs font-bold mb-1" style="color:var(--muted);letter-spacing:.04em;">ORIGEM (DE ONDE OS CONTATOS VIERAM NO HUBSPOT)</div>
+        <div class="card p-3 mb-4">${(e.origens_registro || []).map(o => `<div class="flex justify-between gap-3 text-xs py-1" style="border-bottom:1px solid var(--border);"><span>${baseEsc(o.nome)}</span><b>${o.n}</b></div>`).join('') || '<span class="text-xs" style="color:var(--muted);">Sem contatos na base.</span>'}</div>
         <div class="text-xs font-bold mb-1" style="color:var(--muted);letter-spacing:.04em;">TIER</div>
         <div class="card p-3">
           <div class="flex items-center gap-2 mb-2">${baseTierBadge(t)} <span class="text-sm font-semibold">${baseEsc(BASE_TIERS[t].desc)}</span></div>
@@ -2682,12 +2879,12 @@ function baseAbrirCard(k) {
       </div>
     </div>
     <div class="text-xs font-bold mt-5 mb-1" style="color:var(--muted);letter-spacing:.04em;">CONTATOS (${cts.length})</div>
-    <div class="overflow-x-auto"><table><thead><tr><th style="text-align:left;">Nome</th><th style="text-align:left;">Cargo</th><th style="text-align:left;">E-mail</th><th style="text-align:left;">Telefone</th><th style="text-align:left;">Sequência</th><th>InHire Experience</th></tr></thead><tbody>
+    <div class="overflow-x-auto"><table><thead><tr><th style="text-align:left;">Nome</th><th style="text-align:left;">Cargo</th><th style="text-align:left;">E-mail</th><th style="text-align:left;">Telefone</th><th style="text-align:left;">Origem</th><th style="text-align:left;">Sequência</th><th>InHire Experience</th></tr></thead><tbody>
       ${cts.map(c => `<tr><td style="text-align:left;"><b>${baseEsc(c.nome)}</b>${c.cards.length ? ' <span class="badge badge-nd" title="Ligado a um card">card</span>' : ''}</td>
         <td style="text-align:left;" class="text-xs">${baseEsc(c.cargo)}</td><td style="text-align:left;" class="text-xs">${baseEsc(c.email)}</td>
-        <td style="text-align:left;" class="text-xs">${baseEsc(c.tel)}</td><td style="text-align:left;" class="text-xs">${baseEsc(c.seq)}${c.seq_data ? ' · ' + dt(c.seq_data) : ''}</td>
+        <td style="text-align:left;" class="text-xs">${baseEsc(c.tel)}</td><td style="text-align:left;" class="text-xs" title="${baseEsc(c.origem)}">${baseEsc(baseOrigemCurta(c.origem))}</td><td style="text-align:left;" class="text-xs">${baseEsc(c.seq)}${c.seq_data ? ' · ' + dt(c.seq_data) : ''}</td>
         <td>${c.inhire_inscrito ? '<span class="badge badge-re">inscrito</span>' : (c.inhire_convidado ? '<span class="badge badge-nd">convidado</span>' : '')}</td></tr>`).join('')
-        || '<tr><td colspan="6" style="color:var(--muted);">Nenhum contato associado no HubSpot.</td></tr>'}
+        || '<tr><td colspan="7" style="color:var(--muted);">Nenhum contato associado no HubSpot.</td></tr>'}
     </tbody></table></div>`;
   document.getElementById('base-modal').style.display = 'flex';
 }
@@ -2707,13 +2904,13 @@ function baseExportarCSV() {
   const X = b => b ? 'X' : '';
   let linhas;
   if (baseVisao === 'empresas') {
-    linhas = [['Empresa','Tier','Motivo do tier','OUT','CG','MKT','CONARH','InHire Experience','Etapa pré-vendas','Reunião','Etapa RPO Virtual','Sequências','Inscritos InHire Experience','Nº contatos']]
-      .concat(rows.map(e => [e.nome, baseTier(e), baseTierMotivo(e), X(e.marc.OUT), X(e.marc.CG), X(e.marc.MKT), X(e.marc.CONARH), X(e.marc.INHIRE),
+    linhas = [['Empresa','Tier','Motivo do tier','Origem','Engaj.: OUT','Engaj.: CG','Engaj.: MKT','Engaj.: CONARH','Engaj.: InHire Experience','Etapa pré-vendas','Reunião','Etapa RPO Virtual','Sequências','Inscritos InHire Experience','Nº contatos','Site','LinkedIn','Página de carreiras']]
+      .concat(rows.map(e => [e.nome, baseTier(e), baseTierMotivo(e), (e.origens_registro || []).map(o => `${o.nome} (${o.n})`).join('; '), X(e.marc.OUT), X(e.marc.CG), X(e.marc.MKT), X(e.marc.CONARH), X(e.marc.INHIRE),
         e.prevendas.map(c => c.etapa).join(' / '), e.reuniao || '', e.rpo.map(c => c.etapa).join(' / '), e.sequencias.join(', '),
-        e.inhire_inscritos.map(i => i.nome).join(', '), e.n_contatos]));
+        e.inhire_inscritos.map(i => i.nome).join(', '), e.n_contatos, ...(l => [l.site, l.linkedin, l.carreiras.map(c => c.url).join(' | ')])(baseLinks(e))]));
   } else {
-    linhas = [['Empresa','Tier','Nome','Cargo','E-mail','Telefone','OUT','CG','MKT','CONARH','InHire Experience','Sequência','Ligado a card','Inscrito InHire Experience']]
-      .concat(rows.map(c => { const e = baseEmpByKey[c.k]; return [e.nome, baseTier(e), c.nome, c.cargo, c.email, c.tel, X(e.marc.OUT), X(e.marc.CG), X(e.marc.MKT),
+    linhas = [['Empresa','Tier','Nome','Cargo','E-mail','Telefone','Origem','Engaj.: OUT','Engaj.: CG','Engaj.: MKT','Engaj.: CONARH','Engaj.: InHire Experience','Sequência','Ligado a card','Inscrito InHire Experience']]
+      .concat(rows.map(c => { const e = baseEmpByKey[c.k]; return [e.nome, baseTier(e), c.nome, c.cargo, c.email, c.tel, c.origem || '', X(e.marc.OUT), X(e.marc.CG), X(e.marc.MKT),
         X(e.marc.CONARH), X(e.marc.INHIRE), c.seq || '', X(c.cards.length), X(c.inhire_inscrito)]; }));
   }
   const blob = new Blob(['﻿' + linhas.map(l => l.map(q).join(';')).join('\n')], { type: 'text/csv;charset=utf-8' });
@@ -2764,8 +2961,9 @@ window.addEventListener('DOMContentLoaded', () => {
         if (Array.isArray(d.clientes_fechados)) clientesFechados = d.clientes_fechados;
         renderAll();
         switchTab(d.active_tab || 'metas');
+        if (sessionStorage.getItem('rpov_base_key')) baseAbrirProtegida();
       })
-      .catch(() => { renderAll(); switchTab('metas'); });
+      .catch(() => { renderAll(); switchTab('metas'); if (sessionStorage.getItem('rpov_base_key')) baseAbrirProtegida(); });
     return;
   }
 
@@ -2787,7 +2985,7 @@ window.addEventListener('DOMContentLoaded', () => {
   body.viewer-mode .viewer-only { display: inline; }
   body:not(.viewer-mode) .viewer-only { display: none; }
   body.viewer-mode .viewer-only-inline { display: inline !important; }
-  body.viewer-mode input:not(#viewer-gate-input), body.viewer-mode select { display: none !important; }
+  body.viewer-mode input:not(#viewer-gate-input):not(.viewer-filtro), body.viewer-mode select:not(.viewer-filtro) { display: none !important; }
 </style>
 
 </body>
