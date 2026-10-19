@@ -40,7 +40,7 @@
       "mrrFechado": 0
     },
     {
-      "mrrFechado": 30000
+      "mrrFechado": 0
     },
     {
       "mrrFechado": 0
@@ -114,7 +114,7 @@
       "realizadas": 0
     },
     {
-      "realizadas": 0
+      "realizadas": 1
     },
     {
       "realizadas": 0
@@ -324,7 +324,7 @@
       "id": "62619521145",
       "name": "Riachuelo | Johnny | CG",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554091",
       "created": "2026-07-13",
       "notes": [
         {
@@ -907,7 +907,7 @@
       "id": "65489655094",
       "name": "Grupo Melo Cordeiro | CONARH",
       "amount": 0,
-      "stageId": "1397554093",
+      "stageId": "1397554094",
       "created": "2026-10-01",
       "notes": []
     },
@@ -915,7 +915,7 @@
       "id": "65428601699",
       "name": "FIESP | OUT",
       "amount": 0,
-      "stageId": "1397554093",
+      "stageId": "1397554094",
       "created": "2026-10-01",
       "notes": []
     },
@@ -923,7 +923,7 @@
       "id": "65489601875",
       "name": "Leo Madeiras",
       "amount": 0,
-      "stageId": "1397554093",
+      "stageId": "1397554100",
       "created": "2026-10-01",
       "notes": []
     },
@@ -934,13 +934,29 @@
       "stageId": "1397554099",
       "created": "2026-10-01",
       "notes": []
+    },
+    {
+      "id": "66137869394",
+      "name": "FISIA (Nike) | OUT",
+      "amount": 0,
+      "stageId": "1397554092",
+      "created": "2026-10-19",
+      "notes": []
+    },
+    {
+      "id": "66137683724",
+      "name": "Bemol | OUT",
+      "amount": 0,
+      "stageId": "1397554092",
+      "created": "2026-10-19",
+      "notes": []
     }
   ],
-  "hs_last_updated": "13/10/2026, 16:10:30",
+  "hs_last_updated": "19/10/2026, 10:28:37",
   "mrr_overrides": {
     "total": {
-      "value": 91000,
-      "locked": true
+      "value": 93000,
+      "locked": false
     },
     "q3": {
       "value": 61000,
@@ -1080,6 +1096,12 @@
     },
     "65489655094": {
       "canal": "CONARH"
+    },
+    "66137869394": {
+      "canal": "OUT"
+    },
+    "66137683724": {
+      "canal": "OUT"
     }
   },
   "hs_deleted": [],
@@ -5881,7 +5903,7 @@
       "id": "64524593760",
       "name": "Banco BIB | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T13:23:56.364Z",
@@ -5918,7 +5940,7 @@
       "id": "64524659327",
       "name": "Best Life Seguros | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T14:01:26.546Z",
@@ -5955,7 +5977,7 @@
       "id": "64524538260",
       "name": "Blue Cycle e Fishing | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T14:37:25.250Z",
@@ -5992,7 +6014,7 @@
       "id": "64519381919",
       "name": "Cacau Show | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T14:37:27.222Z",
@@ -6059,7 +6081,7 @@
       "id": "64519503751",
       "name": "CNL Concessionaria Novo Litoral | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T17:48:48.001Z",
@@ -6096,7 +6118,7 @@
       "id": "64519510094",
       "name": "Coelho da Fonseca | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081991",
       "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T18:11:38.877Z",
@@ -6127,7 +6149,7 @@
       "id": "64524487442",
       "name": "Comeri Litoral Comercio de Veiculos | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T18:16:20.620Z",
@@ -6193,7 +6215,7 @@
       "id": "64519454777",
       "name": "Cresol | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-01T18:40:27.582Z",
@@ -6329,7 +6351,7 @@
       "id": "64524493314",
       "name": "Grupo Bancorbrás",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "created": "2026-09-01",
       "dEntries": {
         "1": "2026-09-02T13:43:56.275Z",
@@ -6366,16 +6388,22 @@
       "id": "64575216759",
       "name": "GRUPO FT | CONARH",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081988",
       "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T14:04:24.823Z",
         "2": "2026-09-09T13:11:43.870Z",
-        "3": "2026-09-21T12:31:53.185Z"
+        "3": "2026-09-21T12:31:53.185Z",
+        "4": "2026-10-16T13:45:16.670Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP",
+          "timestamp": "2026-10-16T13:45:28.581Z",
+          "author": ""
+        },
         {
           "body": "fup feito pelo WhatsApp",
           "timestamp": "2026-09-21T12:32:20.328Z",
@@ -6428,7 +6456,7 @@
       "id": "64576941088",
       "name": "Grupo Raviera | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T14:36:04.247Z",
@@ -6495,7 +6523,7 @@
       "id": "64576756041",
       "name": "Grupo Vigorito | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T17:10:33.086Z",
@@ -6532,7 +6560,7 @@
       "id": "64576756622",
       "name": "Grupofarma / Drogaria Teixeira | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T17:38:50.629Z",
@@ -6569,7 +6597,7 @@
       "id": "64576255159",
       "name": "Hirota Food Supermercados | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T17:38:53.401Z",
@@ -6760,7 +6788,7 @@
       "id": "64576264334",
       "name": "Sicoob Uni Sudeste | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T19:28:14.788Z",
@@ -6797,7 +6825,7 @@
       "id": "64576829721",
       "name": "Sicredi | CONARH",
       "amount": 0,
-      "stageId": "1399081988",
+      "stageId": "1399081991",
       "created": "2026-09-02",
       "dEntries": {
         "1": "2026-09-02T19:53:32.852Z",
@@ -6890,15 +6918,21 @@
       "id": "65580238732",
       "name": "Grupo Itavema ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "created": "2026-10-02",
       "dEntries": {
         "1": "2026-10-02T17:51:37.403Z",
-        "2": "2026-10-08T13:23:42.709Z"
+        "2": "2026-10-08T13:23:42.709Z",
+        "3": "2026-10-15T18:15:41.858Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "Se não tiver retorno,fechar.",
+          "timestamp": "2026-10-15T18:16:00.910Z",
+          "author": ""
+        },
         {
           "body": "1° fup",
           "timestamp": "2026-10-08T13:24:16.103Z",
@@ -6915,15 +6949,21 @@
       "id": "65580547107",
       "name": "São Vicente ",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "created": "2026-10-02",
       "dEntries": {
         "1": "2026-10-02T17:51:35.043Z",
-        "2": "2026-10-08T13:33:44.733Z"
+        "2": "2026-10-08T13:33:44.733Z",
+        "3": "2026-10-19T17:50:01.827Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup  pelo whatsapp",
+          "timestamp": "2026-10-19T17:50:20.689Z",
+          "author": ""
+        },
         {
           "body": "1° FUP",
           "timestamp": "2026-10-08T13:33:58.564Z",
@@ -6940,11 +6980,12 @@
       "id": "65578195079",
       "name": "Grupo Trigo",
       "amount": 0,
-      "stageId": "1398904716",
+      "stageId": "1399081987",
       "created": "2026-10-02",
       "dEntries": {
         "1": "2026-10-02T17:51:32.901Z",
-        "2": "2026-10-08T13:37:03.217Z"
+        "2": "2026-10-08T13:37:03.217Z",
+        "3": "2026-10-14T18:24:55.132Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -6990,14 +7031,20 @@
       "id": "65578201723",
       "name": "Roldão Atacadista ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "created": "2026-10-02",
       "dEntries": {
-        "1": "2026-10-02T18:39:51.333Z"
+        "1": "2026-10-02T18:39:51.333Z",
+        "2": "2026-10-14T19:12:16.811Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-10-14T19:12:25.736Z",
+          "author": ""
+        },
         {
           "body": "http://www.linkedin.com/in/cintia-bezerra-ferreira-prates-804b58a1",
           "timestamp": "2026-10-02T18:40:20.990Z",
@@ -7009,10 +7056,11 @@
       "id": "65580615426",
       "name": "Sonda Delivery ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "created": "2026-10-02",
       "dEntries": {
-        "1": "2026-10-02T18:55:28.433Z"
+        "1": "2026-10-02T18:55:28.433Z",
+        "2": "2026-10-19T18:11:32.099Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
@@ -7028,14 +7076,20 @@
       "id": "65580492686",
       "name": "Supermercados BH ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "created": "2026-10-02",
       "dEntries": {
-        "1": "2026-10-02T19:01:21.511Z"
+        "1": "2026-10-02T19:01:21.511Z",
+        "2": "2026-10-14T19:08:55.175Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP",
+          "timestamp": "2026-10-14T19:09:05.921Z",
+          "author": ""
+        },
         {
           "body": "http://www.linkedin.com/in/elizene-martins-9aa9b8115",
           "timestamp": "2026-10-02T19:02:22.065Z",
@@ -7047,14 +7101,21 @@
       "id": "65578326186",
       "name": "Unicred ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1399081987",
       "created": "2026-10-02",
       "dEntries": {
-        "1": "2026-10-02T19:08:43.724Z"
+        "1": "2026-10-02T19:08:43.724Z",
+        "2": "2026-10-19T18:03:55.292Z",
+        "3": "2026-10-19T18:10:54.785Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "fup",
+          "timestamp": "2026-10-19T18:04:20.772Z",
+          "author": ""
+        },
         {
           "body": "http://www.linkedin.com/in/melissa-zeni-83a71539",
           "timestamp": "2026-10-02T19:09:18.549Z",
@@ -7066,14 +7127,20 @@
       "id": "65580555695",
       "name": "Unifique | RPO Virtual",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1398904716",
       "created": "2026-10-02",
       "dEntries": {
-        "1": "2026-10-02T19:23:15.688Z"
+        "1": "2026-10-02T19:23:15.688Z",
+        "2": "2026-10-14T19:09:35.335Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP",
+          "timestamp": "2026-10-14T19:11:38.012Z",
+          "author": ""
+        },
         {
           "body": "http://www.linkedin.com/in/anapaulaoliveira1",
           "timestamp": "2026-10-02T19:24:49.473Z",
@@ -7085,14 +7152,26 @@
       "id": "65578327181",
       "name": "Óticas Diniz ",
       "amount": 0,
-      "stageId": "1398904715",
+      "stageId": "1399081987",
       "created": "2026-10-02",
       "dEntries": {
-        "1": "2026-10-02T19:37:32.201Z"
+        "1": "2026-10-02T19:37:32.201Z",
+        "2": "2026-10-14T17:49:32.636Z",
+        "3": "2026-10-19T18:02:34.384Z"
       },
       "reachedAgendado": false,
       "agendadoDate": null,
       "notes": [
+        {
+          "body": "FUP",
+          "timestamp": "2026-10-19T18:02:47.337Z",
+          "author": ""
+        },
+        {
+          "body": "Fazer último FUP",
+          "timestamp": "2026-10-14T17:51:29.519Z",
+          "author": ""
+        },
         {
           "body": "http://www.linkedin.com/in/gabriela-luzia-3850932a4",
           "timestamp": "2026-10-02T19:38:03.811Z",
@@ -7121,7 +7200,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "13/10/2026, 16:10:28",
+  "hs_last_updated2": "19/10/2026, 15:15:58",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -7263,37 +7342,47 @@
     },
     {
       "metaAbordagens": 40,
-      "metaReunioes": 8,
-      "abordagensOverride": null
-    },
-    {
-      "metaAbordagens": 0,
-      "metaReunioes": 8,
-      "abordagensOverride": 372
-    },
-    {
-      "metaAbordagens": 65,
-      "metaReunioes": 2,
+      "metaReunioes": 0,
       "abordagensOverride": null
     },
     {
       "metaAbordagens": 65,
-      "metaReunioes": 6,
+      "metaReunioes": 0,
+      "abordagensOverride": 128
+    },
+    {
+      "metaAbordagens": 65,
+      "metaReunioes": 0,
+      "abordagensOverride": 204
+    },
+    {
+      "metaAbordagens": 65,
+      "metaReunioes": 3,
       "abordagensOverride": null
     },
     {
       "metaAbordagens": 65,
-      "metaReunioes": 10,
+      "metaReunioes": 4,
       "abordagensOverride": null
     },
     {
       "metaAbordagens": 65,
-      "metaReunioes": 16,
+      "metaReunioes": 5,
       "abordagensOverride": null
     },
     {
       "metaAbordagens": 25,
       "metaReunioes": 14,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 10,
+      "abordagensOverride": null
+    },
+    {
+      "metaAbordagens": 0,
+      "metaReunioes": 11,
       "abordagensOverride": null
     },
     {
@@ -7304,16 +7393,6 @@
     {
       "metaAbordagens": 0,
       "metaReunioes": 5,
-      "abordagensOverride": null
-    },
-    {
-      "metaAbordagens": 0,
-      "metaReunioes": 2,
-      "abordagensOverride": null
-    },
-    {
-      "metaAbordagens": 0,
-      "metaReunioes": 0,
       "abordagensOverride": null
     },
     {
@@ -7351,39 +7430,49 @@
     {
       "nome": "Cielo",
       "valor": 10000,
-      "link": ""
+      "link": "",
+      "inicio": "2026-07"
     },
     {
       "nome": "Facta",
       "valor": 10000,
-      "link": ""
+      "link": "",
+      "inicio": "2026-07"
     },
     {
       "nome": "DM",
       "valor": 5000,
-      "link": ""
+      "link": "",
+      "inicio": "2026-07"
     },
     {
       "nome": "Renner",
       "valor": 16000,
-      "link": ""
+      "link": "",
+      "inicio": "2026-07"
     },
     {
       "nome": "Pravaler",
       "valor": 10000,
-      "link": ""
+      "link": "",
+      "inicio": "2026-09"
     },
     {
       "nome": "Pernambucanas",
       "valor": 10000,
-      "link": ""
+      "link": "",
+      "inicio": "2026-09"
     },
     {
       "nome": "Renner UpSell",
-      "valor": 30000,
-      "link": ""
+      "valor": 0,
+      "link": "",
+      "inicio": "2026-10",
+      "parcelas": "32000, 20000, 20000"
     }
   ],
-  "active_tab": "metas",
-  "snapshot_at": "2026-10-19T13:05:28.497Z"
+  "churn_q4": [],
+  "q4_real": {},
+  "active_tab": "metasemanal",
+  "snapshot_at": "2026-10-19T19:38:14.212Z"
 }
