@@ -80,6 +80,8 @@
   table.pq4 td.zero { color: #C8C8C8; }
   table.pq4 td.sep-l, table.pq4 th.sep-l { border-left: 1px solid var(--border); }
   table.pq4 tfoot td { background: #FAFAFA; font-weight: 700; }
+  table.pq4 td.real { background: #FFFDF5; } table.pq4 td.real input { width: 46px; text-align: center; }
+  table.pq4 th.real { background: #FFF6D6 !important; }
   .base-chip { border: 1px solid var(--border); border-radius: 999px; padding: 2px 10px; font-weight: 600; background: #fff; color: var(--text2); }
   .base-chip.on { background: var(--black); color: #fff; border-color: var(--black); }
 </style>
@@ -156,6 +158,7 @@
   <div class="card p-5">
     <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color:var(--accent);">MRR Total — Meta · Q3 + Q4 · até dez/2026</p>
     <p class="text-2xl font-bold" style="color:var(--black);">R$ 180.000,00</p>
+    <p id="mrr-total-foto" class="text-xs mt-1" style="color:var(--text2);"></p>
     <div class="flex items-center gap-2 mt-3 flex-wrap">
       <label class="text-xs font-semibold" style="color:var(--text2);">Realizado (R$)</label>
       <input id="input-mrr-total-realizado" type="number" step="0.01" class="admin-only w-32" oninput="onMrrRealizadoInput('total', this.value)" />
@@ -170,7 +173,8 @@
   </div>
 
   <div class="card p-5">
-    <h3 class="text-sm font-bold mb-3" style="color:var(--black);">MRR — Meta Linear x Realizado (semestre completo)</h3>
+    <h3 class="text-sm font-bold mb-1" style="color:var(--black);">MRR mês a mês — fotografia x meta</h3>
+    <p class="text-xs mb-3" style="color:var(--text2);">Soma do que cada cliente paga em cada mês, pela tabela Clientes Fechados. Meses à frente mostram o que já está contratado.</p>
     <canvas id="chart-mrr-total" height="90"></canvas>
   </div>
 
@@ -201,7 +205,30 @@
       </div>
       <div class="progress-track mt-3"><div id="bar-mrr-q4" class="progress-fill" style="width:0%;background:#B8860B;"></div></div>
       <p id="pct-mrr-q4" class="text-xs mt-1 font-semibold" style="color:var(--text2);">0% da meta</p>
+      <p id="mrr-q4-upsell-nota" class="text-xs mt-1" style="color:var(--text2);"></p>
       <canvas id="chart-mrr-q4" height="130" class="mt-4"></canvas>
+    </div>
+  </div>
+
+  <div class="card p-5">
+    <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color:var(--accent);">KRs táticos do Q4</p>
+    <p class="text-xs mb-4" style="color:var(--text2);">O KR estratégico continua sendo os R$ 180 mil de MRR total, no topo da página.</p>
+    <div id="krs-q4" class="grid gap-3" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));"></div>
+    <div class="mt-5">
+      <div class="flex items-center justify-between flex-wrap gap-2 mb-1">
+        <h4 class="text-sm font-bold" style="color:var(--black);">Churn do Q4</h4>
+        <div class="flex items-center gap-3">
+          <span class="text-xs" style="color:var(--text2);">Total: <b id="churn-total" style="color:var(--danger);">R$ 0,00</b></span>
+          <button class="admin-only btn-primary text-sm" onclick="addChurnRow()">+ Adicionar churn</button>
+        </div>
+      </div>
+      <p class="text-xs mb-2" style="color:var(--text2);">Cliente da safra Q3 que saiu ou reduziu no Q4, e o MRR perdido. A expansão vem sozinha dos clientes com "upsell" no nome, em Clientes Fechados.</p>
+      <div class="overflow-x-auto">
+        <table>
+          <thead><tr><th style="text-align:left;">Cliente</th><th>MRR perdido (R$)</th><th class="admin-only">Ações</th></tr></thead>
+          <tbody id="churn-tbody"></tbody>
+        </table>
+      </div>
     </div>
   </div>
 
@@ -218,10 +245,10 @@
         <button class="admin-only btn-primary text-sm" onclick="addClienteRow()">+ Adicionar cliente</button>
       </div>
     </div>
-    <p class="text-xs mb-3" style="color:var(--text2);">Nome do cliente, valor mensal (MRR) e link do contrato.</p>
+    <p class="text-xs mb-3" style="color:var(--text2);">Valor mensal, mês em que começa a pagar e, se a mensalidade variar, os valores mês a mês (ex.: 32000, 20000, 20000). Fim só para contrato com prazo ou cliente que saiu.</p>
     <div class="overflow-x-auto">
       <table>
-        <thead><tr><th style="text-align:left;">Cliente</th><th>Valor mensal (R$)</th><th>Contrato (link)</th><th class="admin-only">Ações</th></tr></thead>
+        <thead><tr><th style="text-align:left;">Cliente</th><th>Valor mensal (R$)</th><th>Início</th><th>Mensalidades diferentes (opcional)</th><th>Fim (opcional)</th><th>Contrato (link)</th><th class="admin-only">Ações</th></tr></thead>
         <tbody id="clientes-tbody"></tbody>
       </table>
     </div>
@@ -299,12 +326,12 @@
     <div class="flex items-start justify-between flex-wrap gap-4 mb-4">
       <div>
         <h3 class="text-sm font-bold" style="color:var(--black);">Plano Q4: reta final</h3>
-        <p class="text-xs" style="color:var(--text2);">Metas por semana de S14 a S23, replanejadas em 13/10. Já alimentam as tabelas abaixo e a Cascata Semanal.</p>
+        <p class="text-xs" style="color:var(--text2);">Metas da cascata do Q4 (replanejada em 19/10) e, nas colunas amarelas, o realizado de cada semana, que você preenche. As realizadas viram as reuniões realizadas da semana no resto do dashboard.</p>
       </div>
       <div style="min-width:280px;flex:0 1 360px;">
         <div class="flex items-baseline justify-between text-xs mb-1" style="color:var(--text2);">
           <span>Reuniões realizadas desde S14</span>
-          <span><b id="pq4-realizado" class="text-base" style="color:var(--black);">0</b> de <b>60</b> até 28/11</span>
+          <span><b id="pq4-realizado" class="text-base" style="color:var(--black);">0</b> de <b>60</b> no Q4</span>
         </div>
         <div class="progress-track" style="height:12px;position:relative;">
           <div id="pq4-barra" class="progress-fill" style="width:0%;background:var(--teal);"></div>
@@ -318,16 +345,15 @@
         <thead>
           <tr class="pq4-grupo">
             <th rowspan="2" style="text-align:left;">Período</th>
-            <th colspan="3" class="g-out">Prospecção outbound</th>
-            <th rowspan="2" class="g-venda">Vendas<br>realizadas</th>
-            <th colspan="7" class="g-evt">Eventos e ABM</th>
-            <th colspan="3" class="g-res">Resultado</th>
-            <th rowspan="2" class="g-prop">Propostas<br>enviadas</th>
+            <th colspan="5" class="g-out">Prospecção outbound</th>
+            <th colspan="5" class="g-evt">ABM</th>
+            <th rowspan="2" class="g-venda">Meta<br>vendas</th>
+            <th colspan="5" class="g-res">Resultado (reuniões realizadas)</th>
           </tr>
           <tr>
-            <th class="g-out">Contas novas<br>a abordar</th><th class="g-out">Reuniões<br>marcadas</th><th class="g-out">Reuniões<br>realizadas</th>
-            <th class="g-evt">Convites<br>de evento</th><th class="g-evt">InHire<br>Experience</th><th class="g-evt">Jantar<br>SP</th><th class="g-evt">Jantar<br>Recife</th><th class="g-evt">Recrutar no<br>Varejo</th><th class="g-evt">ABM<br>direto</th><th class="g-evt">Realizadas<br>ABM + eventos</th>
-            <th class="g-res">TOTAL reuniões<br>realizadas</th><th class="g-res">Acumulado</th><th class="g-res" style="min-width:110px;">% da meta de 60</th>
+            <th class="g-out">Meta contas<br>novas</th><th class="g-out">Meta<br>agendadas</th><th class="g-out real">Agendadas</th><th class="g-out">Meta<br>realizadas</th><th class="g-out real">Realizadas</th>
+            <th class="g-evt">Meta contas<br>novas</th><th class="g-evt">Meta<br>agendadas</th><th class="g-evt real">Agendadas</th><th class="g-evt">Meta<br>realizadas</th><th class="g-evt real">Realizadas</th>
+            <th class="g-res">Meta<br>total</th><th class="g-res">Realizadas<br>total</th><th class="g-res">Meta<br>acumulada</th><th class="g-res">Realizado<br>acumulado</th><th class="g-res" style="min-width:110px;">% da meta de 60</th>
           </tr>
         </thead>
         <tbody id="planoq4-tbody"></tbody>
@@ -681,24 +707,26 @@ const _REUN_META_ORIG = _REUN_META.slice();
 // reuniões realizadas (outbound), vendas, convites de evento, reuniões por canal (InHire Exp., Jantar SP, Jantar Recife,
 // Recrutar no Varejo, ABM direto), reuniões realizadas ABM + eventos, TOTAL reuniões realizadas, acumulado, % da meta de 60, propostas.
 const PLANO_Q4_INICIO = 13; // índice de S14
+const Q4_PRIMEIRA_SEMANA_IDX = 11; // S12 (28/09) abre o Q4 no calendário de semanas
 const PLANO_Q4_META = 60;
+// Cascata do Q4 (replanejada em 19/10/2026). S1 = S14 do semestre (12/10). Meta de reuniões = realizadas outbound + ABM.
 const PLANO_Q4 = [
-  { periodo:'13-17/10',   marco:'InHire Experience (15/10) · cadências no ar · convites 21/10 e 5/11', contas:65, marcadas:0, realOut:0, vendas:0, convites:75, inhire:2, jantarSP:0, jantarRecife:0, recrutar:0, abm:0, abmEventos:2,  total:2,  acum:2,  pct:3,   propostas:0 },
-  { periodo:'20-24/10',   marco:'Jantar SP (qua 21/10) + presenciais',                                 contas:65, marcadas:3, realOut:0, vendas:0, convites:90, inhire:2, jantarSP:3, jantarRecife:0, recrutar:0, abm:1, abmEventos:6,  total:6,  acum:8,  pct:13,  propostas:1 },
-  { periodo:'27-31/10',   marco:'Jantar Recife (qua 28/10) + presenciais NE',                          contas:65, marcadas:6, realOut:2, vendas:0, convites:40, inhire:1, jantarSP:4, jantarRecife:2, recrutar:0, abm:1, abmEventos:8,  total:10, acum:17, pct:29,  propostas:3 },
-  { periodo:'3-6/11',     marco:'Recrutar no Varejo SP (qui 5/11) · feriado 2/11',                     contas:65, marcadas:7, realOut:4, vendas:0, convites:0,  inhire:0, jantarSP:1, jantarRecife:3, recrutar:6, abm:2, abmEventos:12, total:16, acum:33, pct:55,  propostas:5 },
-  { periodo:'9-13/11',    marco:'Semana presencial pós-evento em SP',                                  contas:25, marcadas:7, realOut:5, vendas:0, convites:0,  inhire:0, jantarSP:0, jantarRecife:1, recrutar:6, abm:2, abmEventos:9,  total:14, acum:47, pct:79,  propostas:8 },
-  { periodo:'16-20/11',   marco:'Propostas · feriado 20/11',                                           contas:0,    marcadas:5, realOut:5, vendas:0, convites:0,  inhire:0, jantarSP:0, jantarRecife:0, recrutar:2, abm:1, abmEventos:3,  total:8,  acum:55, pct:92,  propostas:7 },
-  { periodo:'23-28/11',   marco:'Corte de reuniões novas (28/11)',                                     contas:0,    marcadas:3, realOut:4, vendas:0, convites:0,  inhire:0, jantarSP:0, jantarRecife:0, recrutar:0, abm:1, abmEventos:1,  total:5,  acum:60, pct:100, propostas:4 },
-  { periodo:'30/11-4/12', marco:'Fechamento',                                                          contas:0,    marcadas:1, realOut:2, vendas:1, convites:0,  inhire:0, jantarSP:0, jantarRecife:0, recrutar:0, abm:0, abmEventos:0,  total:2,  acum:62, pct:103, propostas:2 },
-  { periodo:'7-11/12',    marco:'Fechamento',                                                          contas:0,    marcadas:0, realOut:0, vendas:0, convites:0,  inhire:0, jantarSP:0, jantarRecife:0, recrutar:0, abm:0, abmEventos:0,  total:0,  acum:62, pct:104, propostas:1 },
-  { periodo:'14-18/12',   marco:'Assinaturas até 15/12',                                               contas:0,    marcadas:0, realOut:0, vendas:0, convites:0,  inhire:0, jantarSP:0, jantarRecife:0, recrutar:0, abm:0, abmEventos:0,  total:0,  acum:62, pct:104, propostas:0 },
+  { periodo:'12-16/10',   marco:'InHire Experience (15/10)',               contasOut:65, contasAbm:0,  agOut:0, agAbm:0,  realOut:0, realAbm:0,  vendas:0 },
+  { periodo:'19-23/10',   marco:'Leads InHire Exp',                        contasOut:65, contasAbm:20, agOut:3, agAbm:2,  realOut:2, realAbm:1,  vendas:0 },
+  { periodo:'26-30/10',   marco:'Leads InHire Exp',                        contasOut:65, contasAbm:20, agOut:4, agAbm:2,  realOut:3, realAbm:1,  vendas:0 },
+  { periodo:'2-6/11',     marco:'Recrutar no Varejo SP (qui 5/11)',        contasOut:65, contasAbm:20, agOut:5, agAbm:15, realOut:4, realAbm:1,  vendas:0 },
+  { periodo:'9-13/11',    marco:'ABM + Leads outros eventos',              contasOut:25, contasAbm:20, agOut:6, agAbm:4,  realOut:4, realAbm:10, vendas:0 },
+  { periodo:'16-20/11',   marco:'ABM + Outro evento dia 18/11 ou 26/11?',  contasOut:0,  contasAbm:10, agOut:6, agAbm:7,  realOut:5, realAbm:5,  vendas:0 },
+  { periodo:'23-27/11',   marco:'ABM + Leads outros eventos',              contasOut:0,  contasAbm:0,  agOut:6, agAbm:3,  realOut:5, realAbm:6,  vendas:0 },
+  { periodo:'30/11-4/12', marco:'ABM + Leads outros eventos',              contasOut:0,  contasAbm:0,  agOut:6, agAbm:3,  realOut:5, realAbm:3,  vendas:1 },
+  { periodo:'7-11/12',    marco:'',                                        contasOut:0,  contasAbm:0,  agOut:0, agAbm:0,  realOut:2, realAbm:3,  vendas:0 },
+  { periodo:'14-18/12',   marco:'',                                        contasOut:0,  contasAbm:0,  agOut:0, agAbm:0,  realOut:0, realAbm:0,  vendas:0 },
 ];
-const PLANO_Q4_TOTAIS = {
-  ate2811: { contas:285, marcadas:31, realOut:20, vendas:0, convites:205, inhire:4, jantarSP:8, jantarRecife:6, recrutar:14, abm:8, abmEventos:40, total:60, pct:100, propostas:27.7 },
-  q4:      { contas:285, marcadas:31, realOut:22, vendas:1, convites:205, inhire:4, jantarSP:8, jantarRecife:6, recrutar:14, abm:8, abmEventos:40, total:62, pct:null, propostas:31.1 },
-};
+let _accPq4 = 0;
+PLANO_Q4.forEach(p => { p.total = p.realOut + p.realAbm; _accPq4 += p.total; p.acum = _accPq4; p.pct = Math.round(p.acum / PLANO_Q4_META * 100); });
 PLANO_Q4.forEach((p, i) => { _REUN_META[PLANO_Q4_INICIO + i] = p.total; _VENDAS_PLAN[PLANO_Q4_INICIO + i] = p.vendas; });
+// Toda a meta do Q4 está na cascata (S14 em diante): S12 e S13 ficam sem meta própria de reuniões e vendas.
+for (let i = Q4_PRIMEIRA_SEMANA_IDX; i < PLANO_Q4_INICIO; i++) { _REUN_META[i] = 0; _VENDAS_PLAN[i] = 0; }
 
 let _accReun = 0, _accVenda = 0, _accReunOrig = 0;
 WEEKS.forEach((w,i) => {
@@ -756,15 +784,24 @@ if (localStorage.getItem('rpov_metareun_v2') !== '1') {
 }
 // Aplica UMA VEZ o replanejamento Q4 (13/10/2026) nas metas de S14 a S23: reuniões = TOTAL reuniões realizadas,
 // abordagens = contas novas a abordar (outbound). Semanas anteriores e ajustes manuais posteriores ficam intactos.
-if (localStorage.getItem('rpov_plano_q4_v1') !== '1') {
+if (localStorage.getItem('rpov_plano_q4_v2') !== '1') {
   PLANO_Q4.forEach((p, i) => {
     const idx = PLANO_Q4_INICIO + i;
     metaSemanal[idx] = metaSemanal[idx] || { abordagensOverride: null };
     metaSemanal[idx].metaReunioes = p.total;
-    metaSemanal[idx].metaAbordagens = p.contas;
+    metaSemanal[idx].metaAbordagens = p.contasOut;
   });
   saveJSON('rpov_meta_semanal', metaSemanal);
-  localStorage.setItem('rpov_plano_q4_v1', '1');
+  localStorage.setItem('rpov_plano_q4_v2', '1');
+}
+// Migração única (19/10): meta de reuniões da Meta Semanal = plano da Cascata (Q4 = 62 reuniões, de S14 em diante).
+if (localStorage.getItem('rpov_meta_reun_cascata_v4') !== '1') {
+  WEEKS.forEach((w, idx) => {
+    metaSemanal[idx] = metaSemanal[idx] || { abordagensOverride: null };
+    metaSemanal[idx].metaReunioes = w.reunMeta;
+  });
+  saveJSON('rpov_meta_semanal', metaSemanal);
+  localStorage.setItem('rpov_meta_reun_cascata_v4', '1');
 }
 // Vendas realizadas por semana (editável à mão).
 let vendasSemana = loadJSON('rpov_vendas_semana', WEEKS.map(() => 0));
@@ -773,6 +810,25 @@ let vendasSemana = loadJSON('rpov_vendas_semana', WEEKS.map(() => 0));
 localStorage.removeItem('rpov_contagem_inicio'); // limpa filtro antigo que podia zerar a contagem
 // Clientes fechados (Metas Gerais): nome, valor mensal (MRR), link do contrato.
 let clientesFechados = loadJSON('rpov_clientes_fechados', []);
+// Migração única (19/10): mês de início de cada cliente, deduzido da semana em que o MRR entrou na Cascata,
+// e a mensalidade variável do Renner UpSell. Tudo editável na tabela Clientes Fechados.
+if (!IS_VIEWER && !localStorage.getItem('rpov_mrr_mensal_v1')) {
+  const INICIO = { 'cielo':'2026-07', 'facta':'2026-07', 'dm':'2026-07', 'renner':'2026-07', 'pravaler':'2026-09', 'pernambucanas':'2026-09', 'renner upsell':'2026-10' };
+  clientesFechados.forEach(c => {
+    const k = String(c.nome || '').trim().toLowerCase();
+    if (!c.inicio && INICIO[k]) c.inicio = INICIO[k];
+    if (k === 'renner upsell' && !c.parcelas) c.parcelas = '32000, 20000, 20000';
+  });
+  localStorage.setItem('rpov_clientes_fechados', JSON.stringify(clientesFechados));
+  // o MRR total passa a ser a fotografia do mês, então sai do valor travado à mão
+  const ovs = JSON.parse(localStorage.getItem('rpov_mrr_overrides') || '{}');
+  if (ovs.total) { ovs.total.locked = false; localStorage.setItem('rpov_mrr_overrides', JSON.stringify(ovs)); }
+  if (mrrOverrides.total) mrrOverrides.total.locked = false;
+  localStorage.setItem('rpov_mrr_mensal_v1', '1');
+}
+let churnQ4 = loadJSON('rpov_churn_q4', []); // [{ nome, valor }] MRR perdido da safra Q3 durante o Q4
+// Realizado da cascata do Q4, preenchido à mão semana a semana: { [idx]: { agOut, realOut, agAbm, realAbm } } (vazio = não preenchido)
+let q4Real = loadJSON('rpov_q4_real', {});
 
 // ─── Datas das semanas (S1 começa 13/07/2026, uma por semana) ───
 const WEEK1_START = new Date(2026, 6, 13); // mês 6 = julho
@@ -892,10 +948,44 @@ function cascataAcumuladoAte(weeks) {
   return weeks.map(w => { acc += (cascataRows[w.n-1]?.mrrFechado || 0); return acc; });
 }
 
+// Upsell (cliente fechado com "upsell" no nome) não é new MRR: fica fora da meta do Q4 (120k),
+// mas continua somando no MRR total (180k). O Q3 já fechou, então todo upsell cadastrado é descontado do Q4.
+function isUpsell(c) { return /up\s*-?\s*sell/i.test((c && c.nome) || ''); }
+function mrrUpsell() { return clientesFechados.filter(isUpsell).reduce((s,c) => s + (parseFloat(c.valor)||0), 0); }
+
+// ── MRR mês a mês (fotografia): o que cada cliente paga em cada mês ──
+const MESES_MRR = ['2026-07','2026-08','2026-09','2026-10','2026-11','2026-12'];
+const MESES_OPCOES = ['2026-07','2026-08','2026-09','2026-10','2026-11','2026-12','2027-01','2027-02','2027-03','2027-04','2027-05','2027-06'];
+const NOMES_MES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+function mesLabel(m) { const [y, mm] = m.split('-'); return NOMES_MES[+mm - 1] + '/' + y.slice(2); }
+function mesIdx(m) { const [y, mm] = m.split('-').map(Number); return y * 12 + mm - 1; }
+function mesAtual() { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0'); }
+// "32000, 20000, 20000" ou "32.000; 20.000" → [32000, 20000, 20000]
+function parcelasCliente(c) {
+  return String(c.parcelas || '').split(/[;,\s]+/).map(x => parseFloat(x.replace(/\./g, ''))).filter(x => x > 0);
+}
+function mrrClienteNoMes(c, m) {
+  const ini = c.inicio || MESES_MRR[0];
+  const d = mesIdx(m) - mesIdx(ini);
+  if (d < 0) return 0;
+  if (c.fim && mesIdx(m) > mesIdx(c.fim)) return 0;
+  const p = parcelasCliente(c);
+  if (p.length) return d < p.length ? p[d] : 0;
+  return parseFloat(c.valor) || 0;
+}
+function mrrNoMes(m) { return clientesFechados.reduce((s, c) => s + mrrClienteNoMes(c, m), 0); }
+// Meta do mês = MRR planejado acumulado na última semana que começa naquele mês (plano da cascata)
+function metaNoMes(m) {
+  const mm = m.split('-')[1];
+  const ws = WEEKS.filter(w => (w.period || '').split('–')[0].split('/')[1] === mm);
+  return ws.length ? (ws[ws.length - 1].mrrMeta || 0) : 0;
+}
+
 function mrrAuto(key) {
-  if (key === 'total') return cascataRows.reduce((s,r) => s + (r.mrrFechado||0), 0);
+  if (key === 'total') return mrrNoMes(mesAtual()); // fotografia do mês atual
   const weeks = key === 'q3' ? Q3_WEEKS : Q4_WEEKS;
-  return weeks.reduce((s,w) => s + (cascataRows[w.n-1]?.mrrFechado||0), 0);
+  const bruto = weeks.reduce((s,w) => s + (cascataRows[w.n-1]?.mrrFechado||0), 0);
+  return key === 'q4' ? Math.max(0, bruto - mrrUpsell()) : bruto;
 }
 function mrrRealizado(key) {
   const ov = mrrOverrides[key];
@@ -918,16 +1008,23 @@ function updateMetasSummary() {
   const q4Realizado = mrrRealizado('q4');
 
   document.getElementById('mrr-total-realizado').textContent = fmtBRL(totalRealizado);
+  const foto = document.getElementById('mrr-total-foto');
+  if (foto) foto.textContent = `Fotografia de ${mesLabel(mesAtual())}: o que os clientes pagam neste mês.`;
   document.getElementById('bar-mrr-total').style.width = Math.min(100, pct(totalRealizado, 180000)) + '%';
   document.getElementById('pct-mrr-total').textContent = pct(totalRealizado, 180000) + '% da meta';
 
   document.getElementById('mrr-q3-realizado').textContent = fmtBRL(q3Realizado);
-  document.getElementById('bar-mrr-q3').style.width = Math.min(100, pct(q3Realizado, 100000)) + '%';
-  document.getElementById('pct-mrr-q3').textContent = pct(q3Realizado, 100000) + '% da meta';
+  document.getElementById('bar-mrr-q3').style.width = Math.min(100, pct(q3Realizado, 60000)) + '%';
+  document.getElementById('pct-mrr-q3').textContent = pct(q3Realizado, 60000) + '% da meta';
 
   document.getElementById('mrr-q4-realizado').textContent = fmtBRL(q4Realizado);
-  document.getElementById('bar-mrr-q4').style.width = Math.min(100, pct(q4Realizado, 200000)) + '%';
-  document.getElementById('pct-mrr-q4').textContent = pct(q4Realizado, 200000) + '% da meta';
+  document.getElementById('bar-mrr-q4').style.width = Math.min(100, pct(q4Realizado, 120000)) + '%';
+  document.getElementById('pct-mrr-q4').textContent = pct(q4Realizado, 120000) + '% da meta';
+  const ups = clientesFechados.filter(isUpsell);
+  const notaUps = document.getElementById('mrr-q4-upsell-nota');
+  if (notaUps) notaUps.innerHTML = ups.length
+    ? `Upsell não conta como new MRR do Q4: ${ups.map(c => escapeHtml(c.nome) + ' (' + fmtBRL(c.valor) + ')').join(', ')}. Esse valor soma só no MRR total.`
+    : '';
 
   ['total','q3','q4'].forEach(key => {
     const ov = mrrOverrides[key];
@@ -937,9 +1034,11 @@ function updateMetasSummary() {
     if (reset) reset.style.display = ov?.locked ? '' : 'none';
   });
 
+  renderKrsQ4();
+
   renderChartMrrTotal();
-  renderChartMrrQ(Q3_WEEKS, 100000, 'chart-mrr-q3', 'mrrQ3');
-  renderChartMrrQ(Q4_WEEKS, 200000, 'chart-mrr-q4', 'mrrQ4');
+  renderChartMrrQ(Q3_WEEKS, 60000, 'chart-mrr-q3', 'mrrQ3');
+  renderChartMrrQ(Q4_WEEKS, 120000, 'chart-mrr-q4', 'mrrQ4');
   renderChartReunioesAcum();
 }
 
@@ -956,6 +1055,66 @@ function resetMrrAuto(key) {
   updateMetasSummary();
 }
 
+// ─── KRs táticos do Q4 ───
+// 1) 120k de new MRR (upsell fora). 2) Garantir 60k de MRR da safra Q3, desdobrado em
+// churn de no máximo 15k e expansão de 20k, para o saldo da safra (expansão - churn) ficar em zero ou positivo.
+const KR_Q4 = { newMrr: 120000, safraQ3: 60000, churnMax: 15000, expansao: 20000 };
+function churnTotal() { return churnQ4.reduce((s,c) => s + (parseFloat(c.valor)||0), 0); }
+
+function renderKrsQ4() {
+  const box = document.getElementById('krs-q4');
+  if (!box) return;
+  const newMrr = mrrRealizado('q4');
+  const baseQ3 = mrrRealizado('q3');
+  const churn = churnTotal();
+  const exp = mrrUpsell();
+  const safra = baseQ3 - churn + exp;
+  const saldo = exp - churn;
+  const card = (titulo, valor, meta, sub, ok, inverso) => {
+    const p = pct(valor, meta);
+    const cor = ok ? 'var(--teal)' : (inverso ? 'var(--danger)' : 'var(--accent)');
+    return `<div class="card p-3">
+      <div class="text-xs font-semibold" style="color:var(--text2);">${titulo}</div>
+      <div class="font-brand font-extrabold text-xl" style="color:var(--black);">${fmtBRL(valor)}</div>
+      <div class="text-xs" style="color:var(--muted);">${sub}</div>
+      <div class="progress-track mt-2"><div class="progress-fill" style="width:${Math.min(100, p)}%;background:${cor};"></div></div>
+      <div class="text-xs mt-1 font-semibold" style="color:${cor};">${ok ? '✓ ' : ''}${p}% ${inverso ? 'do limite' : 'da meta'}</div>
+    </div>`;
+  };
+  box.innerHTML =
+    card('New MRR do Q4', newMrr, KR_Q4.newMrr, 'meta R$ 120 mil · upsell não entra', newMrr >= KR_Q4.newMrr) +
+    card('MRR da safra Q3', safra, KR_Q4.safraQ3, `meta R$ 60 mil · ${fmtBRL(baseQ3)} fechados no Q3 - churn + expansão`, safra >= KR_Q4.safraQ3) +
+    card('Churn', churn, KR_Q4.churnMax, 'no máximo R$ 15 mil', churn <= KR_Q4.churnMax, true) +
+    card('Expansão (upsell)', exp, KR_Q4.expansao, 'meta R$ 20 mil', exp >= KR_Q4.expansao) +
+    `<div class="card p-3">
+      <div class="text-xs font-semibold" style="color:var(--text2);">Saldo da safra Q3</div>
+      <div class="font-brand font-extrabold text-xl" style="color:${saldo >= 0 ? 'var(--teal)' : 'var(--danger)'};">${saldo >= 0 ? '+' : ''}${fmtBRL(saldo)}</div>
+      <div class="text-xs" style="color:var(--muted);">expansão - churn · precisa ficar em zero ou positivo</div>
+      <div class="text-xs mt-2 font-semibold" style="color:${saldo >= 0 ? 'var(--teal)' : 'var(--danger)'};">${saldo >= 0 ? '✓ não perdemos MRR da safra' : 'perdendo MRR da safra'}</div>
+    </div>`;
+  renderChurn();
+}
+
+function renderChurn() {
+  const tbody = document.getElementById('churn-tbody');
+  if (!tbody) return;
+  tbody.innerHTML = churnQ4.map((c, i) => `<tr>
+      <td style="text-align:left;"><input type="text" class="admin-only w-48" value="${escapeHtml(c.nome||'')}" onchange="onChurnField(${i},'nome',this.value)" placeholder="Nome do cliente" /><span class="viewer-only font-semibold">${escapeHtml(c.nome||'')}</span></td>
+      <td><input type="number" step="0.01" class="admin-only w-32" value="${c.valor||''}" onchange="onChurnField(${i},'valor',this.value)" placeholder="0,00" /><span class="viewer-only">${fmtBRL(c.valor)}</span></td>
+      <td class="admin-only"><button class="text-red-600 text-xs font-semibold" onclick="removeChurnRow(${i})">Remover</button></td>
+    </tr>`).join('') || `<tr><td colspan="3" style="color:var(--muted);">Nenhum churn registrado no Q4.</td></tr>`;
+  const el = document.getElementById('churn-total');
+  if (el) el.textContent = fmtBRL(churnTotal());
+}
+function addChurnRow() { churnQ4.push({ nome:'', valor:0 }); saveJSON('rpov_churn_q4', churnQ4); renderKrsQ4(); }
+function removeChurnRow(i) { churnQ4.splice(i,1); saveJSON('rpov_churn_q4', churnQ4); renderKrsQ4(); }
+// onchange (não oninput): redesenhar a tabela a cada tecla tiraria o foco do campo
+function onChurnField(i, field, val) {
+  churnQ4[i][field] = field === 'valor' ? (parseFloat(val)||0) : val;
+  saveJSON('rpov_churn_q4', churnQ4);
+  renderKrsQ4();
+}
+
 // ─── Clientes Fechados ───
 function renderClientes() {
   const tbody = document.getElementById('clientes-tbody');
@@ -965,12 +1124,15 @@ function renderClientes() {
       ? `<a href="${escapeHtml(c.link)}" target="_blank" rel="noopener noreferrer" style="color:var(--accent2);text-decoration:underline;">abrir contrato ↗</a>`
       : `<span style="color:var(--muted);">—</span>`;
     return `<tr>
-      <td style="text-align:left;"><input type="text" class="admin-only w-48" value="${escapeHtml(c.nome||'')}" oninput="onClienteField(${i},'nome',this.value)" placeholder="Nome do cliente" /><span class="viewer-only font-semibold">${escapeHtml(c.nome||'')}</span></td>
+      <td style="text-align:left;"><input type="text" class="admin-only w-48" value="${escapeHtml(c.nome||'')}" oninput="onClienteField(${i},'nome',this.value)" placeholder="Nome do cliente" /><span class="viewer-only font-semibold">${escapeHtml(c.nome||'')}</span>${isUpsell(c) ? ' <span class="badge badge-nd" title="Upsell: soma no MRR total, fica fora do new MRR do Q4">upsell</span>' : ''}</td>
       <td><input type="number" step="0.01" class="admin-only w-32" value="${c.valor||''}" oninput="onClienteField(${i},'valor',this.value)" placeholder="0,00" /><span class="viewer-only">${fmtBRL(c.valor)}</span></td>
+      <td><select class="admin-only" onchange="onClienteField(${i},'inicio',this.value)">${MESES_OPCOES.map(m => `<option value="${m}" ${(c.inicio || MESES_MRR[0]) === m ? 'selected' : ''}>${mesLabel(m)}</option>`).join('')}</select><span class="viewer-only">${mesLabel(c.inicio || MESES_MRR[0])}</span></td>
+      <td><input type="text" class="admin-only w-48" value="${escapeHtml(c.parcelas||'')}" onchange="onClienteField(${i},'parcelas',this.value)" placeholder="ex.: 32000, 20000, 20000" /><span class="viewer-only">${escapeHtml(c.parcelas||'')}</span></td>
+      <td><select class="admin-only" onchange="onClienteField(${i},'fim',this.value)"><option value="">sem fim</option>${MESES_OPCOES.map(m => `<option value="${m}" ${c.fim === m ? 'selected' : ''}>${mesLabel(m)}</option>`).join('')}</select><span class="viewer-only">${c.fim ? mesLabel(c.fim) : ''}</span></td>
       <td><input type="text" class="admin-only w-64" value="${escapeHtml(c.link||'')}" oninput="onClienteField(${i},'link',this.value)" placeholder="https://…" /><span class="viewer-only">${linkView}</span></td>
       <td class="admin-only"><button class="text-red-600 text-xs font-semibold" onclick="removeClienteRow(${i})">Remover</button></td>
     </tr>`;
-  }).join('') || `<tr><td colspan="4" style="color:var(--muted);">Nenhum cliente fechado cadastrado.</td></tr>`;
+  }).join('') || `<tr><td colspan="7" style="color:var(--muted);">Nenhum cliente fechado cadastrado.</td></tr>`;
 
   const totalMensal = clientesFechados.reduce((s,c) => s + (parseFloat(c.valor)||0), 0);
   const el = document.getElementById('clientes-total-mensal');
@@ -978,7 +1140,7 @@ function renderClientes() {
 }
 
 function addClienteRow() {
-  clientesFechados.push({ nome:'', valor:0, link:'' });
+  clientesFechados.push({ nome:'', valor:0, link:'', inicio: mesAtual() });
   saveJSON('rpov_clientes_fechados', clientesFechados);
   renderClientes();
 }
@@ -986,10 +1148,12 @@ function removeClienteRow(i) {
   clientesFechados.splice(i,1);
   saveJSON('rpov_clientes_fechados', clientesFechados);
   renderClientes();
+  updateMetasSummary();
 }
 function onClienteField(i, field, val) {
   clientesFechados[i][field] = field === 'valor' ? (parseFloat(val)||0) : val;
   saveJSON('rpov_clientes_fechados', clientesFechados);
+  updateMetasSummary(); // nome com "upsell" ou valor mudam o new MRR do Q4
   if (field === 'valor') {
     const totalMensal = clientesFechados.reduce((s,c) => s + (parseFloat(c.valor)||0), 0);
     const el = document.getElementById('clientes-total-mensal');
@@ -997,22 +1161,50 @@ function onClienteField(i, field, val) {
   }
 }
 
+// Escreve o valor em cima de cada barra (sem precisar passar o mouse)
+const rotuloBarras = {
+  id: 'rotuloBarras',
+  afterDatasetsDraw(chart) {
+    const meta = chart.getDatasetMeta(0);
+    if (!meta || meta.hidden) return;
+    const { ctx } = chart;
+    ctx.save();
+    ctx.font = '600 11px Montserrat, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'bottom';
+    meta.data.forEach((bar, i) => {
+      const v = chart.data.datasets[0].data[i] || 0;
+      const txt = v.toLocaleString('pt-BR', { style:'currency', currency:'BRL', maximumFractionDigits: 0 });
+      const w = ctx.measureText(txt).width + 8;
+      ctx.fillStyle = 'rgba(255,255,255,0.92)'; // fundo para a linha da meta não cortar o número
+      ctx.fillRect(bar.x - w / 2, bar.y - 19, w, 15);
+      ctx.fillStyle = '#1A1A1A';
+      ctx.fillText(txt, bar.x, bar.y - 5);
+    });
+    ctx.restore();
+  }
+};
+
 function renderChartMrrTotal() {
-  const labels = WEEKS.map(w => 'S' + w.n);
-  const totalMeta = 180000;
-  // Meta = MRR planejado ACUMULADO de cada semana (do plano da cascata): 0 → 180k.
-  const planejado = WEEKS.map(w => w.mrrMeta || 0);
-  const realizadoAcum = cascataAcumuladoAte(WEEKS);
+  const atual = mesIdx(mesAtual());
+  const labels = MESES_MRR.map(mesLabel);
+  const valores = MESES_MRR.map(mrrNoMes);
+  const metas = MESES_MRR.map(metaNoMes);
+  const futuro = MESES_MRR.map(m => mesIdx(m) > atual);
   destroyChart('mrrTotal');
   CHARTS.mrrTotal = new Chart(document.getElementById('chart-mrr-total'), {
-    type: 'line',
+    plugins: [rotuloBarras],
     data: { labels, datasets: [
-      { label: 'Meta Planejada', data: planejado, borderColor: '#999', borderDash:[5,4], pointRadius:0, tension:.25 },
-      { label: 'Realizado', data: realizadoAcum, borderColor: '#9900FF', backgroundColor:'#9900FF22', fill:true, tension:.25, pointRadius:2 },
+      { type: 'bar', label: 'MRR do mês', data: valores, order: 2, borderRadius: 4,
+        backgroundColor: futuro.map(f => f ? '#9900FF33' : '#9900FF'), borderColor: '#9900FF', borderWidth: futuro.map(f => f ? 1 : 0) },
+      { type: 'line', label: 'Meta do mês', data: metas, order: 1, borderColor: '#999', borderDash: [5,4], pointRadius: 3, tension: .25 },
     ]},
     options: { responsive:true, interaction:{ mode:'index', intersect:false },
-      plugins:{ legend:{ position:'bottom' }, tooltip: mrrTooltip(totalMeta, WEEKS), vline: { index: currentWeekIdx() } },
-      scales: { y: { ticks: { callback: v => fmtBRL(v) } } } }
+      plugins:{ legend:{ position:'bottom' }, tooltip: { callbacks: {
+        title: (it) => labels[it[0].dataIndex] + (futuro[it[0].dataIndex] ? ' · já contratado' : ''),
+        label: (c) => `${c.dataset.label}: ${fmtBRL(c.parsed.y)}` + (c.dataset.type === 'bar' ? ` · ${pct(c.parsed.y, 180000)}% dos 180k` : '') } } },
+      layout: { padding: { top: 18 } },
+      scales: { y: { beginAtZero: true, ticks: { callback: v => fmtBRL(v) } } } }
   });
 }
 
@@ -1024,7 +1216,8 @@ function renderChartMrrQ(weeks, meta, canvasId, key) {
   const base = firstN > 1 ? (WEEKS[firstN-2].mrrMeta || 0) : 0;
   const planejado = weeks.map(w => (w.mrrMeta || 0) - base);
   let acc = 0;
-  const realizado = weeks.map(w => { acc += (cascataRows[w.n-1]?.mrrFechado||0); return acc; });
+  const desconto = key === 'mrrQ4' ? mrrUpsell() : 0; // upsell fora do new MRR do Q4
+  const realizado = weeks.map(w => { acc += (cascataRows[w.n-1]?.mrrFechado||0); return Math.max(0, acc - desconto); });
   // Índice da semana atual DENTRO deste trimestre (ou -1 se estamos fora dele).
   const wkAbs = currentWeekIdx();
   const localIdx = weeks.findIndex(w => (w.n-1) === wkAbs);
@@ -1274,27 +1467,34 @@ function renderPlanoQ4() {
   const wkNow = currentWeekIdx();
   const c = (v, extra) => `<td class="${(v || 0) === 0 ? 'zero ' : ''}${extra || ''}">${(v || 0).toLocaleString('pt-BR')}</td>`;
   const barra = pct => `<div class="flex items-center gap-2"><div class="progress-track" style="height:6px;flex:1;"><div class="progress-fill" style="width:${Math.min(pct, 100)}%;background:${pct >= 100 ? 'var(--teal)' : 'var(--mustard)'};"></div></div><span class="text-[11px] font-semibold" style="width:34px;text-align:right;">${pct}%</span></div>`;
+  const v = (idx, k) => { const x = (q4Real[idx] || {})[k]; return (x === undefined || x === null || x === '') ? null : x; };
+  const inp = (idx, k) => { const x = v(idx, k);
+    return `<td class="real"><input type="number" min="0" class="admin-only" value="${x ?? ''}" onchange="onQ4RealInput(${idx},'${k}',this.value)" /><span class="viewer-only font-bold">${x ?? ''}</span></td>`; };
+  let accMeta = 0, accReal = 0;
   tbody.innerHTML = PLANO_Q4.map((p, i) => {
     const idx = PLANO_Q4_INICIO + i, w = WEEKS[idx];
-    return `<tr class="${idx === wkNow ? 'week-atual' : ''}${i === 6 ? ' q-divider' : ''}" title="${p.marco}">
-      <td style="text-align:left;white-space:nowrap;"><b>${p.periodo}</b>${idx === wkNow ? ' 📍' : ''} <span class="text-[10px]" style="color:var(--muted);">S${w.n}</span></td>
-      ${c(p.contas, 'font-semibold sep-l')}${c(p.marcadas)}${c(p.realOut)}
+    const ro = v(idx, 'realOut'), ra = v(idx, 'realAbm');
+    const preenchido = ro !== null || ra !== null;
+    const realTot = (ro || 0) + (ra || 0);
+    accMeta += p.total; if (preenchido) accReal += realTot;
+    const pctR = pct(accReal, PLANO_Q4_META);
+    return `<tr class="${idx === wkNow ? 'week-atual' : ''}" title="${p.marco}">
+      <td style="text-align:left;white-space:nowrap;"><b>${p.periodo}</b>${idx === wkNow ? ' 📍' : ''} <span class="text-[10px]" style="color:var(--muted);">S${w.n}</span>${p.marco ? `<div class="text-[10px]" style="color:var(--muted);white-space:normal;max-width:200px;">${p.marco}</div>` : ''}</td>
+      ${c(p.contasOut, 'font-semibold sep-l')}${c(p.agOut)}${inp(idx, 'agOut')}${c(p.realOut)}${inp(idx, 'realOut')}
+      ${c(p.contasAbm, 'sep-l')}${c(p.agAbm)}${inp(idx, 'agAbm')}${c(p.realAbm)}${inp(idx, 'realAbm')}
       ${c(p.vendas, 'sep-l font-semibold')}
-      ${c(p.convites, 'sep-l')}${c(p.inhire)}${c(p.jantarSP)}${c(p.jantarRecife)}${c(p.recrutar)}${c(p.abm)}${c(p.abmEventos)}
-      ${c(p.total, 'sep-l font-bold')}<td style="color:var(--text2);">${p.acum}</td><td>${barra(p.pct)}</td>
-      ${c(p.propostas, 'sep-l')}
+      ${c(p.total, 'sep-l font-bold')}<td class="font-bold">${preenchido ? realTot : ''}</td>
+      <td style="color:var(--text2);">${accMeta}</td><td class="font-semibold" style="color:var(--accent2);">${preenchido ? accReal : ''}</td><td>${preenchido ? barra(pctR) : ''}</td>
     </tr>`;
   }).join('');
-  // Totais oficiais da planilha (os valores semanais são arredondados de decimais; a soma das linhas pode dar 1 a mais).
-  const linha = (rotulo, t) => `<tr>
-    <td style="text-align:left;">${rotulo}</td>
-    <td class="sep-l">${t.contas}</td><td>${t.marcadas}</td><td>${t.realOut}</td>
-    <td class="sep-l">${t.vendas}</td>
-    <td class="sep-l">${t.convites}</td><td>${t.inhire}</td><td>${t.jantarSP}</td><td>${t.jantarRecife}</td><td>${t.recrutar}</td><td>${t.abm.toLocaleString('pt-BR', { minimumFractionDigits: 1 })}</td><td>${t.abmEventos}</td>
-    <td class="sep-l">${t.total}</td><td></td><td>${t.pct ? t.pct + '%' : ''}</td>
-    <td class="sep-l">${t.propostas.toLocaleString('pt-BR')}</td></tr>`;
-  document.getElementById('planoq4-tfoot').innerHTML =
-    linha('Total até 28/11 (S1-S7)', PLANO_Q4_TOTAIS.ate2811) + linha('Total Q4 (S1-S10)', PLANO_Q4_TOTAIS.q4);
+  const soma = k => PLANO_Q4.reduce((t, p) => t + (p[k] || 0), 0);
+  const somaReal = k => PLANO_Q4.reduce((t, p, i) => t + (v(PLANO_Q4_INICIO + i, k) || 0), 0);
+  document.getElementById('planoq4-tfoot').innerHTML = `<tr>
+    <td style="text-align:left;">Total Q4 (S14-S23)</td>
+    <td class="sep-l">${soma('contasOut')}</td><td>${soma('agOut')}</td><td>${somaReal('agOut')}</td><td>${soma('realOut')}</td><td>${somaReal('realOut')}</td>
+    <td class="sep-l">${soma('contasAbm')}</td><td>${soma('agAbm')}</td><td>${somaReal('agAbm')}</td><td>${soma('realAbm')}</td><td>${somaReal('realAbm')}</td>
+    <td class="sep-l">${soma('vendas')}</td>
+    <td class="sep-l">${soma('total')}</td><td>${somaReal('realOut') + somaReal('realAbm')}</td><td></td><td></td><td>${pct(somaReal('realOut') + somaReal('realAbm'), PLANO_Q4_META)}%</td></tr>`;
   // Resumo: realizado desde S14 x meta de 60, com marca da meta acumulada até a semana atual
   let real = 0, metaAteAgora = 0;
   PLANO_Q4.forEach((p, i) => {
@@ -1306,6 +1506,25 @@ function renderPlanoQ4() {
   document.getElementById('pq4-marca').style.left = Math.min(metaAteAgora / PLANO_Q4_META * 100, 100) + '%';
   document.getElementById('pq4-legenda').textContent =
     `Meta acumulada até a semana atual: ${metaAteAgora} (linha preta) · ${real >= metaAteAgora ? 'no ritmo' : 'faltam ' + (metaAteAgora - real) + ' para o ritmo'}`;
+}
+
+// Preenchimento do realizado no Plano Q4. As realizadas (outbound + ABM) viram as "reuniões realizadas" da semana
+// no resto do dashboard (Cascata Semanal, Meta Semanal, gráficos), para não precisar digitar duas vezes.
+function onQ4RealInput(idx, k, val) {
+  q4Real[idx] = q4Real[idx] || {};
+  q4Real[idx][k] = val === '' ? null : (parseInt(val) || 0);
+  saveJSON('rpov_q4_real', q4Real);
+  if (k === 'realOut' || k === 'realAbm') {
+    const r = q4Real[idx];
+    const vazio = (r.realOut === null || r.realOut === undefined) && (r.realAbm === null || r.realAbm === undefined);
+    reunioesChips[idx] = { realizadas: vazio ? 0 : (r.realOut || 0) + (r.realAbm || 0) };
+    saveJSON('rpov_reunioes_chips', reunioesChips);
+    if (typeof renderChipsGrid === 'function') renderChipsGrid();
+    if (typeof renderChartReunioesCascata === 'function') renderChartReunioesCascata();
+    if (typeof renderRVM === 'function') renderRVM();
+    updateMetasSummary();
+  }
+  renderMetaSemanal();
 }
 
 function renderMetaSemanal() {
@@ -1451,7 +1670,7 @@ function renderRVM() {
     return `<tr class="${w.qEnd ? 'q-divider ' : ''}${idx===wkNow ? 'week-atual' : ''}">
       <td class="font-semibold">S${w.n}${idx===wkNow ? ' 📍' : ''}</td>
       <td>${w.period}</td>
-      <td><input type="number" min="0" class="admin-only w-14" value="${ms.metaReunioes||''}" oninput="onMetaSemanalInput(${idx},'metaReunioes',this.value)" placeholder="0" /><span class="viewer-only">${ms.metaReunioes||0}</span></td>
+      <td title="Meta da Cascata (plano)">${w.reunMeta || 0}</td>
       <td><input type="number" min="0" class="admin-only w-14" value="${reunReal || ''}" oninput="onMetaSemanalReuniaoInput(${idx},this.value)" placeholder="0" title="Reuniões realizadas (sincroniza com Cascata Semanal)" /><span class="viewer-only font-bold">${reunReal}</span></td>
       <td id="rvm-ader-${idx}" class="text-[11px] font-bold"></td>
       <td id="rvm-racp-${idx}" style="color:var(--text2);"></td>
@@ -1476,7 +1695,7 @@ function updateRVMLive() {
   let accMetaReun = 0;
   WEEKS.forEach(w => {
     const idx = w.n-1;
-    const metaReun = metaSemanal[idx]?.metaReunioes || 0;
+    const metaReun = w.reunMeta || 0; // mesma meta da Cascata Semanal
     const reunReal = reunioesChips[idx]?.realizadas || 0;
     accMetaReun += metaReun;
     accReunReal += reunReal;
@@ -1492,7 +1711,7 @@ function updateRVMLive() {
     set('rvm-macr-'+idx, fmtBRL(accMrr));
     const macp = document.getElementById('rvm-macp-'+idx); if (macp) macp.textContent = fmtBRL(w.mrrMeta);
   });
-  const totMetaR = metaSemanal.reduce((s,m)=>s+(m.metaReunioes||0),0);
+  const totMetaR = WEEKS.reduce((s,w)=>s+(w.reunMeta||0),0);
   const totRealR = reunioesChips.reduce((s,c)=>s+(c.realizadas||0),0);
   const totVendas = vendasSemana.reduce((a,b)=>a+(b||0),0);
   const totVendasPlan = WEEKS.reduce((s,w)=>s+(w.vendasPlan||0),0);
@@ -2432,6 +2651,8 @@ async function publicarSnapshot() {
       meta_semanal: metaSemanal,
       vendas_semana: vendasSemana,
       clientes_fechados: clientesFechados,
+      churn_q4: churnQ4,
+      q4_real: q4Real,
       active_tab: localStorage.getItem('rpov_active_tab') || 'metas',
       snapshot_at: new Date().toISOString(),
     };
@@ -2963,6 +3184,8 @@ window.addEventListener('DOMContentLoaded', () => {
         if (Array.isArray(d.meta_semanal)) metaSemanal = d.meta_semanal;
         if (Array.isArray(d.vendas_semana)) vendasSemana = d.vendas_semana;
         if (Array.isArray(d.clientes_fechados)) clientesFechados = d.clientes_fechados;
+        if (Array.isArray(d.churn_q4)) churnQ4 = d.churn_q4;
+        if (d.q4_real && typeof d.q4_real === 'object') q4Real = d.q4_real;
         renderAll();
         switchTab(d.active_tab || 'metas');
         if (sessionStorage.getItem('rpov_base_key')) baseAbrirProtegida();
