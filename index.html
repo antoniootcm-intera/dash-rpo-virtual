@@ -507,6 +507,7 @@
           <option value="conarh">CONARH: conversamos e agendamos reunião</option>
           <option value="inhire">Convidada ao InHire Experience</option>
           <option value="inscrito">Tem inscrito no InHire Experience</option>
+          <option value="presente">🎟 Esteve no InHire Experience (presença no evento)</option>
           <option value="baseinhire-inscrito">⭐ Base InHire com inscrito no InHire Experience</option>
           <option value="baseinhire-sem-engaj">Base InHire sem nenhum engajamento</option>
           <option value="sem-engaj">Sem nenhum engajamento (qualquer origem)</option>
@@ -2494,6 +2495,7 @@ const BASE_ORIGENS = [
   { k: 'MKT',    label: 'MKT',        cls: 'badge-mkt',    tip: 'Leads de site e inbound' },
   { k: 'CONARH', label: 'CONARH',     cls: 'badge-conarh', tip: 'Conversamos no CONARH e agendamos reunião (não quer dizer que a reunião aconteceu)' },
   { k: 'INHIRE', label: 'InHire Experience', cls: 'badge-re',     tip: 'Convidada ao InHire Experience' },
+  { k: 'PRESENTE', label: '🎟 Esteve no InHire Experience', cls: 'badge-re', tip: 'Alguém da empresa esteve presente no evento InHire Experience' },
 ];
 const BASE_PAGINA = 300;
 let baseVisao = localStorage.getItem('rpov_base_visao') || 'empresas';
@@ -2725,6 +2727,7 @@ function baseEmpresaPassa(e) {
   if (f === 'conarh' && !e.marc.CONARH) return false;
   if (f === 'inhire' && !e.marc.INHIRE) return false;
   if (f === 'inscrito' && !e.inhire_inscritos.length) return false;
+  if (f === 'presente' && !(e.inhire_presentes || []).length) return false;
   if (f === 'baseinhire-inscrito' && !(e.base_inhire && e.inhire_inscritos.length)) return false;
   if (f === 'baseinhire-sem-engaj' && !(e.base_inhire && !baseTemEngajamento(e))) return false;
   if (f === 'sem-engaj' && baseTemEngajamento(e)) return false;
@@ -2764,7 +2767,7 @@ function baseAtualizarKpis() {
       <div class="font-brand font-extrabold text-2xl">${RPOV_BASE.contatos.filter(c => c.origem === 'Base InHire').length}</div>
       <div class="text-xs" style="color:var(--muted);">contatos importados · ${n(e => e.base_inhire && e.inhire_inscritos.length)} empresas com ⭐ inscrito</div></div>` +
     kpi('CONARH', n(e => e.marc.CONARH), 'conversamos no evento e agendamos reunião (não quer dizer que aconteceu)') +
-    kpi('InHire Experience', n(e => e.marc.INHIRE), `${n(e => e.inhire_inscritos.length)} com inscrito`);
+    kpi('InHire Experience', n(e => e.marc.INHIRE), `${n(e => e.inhire_inscritos.length)} com inscrito · ${n(e => (e.inhire_presentes || []).length)} estiveram no evento`);
 }
 
 function baseDesenharTabela() {
@@ -2795,7 +2798,7 @@ function baseDesenharTabela() {
     thead.innerHTML = `<tr><th ${L}>Nome</th><th ${L}>Cargo</th><th ${L}>Empresa</th><th>Tier</th><th ${L}>E-mail</th><th ${L}>Telefone</th><th ${L}>Origem</th><th ${L}>Sequência</th><th>Card</th><th>InHire Experience</th></tr>`;
     tbody.innerHTML = vis.map(c => {
       const e = baseEmpByKey[c.k];
-      const inh = c.inhire_inscrito ? '<span class="badge" style="background:var(--mustard);color:#000;">⭐ inscrito</span>' : (c.inhire_convidado ? '<span class="badge badge-nd">convidado</span>' : '');
+      const inh = c.inhire_presente ? '<span class="badge" style="background:var(--mustard);color:#000;">🎟 esteve no evento</span>' : (c.inhire_inscrito ? '<span class="badge" style="background:var(--mustard);color:#000;">⭐ inscrito</span>' : (c.inhire_convidado ? '<span class="badge badge-nd">convidado</span>' : ''));
       return `<tr style="cursor:pointer;${c.inhire_inscrito ? 'background:#FFF6D6;' : ''}" onclick="baseAbrirCard('${baseEsc(c.k)}')">
         <td ${L}><b>${baseEsc(c.nome)}</b></td><td ${L} class="text-xs">${baseEsc(c.cargo)}</td>
         <td ${L}>${baseEsc(e.nome)}</td><td>${baseTierBadge(baseTier(e))}</td>
@@ -2831,6 +2834,7 @@ function baseAbrirCard(k) {
     ponto(e.marc.CONARH, 'CONARH: conversamos no evento e agendamos reunião', 'Se a reunião aconteceu, veja "Reunião (funil RPO Virtual)" acima') +
     ponto(e.marc.INHIRE, 'Convidada ao InHire Experience', e.inhire_inscritos.length
       ? 'Inscritos: ' + e.inhire_inscritos.map(i => baseEsc(i.nome) + (i.mesma_pessoa ? ' (contato nosso)' : '')).join(', ') : 'Ninguém da empresa se inscreveu') +
+    ponto((e.inhire_presentes || []).length, 'Esteve no InHire Experience (presença no evento)', (e.inhire_presentes || []).map(i => baseEsc(i.nome) + (i.contato_nosso ? '' : ' (não está nos contatos da base)')).join(', ')) +
     ponto(e.sequencias.length, 'Sequências de e-mail', e.sequencias.map(baseEsc).join(', ')) +
     ponto(e.marc.CG, 'Cliente do grupo (CG)', '') +
     ponto(e.marc.MKT, 'Lead de marketing (site ou inbound)', '');
@@ -2883,7 +2887,7 @@ function baseAbrirCard(k) {
       ${cts.map(c => `<tr><td style="text-align:left;"><b>${baseEsc(c.nome)}</b>${c.cards.length ? ' <span class="badge badge-nd" title="Ligado a um card">card</span>' : ''}</td>
         <td style="text-align:left;" class="text-xs">${baseEsc(c.cargo)}</td><td style="text-align:left;" class="text-xs">${baseEsc(c.email)}</td>
         <td style="text-align:left;" class="text-xs">${baseEsc(c.tel)}</td><td style="text-align:left;" class="text-xs" title="${baseEsc(c.origem)}">${baseEsc(baseOrigemCurta(c.origem))}</td><td style="text-align:left;" class="text-xs">${baseEsc(c.seq)}${c.seq_data ? ' · ' + dt(c.seq_data) : ''}</td>
-        <td>${c.inhire_inscrito ? '<span class="badge badge-re">inscrito</span>' : (c.inhire_convidado ? '<span class="badge badge-nd">convidado</span>' : '')}</td></tr>`).join('')
+        <td>${c.inhire_presente ? '<span class="badge badge-re">🎟 esteve no evento</span>' : (c.inhire_inscrito ? '<span class="badge badge-re">inscrito</span>' : (c.inhire_convidado ? '<span class="badge badge-nd">convidado</span>' : ''))}</td></tr>`).join('')
         || '<tr><td colspan="7" style="color:var(--muted);">Nenhum contato associado no HubSpot.</td></tr>'}
     </tbody></table></div>`;
   document.getElementById('base-modal').style.display = 'flex';
@@ -2904,14 +2908,14 @@ function baseExportarCSV() {
   const X = b => b ? 'X' : '';
   let linhas;
   if (baseVisao === 'empresas') {
-    linhas = [['Empresa','Tier','Motivo do tier','Origem','Engaj.: OUT','Engaj.: CG','Engaj.: MKT','Engaj.: CONARH','Engaj.: InHire Experience','Etapa pré-vendas','Reunião','Etapa RPO Virtual','Sequências','Inscritos InHire Experience','Nº contatos','Site','LinkedIn','Página de carreiras']]
+    linhas = [['Empresa','Tier','Motivo do tier','Origem','Engaj.: OUT','Engaj.: CG','Engaj.: MKT','Engaj.: CONARH','Engaj.: InHire Experience','Etapa pré-vendas','Reunião','Etapa RPO Virtual','Sequências','Inscritos InHire Experience','Estiveram no InHire Experience','Nº contatos','Site','LinkedIn','Página de carreiras']]
       .concat(rows.map(e => [e.nome, baseTier(e), baseTierMotivo(e), (e.origens_registro || []).map(o => `${o.nome} (${o.n})`).join('; '), X(e.marc.OUT), X(e.marc.CG), X(e.marc.MKT), X(e.marc.CONARH), X(e.marc.INHIRE),
         e.prevendas.map(c => c.etapa).join(' / '), e.reuniao || '', e.rpo.map(c => c.etapa).join(' / '), e.sequencias.join(', '),
-        e.inhire_inscritos.map(i => i.nome).join(', '), e.n_contatos, ...(l => [l.site, l.linkedin, l.carreiras.map(c => c.url).join(' | ')])(baseLinks(e))]));
+        e.inhire_inscritos.map(i => i.nome).join(', '), (e.inhire_presentes || []).map(i => i.nome).join(', '), e.n_contatos, ...(l => [l.site, l.linkedin, l.carreiras.map(c => c.url).join(' | ')])(baseLinks(e))]));
   } else {
-    linhas = [['Empresa','Tier','Nome','Cargo','E-mail','Telefone','Origem','Engaj.: OUT','Engaj.: CG','Engaj.: MKT','Engaj.: CONARH','Engaj.: InHire Experience','Sequência','Ligado a card','Inscrito InHire Experience']]
+    linhas = [['Empresa','Tier','Nome','Cargo','E-mail','Telefone','Origem','Engaj.: OUT','Engaj.: CG','Engaj.: MKT','Engaj.: CONARH','Engaj.: InHire Experience','Sequência','Ligado a card','Inscrito InHire Experience','Esteve no InHire Experience']]
       .concat(rows.map(c => { const e = baseEmpByKey[c.k]; return [e.nome, baseTier(e), c.nome, c.cargo, c.email, c.tel, c.origem || '', X(e.marc.OUT), X(e.marc.CG), X(e.marc.MKT),
-        X(e.marc.CONARH), X(e.marc.INHIRE), c.seq || '', X(c.cards.length), X(c.inhire_inscrito)]; }));
+        X(e.marc.CONARH), X(e.marc.INHIRE), c.seq || '', X(c.cards.length), X(c.inhire_inscrito), X(c.inhire_presente)]; }));
   }
   const blob = new Blob(['﻿' + linhas.map(l => l.map(q).join(';')).join('\n')], { type: 'text/csv;charset=utf-8' });
   const a = document.createElement('a');
