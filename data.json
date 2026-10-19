@@ -40,7 +40,7 @@
       "mrrFechado": 0
     },
     {
-      "mrrFechado": 0
+      "mrrFechado": 30000
     },
     {
       "mrrFechado": 0
@@ -939,7 +939,7 @@
   "hs_last_updated": "13/10/2026, 16:10:30",
   "mrr_overrides": {
     "total": {
-      "value": 51000,
+      "value": 91000,
       "locked": true
     },
     "q3": {
@@ -7269,7 +7269,7 @@
     {
       "metaAbordagens": 0,
       "metaReunioes": 8,
-      "abordagensOverride": null
+      "abordagensOverride": 372
     },
     {
       "metaAbordagens": 65,
@@ -7377,8 +7377,13 @@
       "nome": "Pernambucanas",
       "valor": 10000,
       "link": ""
+    },
+    {
+      "nome": "Renner UpSell",
+      "valor": 30000,
+      "link": ""
     }
   ],
-  "active_tab": "base",
-  "snapshot_at": "2026-10-14T12:37:58.786Z"
+  "active_tab": "metas",
+  "snapshot_at": "2026-10-19T13:05:28.497Z"
 }
