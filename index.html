@@ -345,14 +345,14 @@
         <thead>
           <tr class="pq4-grupo">
             <th rowspan="2" style="text-align:left;">Período</th>
-            <th colspan="5" class="g-out">Prospecção outbound</th>
-            <th colspan="5" class="g-evt">ABM</th>
+            <th colspan="5" class="g-out">Prospecção outbound (Tier 2)</th>
+            <th colspan="5" class="g-evt">ABM + eventos (Tier 1)</th>
             <th rowspan="2" class="g-venda">Meta<br>vendas</th>
             <th colspan="5" class="g-res">Resultado (reuniões realizadas)</th>
           </tr>
           <tr>
-            <th class="g-out">Meta contas<br>novas</th><th class="g-out">Meta<br>agendadas</th><th class="g-out real">Agendadas</th><th class="g-out">Meta<br>realizadas</th><th class="g-out real">Realizadas</th>
-            <th class="g-evt">Meta contas<br>novas</th><th class="g-evt">Meta<br>agendadas</th><th class="g-evt real">Agendadas</th><th class="g-evt">Meta<br>realizadas</th><th class="g-evt real">Realizadas</th>
+            <th class="g-out">Meta contas<br>novas Tier 2</th><th class="g-out">Meta<br>agendadas</th><th class="g-out real">Agendadas</th><th class="g-out">Meta<br>realizadas</th><th class="g-out real">Realizadas</th>
+            <th class="g-evt">Meta contas<br>novas Tier 1</th><th class="g-evt">Meta<br>agendadas</th><th class="g-evt real">Agendadas</th><th class="g-evt">Meta<br>realizadas</th><th class="g-evt real">Realizadas</th>
             <th class="g-res">Meta<br>total</th><th class="g-res">Realizadas<br>total</th><th class="g-res">Meta<br>acumulada</th><th class="g-res">Realizado<br>acumulado</th><th class="g-res" style="min-width:110px;">% da meta de 60</th>
           </tr>
         </thead>
@@ -380,7 +380,7 @@
 
   <div class="card p-5 overflow-x-auto">
     <h3 class="text-sm font-bold mb-1" style="color:var(--black);">Reuniões, Vendas & MRR por Semana — Plano x Realizado</h3>
-    <p class="text-xs mb-3" style="color:var(--text2);">Meta e realizado por semana, com acumulado <b>planejado</b> (do plano) e <b>realizado</b> (soma corrente). Reuniões realizadas, vendas e MRR fechado são editáveis à mão.</p>
+    <p class="text-xs mb-3" style="color:var(--text2);">Meta e realizado por semana, com acumulado <b>planejado</b> (do plano) e <b>realizado</b> (soma corrente). Reuniões realizadas, vendas e o MRR novo fechado na semana são editáveis à mão. O MRR total fica na tabela mês a mês, logo abaixo.</p>
     <table>
       <thead>
         <tr>
@@ -389,11 +389,20 @@
           <th>Reun. Acum.<br>Planejado</th><th>Reun. Acum.<br>Realizado</th>
           <th>Vendas<br>Planejado</th><th>Vendas<br>Realizadas</th>
           <th>Vendas Acum.<br>Planejado</th><th>Vendas Acum.<br>Realizado</th>
-          <th>MRR fechado<br>(semana)</th><th>MRR Acum.<br>Planejado</th><th>MRR Acum.<br>Realizado</th>
+          <th>MRR novo fechado<br>(semana)</th>
         </tr>
       </thead>
       <tbody id="rvm-tbody"></tbody>
       <tfoot id="rvm-tfoot"></tfoot>
+    </table>
+  </div>
+
+  <div class="card p-5 overflow-x-auto">
+    <h3 class="text-sm font-bold mb-1" style="color:var(--black);">MRR mês a mês — fotografia x meta</h3>
+    <p class="text-xs mb-3" style="color:var(--text2);">O que cada cliente paga em cada mês, pela tabela Clientes Fechados (aba Metas Gerais), já com mensalidade variável como a do Renner UpSell. Meses à frente mostram o que já está contratado.</p>
+    <table>
+      <thead><tr><th style="text-align:left;">Mês</th><th>MRR do mês</th><th>Meta do mês</th><th>% da meta do mês</th><th>% dos 180k</th><th style="text-align:left;">Clientes pagando no mês</th></tr></thead>
+      <tbody id="mrr-mes-tbody"></tbody>
     </table>
   </div>
 
@@ -711,16 +720,16 @@ const Q4_PRIMEIRA_SEMANA_IDX = 11; // S12 (28/09) abre o Q4 no calendário de se
 const PLANO_Q4_META = 60;
 // Cascata do Q4 (replanejada em 19/10/2026). S1 = S14 do semestre (12/10). Meta de reuniões = realizadas outbound + ABM.
 const PLANO_Q4 = [
-  { periodo:'12-16/10',   marco:'InHire Experience (15/10)',               contasOut:65, contasAbm:0,  agOut:0, agAbm:0,  realOut:0, realAbm:0,  vendas:0 },
-  { periodo:'19-23/10',   marco:'Leads InHire Exp',                        contasOut:65, contasAbm:20, agOut:3, agAbm:2,  realOut:2, realAbm:1,  vendas:0 },
-  { periodo:'26-30/10',   marco:'Leads InHire Exp',                        contasOut:65, contasAbm:20, agOut:4, agAbm:2,  realOut:3, realAbm:1,  vendas:0 },
-  { periodo:'2-6/11',     marco:'Recrutar no Varejo SP (qui 5/11)',        contasOut:65, contasAbm:20, agOut:5, agAbm:15, realOut:4, realAbm:1,  vendas:0 },
-  { periodo:'9-13/11',    marco:'ABM + Leads outros eventos',              contasOut:25, contasAbm:20, agOut:6, agAbm:4,  realOut:4, realAbm:10, vendas:1 },
-  { periodo:'16-20/11',   marco:'ABM + Outro evento dia 18/11 ou 26/11?',  contasOut:0,  contasAbm:10, agOut:6, agAbm:7,  realOut:5, realAbm:5,  vendas:1 },
-  { periodo:'23-27/11',   marco:'ABM + Leads outros eventos',              contasOut:0,  contasAbm:0,  agOut:6, agAbm:3,  realOut:5, realAbm:6,  vendas:1 },
-  { periodo:'30/11-4/12', marco:'ABM + Leads outros eventos',              contasOut:0,  contasAbm:0,  agOut:6, agAbm:3,  realOut:5, realAbm:3,  vendas:1 },
-  { periodo:'7-11/12',    marco:'',                                        contasOut:0,  contasAbm:0,  agOut:0, agAbm:0,  realOut:2, realAbm:3,  vendas:1 },
-  { periodo:'14-18/12',   marco:'',                                        contasOut:0,  contasAbm:0,  agOut:0, agAbm:0,  realOut:0, realAbm:0,  vendas:0 },
+  { periodo:'12-16/10',   marco:'InHire Experience (15/10)',         contasOut:65, contasAbm:0,  agOut:0, agAbm:0,  realOut:0, realAbm:0,  vendas:0 },
+  { periodo:'19-23/10',   marco:'Leads InHire Exp',                  contasOut:65, contasAbm:20, agOut:3, agAbm:1,  realOut:2, realAbm:1,  vendas:0 },
+  { periodo:'26-30/10',   marco:'Leads InHire Exp',                  contasOut:65, contasAbm:20, agOut:4, agAbm:2,  realOut:3, realAbm:1,  vendas:0 },
+  { periodo:'2-6/11',     marco:'Recrutar no Varejo SP (qui 5/11)',  contasOut:65, contasAbm:20, agOut:5, agAbm:15, realOut:4, realAbm:1,  vendas:1 },
+  { periodo:'9-13/11',    marco:'ABM + Leads outros eventos',        contasOut:25, contasAbm:20, agOut:6, agAbm:4,  realOut:4, realAbm:10, vendas:1 },
+  { periodo:'16-20/11',   marco:'ABM + Leads outros eventos',        contasOut:0,  contasAbm:10, agOut:6, agAbm:4,  realOut:5, realAbm:5,  vendas:1 },
+  { periodo:'23-27/11',   marco:'ABM + Evento 26/11 (pipe)',         contasOut:0,  contasAbm:0,  agOut:6, agAbm:7,  realOut:5, realAbm:6,  vendas:1 },
+  { periodo:'30/11-4/12', marco:'ABM + Leads outros eventos',        contasOut:0,  contasAbm:0,  agOut:6, agAbm:3,  realOut:5, realAbm:3,  vendas:2 },
+  { periodo:'7-11/12',    marco:'',                                  contasOut:0,  contasAbm:0,  agOut:0, agAbm:0,  realOut:2, realAbm:3,  vendas:1 },
+  { periodo:'14-18/12',   marco:'',                                  contasOut:0,  contasAbm:0,  agOut:0, agAbm:0,  realOut:0, realAbm:0,  vendas:0 },
 ];
 let _accPq4 = 0;
 PLANO_Q4.forEach(p => { p.total = p.realOut + p.realAbm; _accPq4 += p.total; p.acum = _accPq4; p.pct = Math.round(p.acum / PLANO_Q4_META * 100); });
@@ -1035,6 +1044,7 @@ function updateMetasSummary() {
   });
 
   renderKrsQ4();
+  if (typeof renderMrrMensalTabela === 'function') renderMrrMensalTabela();
 
   renderChartMrrTotal();
   renderChartMrrQ(Q3_WEEKS, 60000, 'chart-mrr-q3', 'mrrQ3');
@@ -1658,6 +1668,28 @@ function updateMetaSemanalTotals() {
   renderChartContatos();
 }
 
+// ─── MRR mês a mês (fotografia), na aba Meta Semanal ───
+function renderMrrMensalTabela() {
+  const tb = document.getElementById('mrr-mes-tbody');
+  if (!tb) return;
+  const atual = mesIdx(mesAtual());
+  const cor = a => a >= 100 ? 'var(--teal)' : (a >= 60 ? 'var(--mustard)' : 'var(--danger)');
+  tb.innerHTML = MESES_MRR.map(m => {
+    const v = mrrNoMes(m), meta = metaNoMes(m), futuro = mesIdx(m) > atual;
+    const quem = clientesFechados.map(c => ({ nome: c.nome, v: mrrClienteNoMes(c, m) })).filter(x => x.v > 0)
+      .map(x => `${escapeHtml(x.nome)} ${fmtBRL(x.v).replace(',00', '')}`).join(' · ');
+    const pm = pct(v, meta);
+    return `<tr class="${mesIdx(m) === atual ? 'week-atual' : ''}">
+      <td style="text-align:left;" class="font-semibold">${mesLabel(m)}${mesIdx(m) === atual ? ' 📍' : ''}${futuro ? ' <span class="text-[10px]" style="color:var(--muted);">já contratado</span>' : ''}</td>
+      <td class="font-bold" style="color:var(--accent2);">${fmtBRL(v)}</td>
+      <td style="color:var(--text2);">${fmtBRL(meta)}</td>
+      <td class="font-bold" style="color:${meta ? cor(pm) : 'var(--muted)'};">${meta ? pm + '%' : '—'}</td>
+      <td>${pct(v, 180000)}%</td>
+      <td style="text-align:left;" class="text-xs">${quem || '<span style="color:var(--muted);">—</span>'}</td>
+    </tr>`;
+  }).join('');
+}
+
 // ─── Tabela Reuniões, Vendas & MRR por Semana ───
 function renderRVM() {
   const tbody = document.getElementById('rvm-tbody');
@@ -1680,8 +1712,6 @@ function renderRVM() {
       <td style="color:var(--text2);">${w.vendasAcumPlan||0}</td>
       <td id="rvm-av-${idx}" class="font-semibold" style="color:var(--accent2);"></td>
       <td><input type="number" step="0.01" min="0" class="admin-only w-24" value="${cascataRows[idx]?.mrrFechado || ''}" oninput="onRvmMrrInput(${idx},this.value)" placeholder="0" title="MRR fechado na semana (sincroniza com Cascata Semanal)" /><span class="viewer-only">${fmtBRL(cascataRows[idx]?.mrrFechado||0)}</span></td>
-      <td id="rvm-macp-${idx}" style="color:var(--text2);">${fmtBRL(w.mrrMeta)}</td>
-      <td id="rvm-macr-${idx}" class="font-semibold" style="color:var(--accent2);"></td>
     </tr>`;
   }).join('');
   updateRVMLive();
@@ -1691,7 +1721,7 @@ function renderRVM() {
 function updateRVMLive() {
   if (!document.getElementById('rvm-tbody')) return;
   const cor = a => a>=100?'var(--teal)':(a>=60?'var(--mustard)':'var(--danger)');
-  let accReunReal = 0, accVendas = 0, accMrr = 0;
+  let accReunReal = 0, accVendas = 0;
   let accMetaReun = 0;
   WEEKS.forEach(w => {
     const idx = w.n-1;
@@ -1700,7 +1730,6 @@ function updateRVMLive() {
     accMetaReun += metaReun;
     accReunReal += reunReal;
     accVendas += (vendasSemana[idx] || 0);
-    accMrr += (cascataRows[idx]?.mrrFechado || 0);
     const set = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
     const adher = pct(reunReal, metaReun);
     const ea = document.getElementById('rvm-ader-'+idx);
@@ -1708,8 +1737,6 @@ function updateRVMLive() {
     set('rvm-racp-'+idx, accMetaReun);
     set('rvm-racr-'+idx, accReunReal);
     set('rvm-av-'+idx, accVendas);
-    set('rvm-macr-'+idx, fmtBRL(accMrr));
-    const macp = document.getElementById('rvm-macp-'+idx); if (macp) macp.textContent = fmtBRL(w.mrrMeta);
   });
   const totMetaR = WEEKS.reduce((s,w)=>s+(w.reunMeta||0),0);
   const totRealR = reunioesChips.reduce((s,c)=>s+(c.realizadas||0),0);
@@ -1723,8 +1750,9 @@ function updateRVMLive() {
     <td>${accMetaReun}</td><td>${totRealR}</td>
     <td>${totVendasPlan}</td><td>${totVendas}</td>
     <td>${totVendasPlan}</td><td>${totVendas}</td>
-    <td>${fmtBRL(totMrr)}</td><td>${fmtBRL(180000)}</td><td>${fmtBRL(totMrr)}</td>
+    <td>${fmtBRL(totMrr)}</td>
   </tr>`;
+  renderMrrMensalTabela();
   renderPlanoQ4(); // tabela só de leitura: pode redesenhar a cada digitação sem perder foco
 }
 
