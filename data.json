@@ -114,7 +114,7 @@
       "realizadas": 0
     },
     {
-      "realizadas": 1
+      "realizadas": 2
     },
     {
       "realizadas": 0
@@ -7474,10 +7474,10 @@
   "churn_q4": [],
   "q4_real": {
     "14": {
-      "agOut": 2,
-      "realOut": 1
+      "agOut": 6,
+      "realOut": 2
     }
   },
   "active_tab": "metasemanal",
-  "snapshot_at": "2026-10-19T19:40:29.764Z"
+  "snapshot_at": "2026-10-21T18:33:04.812Z"
 }
