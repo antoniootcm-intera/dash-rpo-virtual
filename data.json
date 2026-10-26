@@ -114,10 +114,10 @@
       "realizadas": 0
     },
     {
-      "realizadas": 2
+      "realizadas": 6
     },
     {
-      "realizadas": 0
+      "realizadas": 1
     },
     {
       "realizadas": 0
@@ -939,20 +939,88 @@
       "id": "66137869394",
       "name": "FISIA (Nike) | OUT",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554093",
       "created": "2026-10-19",
-      "notes": []
+      "notes": [
+        {
+          "body": "Reunião RPO Virtual realizada em 19/10/2026 com Fernanda Strutz (Talent Acquisition Coordinator). Paula Morais (InHire) presente.Gravação tl;dv: https://tldv.io/app/meetings/6ad65a81cbbbea0013dff482Contexto53 lojas próprias (sem franquias), time de recrutamento de 4 pessoas.Cerca de 70 vagas de reposição por mês; pico de cerca de 600 posições entre Black Friday e Natal, hoje atendido por 3 consultorias de temporários.Cerca de 10 inaugurações previstas para o ano que vem, com cerca de 25 posições cada, incluindo liderança.Subgerente e consultor de vendas são as vagas mais difíceis; Espírito Santo demora mais.Avaliam centralizar ou descentralizar o recrutamento das lojas.A INTERA já é homologada no Grupo SBF, o que facilita a contratação.InteresseFernanda considera testar a INTERA nas inaugurações do início do ano, começando em dezembro. Aguarda proposta formal para decidir.Próximos passosAntônio parametriza a entrevistadora com um descritivo de vaga para Fernanda testar como candidata (entrevista-teste de 40 minutos, com mais uma pessoa do time dela).Antônio formaliza a conversa por e-mail e envia a proposta.Paula envia material sobre centralização ou descentralização de lojas para o jantar de 5/11.",
+          "timestamp": "2026-10-19T18:00:00Z",
+          "author": ""
+        }
+      ]
     },
     {
       "id": "66137683724",
       "name": "Bemol | OUT",
       "amount": 0,
-      "stageId": "1397554092",
+      "stageId": "1397554093",
       "created": "2026-10-19",
-      "notes": []
+      "notes": [
+        {
+          "body": "Reunião RPO Virtual realizada em 22/10/2026 com Camila Camurça (People & Culture Manager) e Erika Rangel (Supervisora de R&S). Paula Morais (InHire) presente.Gravação tl;dv: https://tldv.io/app/meetings/6ada16c303e7ff0013a52847Contexto4 hipermercados, lojas e CDs no Amazonas, Rondônia, Acre e Roraima.Maior volume em carga e descarga no CD. Volume normal de 70 a 80 vagas; desafio de fechar 500 vagas em 3 meses para a Black Friday.SLA atual das vagas operacionais: cerca de 20 dias.Muitos candidatos estrangeiros sem acesso à internet entregam currículo presencialmente.Sazonais via terceirização (o jurídico não libera temporário direto); reavaliação prevista para janeiro.DoresContratações com perfil inadequado (falha na validação de CPF), integrações com feedback ruim, saídas em menos de 30 dias.Gestores antigos resistem à recepção de novatos, o que afeta a retenção.ObjeçõesSem orçamento previsto para o restante do ano.Não há teste gratuito; propusemos teste pago de 3 meses, com parcelas parcialmente em 2027.Próximos passosAntônio envia a proposta personalizada e o material do evento de 5/11 (Recrutar no Varejo).Camila conversa com Cleiton sobre a possibilidade de orçamento.",
+          "timestamp": "2026-10-22T14:00:00Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "66613042509",
+      "name": "Grupo Pereira | OUT",
+      "amount": 0,
+      "stageId": "1397554093",
+      "created": "2026-10-23",
+      "notes": [
+        {
+          "body": "Reunião RPO Virtual realizada em 23/10/2026 com Kamila Maciel. Paula Morais (InHire) presente.Gravação tl;dv: https://tldv.io/app/meetings/6adb5a3ac5b5fb00132e659cReunião anterior (20/10, Grupo Pereira <> INTERA, com Ariany): https://tldv.io/app/meetings/6ad765db0284ba0013d98bceContextoRecrutamento de vagas de base centralizado, com decisões estratégicas na matriz.Cerca de 3.000 posições abertas no país, incluindo novas vagas ligadas ao Carrefour.Agências locais só para vagas pontuais de difícil preenchimento.Proposta apresentadaAté 80 vagas trabalhadas por mês por RPO Virtual, em localidades definidas pelo cliente; R$ 26 mil, cerca de R$ 325 por vaga.Até 3 finalistas por vaga, sem custo extra por contratação.ObjeçõesResistência interna à automação, pelo público 50+ com pouca familiaridade com tecnologia.Terceirização anterior de vagas de agente de viagem não deu certo com consultoria.O período mínimo de 3 meses não se justifica pelo volume atual; Kamila sugeriu um pacote inicial com as vagas existentes.RPO tradicional não é aderente. Kamila quer mapear o mercado antes de avançar.Próximos passosAntônio envia o material de apresentação e a proposta comercial por e-mail e formaliza o follow-up.Sugestão: teste controlado em uma região ou em vagas com dificuldade; comparar com o custo de agências (cerca de 100% do primeiro salário).",
+          "timestamp": "2026-10-23T13:00:00Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "66643953528",
+      "name": "Polishop | OUT",
+      "amount": 0,
+      "stageId": "1397554093",
+      "created": "2026-10-23",
+      "notes": [
+        {
+          "body": "Reunião RPO Virtual realizada em 23/10/2026 com Sheila Oliveira de Souza (Analista de R&S) e Evilin Souza (Especialista em R&S). Paula Morais (InHire) presente.Gravação tl;dv: https://tldv.io/app/meetings/6adb68509ec8530013f0b3edContexto80 lojas próprias, meta de 90 até dezembro, com inaugurações semanais.Time de recrutamento com 2 analistas, sobrecarregado.Média de 40 vagas por mês: cerca de 20 de substituição e o restante de inauguração.SLA médio de vendedor: 15 dias, com necessidade de fechar antes do dia 20.Perfil: 6 meses de experiência, ensino médio completo e histórico estável no varejo.DecisãoAvaliam outras consultorias; decisão após reunião interna na próxima semana.Próximos passosAntônio cria a vaga de teste na entrevistadora a partir do descritivo da Sheila; Sheila testa na terça às 10h.Antônio envia proposta personalizada por e-mail com cenários de 10 inaugurações até segunda-feira.Antônio envia o convite do evento de 5/11; Sheila verifica a participação com a coordenadora.",
+          "timestamp": "2026-10-23T14:00:00Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "66591046235",
+      "name": "Portal Nova | OUT",
+      "amount": 0,
+      "stageId": "1397554093",
+      "created": "2026-10-23",
+      "notes": [
+        {
+          "body": "Reunião RPO Virtual realizada em 21/10/2026 com Deusa Paisani e Isabel Alves.Gravação tl;dv: https://tldv.io/app/meetings/6ad8c55325221200135fed8bContextoA Portal é franqueada da Help e há mais de um ano não consegue atrair candidatos para vendas.Cerca de 30 vagas abertas, com alto volume de aberturas semanais. Consultor de vendas ganha entre R$ 2.100 e R$ 3.000.Já testaram várias plataformas, incluindo a Diga Aí, com frustração. Piloto com a Íris: 20 inscritos, 6 aderentes e só uma resposta.Não têm banco de currículos próprio.Proposta apresentadaAté 15 vagas simultâneas por mês (vagas da mesma região com várias posições contam como uma).Mensalidade fixa, sem taxa por contratação; consultorias costumam cobrar 100% do primeiro salário.PendênciasOrçamento não definido, depende da diretoria. Aguardam a proposta para avaliar o retorno.Pediram contato de um cliente do serviço para referência.Próximos passosAntônio formaliza a proposta e busca um cliente de referência.Deusa compartilha a proposta com a coordenadora e vai se organizar para o evento de 5/11.",
+          "timestamp": "2026-10-21T14:00:00Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "66646268814",
+      "name": "Grupo Hirota | OUT",
+      "amount": 0,
+      "stageId": "1397554093",
+      "created": "2026-10-23",
+      "notes": [
+        {
+          "body": "Reunião RPO Virtual realizada em 22/10/2026 com Cristiane Silva. Paula Morais (InHire) presente. A conversa veio da resposta da Marcia Maria Ferreira (Analista de RH) à sequência Tier 2.Gravação tl;dv: https://tldv.io/app/meetings/6ad9faab9304370013d472a4ContextoMais de 200 lojas, a maioria na capital paulista. Nova loja na Raposo Tavares (Osasco) com 40 vagas para a inauguração.Preenchem de 100 a 150 vagas por mês, com contratações acima das demissões. Turnover entre 47% e 48%.Recrutamento operacional com 2 analistas e 3 pessoas na documentação. Admissões diárias, em 3 a 4 dias.A equipe da Cristiane cuida de treinamento, desenvolvimento, eventos e estratégia de funcionários.Contratações centralizadas no RH; gestores de loja têm período de experiência de 90 dias. Cultura conservadora e cristã, que prioriza valores sobre experiência técnica.DoresAtração é o maior desafio, seguida da retenção. Muitos candidatos preferem trabalho informal.Açougue e peixaria com 4 vagas abertas cada, equipes desfalcadas.Mutirões atraem pouca gente. Divulgação por cartazes, redes pessoais, grupos e Instagram.A ferramenta atual de recrutamento não atende mais; a migração está em planejamento.Teste anterior com agência em 10 vagas não gerou nenhuma contratação.Proposta apresentadaAté 80 vagas simultâneas por mês: R$ 20 mil sem impulsionamento ou R$ 26 mil com impulsionamento (cerca de R$ 325 por vaga).Projeto de 3 meses com 240 vagas: R$ 78 mil com impulsionamento. Vagas não fechadas no mês não acumulam.Valor fixo, sem cobrança por contratação. Sugerimos um double check do RH para alinhar com os gestores de loja.Próximos passosAntônio envia a apresentação do RPO Virtual e as informações do evento de 5/11; Cristiane reserva a agenda.Antônio parametriza a vaga escolhida na entrevistadora virtual.Reunião de 30 minutos em 28/10 às 16h para Cristiane testar a entrevistadora, com a recrutadora dela.",
+          "timestamp": "2026-10-22T12:00:00Z",
+          "author": ""
+        }
+      ]
     }
   ],
-  "hs_last_updated": "19/10/2026, 10:28:37",
+  "hs_last_updated": "23/10/2026, 14:28:07",
   "mrr_overrides": {
     "total": {
       "value": 93000,
@@ -1101,6 +1169,9 @@
       "canal": "OUT"
     },
     "66137683724": {
+      "canal": "OUT"
+    },
+    "63666627638": {
       "canal": "OUT"
     }
   },
@@ -7200,7 +7271,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "19/10/2026, 15:15:58",
+  "hs_last_updated2": "22/10/2026, 17:04:28",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -7475,9 +7546,15 @@
   "q4_real": {
     "14": {
       "agOut": 6,
-      "realOut": 2
+      "realOut": 6,
+      "agAbm": 1,
+      "realAbm": 0
+    },
+    "15": {
+      "realOut": 0,
+      "realAbm": 1
     }
   },
   "active_tab": "metasemanal",
-  "snapshot_at": "2026-10-21T18:33:04.812Z"
+  "snapshot_at": "2026-10-26T20:12:20.706Z"
 }
