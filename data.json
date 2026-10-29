@@ -117,7 +117,7 @@
       "realizadas": 6
     },
     {
-      "realizadas": 1
+      "realizadas": 4
     },
     {
       "realizadas": 0
@@ -6989,7 +6989,7 @@
       "id": "65580238732",
       "name": "Grupo Itavema ",
       "amount": 0,
-      "stageId": "1399081987",
+      "stageId": "1399081991",
       "created": "2026-10-02",
       "dEntries": {
         "1": "2026-10-02T17:51:37.403Z",
@@ -7271,7 +7271,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "22/10/2026, 17:04:28",
+  "hs_last_updated2": "29/10/2026, 16:31:20",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -7545,16 +7545,17 @@
   "churn_q4": [],
   "q4_real": {
     "14": {
-      "agOut": 6,
+      "agOut": 7,
       "realOut": 6,
       "agAbm": 1,
       "realAbm": 0
     },
     "15": {
-      "realOut": 0,
-      "realAbm": 1
+      "realOut": 3,
+      "realAbm": 1,
+      "agOut": 3
     }
   },
   "active_tab": "metasemanal",
-  "snapshot_at": "2026-10-26T20:12:20.706Z"
+  "snapshot_at": "2026-10-29T22:39:51.918Z"
 }
