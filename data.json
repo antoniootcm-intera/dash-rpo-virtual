@@ -7536,12 +7536,12 @@
     {
       "metaAbordagens": 65,
       "metaReunioes": 3,
-      "abordagensOverride": null
+      "abordagensOverride": 329
     },
     {
       "metaAbordagens": 65,
       "metaReunioes": 4,
-      "abordagensOverride": null
+      "abordagensOverride": 286
     },
     {
       "metaAbordagens": 65,
@@ -7660,9 +7660,10 @@
     "15": {
       "realOut": 3,
       "realAbm": 1,
-      "agOut": 3
+      "agOut": 3,
+      "agAbm": 1
     }
   },
-  "active_tab": "kanban",
-  "snapshot_at": "2026-10-30T13:22:14.636Z"
+  "active_tab": "metasemanal",
+  "snapshot_at": "2026-10-30T13:32:07.738Z"
 }
