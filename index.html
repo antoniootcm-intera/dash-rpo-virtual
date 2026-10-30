@@ -2109,15 +2109,42 @@ function fmtNoteDate(ts) {
   return d.toLocaleDateString('pt-BR', { day:'2-digit', month:'2-digit' }) + ' ' + d.toLocaleTimeString('pt-BR', { hour:'2-digit', minute:'2-digit' });
 }
 
+// Transforma URLs do texto da observação em links clicáveis (abre em nova aba, sem abrir o modal do card)
+const NOTE_URL_RE = /https?:\/\/[^\s<>"']+[^\s<>"'.,;:!?)\]]/g;
+function linkifyNote(text) {
+  const s = String(text ?? '');
+  let out = '', last = 0;
+  for (const m of s.matchAll(NOTE_URL_RE)) {
+    out += escapeHtml(s.slice(last, m.index));
+    out += `<a href="${escapeHtml(m[0])}" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="color:var(--accent2);text-decoration:underline;word-break:break-all;">${escapeHtml(m[0])}</a>`;
+    last = m.index + m[0].length;
+  }
+  return out + escapeHtml(s.slice(last));
+}
+
+// Links de gravação tl;dv de todas as observações do card, sem repetir
+function tldvLinks(notes) {
+  const seen = new Set();
+  (notes || []).forEach(n => (String(n.body || '').match(NOTE_URL_RE) || [])
+    .filter(u => /tldv\.io/i.test(u)).forEach(u => seen.add(u)));
+  return [...seen];
+}
+
 function renderNotesBlock(notes, source, dealId) {
   if (!notes || !notes.length) {
     return `<p class="text-[10px] mt-1 pt-1" style="color:var(--muted);border-top:1px dashed var(--border);">Sem observações</p>`;
   }
   const latest = notes[0];
-  const preview = latest.body.length > 70 ? latest.body.slice(0,70) + '…' : latest.body;
+  const latestText = latest.body.replace(NOTE_URL_RE, '').replace(/Grava[cç][aã]o tl;dv:?/gi, '').replace(/\s+/g, ' ').trim();
+  const preview = latestText.length > 70 ? latestText.slice(0,70) + '…' : latestText;
+  const gravacoes = tldvLinks(notes);
+  const gravacoesHtml = gravacoes.length
+    ? `<div class="text-[10px] font-semibold mt-0.5">${gravacoes.map((u, i) => `<a href="${escapeHtml(u)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="color:var(--accent2);text-decoration:underline;">🎥 Gravação tl;dv${gravacoes.length > 1 ? ' ' + (i + 1) : ''}</a>`).join(' · ')}</div>`
+    : '';
   return `<div class="mt-1 pt-1" style="border-top:1px dashed var(--border);cursor:pointer;" onclick="openNotesModal('${source}','${dealId}')" title="Ver todas as observações">
     <div class="text-[10px] font-semibold" style="color:var(--text2);">${escapeHtml(latest.author || 'Observação')}${latest.timestamp ? ` · ${fmtNoteDate(latest.timestamp)}` : ''}</div>
     <div class="text-[11px]">${escapeHtml(preview)}</div>
+    ${gravacoesHtml}
     <div class="text-[10px] font-semibold mt-0.5" style="color:var(--accent2);">👁 ${notes.length > 1 ? 'Ver todas (' + notes.length + ')' : 'Ver observação'}</div>
   </div>`;
 }
@@ -2130,7 +2157,7 @@ function openNotesModal(source, dealId) {
   document.getElementById('notes-modal-body').innerHTML = notes.length
     ? notes.map(n => `<div class="mb-3 pb-3" style="border-bottom:1px solid var(--border);">
         <div class="text-xs font-semibold" style="color:var(--text2);">${escapeHtml(n.author || 'Observação')}${n.timestamp ? ` · ${fmtNoteDate(n.timestamp)}` : ''}</div>
-        <div class="text-sm mt-1" style="white-space:pre-wrap;">${escapeHtml(n.body)}</div>
+        <div class="text-sm mt-1" style="white-space:pre-wrap;">${linkifyNote(n.body)}</div>
       </div>`).join('')
     : `<p style="color:var(--muted);">Sem observações.</p>`;
   document.getElementById('notes-modal').style.display = 'flex';
@@ -2449,8 +2476,9 @@ function onPipelinePickerChange(id) {
 // ─── Notas (aba "Observações" de Atividades no HubSpot) ──────────────────
 function stripHtml(html) {
   const tmp = document.createElement('div');
-  tmp.innerHTML = html || '';
-  return (tmp.textContent || tmp.innerText || '').trim();
+  // quebra de linha no fim de parágrafo/item, pra o texto não grudar no link ("Riachuelo.Gravação")
+  tmp.innerHTML = String(html || '').replace(/<br\s*\/?>/gi, '\n').replace(/<\/(p|div|li|h[1-6])>/gi, '</$1>\n');
+  return (tmp.textContent || tmp.innerText || '').replace(/\n{3,}/g, '\n\n').trim();
 }
 
 function chunkArray(arr, size) {
