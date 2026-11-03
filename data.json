@@ -117,7 +117,7 @@
       "realizadas": 6
     },
     {
-      "realizadas": 4
+      "realizadas": 5
     },
     {
       "realizadas": 0
@@ -7658,12 +7658,12 @@
       "realAbm": 0
     },
     "15": {
-      "realOut": 3,
+      "realOut": 4,
       "realAbm": 1,
       "agOut": 3,
       "agAbm": 1
     }
   },
   "active_tab": "metasemanal",
-  "snapshot_at": "2026-10-30T13:32:07.738Z"
+  "snapshot_at": "2026-11-03T12:48:52.896Z"
 }
