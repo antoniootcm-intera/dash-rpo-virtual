@@ -117,13 +117,13 @@
       "realizadas": 6
     },
     {
-      "realizadas": 5
+      "realizadas": 6
     },
     {
-      "realizadas": 0
+      "realizadas": 1
     },
     {
-      "realizadas": 0
+      "realizadas": 1
     },
     {
       "realizadas": 0
@@ -1138,8 +1138,8 @@
       "locked": true
     },
     "q4": {
-      "value": 0,
-      "locked": false
+      "value": 51500,
+      "locked": true
     }
   },
   "canal_overrides": {
@@ -1932,31 +1932,6 @@
       ]
     },
     {
-      "id": "62639560839",
-      "name": "Cencosud S.A. ",
-      "amount": 0,
-      "stageId": "1398904716",
-      "created": "2026-07-14",
-      "dEntries": {
-        "1": "2026-07-23T14:03:36.434Z",
-        "2": "2026-07-29T14:49:58.584Z"
-      },
-      "reachedAgendado": false,
-      "agendadoDate": null,
-      "notes": [
-        {
-          "body": "FUP novo feito.",
-          "timestamp": "2026-07-29T14:50:06.707Z",
-          "author": ""
-        },
-        {
-          "body": "Primeiro email enviado. Sao vagas operacionais, mas nao vagas comerciais necessariamente.",
-          "timestamp": "2026-07-23T14:03:32.222Z",
-          "author": ""
-        }
-      ]
-    },
-    {
       "id": "62639560975",
       "name": "Petlove ",
       "amount": 0,
@@ -2010,7 +1985,7 @@
       "agendadoDate": null,
       "notes": [
         {
-          "body": "Contato feito com a Clarissa JaquesTese IA, case magalu e sla diminuídoteste em bullet points",
+          "body": "Contato feito com a Clarissa Jaques\nTese IA, case magalu e sla diminuído\nteste em bullet points",
           "timestamp": "2026-07-15T12:35:21.895Z",
           "author": ""
         }
@@ -2766,7 +2741,7 @@
       "agendadoDate": "2026-07-31T14:56:57.710Z",
       "notes": [
         {
-          "body": "Usam pandapé para vagas ops. Muita vaga com fit.",
+          "body": "Usam pandapé para vagas ops. \n\nMuita vaga com fit.",
           "timestamp": "2026-07-31T14:56:54.847Z",
           "author": ""
         }
@@ -3010,26 +2985,6 @@
       ]
     },
     {
-      "id": "63087278998",
-      "name": "Avenida ",
-      "amount": 0,
-      "stageId": "1398904716",
-      "created": "2026-07-27",
-      "dEntries": {
-        "1": "2026-07-29T18:16:01.401Z",
-        "2": "2026-08-14T19:45:02.442Z"
-      },
-      "reachedAgendado": false,
-      "agendadoDate": null,
-      "notes": [
-        {
-          "body": "Primeiro contato feito. Lead tem um dizer muito forte de gente importa. Meio contra IA.",
-          "timestamp": "2026-07-29T18:16:19.178Z",
-          "author": ""
-        }
-      ]
-    },
-    {
       "id": "63125454710",
       "name": "Grupo Equatorial ",
       "amount": 0,
@@ -3117,7 +3072,7 @@
           "author": ""
         },
         {
-          "body": "Contato feito com a Diretora de RH. 315 VAGAS SÓ DE ATENDENTE",
+          "body": "Contato feito com a Diretora de RH. \n315 VAGAS SÓ DE ATENDENTE",
           "timestamp": "2026-07-27T19:16:45.269Z",
           "author": ""
         }
@@ -3143,7 +3098,7 @@
           "author": ""
         },
         {
-          "body": "Contato feito com o HRBP. Foquei no turnover que ele avaliar.",
+          "body": "Contato feito com o HRBP. \nFoquei no turnover que ele avaliar.",
           "timestamp": "2026-07-27T19:10:24.906Z",
           "author": ""
         }
@@ -3222,7 +3177,7 @@
           "author": ""
         },
         {
-          "body": "Contato com carolina.rosa@portoseguro.com.br RPO Virtual e tese de IA forte132 vagas com perfil comercial na gupy",
+          "body": "Contato com carolina.rosa@portoseguro.com.br \nRPO Virtual e tese de IA forte\n132 vagas com perfil comercial na gupy",
           "timestamp": "2026-07-27T19:01:28.058Z",
           "author": ""
         }
@@ -3614,7 +3569,7 @@
           "author": ""
         },
         {
-          "body": "https://www.linkedin.com/in/keniamatos/msg no linkedin",
+          "body": "https://www.linkedin.com/in/keniamatos/\n\nmsg no linkedin",
           "timestamp": "2026-08-04T17:42:07.258Z",
           "author": ""
         }
@@ -3696,7 +3651,7 @@
       "agendadoDate": null,
       "notes": [
         {
-          "body": "https://www.linkedin.com/in/yago-brito-28763290/msg no link",
+          "body": "https://www.linkedin.com/in/yago-brito-28763290/\nmsg no link",
           "timestamp": "2026-08-04T19:55:56.206Z",
           "author": ""
         }
@@ -3734,7 +3689,7 @@
       "agendadoDate": null,
       "notes": [
         {
-          "body": "Emailhttps://app.apollo.io/?_gl=1*17k1bg7*_gcl_au*NjYxMTg4NTYuMTc4NDEzNzI0NS4xNTcxNzk4NTQzLjE3ODU0MzQ3OTMuMTc4NTQzNDc5My4xNzgwNTI1MzEyLjE3ODU0MzQ3OTMuMTc4NTQzNDc5Mw..*_ga*NjU3NDc1ODg2LjE3Nzg4NzUxNjE.*_ga_76XXTC73SP*czE3ODU4NzE5NDUkbzMwJGcwJHQxNzg1ODcxOTQ1JGo2MCRsMCRoMTQ4NTkwMzEw#/contacts/6a44366ea55b3a0001271278?overrideScoreId=6a10a7e5fbf558000160c72f",
+          "body": "Email\nhttps://app.apollo.io/?_gl=1*17k1bg7*_gcl_au*NjYxMTg4NTYuMTc4NDEzNzI0NS4xNTcxNzk4NTQzLjE3ODU0MzQ3OTMuMTc4NTQzNDc5My4xNzgwNTI1MzEyLjE3ODU0MzQ3OTMuMTc4NTQzNDc5Mw..*_ga*NjU3NDc1ODg2LjE3Nzg4NzUxNjE.*_ga_76XXTC73SP*czE3ODU4NzE5NDUkbzMwJGcwJHQxNzg1ODcxOTQ1JGo2MCRsMCRoMTQ4NTkwMzEw#/contacts/6a44366ea55b3a0001271278?overrideScoreId=6a10a7e5fbf558000160c72f",
           "timestamp": "2026-08-04T20:02:53.321Z",
           "author": ""
         }
@@ -3848,7 +3803,7 @@
       "agendadoDate": null,
       "notes": [
         {
-          "body": "INmail enviadohttps://www.linkedin.com/in/vanessasilva-rh/",
+          "body": "INmail enviado\nhttps://www.linkedin.com/in/vanessasilva-rh/",
           "timestamp": "2026-08-04T21:06:07.208Z",
           "author": ""
         }
@@ -4057,7 +4012,7 @@
       "agendadoDate": null,
       "notes": [
         {
-          "body": "Contato por email10 lojas, 4 cidades, 500 colaboradores",
+          "body": "Contato por email\n10 lojas, 4 cidades, 500 colaboradores",
           "timestamp": "2026-08-04T22:07:22.779Z",
           "author": ""
         }
@@ -4455,7 +4410,7 @@
           "author": ""
         },
         {
-          "body": "https://www.linkedin.com/in/nadiamacedo/Por não termos o e-mail da cliente, entrei em contato com ela via WhatsApp",
+          "body": "https://www.linkedin.com/in/nadiamacedo/\n\nPor não termos o e-mail da cliente, entrei em contato com ela via WhatsApp",
           "timestamp": "2026-08-12T20:41:15.060Z",
           "author": ""
         }
@@ -4517,7 +4472,7 @@
           "author": ""
         },
         {
-          "body": "http://www.linkedin.com/in/thais-figueiredo-330032170https://www.linkedin.com/in/luisfilipeab/",
+          "body": "http://www.linkedin.com/in/thais-figueiredo-330032170\nhttps://www.linkedin.com/in/luisfilipeab/",
           "timestamp": "2026-08-12T17:49:52.516Z",
           "author": ""
         }
@@ -5344,7 +5299,7 @@
       "agendadoDate": null,
       "notes": [
         {
-          "body": "Retorno do cliente.Ariany, boa tarde!No momento, não estamos abertos a este tipo de parceria, pois não viabilizamos orçamento para tal ação.Caso isso mude no futuro, faremos contato para entender como trabalham.Atenciosamente,",
+          "body": "Retorno do cliente.\nAriany, boa tarde!\n\nNo momento, não estamos abertos a este tipo de parceria, pois não viabilizamos orçamento para tal ação.\n\nCaso isso mude no futuro, faremos contato para entender como trabalham.\n\nAtenciosamente,",
           "timestamp": "2026-08-31T13:53:37.841Z",
           "author": ""
         },
@@ -6541,7 +6496,7 @@
       "agendadoDate": null,
       "notes": [
         {
-          "body": "fup por e-mail.SE NÃO RESPONDER FECHAR O CARD",
+          "body": "fup por e-mail.\nSE NÃO RESPONDER FECHAR O CARD",
           "timestamp": "2026-09-21T12:39:11.064Z",
           "author": ""
         },
@@ -7378,7 +7333,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "29/10/2026, 16:31:20",
+  "hs_last_updated2": "12/11/2026, 15:20:26",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -7546,7 +7501,7 @@
     {
       "metaAbordagens": 65,
       "metaReunioes": 5,
-      "abordagensOverride": null
+      "abordagensOverride": 7
     },
     {
       "metaAbordagens": 25,
@@ -7597,7 +7552,7 @@
     0,
     0,
     0,
-    0,
+    1,
     0,
     0,
     0,
@@ -7609,7 +7564,8 @@
       "nome": "Cielo",
       "valor": 10000,
       "link": "",
-      "inicio": "2026-07"
+      "inicio": "2026-07",
+      "commit": "2026-07"
     },
     {
       "nome": "Facta",
@@ -7624,7 +7580,7 @@
       "inicio": "2026-07"
     },
     {
-      "nome": "Renner",
+      "nome": "Renner 01",
       "valor": 16000,
       "link": "",
       "inicio": "2026-07"
@@ -7642,11 +7598,27 @@
       "inicio": "2026-09"
     },
     {
-      "nome": "Renner UpSell",
+      "nome": "Renner 02 ",
       "valor": 0,
       "link": "",
       "inicio": "2026-10",
-      "parcelas": "32000, 20000, 20000"
+      "parcelas": "32000, 20000, 20000",
+      "fim": "2026-12"
+    },
+    {
+      "nome": "OXXO",
+      "valor": 51500,
+      "link": "",
+      "inicio": "2026-11",
+      "parcelas": "",
+      "fim": "2026-12"
+    },
+    {
+      "nome": "Renner 03 (5x2)",
+      "valor": 0,
+      "link": "",
+      "inicio": "2026-11",
+      "parcelas": "114000, 114000"
     }
   ],
   "churn_q4": [],
@@ -7659,11 +7631,19 @@
     },
     "15": {
       "realOut": 4,
-      "realAbm": 1,
+      "realAbm": 2,
       "agOut": 3,
       "agAbm": 1
+    },
+    "16": {
+      "realOut": 1,
+      "agOut": 1
+    },
+    "17": {
+      "realOut": 1,
+      "agOut": 2
     }
   },
-  "active_tab": "metasemanal",
-  "snapshot_at": "2026-11-03T12:48:52.896Z"
+  "active_tab": "metas",
+  "snapshot_at": "2026-11-13T15:44:27.270Z"
 }
