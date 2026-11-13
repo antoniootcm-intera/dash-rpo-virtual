@@ -172,10 +172,17 @@
     <p id="pct-mrr-total" class="text-xs mt-1 font-semibold" style="color:var(--text2);">0% da meta</p>
   </div>
 
-  <div class="card p-5">
-    <h3 class="text-sm font-bold mb-1" style="color:var(--black);">MRR mês a mês — fotografia x meta</h3>
-    <p class="text-xs mb-3" style="color:var(--text2);">Soma do que cada cliente paga em cada mês, pela tabela Clientes Fechados. Meses à frente mostram o que já está contratado.</p>
-    <canvas id="chart-mrr-total" height="90"></canvas>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <div class="card p-5">
+      <h3 class="text-sm font-bold mb-1" style="color:var(--black);">MRR por commit — fotografia x meta</h3>
+      <p class="text-xs mb-3" style="color:var(--text2);">Soma do que cada cliente paga em cada mês, a partir do mês do commit. Cliente sem commit preenchido entra pelo mês do kick off.</p>
+      <canvas id="chart-mrr-commit" height="180"></canvas>
+    </div>
+    <div class="card p-5">
+      <h3 class="text-sm font-bold mb-1" style="color:var(--black);">MRR por kick off — fotografia x meta</h3>
+      <p class="text-xs mb-3" style="color:var(--text2);">Soma do que cada cliente paga em cada mês, a partir do mês do kick off. Meses à frente mostram o que já está contratado.</p>
+      <canvas id="chart-mrr-total" height="180"></canvas>
+    </div>
   </div>
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -222,7 +229,7 @@
           <button class="admin-only btn-primary text-sm" onclick="addChurnRow()">+ Adicionar churn</button>
         </div>
       </div>
-      <p class="text-xs mb-2" style="color:var(--text2);">Cliente da safra Q3 que saiu ou reduziu no Q4, e o MRR perdido. A expansão vem sozinha dos clientes com "upsell" no nome, em Clientes Fechados.</p>
+      <p class="text-xs mb-2" style="color:var(--text2);">Cliente da safra Q3 que saiu ou reduziu no Q4, e o MRR perdido. A expansão vem sozinha dos clientes marcados como Upsell, em Clientes Fechados.</p>
       <div class="overflow-x-auto">
         <table>
           <thead><tr><th style="text-align:left;">Cliente</th><th>MRR perdido (R$)</th><th class="admin-only">Ações</th></tr></thead>
@@ -245,10 +252,10 @@
         <button class="admin-only btn-primary text-sm" onclick="addClienteRow()">+ Adicionar cliente</button>
       </div>
     </div>
-    <p class="text-xs mb-3" style="color:var(--text2);">Valor mensal, mês em que começa a pagar e, se a mensalidade variar, os valores mês a mês (ex.: 32000, 20000, 20000). Fim só para contrato com prazo ou cliente que saiu.</p>
+    <p class="text-xs mb-3" style="color:var(--text2);">Valor mensal, data do commit (nota), data do kick off (quando começa a pagar; os gráficos usam só o mês) e, se a mensalidade variar, os valores mês a mês (ex.: 32000, 20000, 20000). Fim só para contrato com prazo ou cliente que saiu.</p>
     <div class="overflow-x-auto">
       <table>
-        <thead><tr><th style="text-align:left;">Cliente</th><th>Valor mensal (R$)</th><th>Início</th><th>Mensalidades diferentes (opcional)</th><th>Fim (opcional)</th><th>Contrato (link)</th><th class="admin-only">Ações</th></tr></thead>
+        <thead><tr><th style="text-align:left;">Cliente</th><th>Tipo</th><th>Valor mensal (R$)</th><th>Commit</th><th>Kick off</th><th>Mensalidades diferentes (opcional)</th><th>Fim (opcional)</th><th>Contrato (link)</th><th class="admin-only">Ações</th></tr></thead>
         <tbody id="clientes-tbody"></tbody>
       </table>
     </div>
@@ -345,14 +352,15 @@
         <thead>
           <tr class="pq4-grupo">
             <th rowspan="2" style="text-align:left;">Período</th>
-            <th colspan="5" class="g-out">Prospecção outbound (Tier 2)</th>
-            <th colspan="5" class="g-evt">ABM + eventos (Tier 1)</th>
-            <th rowspan="2" class="g-venda">Meta<br>vendas</th>
+            <th colspan="5" class="g-out">Prospecção outbound</th>
+            <th colspan="5" class="g-evt">ABM + eventos</th>
             <th colspan="5" class="g-res">Resultado (reuniões realizadas)</th>
+            <th rowspan="2" class="g-venda">Meta<br>vendas</th>
+            <th rowspan="2" class="g-venda real">Vendas<br>realizadas</th>
           </tr>
           <tr>
-            <th class="g-out">Meta contas<br>novas Tier 2</th><th class="g-out">Meta<br>agendadas</th><th class="g-out real">Agendadas</th><th class="g-out">Meta<br>realizadas</th><th class="g-out real">Realizadas</th>
-            <th class="g-evt">Meta contas<br>novas Tier 1</th><th class="g-evt">Meta<br>agendadas</th><th class="g-evt real">Agendadas</th><th class="g-evt">Meta<br>realizadas</th><th class="g-evt real">Realizadas</th>
+            <th class="g-out">Meta contas<br>novas</th><th class="g-out">Meta<br>agendadas</th><th class="g-out real">Agendadas</th><th class="g-out">Meta<br>realizadas</th><th class="g-out real">Realizadas</th>
+            <th class="g-evt">Meta contas<br>novas</th><th class="g-evt">Meta<br>agendadas</th><th class="g-evt real">Agendadas</th><th class="g-evt">Meta<br>realizadas</th><th class="g-evt real">Realizadas</th>
             <th class="g-res">Meta<br>total</th><th class="g-res">Realizadas<br>total</th><th class="g-res">Meta<br>acumulada</th><th class="g-res">Realizado<br>acumulado</th><th class="g-res" style="min-width:110px;">% da meta de 60</th>
           </tr>
         </thead>
@@ -959,7 +967,11 @@ function cascataAcumuladoAte(weeks) {
 
 // Upsell (cliente fechado com "upsell" no nome) não é new MRR: fica fora da meta do Q4 (120k),
 // mas continua somando no MRR total (180k). O Q3 já fechou, então todo upsell cadastrado é descontado do Q4.
-function isUpsell(c) { return /up\s*-?\s*sell/i.test((c && c.nome) || ''); }
+// Etiqueta escolhida na tabela (tipo: 'upsell' | 'nova'); sem etiqueta, vale o nome com "upsell".
+function isUpsell(c) {
+  if (c && c.tipo) return c.tipo === 'upsell';
+  return /up\s*-?\s*sell/i.test((c && c.nome) || '');
+}
 function mrrUpsell() { return clientesFechados.filter(isUpsell).reduce((s,c) => s + (parseFloat(c.valor)||0), 0); }
 
 // ── MRR mês a mês (fotografia): o que cada cliente paga em cada mês ──
@@ -968,13 +980,28 @@ const MESES_OPCOES = ['2026-07','2026-08','2026-09','2026-10','2026-11','2026-12
 const NOMES_MES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
 function mesLabel(m) { const [y, mm] = m.split('-'); return NOMES_MES[+mm - 1] + '/' + y.slice(2); }
 function mesIdx(m) { const [y, mm] = m.split('-').map(Number); return y * 12 + mm - 1; }
+// Commit e kick off guardam a data exata (AAAA-MM-DD); os gráficos usam só o mês.
+// Clientes antigos ainda podem ter só o mês (AAAA-MM).
+function mesDe(x) { return String(x || '').slice(0, 7); }
+function temDia(x) { return /^\d{4}-\d{2}-\d{2}$/.test(String(x || '')); }
+function dataLabel(x) {
+  if (!x) return '';
+  if (temDia(x)) { const [y, m, d] = x.split('-'); return `${d}/${m}/${y.slice(2)}`; }
+  return mesLabel(mesDe(x));
+}
+function hojeISO() { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+function campoData(i, field, val) {
+  const aviso = val && !temDia(val) ? `<div class="text-[10px]" style="color:var(--muted);">${mesLabel(mesDe(val))}, falta o dia</div>` : '';
+  return `<input type="date" class="admin-only" value="${temDia(val) ? val : ''}" onchange="onClienteField(${i},'${field}',this.value)" />${aviso ? `<span class="admin-only">${aviso}</span>` : ''}<span class="viewer-only">${escapeHtml(dataLabel(val))}</span>`;
+}
 function mesAtual() { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0'); }
 // "32000, 20000, 20000" ou "32.000; 20.000" → [32000, 20000, 20000]
 function parcelasCliente(c) {
   return String(c.parcelas || '').split(/[;,\s]+/).map(x => parseFloat(x.replace(/\./g, ''))).filter(x => x > 0);
 }
-function mrrClienteNoMes(c, m) {
-  const ini = c.inicio || MESES_MRR[0];
+// base 'commit': conta a partir do mês do commit (sem commit, cai no kick off)
+function mrrClienteNoMes(c, m, base) {
+  const ini = mesDe((base === 'commit' && c.commit) ? c.commit : (c.inicio || MESES_MRR[0]));
   const d = mesIdx(m) - mesIdx(ini);
   if (d < 0) return 0;
   if (c.fim && mesIdx(m) > mesIdx(c.fim)) return 0;
@@ -983,6 +1010,7 @@ function mrrClienteNoMes(c, m) {
   return parseFloat(c.valor) || 0;
 }
 function mrrNoMes(m) { return clientesFechados.reduce((s, c) => s + mrrClienteNoMes(c, m), 0); }
+function mrrNoMesCommit(m) { return clientesFechados.reduce((s, c) => s + mrrClienteNoMes(c, m, 'commit'), 0); }
 // Meta do mês = MRR planejado acumulado na última semana que começa naquele mês (plano da cascata)
 function metaNoMes(m) {
   const mm = m.split('-')[1];
@@ -1134,15 +1162,17 @@ function renderClientes() {
       ? `<a href="${escapeHtml(c.link)}" target="_blank" rel="noopener noreferrer" style="color:var(--accent2);text-decoration:underline;">abrir contrato ↗</a>`
       : `<span style="color:var(--muted);">—</span>`;
     return `<tr>
-      <td style="text-align:left;"><input type="text" class="admin-only w-48" value="${escapeHtml(c.nome||'')}" oninput="onClienteField(${i},'nome',this.value)" placeholder="Nome do cliente" /><span class="viewer-only font-semibold">${escapeHtml(c.nome||'')}</span>${isUpsell(c) ? ' <span class="badge badge-nd" title="Upsell: soma no MRR total, fica fora do new MRR do Q4">upsell</span>' : ''}</td>
+      <td style="text-align:left;"><input type="text" class="admin-only w-48" value="${escapeHtml(c.nome||'')}" oninput="onClienteField(${i},'nome',this.value)" placeholder="Nome do cliente" /><span class="viewer-only font-semibold">${escapeHtml(c.nome||'')}</span></td>
+      <td><select class="admin-only" onchange="onClienteField(${i},'tipo',this.value)" title="Upsell soma no MRR total e fica fora do new MRR do Q4"><option value="nova" ${!isUpsell(c) ? 'selected' : ''}>Nova venda</option><option value="upsell" ${isUpsell(c) ? 'selected' : ''}>Upsell</option></select><span class="viewer-only badge badge-nd">${isUpsell(c) ? 'Upsell' : 'Nova venda'}</span></td>
       <td><input type="number" step="0.01" class="admin-only w-32" value="${c.valor||''}" oninput="onClienteField(${i},'valor',this.value)" placeholder="0,00" /><span class="viewer-only">${fmtBRL(c.valor)}</span></td>
-      <td><select class="admin-only" onchange="onClienteField(${i},'inicio',this.value)">${MESES_OPCOES.map(m => `<option value="${m}" ${(c.inicio || MESES_MRR[0]) === m ? 'selected' : ''}>${mesLabel(m)}</option>`).join('')}</select><span class="viewer-only">${mesLabel(c.inicio || MESES_MRR[0])}</span></td>
+      <td>${campoData(i, 'commit', c.commit)}</td>
+      <td>${campoData(i, 'inicio', c.inicio)}</td>
       <td><input type="text" class="admin-only w-48" value="${escapeHtml(c.parcelas||'')}" onchange="onClienteField(${i},'parcelas',this.value)" placeholder="ex.: 32000, 20000, 20000" /><span class="viewer-only">${escapeHtml(c.parcelas||'')}</span></td>
       <td><select class="admin-only" onchange="onClienteField(${i},'fim',this.value)"><option value="">sem fim</option>${MESES_OPCOES.map(m => `<option value="${m}" ${c.fim === m ? 'selected' : ''}>${mesLabel(m)}</option>`).join('')}</select><span class="viewer-only">${c.fim ? mesLabel(c.fim) : ''}</span></td>
       <td><input type="text" class="admin-only w-64" value="${escapeHtml(c.link||'')}" oninput="onClienteField(${i},'link',this.value)" placeholder="https://…" /><span class="viewer-only">${linkView}</span></td>
       <td class="admin-only"><button class="text-red-600 text-xs font-semibold" onclick="removeClienteRow(${i})">Remover</button></td>
     </tr>`;
-  }).join('') || `<tr><td colspan="7" style="color:var(--muted);">Nenhum cliente fechado cadastrado.</td></tr>`;
+  }).join('') || `<tr><td colspan="9" style="color:var(--muted);">Nenhum cliente fechado cadastrado.</td></tr>`;
 
   const totalMensal = clientesFechados.reduce((s,c) => s + (parseFloat(c.valor)||0), 0);
   const el = document.getElementById('clientes-total-mensal');
@@ -1150,7 +1180,7 @@ function renderClientes() {
 }
 
 function addClienteRow() {
-  clientesFechados.push({ nome:'', valor:0, link:'', inicio: mesAtual() });
+  clientesFechados.push({ nome:'', tipo:'nova', valor:0, link:'', inicio: hojeISO() });
   saveJSON('rpov_clientes_fechados', clientesFechados);
   renderClientes();
 }
@@ -1196,13 +1226,19 @@ const rotuloBarras = {
 };
 
 function renderChartMrrTotal() {
+  renderChartMrrMensal('mrrTotal', 'chart-mrr-total', mrrNoMes);
+  renderChartMrrMensal('mrrCommit', 'chart-mrr-commit', mrrNoMesCommit);
+}
+function renderChartMrrMensal(key, canvasId, fnValor) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
   const atual = mesIdx(mesAtual());
   const labels = MESES_MRR.map(mesLabel);
-  const valores = MESES_MRR.map(mrrNoMes);
+  const valores = MESES_MRR.map(fnValor);
   const metas = MESES_MRR.map(metaNoMes);
   const futuro = MESES_MRR.map(m => mesIdx(m) > atual);
-  destroyChart('mrrTotal');
-  CHARTS.mrrTotal = new Chart(document.getElementById('chart-mrr-total'), {
+  destroyChart(key);
+  CHARTS[key] = new Chart(canvas, {
     plugins: [rotuloBarras],
     data: { labels, datasets: [
       { type: 'bar', label: 'MRR do mês', data: valores, order: 2, borderRadius: 4,
@@ -1492,9 +1528,9 @@ function renderPlanoQ4() {
       <td style="text-align:left;white-space:nowrap;"><b>${p.periodo}</b>${idx === wkNow ? ' 📍' : ''} <span class="text-[10px]" style="color:var(--muted);">S${w.n}</span>${p.marco ? `<div class="text-[10px]" style="color:var(--muted);white-space:normal;max-width:200px;">${p.marco}</div>` : ''}</td>
       ${c(p.contasOut, 'font-semibold sep-l')}${c(p.agOut)}${inp(idx, 'agOut')}${c(p.realOut)}${inp(idx, 'realOut')}
       ${c(p.contasAbm, 'sep-l')}${c(p.agAbm)}${inp(idx, 'agAbm')}${c(p.realAbm)}${inp(idx, 'realAbm')}
-      ${c(p.vendas, 'sep-l font-semibold')}
       ${c(p.total, 'sep-l font-bold')}<td class="font-bold">${preenchido ? realTot : ''}</td>
       <td style="color:var(--text2);">${accMeta}</td><td class="font-semibold" style="color:var(--accent2);">${preenchido ? accReal : ''}</td><td>${preenchido ? barra(pctR) : ''}</td>
+      ${c(p.vendas, 'sep-l font-semibold')}<td class="real"><input type="number" min="0" class="admin-only" value="${vendasSemana[idx] || ''}" onchange="onPq4VendaInput(${idx},this.value)" title="Vendas realizadas na semana (sincroniza com a tabela de Reuniões, Vendas & MRR)" /><span class="viewer-only font-bold">${vendasSemana[idx] || ''}</span></td>
     </tr>`;
   }).join('');
   const soma = k => PLANO_Q4.reduce((t, p) => t + (p[k] || 0), 0);
@@ -1503,8 +1539,8 @@ function renderPlanoQ4() {
     <td style="text-align:left;">Total Q4 (S14-S23)</td>
     <td class="sep-l">${soma('contasOut')}</td><td>${soma('agOut')}</td><td>${somaReal('agOut')}</td><td>${soma('realOut')}</td><td>${somaReal('realOut')}</td>
     <td class="sep-l">${soma('contasAbm')}</td><td>${soma('agAbm')}</td><td>${somaReal('agAbm')}</td><td>${soma('realAbm')}</td><td>${somaReal('realAbm')}</td>
-    <td class="sep-l">${soma('vendas')}</td>
-    <td class="sep-l">${soma('total')}</td><td>${somaReal('realOut') + somaReal('realAbm')}</td><td></td><td></td><td>${pct(somaReal('realOut') + somaReal('realAbm'), PLANO_Q4_META)}%</td></tr>`;
+    <td class="sep-l">${soma('total')}</td><td>${somaReal('realOut') + somaReal('realAbm')}</td><td></td><td></td><td>${pct(somaReal('realOut') + somaReal('realAbm'), PLANO_Q4_META)}%</td>
+    <td class="sep-l">${soma('vendas')}</td><td>${PLANO_Q4.reduce((t, p, i) => t + (vendasSemana[PLANO_Q4_INICIO + i] || 0), 0)}</td></tr>`;
   // Resumo: realizado desde S14 x meta de 60, com marca da meta acumulada até a semana atual
   let real = 0, metaAteAgora = 0;
   PLANO_Q4.forEach((p, i) => {
@@ -1760,6 +1796,14 @@ function onVendaInput(idx, val) {
   vendasSemana[idx] = parseInt(val) || 0;
   saveJSON('rpov_vendas_semana', vendasSemana);
   updateRVMLive();
+  if (typeof renderPlanoQ4 === 'function') renderPlanoQ4();
+}
+// Vendas realizadas digitadas no Plano Q4: mesmo dado da tabela Reuniões, Vendas & MRR.
+function onPq4VendaInput(idx, val) {
+  vendasSemana[idx] = parseInt(val) || 0;
+  saveJSON('rpov_vendas_semana', vendasSemana);
+  if (typeof renderRVM === 'function') renderRVM();
+  renderPlanoQ4();
 }
 
 function onRvmMrrInput(idx, val) {
