@@ -52,7 +52,7 @@
       "mrrFechado": 0
     },
     {
-      "mrrFechado": 0
+      "mrrFechado": 51500
     },
     {
       "mrrFechado": 0
@@ -123,10 +123,10 @@
       "realizadas": 1
     },
     {
-      "realizadas": 1
+      "realizadas": 2
     },
     {
-      "realizadas": 0
+      "realizadas": 1
     },
     {
       "realizadas": 0
@@ -7501,7 +7501,7 @@
     {
       "metaAbordagens": 65,
       "metaReunioes": 5,
-      "abordagensOverride": 7
+      "abordagensOverride": 143
     },
     {
       "metaAbordagens": 25,
@@ -7637,13 +7637,21 @@
     },
     "16": {
       "realOut": 1,
-      "agOut": 1
+      "agOut": 1,
+      "agAbm": 0,
+      "realAbm": 0
     },
     "17": {
-      "realOut": 1,
-      "agOut": 2
+      "realOut": 2,
+      "agOut": 3,
+      "agAbm": 1,
+      "realAbm": 0
+    },
+    "18": {
+      "agOut": 0,
+      "realOut": 1
     }
   },
   "active_tab": "metas",
-  "snapshot_at": "2026-11-13T15:44:27.270Z"
+  "snapshot_at": "2026-11-16T19:25:31.545Z"
 }
