@@ -7780,6 +7780,15 @@
       "inicio": "2026-11-18",
       "fim": "2027-01",
       "parcelas": "10000, 10000, 10000"
+    },
+    {
+      "nome": "Renner 04",
+      "valor": 0,
+      "link": "",
+      "parcelas": "20000",
+      "inicio": "2026-11",
+      "fim": "2026-11",
+      "tipo": "upsell"
     }
   ],
   "churn_q4": [],
@@ -7814,5 +7823,5 @@
     }
   },
   "active_tab": "metas",
-  "snapshot_at": "2026-11-18T19:43:18.256Z"
+  "snapshot_at": "2026-11-18T19:47:29.547Z"
 }
