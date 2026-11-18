@@ -866,6 +866,14 @@ if (!IS_VIEWER && !localStorage.getItem('rpov_dm_kickoff_v2')) {
   localStorage.setItem('rpov_clientes_fechados', JSON.stringify(clientesFechados));
   localStorage.setItem('rpov_dm_kickoff_v2', '1');
 }
+// Migração única (18/11): Renner 04, upsell da escala 5x2 (80 vagas), R$ 20 mil só em nov/26.
+if (!IS_VIEWER && !localStorage.getItem('rpov_renner04_v1')) {
+  if (!clientesFechados.some(c => String(c.nome || '').trim().toLowerCase() === 'renner 04')) {
+    clientesFechados.push({ nome: 'Renner 04', valor: 0, link: '', parcelas: '20000', inicio: '2026-11', fim: '2026-11', tipo: 'upsell' });
+  }
+  localStorage.setItem('rpov_clientes_fechados', JSON.stringify(clientesFechados));
+  localStorage.setItem('rpov_renner04_v1', '1');
+}
 let churnQ4 = loadJSON('rpov_churn_q4', []); // [{ nome, valor }] MRR perdido da safra Q3 durante o Q4
 // Realizado da cascata do Q4, preenchido à mão semana a semana: { [idx]: { agOut, realOut, agAbm, realAbm } } (vazio = não preenchido)
 let q4Real = loadJSON('rpov_q4_real', {});
@@ -997,6 +1005,10 @@ function isUpsell(c) {
   return /up\s*-?\s*sell/i.test((c && c.nome) || '');
 }
 function mrrUpsell() { return clientesFechados.filter(isUpsell).reduce((s,c) => s + (parseFloat(c.valor)||0), 0); }
+// Expansão do Q4: mensalidade dos upsells no mês atual (depois de dez/26, trava em dez).
+// Lê as parcelas, porque upsell pode ter mensalidade diferente a cada mês.
+function mesRefQ4() { const m = mesAtual(); return mesIdx(m) > mesIdx('2026-12') ? '2026-12' : m; }
+function mrrExpansao() { const m = mesRefQ4(); return clientesFechados.filter(isUpsell).reduce((s,c) => s + mrrClienteNoMes(c, m), 0); }
 
 // ── MRR mês a mês (fotografia): o que cada cliente paga em cada mês ──
 const MESES_MRR = ['2026-07','2026-08','2026-09','2026-10','2026-11','2026-12'];
@@ -1088,7 +1100,7 @@ function updateMetasSummary() {
   const ups = clientesFechados.filter(isUpsell);
   const notaUps = document.getElementById('mrr-q4-upsell-nota');
   if (notaUps) notaUps.innerHTML = ups.length
-    ? `Upsell não conta como new MRR do Q4: ${ups.map(c => escapeHtml(c.nome) + ' (' + fmtBRL(c.valor) + ')').join(', ')}. Esse valor soma só no MRR total.`
+    ? `Upsell não conta como new MRR do Q4: ${ups.map(c => escapeHtml(c.nome.trim()) + ' (' + fmtBRL(mrrClienteNoMes(c, mesRefQ4())) + ' em ' + mesLabel(mesRefQ4()) + ')').join(', ')}. Esse valor soma só no MRR total.`
     : '';
 
   ['total','q3','q4'].forEach(key => {
@@ -1133,7 +1145,7 @@ function renderKrsQ4() {
   const newMrr = mrrRealizado('q4');
   const baseQ3 = mrrRealizado('q3');
   const churn = churnTotal();
-  const exp = mrrUpsell();
+  const exp = mrrExpansao();
   const safra = baseQ3 - churn + exp;
   const saldo = exp - churn;
   const card = (titulo, valor, meta, sub, ok, inverso) => {
@@ -1151,7 +1163,7 @@ function renderKrsQ4() {
     card('New MRR do Q4', newMrr, KR_Q4.newMrr, 'meta R$ 120 mil · upsell não entra', newMrr >= KR_Q4.newMrr) +
     card('MRR da safra Q3', safra, KR_Q4.safraQ3, `meta R$ 60 mil · ${fmtBRL(baseQ3)} fechados no Q3 - churn + expansão`, safra >= KR_Q4.safraQ3) +
     card('Churn', churn, KR_Q4.churnMax, 'no máximo R$ 15 mil', churn <= KR_Q4.churnMax, true) +
-    card('Expansão (upsell)', exp, KR_Q4.expansao, 'meta R$ 20 mil', exp >= KR_Q4.expansao) +
+    card('Expansão (upsell)', exp, KR_Q4.expansao, `meta R$ 20 mil · mensalidade de ${mesLabel(mesRefQ4())}`, exp >= KR_Q4.expansao) +
     `<div class="card p-3">
       <div class="text-xs font-semibold" style="color:var(--text2);">Saldo da safra Q3</div>
       <div class="font-brand font-extrabold text-xl" style="color:${saldo >= 0 ? 'var(--teal)' : 'var(--danger)'};">${saldo >= 0 ? '+' : ''}${fmtBRL(saldo)}</div>
