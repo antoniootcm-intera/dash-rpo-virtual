@@ -987,6 +987,13 @@ if (!IS_VIEWER && !localStorage.getItem('rpov_forecast_soma_v1')) {
   }
   localStorage.setItem('rpov_forecast_soma_v1', '1');
 }
+if (!IS_VIEWER && !localStorage.getItem('rpov_forecast_assai_v1')) {
+  if (!forecastDeals.some(d => /assa/i.test(d.cliente || ''))) {
+    forecastDeals.push({ cliente:'Assaí Atacadista', canal:'OUT', prazo:'3 meses', mrr:20000, valor:60000, expectativa:'Mais de 30 dias', temperatura:'Frio', obs:'Indicação Renner. Depende de aprovação da TI, depois piloto. 20k sem / 26k com impulsionamento.' });
+    saveJSON('rpov_forecast_deals', forecastDeals);
+  }
+  localStorage.setItem('rpov_forecast_assai_v1', '1');
+}
 const FC_EXPECT = ['Esta semana', 'Próxima semana', '15 dias', '30 dias', 'Mais de 30 dias'];
 const FC_EXPECT_TIT = { 'Esta semana':'Esta semana', 'Próxima semana':'Próxima semana', '15 dias':'Em até 15 dias', '30 dias':'Em até 30 dias', 'Mais de 30 dias':'Depois de 30 dias' };
 const FC_EXPECT_COR = { 'Esta semana':'#2E7D32', 'Próxima semana':'#558B2F', '15 dias':'#A16207', '30 dias':'#C2410C', 'Mais de 30 dias':'#6B7280' };
