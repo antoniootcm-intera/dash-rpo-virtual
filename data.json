@@ -336,7 +336,7 @@
     },
     {
       "id": "62619521145",
-      "name": "Riachuelo | Johnny | CG",
+      "name": "Riachuelo | Johnny | ABM",
       "amount": 0,
       "stageId": "1397554096",
       "created": "2026-07-13",
@@ -368,7 +368,7 @@
     },
     {
       "id": "62639560839",
-      "name": "Cencosud S.A. ",
+      "name": "Cencosud S.A. | OUT",
       "amount": 0,
       "stageId": "1397554096",
       "created": "2026-07-14",
@@ -507,7 +507,7 @@
     },
     {
       "id": "63087278998",
-      "name": "Avenida ",
+      "name": "Avenida | ABM",
       "amount": 0,
       "stageId": "1397554095",
       "created": "2026-07-27",
@@ -1181,7 +1181,7 @@
     },
     {
       "id": "67100279128",
-      "name": "Indigo",
+      "name": "Indigo | OUT",
       "amount": 0,
       "stageId": "1397554094",
       "created": "2026-10-29",
@@ -1233,9 +1233,9 @@
     },
     {
       "id": "67984702137",
-      "name": "Lupo | Sâmela | OUT",
+      "name": "Lupo | Sâmela | ABM",
       "amount": 0,
-      "stageId": "1397554093",
+      "stageId": "1397554095",
       "created": "2026-11-16",
       "notes": [
         {
@@ -1244,9 +1244,59 @@
           "author": ""
         }
       ]
+    },
+    {
+      "id": "68035863331",
+      "name": "Poliedro Educação | André | OUT",
+      "amount": 0,
+      "stageId": "1397554099",
+      "created": "2026-11-17",
+      "notes": [
+        {
+          "body": "Reunião RPO Virtual em 05/10/2026 com André Daniel (Coordenador de Atração de Talentos). Participaram Antônio Marçal e Ariany Rodrigues.\nGravação tl;dv: https://tldv.io/app/meetings/6ac3a63105792b00132f0c21\nOrigem: card de pré-vendas \"Poliedro Educacao | CONARH\". Contado como outbound no Q4.",
+          "timestamp": "2026-10-05T13:30:00Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "68035868240",
+      "name": "Certel | Andreia | OUT",
+      "amount": 0,
+      "stageId": "1397554093",
+      "created": "2026-11-17",
+      "notes": [
+        {
+          "body": "Apresentação RPO Virtual em 06/10/2026 com Andreia Hauschild (Supervisora de RH) e anahr@certel.com.br. Participaram Antônio Marçal e Ariany Rodrigues.\nGravação tl;dv: https://tldv.io/app/meetings/6ac528e7a5977800130fda91\nOrigem: card de pré-vendas \"Certel | CONARH\". Contado como outbound no Q4.",
+          "timestamp": "2026-10-06T17:00:00Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "68035868241",
+      "name": "Dasa | ABM",
+      "amount": 0,
+      "stageId": "1397554093",
+      "created": "2026-11-17",
+      "notes": [
+        {
+          "body": "Reunião RPO Virtual em 16/11/2026 com natalia.s@dasa.com.br e patricia.melkonian@dasa.com.br, junto com Paula Morais (InHire). Conduzida por Antônio Marçal.\nGravação tl;dv: https://tldv.io/app/meetings/6afb446296b7d900132ce08d\nContado como ABM no Q4.",
+          "timestamp": "2026-11-16T18:00:00Z",
+          "author": ""
+        }
+      ]
+    },
+    {
+      "id": "68559021939",
+      "name": "Assaí Atacadista | Thiago | OUT",
+      "amount": 0,
+      "stageId": "1397554093",
+      "created": "2026-11-23",
+      "notes": []
     }
   ],
-  "hs_last_updated": "17/11/2026, 14:04:48",
+  "hs_last_updated": "23/11/2026, 18:00:09",
   "mrr_overrides": {
     "total": {
       "value": 93000,
@@ -7479,7 +7529,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "12/11/2026, 15:20:26",
+  "hs_last_updated2": "23/11/2026, 18:00:12",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -7899,15 +7949,25 @@
     },
     {
       "cliente": "Grupo Soma",
-      "canal": "",
+      "canal": "ABM",
       "prazo": "3 meses",
       "mrr": 20000,
       "valor": 60000,
       "expectativa": "Mais de 30 dias",
       "temperatura": "Frio",
       "obs": ""
+    },
+    {
+      "cliente": "Assaí Atacadista",
+      "canal": "OUT",
+      "prazo": "3 meses",
+      "mrr": 20000,
+      "valor": 60000,
+      "expectativa": "Mais de 30 dias",
+      "temperatura": "Frio",
+      "obs": "Indicação Renner. Depende de aprovação da TI, depois piloto. 20k sem / 26k com impulsionamento."
     }
   ],
   "active_tab": "metas",
-  "snapshot_at": "2026-11-23T13:03:27.673Z"
+  "snapshot_at": "2026-11-23T21:00:13.717Z"
 }
