@@ -7818,10 +7818,86 @@
       "realAbm": 0
     },
     "18": {
-      "agOut": 0,
+      "agOut": 2,
       "realOut": 1
+    },
+    "19": {
+      "agOut": 0,
+      "realOut": 0
     }
   },
-  "active_tab": "metas",
-  "snapshot_at": "2026-11-18T19:47:29.547Z"
+  "forecast_deals": [
+    {
+      "cliente": "Cencosud",
+      "canal": "OUT",
+      "prazo": "3 meses",
+      "mrr": 26000,
+      "valor": 78000,
+      "expectativa": "Esta semana",
+      "temperatura": "Quente",
+      "obs": "R$ 26 mil com impulsionamento. Em compras e cadastro de fornecedor (Giga Atacado SP)."
+    },
+    {
+      "cliente": "Riachuelo",
+      "canal": "ABM",
+      "prazo": "3 meses",
+      "mrr": 20000,
+      "valor": 60000,
+      "expectativa": "30 dias",
+      "temperatura": "Morno",
+      "obs": "R$ 26 mil com impulsionamento. Piloto proposto em 29/10, reunião em 13/11."
+    },
+    {
+      "cliente": "Lupo",
+      "canal": "ABM",
+      "prazo": "3 meses",
+      "mrr": 10000,
+      "valor": 30000,
+      "expectativa": "30 dias",
+      "temperatura": "Morno",
+      "obs": "40 vagas. R$ 14 mil com impulsionamento."
+    },
+    {
+      "cliente": "Grupo Avenida",
+      "canal": "ABM",
+      "prazo": "3 meses",
+      "mrr": 20000,
+      "valor": 60000,
+      "expectativa": "Mais de 30 dias",
+      "temperatura": "Frio",
+      "obs": "R$ 26 mil com impulsionamento. Avanço pelo relacional (Ponzi com o Fábio)."
+    },
+    {
+      "cliente": "Santander",
+      "canal": "CONARH",
+      "prazo": "",
+      "mrr": 0,
+      "valor": 0,
+      "expectativa": "Mais de 30 dias",
+      "temperatura": "Frio",
+      "obs": "Valor em aberto. Em cadastro de fornecedor, deve demorar."
+    },
+    {
+      "cliente": "Portal Nova",
+      "canal": "OUT",
+      "prazo": "6 meses",
+      "mrr": 12000,
+      "valor": 72000,
+      "expectativa": "Mais de 30 dias",
+      "temperatura": "Frio",
+      "obs": "Plano semestral, menor mensalidade: R$ 12 mil/mês por 6 meses. Trimestral: R$ 14 mil/mês por 3 meses (R$ 42 mil). 1 RPOvirtual, até 15 vagas/mês. Franqueada da Help, ~30 vagas de consultor de vendas. Teste recusado em 29/10; em 16/11 ainda não tinham falado com a referência da Cielo."
+    },
+    {
+      "cliente": "Dasa",
+      "canal": "CG",
+      "prazo": "",
+      "mrr": 0,
+      "valor": 0,
+      "expectativa": "30 dias",
+      "temperatura": "Morno",
+      "obs": "Cliente que viria na negociação com o inhire"
+    }
+  ],
+  "active_tab": "forecast",
+  "snapshot_at": "2026-11-23T12:58:01.473Z"
 }
