@@ -7896,8 +7896,18 @@
       "expectativa": "30 dias",
       "temperatura": "Morno",
       "obs": "Cliente que viria na negociação com o inhire"
+    },
+    {
+      "cliente": "Grupo Soma",
+      "canal": "",
+      "prazo": "3 meses",
+      "mrr": 20000,
+      "valor": 60000,
+      "expectativa": "Mais de 30 dias",
+      "temperatura": "Frio",
+      "obs": ""
     }
   ],
-  "active_tab": "forecast",
-  "snapshot_at": "2026-11-23T12:58:01.473Z"
+  "active_tab": "metas",
+  "snapshot_at": "2026-11-23T13:03:27.673Z"
 }
