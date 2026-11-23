@@ -69,6 +69,17 @@
   .badge-out { background: var(--mustard-light); color: #8a6d00; }
   .badge-conarh { background: #FBE0E8; color: #B03060; }
   .badge-nd { background: #eee; color: #888; }
+  .badge-abm { background: #E0F2F1; color: #00695C; }
+  .tag-quente { background:#FEE2E2; color:#B91C1C; }
+  .tag-morno  { background:#FFEDD5; color:#C2410C; }
+  .tag-frio   { background:#DBEAFE; color:#1D4ED8; }
+  .tag-temp-vazio { background:#F3F4F6; color:#6B7280; }
+  .fc-cell { display:inline-block; min-width:60px; padding:2px 4px; border-radius:4px; transition:background .1s; }
+  body:not(.viewer-mode) .fc-cell:hover { background:#F3E5FF; }
+  body:not(.viewer-mode) .fc-cell:focus { background:#F3E5FF; outline:2px solid var(--accent); }
+  .fc-sel { appearance:none; border:none !important; background:transparent; font-size:12px; font-weight:700; cursor:pointer; padding:3px 10px !important; border-radius:999px; text-align:center; }
+  .ms-bar { height:6px; border-radius:999px; background:#EEE; overflow:hidden; margin-top:8px; }
+  .ms-bar > div { height:100%; border-radius:999px; transition:width .3s; }
   ::-webkit-scrollbar { height: 8px; width: 8px; }
   ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 8px; }
   .no-print { }
@@ -141,11 +152,14 @@
 
   <nav class="max-w-screen-2xl mx-auto px-4 flex gap-1 overflow-x-auto" style="border-top:1px solid #222;">
     <div class="tab-btn active" data-tab="metas" onclick="switchTab('metas')" style="color:#eee;">Metas Gerais</div>
-    <div class="tab-btn" data-tab="cascata" onclick="switchTab('cascata')" style="color:#eee;">Cascata Semanal</div>
     <div class="tab-btn" data-tab="metasemanal" onclick="switchTab('metasemanal')" style="color:#eee;">Meta Semanal</div>
-    <div class="tab-btn" data-tab="reunioes" onclick="switchTab('reunioes')" style="color:#eee;">Reuniões Agendadas</div>
-    <div class="tab-btn" data-tab="conversao" onclick="switchTab('conversao')" style="color:#eee;">Conversão por Canal</div>
-    <div class="tab-btn" data-tab="kanban" onclick="switchTab('kanban')" style="color:#eee;">Pipeline</div>
+    <div class="tab-btn" data-tab="forecast" onclick="switchTab('forecast')" style="color:#eee;">Forecast</div>
+    <!-- Abas escondidas em 23/11/2026 a pedido do Antônio (dados e código mantidos, para voltar depois):
+         Cascata Semanal, Reuniões Agendadas, Conversão por Canal e Pipeline. Para reexibir, tire o display:none e o id da lista ABAS_OCULTAS. -->
+    <div class="tab-btn" data-tab="cascata" onclick="switchTab('cascata')" style="color:#eee;display:none;">Cascata Semanal</div>
+    <div class="tab-btn" data-tab="reunioes" onclick="switchTab('reunioes')" style="color:#eee;display:none;">Reuniões Agendadas</div>
+    <div class="tab-btn" data-tab="conversao" onclick="switchTab('conversao')" style="color:#eee;display:none;">Conversão por Canal</div>
+    <div class="tab-btn" data-tab="kanban" onclick="switchTab('kanban')" style="color:#eee;display:none;">Pipeline</div>
     <div class="tab-btn" data-tab="base" onclick="switchTab('base')" style="color:#eee;">Empresas &amp; Contatos</div>
   </nav>
 </header>
@@ -303,27 +317,28 @@
 <section id="tab-metasemanal" class="tab-panel space-y-6">
 
   <div class="card p-5">
-    <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+    <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
       <p class="text-xs font-bold uppercase tracking-widest" style="color:var(--text2);">📅 Semana atual · <span id="ms-semana-atual" style="color:var(--black);">—</span></p>
       <div class="admin-only text-right">
-        <button class="btn-ghost text-xs" onclick="carregarPipeline2()" title="Recarrega o pipeline de pré-vendas e recalcula abordagens e contatos pelas datas reais">🔄 Atualizar do HubSpot</button>
+        <button class="btn-ghost text-xs" onclick="carregarPipeline2()" title="Recarrega o pipeline de pré-vendas e recalcula as abordagens pelas datas reais">🔄 Atualizar do HubSpot</button>
       </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <div class="rounded-xl p-4" style="background:var(--accent-light);">
-        <p class="text-[11px] font-bold uppercase tracking-widest" style="color:var(--accent2);">Abordagens novas (D1) · na semana</p>
-        <p id="ms-week-abordagens" class="text-3xl font-bold mt-1" style="color:var(--black);">0</p>
-        <p class="text-[11px] mt-0.5" style="color:var(--text2);">meta da semana: <b id="ms-week-meta-abord">0</b> · <span id="ms-week-abord-ader" class="font-bold">0%</span></p>
-      </div>
-      <div class="rounded-xl p-4" style="background:#E8ECFB;">
-        <p class="text-[11px] font-bold uppercase tracking-widest" style="color:#3B4A9C;">Contatos (avanços no funil) · na semana</p>
-        <p id="ms-week-contatos" class="text-3xl font-bold mt-1" style="color:var(--black);">0</p>
-        <p class="text-[11px] mt-0.5" style="color:var(--text2);">soma dos avanços D1→D2→D3… nesta semana</p>
+        <p class="text-[11px] font-bold uppercase tracking-widest" style="color:var(--accent2);">Contas abordadas na semana</p>
+        <div class="flex items-baseline gap-2 mt-1">
+          <p id="ms-week-abordagens" class="text-3xl font-bold" style="color:var(--black);">0</p>
+          <p class="text-sm" style="color:var(--text2);">de <b id="ms-week-meta-abord">0</b> · <span id="ms-week-abord-ader" class="font-bold">0%</span></p>
+        </div>
+        <div class="ms-bar"><div id="ms-week-abord-bar" style="width:0%;background:var(--accent);"></div></div>
       </div>
       <div class="rounded-xl p-4" style="background:var(--teal-light);">
-        <p class="text-[11px] font-bold uppercase tracking-widest" style="color:var(--teal);">Reuniões realizadas · na semana</p>
-        <p id="ms-week-reunioes" class="text-3xl font-bold mt-1" style="color:var(--black);">0</p>
-        <p class="text-[11px] mt-0.5" style="color:var(--text2);">meta da semana: <b id="ms-week-meta-reun">0</b> · <span id="ms-week-reun-ader" class="font-bold">0%</span></p>
+        <p class="text-[11px] font-bold uppercase tracking-widest" style="color:var(--teal);">Reuniões realizadas na semana</p>
+        <div class="flex items-baseline gap-2 mt-1">
+          <p id="ms-week-reunioes" class="text-3xl font-bold" style="color:var(--black);">0</p>
+          <p class="text-sm" style="color:var(--text2);">de <b id="ms-week-meta-reun">0</b> · <span id="ms-week-reun-ader" class="font-bold">0%</span></p>
+        </div>
+        <div class="ms-bar"><div id="ms-week-reun-bar" style="width:0%;background:var(--teal);"></div></div>
       </div>
     </div>
     <div id="ms-d1-status" class="admin-only text-xs mt-3" style="color:var(--text2);">Contagem automática pelo pipeline de pré-vendas.</div>
@@ -370,20 +385,34 @@
     </div>
   </div>
 
-  <div class="card p-5 overflow-x-auto">
-    <h3 class="text-sm font-bold mb-1" style="color:var(--black);">Prospecção por Semana — Abordagens & Contatos</h3>
-    <p class="text-xs mb-3" style="color:var(--text2);"><b>Abordagens</b> = novos cards que entraram em D1 na semana (tem meta). <b>Contatos</b> = cada avanço no funil (D1→D2, D2→D3…), inclui a 1ª abordagem — só realizado, sem meta. Automático pelo pipeline de pré-vendas e editável à mão.</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Semana</th><th>Período</th>
-          <th>Meta contas<br>a abordar</th><th>Abordagens<br>Realizadas</th><th>Ader.</th>
-          <th>Contatos<br>Realizados</th>
-        </tr>
-      </thead>
-      <tbody id="metasemanal-tbody"></tbody>
-      <tfoot id="metasemanal-tfoot"></tfoot>
-    </table>
+  <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 items-start">
+    <div class="card p-5 overflow-x-auto">
+      <h3 class="text-sm font-bold mb-1" style="color:var(--black);">Prospecção por semana</h3>
+      <p class="text-xs mb-3" style="color:var(--text2);">Contas novas abordadas na semana (cards que entraram em D1 no pré-vendas) contra a meta. Automático pelo HubSpot e editável à mão.</p>
+      <table>
+        <thead>
+          <tr><th>Semana</th><th>Período</th><th>Meta contas<br>a abordar</th><th>Abordagens<br>realizadas</th><th>%</th></tr>
+        </thead>
+        <tbody id="metasemanal-tbody"></tbody>
+        <tfoot id="metasemanal-tfoot"></tfoot>
+      </table>
+    </div>
+
+    <div class="card p-5 overflow-x-auto">
+      <div class="flex items-center justify-between flex-wrap gap-2 mb-1">
+        <h3 class="text-sm font-bold" style="color:var(--black);">Conversão: abordados → agendados</h3>
+        <span class="text-xs" style="color:var(--text2);">Total: <b id="conv-total" style="color:var(--accent2);">0 / 0 · 0%</b></span>
+      </div>
+      <p class="text-xs mb-3" style="color:var(--text2);">Agendados da semana: no Q4, as agendadas (outbound + ABM) do Plano Q4; antes do Q4, as reuniões realizadas da tabela Reuniões, Vendas & MRR. Editável à mão.</p>
+      <div id="conv-status" class="admin-only text-xs mb-3" style="color:var(--text2);"></div>
+      <table>
+        <thead>
+          <tr><th>Semana</th><th>Período</th><th>Abordados</th><th>Agendados</th><th>Conversão</th></tr>
+        </thead>
+        <tbody id="conversao-tbody"></tbody>
+        <tfoot id="conversao-tfoot"></tfoot>
+      </table>
+    </div>
   </div>
 
   <div class="card p-5 overflow-x-auto">
@@ -414,37 +443,6 @@
     </table>
   </div>
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-    <div class="card p-5">
-      <h3 class="text-sm font-bold mb-3" style="color:var(--black);">Abordagens por Semana — Meta x Realizado</h3>
-      <canvas id="chart-abordagens" height="120"></canvas>
-    </div>
-    <div class="card p-5">
-      <h3 class="text-sm font-bold mb-3" style="color:var(--black);">Contatos por Semana (evolução)</h3>
-      <canvas id="chart-contatos" height="120"></canvas>
-    </div>
-  </div>
-
-  <div class="card p-5 overflow-x-auto">
-    <div class="flex items-center justify-between flex-wrap gap-2 mb-1">
-      <h3 class="text-sm font-bold" style="color:var(--black);">Conversão: Abordados → Agendados</h3>
-      <span class="text-xs" style="color:var(--text2);">Total: <b id="conv-total" style="color:var(--accent2);">0 / 0 · 0%</b></span>
-    </div>
-    <p class="text-xs mb-3" style="color:var(--text2);">Dos cards <b>abordados</b> na semana (entraram em D1), quantos chegaram na fase <b>Agendado</b> do pipeline de pré-vendas. Automático pelas datas reais, editável à mão.</p>
-    <div id="conv-status" class="admin-only text-xs mb-3" style="color:var(--text2);"></div>
-    <table>
-      <thead>
-        <tr><th>Semana</th><th>Período</th><th>Abordados</th><th>Agendados</th><th>Conversão</th></tr>
-      </thead>
-      <tbody id="conversao-tbody"></tbody>
-      <tfoot id="conversao-tfoot"></tfoot>
-    </table>
-  </div>
-
-  <div class="card p-5">
-    <h3 class="text-sm font-bold mb-3" style="color:var(--black);">Conversão Abordados → Agendados por Semana</h3>
-    <canvas id="chart-conversao" height="110"></canvas>
-  </div>
 </section>
 
 <!-- ══════════════════ TAB 4: REUNIÕES AGENDADAS ══════════════════ -->
@@ -517,6 +515,66 @@
       </div>
     </div>
     <div id="kanban2-board" class="flex gap-3 overflow-x-auto pb-2"></div>
+  </div>
+</section>
+
+<!-- ══════════════════ TAB: FORECAST (manual, sem HubSpot) ══════════════════ -->
+<section id="tab-forecast" class="tab-panel space-y-6">
+  <div class="card overflow-hidden">
+    <div class="px-5 py-3 flex items-center justify-between flex-wrap gap-2" style="background:var(--black);">
+      <span class="text-lg font-bold" style="color:#fff;">🔮 Forecast · RPO Virtual Q4 2026</span>
+      <span class="text-xs" style="color:#ccc;">Possíveis clientes ainda não fechados. Preenchido à mão, sem ligação com o HubSpot.</span>
+    </div>
+    <div class="p-5 space-y-5">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="rounded-xl p-4 border text-center" style="background:#F3E5FF;border-color:#D9A1FF;">
+          <p class="text-xs font-semibold mb-1" style="color:#7A00CC;">OPORTUNIDADES</p>
+          <p class="text-lg font-bold" style="color:#9900FF;" id="fc-resumo-qtd">0</p>
+        </div>
+        <div class="rounded-xl p-4 border text-center" style="background:#E0F2F1;border-color:#80CBC4;">
+          <p class="text-xs font-semibold mb-1" style="color:#00786F;">MRR NEGOCIADO (TOTAL)</p>
+          <p class="text-lg font-bold" style="color:#00786F;" id="fc-resumo-mrr">R$ 0,00</p>
+        </div>
+        <div class="rounded-xl p-4 border text-center" style="background:#FAEDC8;border-color:#E0B84B;">
+          <p class="text-xs font-semibold mb-1" style="color:#8B6914;">VALOR TOTAL (PIPELINE)</p>
+          <p class="text-lg font-bold" style="color:#8B6914;" id="fc-resumo-valor">R$ 0,00</p>
+        </div>
+        <div class="rounded-xl p-4 border text-center" style="background:#E8F5E9;border-color:#A5D6A7;">
+          <p class="text-xs font-semibold mb-1" style="color:#2E7D32;">MRR COM FECHAMENTO ATÉ 30 DIAS</p>
+          <p class="text-lg font-bold" style="color:#2E7D32;" id="fc-resumo-30d">R$ 0,00</p>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-sm mb-3" style="color:var(--text2);">Quadro de fechamento previsto</h3>
+        <div id="fc-quadro" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3"></div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align:left;">Possível cliente</th><th>Canal</th><th>Prazo do contrato</th>
+              <th>MRR negociado</th><th>Valor total</th><th>Expectativa de fechamento</th><th>Temperatura</th>
+              <th style="text-align:left;">Observação</th><th class="admin-only" style="width:36px;">✕</th>
+            </tr>
+          </thead>
+          <tbody id="fc-tbody"></tbody>
+          <tfoot>
+            <tr class="font-bold" style="background:#FAFAFA;">
+              <td style="text-align:left;">TOTAL FORECAST</td><td></td><td></td>
+              <td id="fc-total-mrr" style="color:#00786F;">R$ 0,00</td>
+              <td id="fc-total-valor" style="color:var(--accent2);">R$ 0,00</td>
+              <td></td><td></td><td></td><td class="admin-only"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <div class="admin-only">
+        <button class="btn-ghost text-sm" onclick="addForecastDeal()">+ Adicionar possível cliente</button>
+      </div>
+      <p class="text-xs italic" style="color:var(--muted);">O forecast é só acompanhamento: não entra no MRR nem nas metas até o contrato fechar. Valor total = MRR x meses de contrato, calculado sozinho quando o prazo tem número de meses (dá para sobrescrever).</p>
+    </div>
   </div>
 </section>
 
@@ -874,6 +932,165 @@ if (!IS_VIEWER && !localStorage.getItem('rpov_renner04_v1')) {
   localStorage.setItem('rpov_clientes_fechados', JSON.stringify(clientesFechados));
   localStorage.setItem('rpov_renner04_v1', '1');
 }
+// ─── FORECAST (aba manual, sem HubSpot) ───
+// Só acompanhamento: não entra em MRR nem metas até o contrato fechar.
+let forecastDeals = loadJSON('rpov_forecast_deals', []);
+// Carga inicial (23/11/2026): forecast que o Antônio passou na conversa de 18/11.
+// MRR = proposta sem impulsionamento; prazo = mínimo de 3 meses da proposta; expectativa a revisar.
+if (!IS_VIEWER && !localStorage.getItem('rpov_forecast_seed_v1')) {
+  if (!forecastDeals.length) {
+    forecastDeals = [
+      { cliente:'Cencosud', canal:'OUT', prazo:'3 meses', mrr:20000, valor:60000, expectativa:'30 dias', temperatura:'Quente', obs:'R$ 26 mil com impulsionamento. Em compras e cadastro de fornecedor (Giga Atacado SP).' },
+      { cliente:'Riachuelo', canal:'ABM', prazo:'3 meses', mrr:20000, valor:60000, expectativa:'30 dias', temperatura:'Morno', obs:'R$ 26 mil com impulsionamento. Piloto proposto em 29/10, reunião em 13/11.' },
+      { cliente:'Lupo', canal:'ABM', prazo:'3 meses', mrr:10000, valor:30000, expectativa:'30 dias', temperatura:'Morno', obs:'40 vagas. R$ 14 mil com impulsionamento.' },
+      { cliente:'Grupo Avenida', canal:'ABM', prazo:'3 meses', mrr:20000, valor:60000, expectativa:'Mais de 30 dias', temperatura:'Frio', obs:'R$ 26 mil com impulsionamento. Avanço pelo relacional (Ponzi com o Fábio).' },
+      { cliente:'Santander', canal:'CONARH', prazo:'', mrr:0, valor:0, expectativa:'Mais de 30 dias', temperatura:'Frio', obs:'Valor em aberto. Em cadastro de fornecedor, deve demorar.' },
+    ];
+    saveJSON('rpov_forecast_deals', forecastDeals);
+  }
+  localStorage.setItem('rpov_forecast_seed_v1', '1');
+}
+// Inclusão (23/11/2026): Portal Nova como forecast frio, a pedido do Antônio. Valor da proposta (22/10) está no PDF, não no dash.
+if (!IS_VIEWER && !localStorage.getItem('rpov_forecast_portalnova_v1')) {
+  if (!forecastDeals.some(d => /portal nova/i.test(d.cliente || ''))) {
+    forecastDeals.push({ cliente:'Portal Nova', canal:'OUT', prazo:'', mrr:0, valor:0, expectativa:'Mais de 30 dias', temperatura:'Frio',
+      obs:'Franqueada da Help, ~30 vagas de consultor de vendas. Proposta em 22/10 (planos trimestral e semestral). Teste recusado em 29/10. Em 16/11 a Deusa disse que ainda não falou com a referência da Cielo por demandas de novembro.' });
+    saveJSON('rpov_forecast_deals', forecastDeals);
+  }
+  localStorage.setItem('rpov_forecast_portalnova_v1', '1');
+}
+// Valores da proposta Portal Nova (22/10), passados pelo Antônio em 23/11: trimestral R$ 14 mil/mês, semestral R$ 12 mil/mês.
+if (!IS_VIEWER && !localStorage.getItem('rpov_forecast_portalnova_v2')) {
+  const pn = forecastDeals.find(d => /portal nova/i.test(d.cliente || ''));
+  if (pn && !(parseFloat(pn.mrr) > 0)) {
+    pn.prazo = '3 meses'; pn.mrr = 14000; pn.valor = 42000; delete pn.valorManual;
+    pn.obs = 'Plano trimestral R$ 14 mil/mês (3 meses). Semestral: R$ 12 mil/mês por 6 meses (R$ 72 mil). 1 RPOvirtual, até 15 vagas/mês. Franqueada da Help, ~30 vagas de consultor de vendas. Teste recusado em 29/10; em 16/11 ainda não tinham falado com a referência da Cielo.';
+    saveJSON('rpov_forecast_deals', forecastDeals);
+  }
+  localStorage.setItem('rpov_forecast_portalnova_v2', '1');
+}
+// Portal Nova pela menor mensalidade (pedido do Antônio em 23/11): semestral R$ 12 mil/mês x 6 meses = R$ 72 mil.
+if (!IS_VIEWER && !localStorage.getItem('rpov_forecast_portalnova_v3')) {
+  const pn = forecastDeals.find(d => /portal nova/i.test(d.cliente || ''));
+  if (pn) {
+    pn.prazo = '6 meses'; pn.mrr = 12000; pn.valor = 72000; delete pn.valorManual;
+    pn.obs = 'Plano semestral, menor mensalidade: R$ 12 mil/mês por 6 meses. Trimestral: R$ 14 mil/mês por 3 meses (R$ 42 mil). 1 RPOvirtual, até 15 vagas/mês. Franqueada da Help, ~30 vagas de consultor de vendas. Teste recusado em 29/10; em 16/11 ainda não tinham falado com a referência da Cielo.';
+    saveJSON('rpov_forecast_deals', forecastDeals);
+  }
+  localStorage.setItem('rpov_forecast_portalnova_v3', '1');
+}
+const FC_EXPECT = ['Esta semana', 'Próxima semana', '15 dias', '30 dias', 'Mais de 30 dias'];
+const FC_EXPECT_TIT = { 'Esta semana':'Esta semana', 'Próxima semana':'Próxima semana', '15 dias':'Em até 15 dias', '30 dias':'Em até 30 dias', 'Mais de 30 dias':'Depois de 30 dias' };
+const FC_EXPECT_COR = { 'Esta semana':'#2E7D32', 'Próxima semana':'#558B2F', '15 dias':'#A16207', '30 dias':'#C2410C', 'Mais de 30 dias':'#6B7280' };
+const FC_TEMP = ['Quente', 'Morno', 'Frio'];
+const FC_TEMP_ICONE = { Quente:'🔥', Morno:'🌤️', Frio:'❄️' };
+const FC_CANAIS = ['OUT', 'ABM', 'CG', 'CONARH', 'MKT', 'RE'];
+function fcTempClass(t) { return { Quente:'tag-quente', Morno:'tag-morno', Frio:'tag-frio' }[t] || 'tag-temp-vazio'; }
+function fcTempLabel(t) { return t ? (FC_TEMP_ICONE[t] || '') + ' ' + t : '—'; }
+function fcCanalClass(c) { return 'badge-' + (String(c || '').toLowerCase() || 'nd'); }
+function fcMoeda(s) { return parseFloat(String(s).replace(/[R$\s.]/g, '').replace(',', '.')) || 0; }
+function fcMeses(prazo) { const m = String(prazo || '').match(/\d+/); return m ? parseInt(m[0]) : 0; }
+
+function saveForecast() { saveJSON('rpov_forecast_deals', forecastDeals); }
+function updateForecastField(i, field, value) {
+  if (IS_VIEWER || !forecastDeals[i]) return;
+  const d = forecastDeals[i];
+  const antes = d[field];
+  if (antes === value) return;
+  d[field] = value;
+  // Valor total acompanha MRR x meses enquanto ninguém sobrescreveu à mão.
+  if ((field === 'mrr' || field === 'prazo') && !d.valorManual && fcMeses(d.prazo)) d.valor = (parseFloat(d.mrr) || 0) * fcMeses(d.prazo);
+  if (field === 'valor') d.valorManual = true;
+  saveForecast();
+  renderForecast();
+}
+function addForecastDeal() {
+  forecastDeals.push({ cliente:'Novo possível cliente', canal:'', prazo:'3 meses', mrr:0, valor:0, expectativa:'30 dias', temperatura:'', obs:'' });
+  saveForecast();
+  renderForecast();
+}
+function removeForecastDeal(i) {
+  if (!confirm('Remover este possível cliente do forecast?')) return;
+  forecastDeals.splice(i, 1);
+  saveForecast();
+  renderForecast();
+}
+
+function renderForecast() {
+  const tbody = document.getElementById('fc-tbody');
+  if (!tbody) return;
+  const ordemExp = Object.fromEntries(FC_EXPECT.map((e, k) => [e, k]));
+  const ordemTemp = { Quente:0, Morno:1, Frio:2 };
+  const idx = forecastDeals.map((d, i) => ({ d, i }))
+    .sort((a, b) => ((ordemExp[a.d.expectativa] ?? 9) - (ordemExp[b.d.expectativa] ?? 9)) || ((ordemTemp[a.d.temperatura] ?? 3) - (ordemTemp[b.d.temperatura] ?? 3)));
+  let totM = 0, totV = 0, tot30 = 0;
+  tbody.innerHTML = idx.map(({ d, i }) => {
+    const mrr = parseFloat(d.mrr) || 0, valor = parseFloat(d.valor) || 0;
+    totM += mrr; totV += valor;
+    if ((ordemExp[d.expectativa] ?? 9) <= 3) tot30 += mrr;
+    const ed = IS_VIEWER ? '' : 'contenteditable="true"';
+    return `<tr>
+      <td style="text-align:left;font-weight:600;"><span ${ed} class="fc-cell" onblur="updateForecastField(${i},'cliente',this.textContent.trim())">${escapeHtml(d.cliente || '')}</span></td>
+      <td><select class="fc-sel badge ${fcCanalClass(d.canal)}" onchange="updateForecastField(${i},'canal',this.value)">
+            <option value="" ${!d.canal ? 'selected' : ''}>—</option>
+            ${FC_CANAIS.map(o => `<option ${d.canal === o ? 'selected' : ''}>${o}</option>`).join('')}
+          </select><span class="viewer-only badge ${fcCanalClass(d.canal)}">${escapeHtml(d.canal || '—')}</span></td>
+      <td><span ${ed} class="fc-cell" onblur="updateForecastField(${i},'prazo',this.textContent.trim())">${escapeHtml(d.prazo || '')}</span></td>
+      <td style="font-weight:600;color:#00786F;text-align:right;"><span ${ed} class="fc-cell" onblur="updateForecastField(${i},'mrr',fcMoeda(this.textContent))">${mrr ? fmtBRL(mrr) : 'em aberto'}</span></td>
+      <td style="font-weight:600;color:var(--accent2);text-align:right;"><span ${ed} class="fc-cell" onblur="updateForecastField(${i},'valor',fcMoeda(this.textContent))">${valor ? fmtBRL(valor) : '—'}</span></td>
+      <td><select class="fc-sel" style="color:${FC_EXPECT_COR[d.expectativa] || '#6B7280'};" onchange="updateForecastField(${i},'expectativa',this.value)">
+            ${FC_EXPECT.map(o => `<option value="${o}" ${d.expectativa === o ? 'selected' : ''}>${FC_EXPECT_TIT[o]}</option>`).join('')}
+          </select><span class="viewer-only font-semibold" style="color:${FC_EXPECT_COR[d.expectativa] || '#6B7280'};">${FC_EXPECT_TIT[d.expectativa] || '—'}</span></td>
+      <td><select class="fc-sel ${fcTempClass(d.temperatura)}" onchange="updateForecastField(${i},'temperatura',this.value)">
+            <option value="" ${!d.temperatura ? 'selected' : ''}>—</option>
+            ${FC_TEMP.map(o => `<option value="${o}" ${d.temperatura === o ? 'selected' : ''}>${fcTempLabel(o)}</option>`).join('')}
+          </select><span class="viewer-only badge ${fcTempClass(d.temperatura)}">${fcTempLabel(d.temperatura)}</span></td>
+      <td style="text-align:left;font-size:12px;color:var(--text2);max-width:280px;"><span ${ed} class="fc-cell" onblur="updateForecastField(${i},'obs',this.textContent.trim())">${escapeHtml(d.obs || '')}</span></td>
+      <td class="admin-only"><button onclick="removeForecastDeal(${i})" style="color:#fca5a5;font-weight:700;" onmouseover="this.style.color='#dc2626'" onmouseout="this.style.color='#fca5a5'">✕</button></td>
+    </tr>`;
+  }).join('') || `<tr><td colspan="9" class="text-xs italic" style="color:var(--muted);">Nenhum possível cliente no forecast.</td></tr>`;
+  const setTxt = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
+  setTxt('fc-total-mrr', fmtBRL(totM));
+  setTxt('fc-total-valor', fmtBRL(totV));
+  setTxt('fc-resumo-qtd', String(forecastDeals.length));
+  setTxt('fc-resumo-mrr', fmtBRL(totM));
+  setTxt('fc-resumo-valor', fmtBRL(totV));
+  setTxt('fc-resumo-30d', fmtBRL(tot30));
+
+  const quadro = document.getElementById('fc-quadro');
+  if (!quadro) return;
+  quadro.innerHTML = FC_EXPECT.map(op => {
+    const itens = forecastDeals.filter(d => (d.expectativa || '30 dias') === op)
+      .sort((a, b) => ((ordemTemp[a.temperatura] ?? 3) - (ordemTemp[b.temperatura] ?? 3)) || ((parseFloat(b.mrr) || 0) - (parseFloat(a.mrr) || 0)));
+    const sV = itens.reduce((t, d) => t + (parseFloat(d.valor) || 0), 0);
+    const sM = itens.reduce((t, d) => t + (parseFloat(d.mrr) || 0), 0);
+    const cards = itens.length ? itens.map(d => `
+      <div class="rounded-lg p-3 border" style="background:#fff;border-color:var(--border);">
+        <div class="flex items-start justify-between gap-2">
+          <span class="font-semibold text-sm" style="color:var(--black);">${escapeHtml(d.cliente || '')}</span>
+          <span class="flex gap-1 flex-wrap justify-end">
+            ${d.temperatura ? `<span class="badge ${fcTempClass(d.temperatura)}">${fcTempLabel(d.temperatura)}</span>` : ''}
+            ${d.canal ? `<span class="badge ${fcCanalClass(d.canal)}">${escapeHtml(d.canal)}</span>` : ''}
+          </span>
+        </div>
+        <div class="text-xs mt-1" style="color:var(--muted);">${escapeHtml(d.prazo || 'prazo a definir')}</div>
+        <div class="flex justify-between gap-2 text-xs mt-2" style="color:var(--text2);"><span>MRR</span><strong style="color:#00786F;white-space:nowrap;">${parseFloat(d.mrr) ? fmtBRL(parseFloat(d.mrr)) : 'em aberto'}</strong></div>
+        <div class="flex justify-between gap-2 text-xs" style="color:var(--text2);"><span>Total</span><strong style="color:var(--accent2);white-space:nowrap;">${parseFloat(d.valor) ? fmtBRL(parseFloat(d.valor)) : '—'}</strong></div>
+      </div>`).join('')
+      : '<p class="text-xs italic text-center py-3" style="color:var(--muted);">Nenhum negócio</p>';
+    return `<div class="rounded-xl border flex flex-col" style="background:#FAF8FF;border-color:#E5E0F5;">
+      <div class="px-3 py-2 rounded-t-xl" style="background:${FC_EXPECT_COR[op]};">
+        <p class="text-sm font-bold" style="color:#fff;">${FC_EXPECT_TIT[op]}</p>
+        <p class="text-xs" style="color:#fff;opacity:.9;">${itens.length} negócio${itens.length === 1 ? '' : 's'}</p>
+      </div>
+      <div class="px-3 py-2 border-b" style="border-color:#E5E0F5;">
+        <p class="text-base font-bold" style="color:var(--black);">${fmtBRL(sV)}</p>
+        <p class="text-xs" style="color:var(--text2);">MRR ${fmtBRL(sM)}</p>
+      </div>
+      <div class="p-2 space-y-2">${cards}</div>
+    </div>`;
+  }).join('');
+}
 let churnQ4 = loadJSON('rpov_churn_q4', []); // [{ nome, valor }] MRR perdido da safra Q3 durante o Q4
 // Realizado da cascata do Q4, preenchido à mão semana a semana: { [idx]: { agOut, realOut, agAbm, realAbm } } (vazio = não preenchido)
 let q4Real = loadJSON('rpov_q4_real', {});
@@ -918,8 +1135,10 @@ function setStatus(msg, color) {
 }
 
 // ═══════════════════════════ TABS ═══════════════════════════
+// Abas escondidas (23/11/2026): os dados continuam salvos e calculados, só não aparecem no menu.
+const ABAS_OCULTAS = ['cascata', 'reunioes', 'conversao', 'kanban'];
 function switchTab(id) {
-  if (!document.getElementById('tab-' + id)) id = 'metas'; // aba removida (ex.: Planejamento Cascata) cai em Metas Gerais
+  if (!document.getElementById('tab-' + id) || ABAS_OCULTAS.includes(id)) id = 'metas'; // aba removida ou escondida cai em Metas Gerais
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === id));
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === 'tab-' + id));
   localStorage.setItem('rpov_active_tab', id);
@@ -1542,9 +1761,19 @@ function agendadosDaCoortePorSemana() {
   });
   return arr;
 }
+// AGENDADOS da conversão (23/11/2026, pedido do Antônio): no Q4 (S14 em diante) vem do Plano Q4,
+// agendadas outbound + ABM; antes do Q4 (e em semana do Q4 sem agendadas preenchidas) vem das
+// reuniões realizadas da tabela Reuniões, Vendas & MRR. A coorte do HubSpot (acima) ficou sem uso aqui.
+function agendadosDoPlanoPorSemana() {
+  return WEEKS.map((w, idx) => {
+    const r = q4Real[idx] || {};
+    const temPlano = idx >= PLANO_Q4_INICIO && ((r.agOut !== undefined && r.agOut !== null && r.agOut !== '') || (r.agAbm !== undefined && r.agAbm !== null && r.agAbm !== ''));
+    return temPlano ? (r.agOut || 0) + (r.agAbm || 0) : (reunioesChips[idx]?.realizadas || 0);
+  });
+}
 function getAgendadosRealizados(idx, autoArr) {
   const ov = metaSemanal[idx]?.agendadosOverride;
-  const auto = autoArr || agendadosDaCoortePorSemana();
+  const auto = autoArr || agendadosDoPlanoPorSemana();
   return (ov === undefined || ov === null) ? (auto[idx] || 0) : ov;
 }
 
@@ -1636,16 +1865,11 @@ function renderMetaSemanal() {
       <td>${w.period}</td>
       <td><input type="number" min="0" class="admin-only w-16" value="${ms.metaAbordagens||''}" oninput="onMetaSemanalInput(${idx},'metaAbordagens',this.value)" placeholder="0" /><span class="viewer-only">${ms.metaAbordagens||0}</span></td>
       <td>
-        <input type="number" min="0" class="admin-only w-14" value="${editado ? ms.abordagensOverride : ''}" placeholder="${auto[idx]||0}" oninput="onMetaSemanalInput(${idx},'abordagensOverride',this.value)" title="${editado ? 'Editado à mão' : 'Automático (novos cards D1) — edite para sobrepor'}" />
+        <input type="number" min="0" class="admin-only w-16" value="${editado ? ms.abordagensOverride : ''}" placeholder="${auto[idx]||0}" oninput="onMetaSemanalInput(${idx},'abordagensOverride',this.value)" title="${editado ? 'Editado à mão' : 'Automático (novos cards D1) — edite para sobrepor'}" />
         <span class="viewer-only font-bold">${abordReal}</span>
         ${editado ? `<button class="admin-only text-[10px] underline" style="color:var(--text2);" onclick="resetAbordagens(${idx})">↺</button>` : ''}
       </td>
-      <td id="ms-adher-a-${idx}" class="text-[11px] font-bold" style="color:${cor(adherA)};">${adherA}%</td>
-      <td>
-        <input type="number" min="0" class="admin-only w-14" value="${contEditado ? ms.contatosOverride : ''}" placeholder="${autoCont[idx]||0}" oninput="onMetaSemanalInput(${idx},'contatosOverride',this.value)" title="${contEditado ? 'Editado à mão' : 'Automático (avanços no funil D) — edite para sobrepor'}" />
-        <span class="viewer-only font-bold">${contReal}</span>
-        ${contEditado ? `<button class="admin-only text-[10px] underline" style="color:var(--text2);" onclick="resetContatos(${idx})">↺</button>` : ''}
-      </td>
+      <td id="ms-adher-a-${idx}" class="text-[11px] font-bold" style="color:${cor(adherA)};">${ms.metaAbordagens ? adherA + '%' : '—'}</td>
     </tr>`;
   }).join('');
 
@@ -1655,7 +1879,7 @@ function renderMetaSemanal() {
   const temD = Object.keys(stageDNumMap()).length > 0;
   const statusEl = document.getElementById('ms-d1-status');
   if (statusEl) {
-    if (!hsStages2.length) statusEl.innerHTML = 'Carregue o pipeline de pré-vendas (aba Pipeline) para contar abordagens e contatos automaticamente.';
+    if (!hsStages2.length) statusEl.innerHTML = 'Clique em 🔄 Atualizar do HubSpot para contar as abordagens automaticamente.';
     else if (!temD) statusEl.innerHTML = '⚠ Não encontrei etapas <b>D1/D2/D3…</b> no pipeline de pré-vendas. Use os campos à mão ou nomeie os estágios com [D1], [D2]…';
     else {
       const totAbord = auto.reduce((a,b)=>a+b,0);
@@ -1667,7 +1891,7 @@ function renderMetaSemanal() {
       } else if (diag) {
         aviso = ` <span style="color:var(--muted);">(${diag.comData}/${diag.total} negócios com data de etapa)</span>`;
       }
-      statusEl.innerHTML = `Contado pelas datas reais de entrada em cada etapa D · <b>${totAbord}</b> abordagens · <b>${totCont}</b> contatos.${aviso} Recarregue o pipeline (aba Pipeline) para atualizar.`;
+      statusEl.innerHTML = `Contado pelas datas reais de entrada em D1 · <b>${totAbord}</b> abordagens no semestre.${aviso}`;
     }
   }
 
@@ -1694,6 +1918,7 @@ function onMetaSemanalReuniaoInput(idx, val) {
   saveJSON('rpov_reunioes_chips', reunioesChips);
   updateMetaSemanalTotals();
   updateRVMLive();
+  renderConversaoAgendados(); // agendados de antes do Q4 vêm das reuniões realizadas
   if (typeof renderChartReunioesCascata === 'function') renderChartReunioesCascata();
   if (typeof renderChartReunioesAcum === 'function') renderChartReunioesAcum();
 }
@@ -1707,7 +1932,7 @@ function updateMetaSemanalTotals() {
     const ms = metaSemanal[idx];
     const adherA = pct(getAbordagensRealizadas(idx, auto), ms.metaAbordagens);
     const ea = document.getElementById('ms-adher-a-'+idx);
-    if (ea) { ea.textContent = adherA+'%'; ea.style.color = cor(adherA); }
+    if (ea) { ea.textContent = ms && ms.metaAbordagens ? adherA+'%' : '—'; ea.style.color = cor(adherA); }
   });
   const totMetaA = metaSemanal.reduce((s,m) => s + (m.metaAbordagens||0), 0);
   const totRealA = WEEKS.reduce((s,w) => s + getAbordagensRealizadas(w.n-1, auto), 0);
@@ -1718,7 +1943,6 @@ function updateMetaSemanalTotals() {
   if (tfoot) tfoot.innerHTML = `<tr class="font-bold" style="background:#FAFAFA;">
     <td colspan="2">TOTAL</td>
     <td>${totMetaA}</td><td>${totRealA}</td><td>${pct(totRealA,totMetaA)}%</td>
-    <td>${totRealC}</td>
   </tr>`;
 
   // Tiles do topo = SEMANA ATUAL (não o total do semestre).
@@ -1740,6 +1964,9 @@ function updateMetaSemanalTotals() {
   setTxt('ms-week-reunioes', wkReun);
   setTxt('ms-week-meta-reun', wkMetaReun);
   setAder('ms-week-reun-ader', pct(wkReun, wkMetaReun));
+  const setBar = (id, a) => { const e = document.getElementById(id); if (e) e.style.width = Math.min(100, a) + '%'; };
+  setBar('ms-week-abord-bar', pct(wkAbord, wkMetaAbord));
+  setBar('ms-week-reun-bar', pct(wkReun, wkMetaReun));
 
   renderChartAbordagens(auto);
   renderChartContatos();
@@ -1905,7 +2132,7 @@ const _corConv = a => a >= 100 ? 'var(--teal)' : (a >= 50 ? 'var(--mustard)' : '
 function renderConversaoAgendados() {
   const tbody = document.getElementById('conversao-tbody');
   if (!tbody) return;
-  const autoAg = agendadosDaCoortePorSemana();
+  const autoAg = agendadosDoPlanoPorSemana();
   const wkNow = currentWeekIdx();
   tbody.innerHTML = WEEKS.map(w => {
     const idx = w.n-1;
@@ -1915,7 +2142,7 @@ function renderConversaoAgendados() {
       <td>${w.period}</td>
       <td id="conv-abord-${idx}"></td>
       <td>
-        <input type="number" min="0" class="admin-only w-14" value="${agEdit ? metaSemanal[idx].agendadosOverride : ''}" placeholder="${autoAg[idx]||0}" oninput="onMetaSemanalInput(${idx},'agendadosOverride',this.value)" title="${agEdit ? 'Editado à mão' : 'Automático (chegaram na fase Agendado) — edite para sobrepor'}" />
+        <input type="number" min="0" class="admin-only w-14" value="${agEdit ? metaSemanal[idx].agendadosOverride : ''}" placeholder="${autoAg[idx]||0}" oninput="onMetaSemanalInput(${idx},'agendadosOverride',this.value)" title="${agEdit ? 'Editado à mão' : 'Automático: agendadas do Plano Q4 (ou reuniões realizadas antes do Q4). Edite para sobrepor'}" />
         <span class="viewer-only font-bold" id="conv-ag-view-${idx}"></span>
         ${agEdit ? `<button class="admin-only text-[10px] underline" style="color:var(--text2);" onclick="resetAgendados(${idx})">↺</button>` : ''}
       </td>
@@ -1923,15 +2150,8 @@ function renderConversaoAgendados() {
     </tr>`;
   }).join('');
 
-  const diag = window._rpovDiag;
   const cs = document.getElementById('conv-status');
-  if (cs) {
-    const naFase = hsDeals2.filter(d => _reachedAgendado(d)).length;
-    if (!hsStages2.length) cs.innerHTML = 'Carregue o pipeline de pré-vendas para calcular a conversão.';
-    else if (_agendadoOrderLive() == null) cs.innerHTML = '⚠ Não encontrei uma fase com "Agendado" no pipeline de pré-vendas. Use a coluna Agendados à mão, ou renomeie o estágio para conter "Agendado".';
-    else if (diag && diag.agReached === undefined) cs.innerHTML = `<span style="color:var(--mustard);">Recarregue o pipeline (botão 🔄 Atualizar do HubSpot) para pegar as datas da fase Agendado.</span>`;
-    else cs.innerHTML = `<b>${naFase}</b> cards na fase Agendado ou além.`;
-  }
+  if (cs) cs.innerHTML = '';
 
   updateConversaoLive();
 }
@@ -1940,7 +2160,7 @@ function renderConversaoAgendados() {
 function updateConversaoLive() {
   if (!document.getElementById('conversao-tbody')) return;
   const autoAbord = abordagensRealizadasPorSemana();
-  const autoAg = agendadosDaCoortePorSemana();
+  const autoAg = agendadosDoPlanoPorSemana();
   WEEKS.forEach(w => {
     const idx = w.n-1;
     const abord = getAbordagensRealizadas(idx, autoAbord);
@@ -2796,6 +3016,7 @@ async function publicarSnapshot() {
       clientes_fechados: clientesFechados,
       churn_q4: churnQ4,
       q4_real: q4Real,
+      forecast_deals: forecastDeals,
       active_tab: localStorage.getItem('rpov_active_tab') || 'metas',
       snapshot_at: new Date().toISOString(),
     };
@@ -3298,6 +3519,7 @@ function renderAll() {
   renderConversao();
   renderKanban();
   renderKanban2();
+  renderForecast();
   renderBase();
 }
 
@@ -3329,6 +3551,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (Array.isArray(d.clientes_fechados)) clientesFechados = d.clientes_fechados;
         if (Array.isArray(d.churn_q4)) churnQ4 = d.churn_q4;
         if (d.q4_real && typeof d.q4_real === 'object') q4Real = d.q4_real;
+        if (Array.isArray(d.forecast_deals)) forecastDeals = d.forecast_deals;
         renderAll();
         switchTab(d.active_tab || 'metas');
         if (sessionStorage.getItem('rpov_base_key')) baseAbrirProtegida();
