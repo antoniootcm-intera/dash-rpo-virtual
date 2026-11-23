@@ -979,6 +979,14 @@ if (!IS_VIEWER && !localStorage.getItem('rpov_forecast_portalnova_v3')) {
   }
   localStorage.setItem('rpov_forecast_portalnova_v3', '1');
 }
+// Inclusão (23/11/2026): Grupo Soma, frio, R$ 20 mil/mês por 3 meses, a pedido do Antônio.
+if (!IS_VIEWER && !localStorage.getItem('rpov_forecast_soma_v1')) {
+  if (!forecastDeals.some(d => /soma/i.test(d.cliente || ''))) {
+    forecastDeals.push({ cliente:'Grupo Soma', canal:'', prazo:'3 meses', mrr:20000, valor:60000, expectativa:'Mais de 30 dias', temperatura:'Frio', obs:'' });
+    saveJSON('rpov_forecast_deals', forecastDeals);
+  }
+  localStorage.setItem('rpov_forecast_soma_v1', '1');
+}
 const FC_EXPECT = ['Esta semana', 'Próxima semana', '15 dias', '30 dias', 'Mais de 30 dias'];
 const FC_EXPECT_TIT = { 'Esta semana':'Esta semana', 'Próxima semana':'Próxima semana', '15 dias':'Em até 15 dias', '30 dias':'Em até 30 dias', 'Mais de 30 dias':'Depois de 30 dias' };
 const FC_EXPECT_COR = { 'Esta semana':'#2E7D32', 'Próxima semana':'#558B2F', '15 dias':'#A16207', '30 dias':'#C2410C', 'Mais de 30 dias':'#6B7280' };
@@ -2962,9 +2970,14 @@ async function carregarPipeline2() {
 }
 
 // ═══════════════════════════ PUBLICAR (GitHub Pages) ═══════════════════════════
-async function publicarSnapshot() {
+// opts.auto = rotina diária das 18h: não abre janelas (alert/prompt) e usa a senha da base
+// guardada neste navegador na última publicação manual com a senha certa. Retorna true se publicou.
+async function publicarSnapshot(opts = {}) {
+  const auto = !!opts.auto;
+  let publicado = false;
   const ghToken = localStorage.getItem('rpov_gh_token') || document.getElementById('gh-token')?.value;
   if (!ghToken) {
+    if (auto) return false;
     alert('Cole seu GitHub Token no campo ao lado do botão 🚀 Publicar.\n\nCrie um em: github.com → Settings → Developer settings → Personal access tokens → Tokens (classic) → marcar "repo"');
     return;
   }
@@ -3027,11 +3040,16 @@ async function publicarSnapshot() {
     // Base de empresas e contatos: sobe criptografada com a senha do link (nunca em texto aberto)
     let baseMsg = '';
     if (baseTemDados()) {
-      const senha = prompt('Para publicar a aba Empresas & Contatos, digite a senha do link publicado (a mesma que seu chefe usa).\n\nA base sobe criptografada com essa senha. Deixe em branco para publicar sem a base.');
+      const senha = auto
+        ? (localStorage.getItem('rpov_auto_senha') || '')
+        : prompt('Para publicar a aba Empresas & Contatos, digite a senha do link publicado (a mesma que seu chefe usa).\n\nA base sobe criptografada com essa senha. Deixe em branco para publicar sem a base.');
       if (senha) {
         if (await sha256Hex(senha) !== VIEWER_PASSWORD_HASH) {
           baseMsg = ' Base de contatos NÃO publicada: senha diferente da do link.';
+          if (auto) localStorage.removeItem('rpov_auto_senha');
         } else {
+          // Guarda a senha só neste navegador (nunca no código publicado) para a rotina das 18h.
+          if (!auto) localStorage.setItem('rpov_auto_senha', senha);
           btn.innerHTML = '⏳ base protegida…';
           const pkg = await baseCriptografar(senha, { base: window.RPOV_BASE, tier_ov: baseTierOv, links_ov: baseLinksOv, publicado_em: new Date().toISOString() });
           await pushFile(BASE_ENC_FILE, btoa(JSON.stringify(pkg)), `base protegida ${tsLabel}`);
@@ -3052,6 +3070,7 @@ async function publicarSnapshot() {
     if (htmlSource) {
       htmlSource = htmlSource.replace(/(localStorage\.setItem\(['"](?:rpov_hs_token|rpov_gh_token)['"],\s*['"])[^'"]*(['"])/g, '$1$2');
       await pushFile('index.html', toB64(htmlSource), `dash update ${tsLabel}`);
+      publicado = true;
       setStatus('✓ Publicado! Link atualiza em ~30s → antoniootcm-intera.github.io/dash-rpo-virtual/' + baseMsg, baseMsg.includes('NÃO') ? 'orange' : 'green');
     } else {
       setStatus('⚠ data.json publicado. index.html não atualizado (fetch local falhou).', 'orange');
@@ -3062,6 +3081,34 @@ async function publicarSnapshot() {
     btn.innerHTML = orig;
     btn.disabled = false;
   }
+  return publicado;
+}
+
+// Rotina diária (18h): o LaunchAgent com.intera.rpov.autopublicar abre
+// localhost:8091/?autopublicar=1 → puxa os dois pipelines do HubSpot e publica na nuvem.
+async function _autoPublicar() {
+  const log = (etapa, extra) => {
+    fetch('/__autolog', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ etapa, extra: extra || '', at: new Date().toISOString() }) }).catch(() => {});
+  };
+  window.alert = (m) => log('aviso', String(m || ''));   // nenhuma janela pode travar a rotina
+  window.confirm = () => false;
+  window.prompt = () => '';
+  log('inicio');
+  if (localStorage.getItem('rpov_hs_token')) {
+    try { await carregarPipeline(); } catch (e) { log('hubspot-rpov-erro', String(e && e.message || e)); }
+    try { await carregarPipeline2(); } catch (e) { log('hubspot-prevendas-erro', String(e && e.message || e)); }
+    log('hubspot', document.getElementById('sync-status')?.textContent || '');
+    await new Promise(r => setTimeout(r, 1500));
+  } else {
+    log('hubspot-sem-token');
+  }
+  if (!localStorage.getItem('rpov_gh_token')) { log('publicar-sem-token'); return; }
+  if (!localStorage.getItem('rpov_auto_senha')) log('sem-senha-base', 'publica sem atualizar Empresas & Contatos');
+  const ok = await publicarSnapshot({ auto: true });
+  log(ok ? 'publicado' : 'publicar-falhou', document.getElementById('sync-status')?.textContent || '');
+  if (ok) setStatus('✓ Rotina 18h: HubSpot atualizado e publicado às ' + new Date().toLocaleTimeString('pt-BR') + '. Esta aba fecha sozinha.', 'green');
+  setTimeout(() => { try { window.close(); } catch (_) {} }, 20000);
 }
 
 // ═══════════════════════════ TAB: EMPRESAS & CONTATOS ═══════════════════════════
@@ -3571,6 +3618,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   renderAll();
   switchTab(localStorage.getItem('rpov_active_tab') || 'metas');
+
+  if (new URLSearchParams(location.search).get('autopublicar') === '1') {
+    history.replaceState(null, '', location.pathname); // recarregar a aba não republica
+    setTimeout(_autoPublicar, 2500);
+  }
 });
 </script>
 
