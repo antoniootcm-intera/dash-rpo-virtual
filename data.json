@@ -1125,6 +1125,11 @@
       "created": "2026-10-23",
       "notes": [
         {
+          "body": "Nova condição enviada por email em 24/11/2026 para Deusa, com Isabel em cópia.\nContrato de 3 meses, pagando 2: mês 1 gratuito, meses 2 e 3 a R$ 14 mil.\nTotal de R$ 28 mil, contra R$ 42 mil na proposta original (trimestral de 22/10).\n1 RPOvirtual, até 15 vagas por mês.\nImpulsionamento por conta da INTERA durante todo o contrato, inclusive no mês gratuito.\nVálida até 18/12/2026. Vale para os 3 meses completos.\nContexto: Deusa pediu período de teste em 26/10, recusado em 29/10. Em 16/11 respondeu que ainda não tinham falado com a Sara (Cielo) por demandas de novembro.\nPróximo passo: aguardar retorno. Pedi uma conversa de 20 minutos ainda esta semana para definir por quais vagas começar.",
+          "timestamp": "2026-11-24T14:17:31Z",
+          "author": ""
+        },
+        {
           "body": "Follow-up enviado em 11/11/2026 para Deusa, com Isabel em cópia. Perguntei se falaram com a Sara (Cielo), passada como referência em 29/10, e se ficou alguma dúvida.\nHistórico: proposta em 22/10; Deusa levou à diretoria (26/10) e pediu período de teste, recusado em 29/10. Follow-up anterior em 09/11, sem resposta.",
           "timestamp": "2026-11-11T21:55:54Z",
           "author": ""
@@ -1296,7 +1301,7 @@
       "notes": []
     }
   ],
-  "hs_last_updated": "23/11/2026, 18:00:09",
+  "hs_last_updated": "24/11/2026, 18:00:08",
   "mrr_overrides": {
     "total": {
       "value": 93000,
@@ -7529,7 +7534,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "23/11/2026, 18:00:12",
+  "hs_last_updated2": "24/11/2026, 18:00:11",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -7969,5 +7974,5 @@
     }
   ],
   "active_tab": "metas",
-  "snapshot_at": "2026-11-23T21:00:13.717Z"
+  "snapshot_at": "2026-11-24T21:00:12.662Z"
 }
