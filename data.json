@@ -1299,9 +1299,23 @@
       "stageId": "1397554093",
       "created": "2026-11-23",
       "notes": []
+    },
+    {
+      "id": "68715796649",
+      "name": "Smart Fit | Felipe | OUT",
+      "amount": 0,
+      "stageId": "1397554093",
+      "created": "2026-11-25",
+      "notes": [
+        {
+          "body": "Reunião RPO Virtual, 25/11/2026, 11h. Felipe Casale (Smart Fit), Antônio Marçal e Paula Morais.\nGravação tl;dv: https://tldv.io/app/meetings/6b06e9ab0083bf001397997d\nOrigem: Alline Pina (Gerente de TA corporativo) passou o contato do Felipe em 18/11, depois da call de RPO tradicional de 17/11. Telefone informado por Alline: 11 97622-6132. Felipe já recebia nossos emails de prospecção.\nEstrutura (call + anotações)\nSmart Fit: recrutamento centralizado, 8 analistas. Gerentes de unidade indicam e participam.\nExpansão: 1 coordenação, 2 analistas dedicados e mais 3 que apoiam as regionais.\nBio Ritmo e Nation: 3 analistas (anotação).\nProgramas de entrada: 2 analistas (anotação).\nCélula de triagem feita por aprendizes.\nVolume\n~800 vagas/mês: ~650 de reposição e ~150 de inauguração (na call, Paula estimou ~140 de inauguração).\n1.700+ vagas e 120 unidades inauguradas em 2026. Extensão de horário em unidades de SP aumentou as posições.\nSistemas\nHCM Oracle. ATS 99jobs (anotação). Controle em Google Sheets.\nIdeia: usar o HCM só para admissão e ter um parceiro na etapa inicial.\nSem API oficial da Meta, com bloqueios recorrentes de WhatsApp.\nColetivas presenciais: 2 a 4 por mês em cada polo, além das online.\nDores\n1: atração e topo de funil. Quer arrumar a própria etapa antes de discutir a admissão.\n2: admissão, feita por outro time. Demora e desistência. O SLA alto vem da admissão, não da seleção.\nOnde encaixa: Felipe sugeriu deixar as vagas de capital com o RPOv e o time nas praças complexas (citou uma unidade em BH e Patos de Minas).\nComercial\nFalado: R$20k/mês por 80 vagas simultâneas, sem impulsionamento, plano trimestral. Valor com impulsionamento foi mostrado na tela, não falado.\nPaula sugeriu piloto com 1 ou 2 RPOv, com início em uma semana, e deixou aberto pagar no próximo semestre ou parcelado.\nFelipe perguntou por teste menor, regional, de 2 a 3 meses. Ficou em aberto.\nSem budget pré-aprovado: 2026 ficou no RH global, 2027 em desenho. Pensa em dividir o custo com a operação.\nConcorrente: Diga aí, a que mais gostaram até agora. Felipe passou por Loggi e Pão de Açúcar.\nPróximos passos\n30/11 (tentativa) ou 01/12: Felipe fala com a diretora.\n02/12: Paula chama Felipe no WhatsApp.\n07/12: conversa de 30 min, horário a definir.\nDe 02 a 04/12 Felipe está com o time do Brasil inteiro, sem agenda.",
+          "timestamp": "2026-11-25T14:00:00Z",
+          "author": ""
+        }
+      ]
     }
   ],
-  "hs_last_updated": "24/11/2026, 18:00:08",
+  "hs_last_updated": "25/11/2026, 18:00:10",
   "mrr_overrides": {
     "total": {
       "value": 93000,
@@ -7534,7 +7548,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "24/11/2026, 18:00:11",
+  "hs_last_updated2": "25/11/2026, 18:00:12",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -7974,5 +7988,5 @@
     }
   ],
   "active_tab": "metas",
-  "snapshot_at": "2026-11-24T21:00:12.662Z"
+  "snapshot_at": "2026-11-25T21:00:15.157Z"
 }
