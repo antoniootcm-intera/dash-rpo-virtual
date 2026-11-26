@@ -129,7 +129,7 @@
       "realizadas": 1
     },
     {
-      "realizadas": 0
+      "realizadas": 2
     },
     {
       "realizadas": 0
@@ -1315,7 +1315,7 @@
       ]
     }
   ],
-  "hs_last_updated": "25/11/2026, 18:00:10",
+  "hs_last_updated": "26/11/2026, 18:00:06",
   "mrr_overrides": {
     "total": {
       "value": 93000,
@@ -7548,7 +7548,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "25/11/2026, 18:00:12",
+  "hs_last_updated2": "26/11/2026, 18:00:09",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -7891,8 +7891,8 @@
       "realOut": 1
     },
     "19": {
-      "agOut": 0,
-      "realOut": 0
+      "agOut": 1,
+      "realOut": 2
     }
   },
   "forecast_deals": [
@@ -7987,6 +7987,6 @@
       "obs": "Indicação Renner. Depende de aprovação da TI, depois piloto. 20k sem / 26k com impulsionamento."
     }
   ],
-  "active_tab": "metas",
-  "snapshot_at": "2026-11-25T21:00:15.157Z"
+  "active_tab": "metasemanal",
+  "snapshot_at": "2026-11-26T21:00:11.560Z"
 }
