@@ -1315,7 +1315,7 @@
       ]
     }
   ],
-  "hs_last_updated": "26/11/2026, 18:00:06",
+  "hs_last_updated": "27/11/2026, 18:00:06",
   "mrr_overrides": {
     "total": {
       "value": 93000,
@@ -7548,7 +7548,7 @@
       ]
     }
   ],
-  "hs_last_updated2": "26/11/2026, 18:00:09",
+  "hs_last_updated2": "27/11/2026, 18:00:10",
   "hs_overrides2": {
     "62639556404": {
       "canal": "NF"
@@ -7988,5 +7988,5 @@
     }
   ],
   "active_tab": "metasemanal",
-  "snapshot_at": "2026-11-26T21:00:11.560Z"
+  "snapshot_at": "2026-11-27T21:00:12.395Z"
 }
